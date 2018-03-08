@@ -3,7 +3,5 @@
     "es2015",
     "react"
   ],
-  "plugins": [
-    "babel-plugin-transform-object-rest-spread"
-  ]
+  "plugins": ["transform-class-properties"]
 }

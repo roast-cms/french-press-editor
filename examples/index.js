@@ -6,7 +6,11 @@ import { ThemeProvider } from "styled-components"
 // theme
 import { Sugar } from "@roast-cms/react-sugar-styled"
 
-const Main = props => <div>test</div>
+// editor component
+import { FrenchPress } from "../src/index"
+
+
+const Main = props => <FrenchPress />
 
 render(
   <div>
