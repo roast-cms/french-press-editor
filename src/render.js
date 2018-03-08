@@ -2,9 +2,14 @@
 import React from "react"
 import styled from "styled-components"
 
+// Picture
+// Link
+// PictureDocket (conditional)
+
 
 // return
 export const renderNode = props => {
+  console.log(props);
 
   const { node, attributes, children, isSelected, editor } = props
   const focus = editor.value.isFocused && isSelected

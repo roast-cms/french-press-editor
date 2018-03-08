@@ -9,6 +9,8 @@
   "private": false,
   "devDependencies": {
     "@roast-cms/react-sugar-styled": "*",
+    "@roast-cms/react-link-filter": "*",
+    "@roast-cms/react-button-beans": "*",
     "babel-cli": "^6.0.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -28,13 +30,17 @@
     "webpack-dev-server": "^2.11.1",
     "localforage": "^1.6.0",
     "localforage-getitems": "^1.4.1",
-    "positions": "^1.6.1"
+    "positions": "^1.6.1",
+    "lodash": "^4.17.4",
+    "react-router-dom": "^4.2.2"
   },
   "peerDependencies": {
-    "@roast-cms/react-sugar-styled": "*",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "styled-components": "3.0.2"
+    "styled-components": "3.0.2",
+    "immutable": "^3.8.2",
+    "lodash": "^4.17.4",
+    "react-router-dom": "^4.2.2"
   },
   "scripts": {
     "start": "webpack-dev-server",

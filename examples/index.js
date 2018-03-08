@@ -11,8 +11,8 @@ import { FrenchPress } from "../src/index"
 
 const Main = props =>
   <FrenchPress
-    callbackStatus={status =>
-      console.log(status === "ok" ? "Saved." : "Pending...")}
+    callbackStatus={status => {}}
+    domain="localhost:3002"
   />
 
 render(
@@ -21,7 +21,7 @@ render(
       <div
         style={{
           maxWidth: "800px",
-          margin: "1em auto"
+          margin: "40px auto"
         }}
       >
         <Main />
