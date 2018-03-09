@@ -20,6 +20,9 @@ import {
   // handleImageButton
 } from "./utils"
 
+// plugins
+import { plugins } from "./plugins"
+
 // constants
 import { PLACEHOLDER_TEXT } from "./constants"
 
@@ -77,10 +80,10 @@ export class FrenchPress extends React.PureComponent {
 
   render = () => {
     focusEvents(this)
-    console.log(this.state.editorFocus);
     return [
       <div style={{ position: "relative" }} key="Editor">
         <Editor
+          plugins={plugins}
           placeholder={PLACEHOLDER_TEXT}
           value={this.state.value}
           onChange={this.handleChange}
@@ -95,16 +98,17 @@ export class FrenchPress extends React.PureComponent {
             background: this.state.dragOver ? "rgba(44,44,44,.075)" : ""
           }}
           ref={input => (this.slateEditor = input)}
+          options={this.props.options.domain}
         />
       </div>,
       <FormatMenu
         key="Menu"
-        domain={this.props.domain}
         menuRef={this.menuRef}
         onChange={this.handleChange}
         value={this.state.value}
         formatCommand={this.formatCommand}
-        style={{ display: this.state.editorFocus ? "block" : null }}
+        style={{ display: this.state.editorFocus ? "block" : "none" }}
+        controls={this.props.controls}
       />
     ]
   }

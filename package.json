@@ -8,9 +8,9 @@
   "license": "MPL-2.0",
   "private": false,
   "devDependencies": {
-    "@roast-cms/react-sugar-styled": "*",
-    "@roast-cms/react-link-filter": "*",
     "@roast-cms/react-button-beans": "*",
+    "@roast-cms/react-link-filter": "*",
+    "@roast-cms/react-sugar-styled": "*",
     "babel-cli": "^6.0.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -18,8 +18,13 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "immutable": "^3.8.2",
+    "localforage": "^1.6.0",
+    "localforage-getitems": "^1.4.1",
+    "lodash": "^4.17.4",
+    "positions": "^1.6.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-router-dom": "^4.2.2",
     "slate": "0.33.0",
     "slate-auto-replace": "^0.9.0",
     "slate-drop-or-paste-images": "^0.8.0",
@@ -28,19 +33,17 @@
     "styled-components": "3.0.2",
     "webpack": "^3.11.0",
     "webpack-dev-server": "^2.11.1",
-    "localforage": "^1.6.0",
-    "localforage-getitems": "^1.4.1",
-    "positions": "^1.6.1",
-    "lodash": "^4.17.4",
-    "react-router-dom": "^4.2.2"
+    "react-router-dom": "^4.2.2",
+    "keycode": "^2.1.9",
+    "is-url": "^1.2.2"
   },
   "peerDependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "styled-components": "3.0.2",
     "immutable": "^3.8.2",
     "lodash": "^4.17.4",
-    "react-router-dom": "^4.2.2"
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-router-dom": "^4.2.2",
+    "styled-components": "3.0.2"
   },
   "scripts": {
     "start": "webpack-dev-server",
