@@ -12,7 +12,7 @@ import { Wrapper } from "./styles"
 import { FrenchPress } from "../src/index"
 
 // custom components
-// import Picture from "../src/containers/Picture"
+import Picture from "../src/containers/Picture"
 
 const Main = props =>
   <FrenchPress
@@ -36,7 +36,7 @@ const Main = props =>
       MakeItalic: props => <em>i</em>
     }}
     components={{
-      // Picture
+      Picture // REQUIRED for images
     }}
   />
 

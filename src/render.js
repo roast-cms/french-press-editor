@@ -78,10 +78,8 @@ export const renderNode = props => {
         const Picture = props.editor.props.components.Picture
         return <Picture {...props} />
       } else {
-        import("./containers/Picture").then(Picture => {
-          console.log(props)
-          return <Picture {...props} />
-        })
+        console.warn("<Picture /> component required to render images");
+        return null
       }
     }
 
