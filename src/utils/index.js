@@ -1,9 +1,11 @@
 // tools
 import throttle from "lodash/throttle"
-import { fixHangingSelection } from "./HACKS"
+import { fixHangingSelection } from "../HACKS"
 
 // constants
-import { DEFAULT_EDITOR_STATE } from "./constants"
+import { DEFAULT_EDITOR_STATE } from "../constants"
+import { PICTURE_ACCEPTED_UPLOAD_MIME } from "../constants"
+
 
 // functions that load content from localStorage
 export const loadContent = () => {
@@ -219,3 +221,15 @@ export const imageButtonPosition = (value, parentOffsets, _this) => {
 //     cursorContext: { ..._this.state.cursorContext, newLine: false }
 //   })
 // }
+
+// image size limit for user uploads
+export const forceImageRestrictions = (size, type, max = 10) => {
+  let correctFileType = false
+  PICTURE_ACCEPTED_UPLOAD_MIME.forEach(acceptedFiletype => {
+    if (acceptedFiletype === type) correctFileType = true
+  })
+  return new Promise((resolve, reject) => {
+    if (size / 1000000 <= max && correctFileType) resolve()
+    else reject()
+  })
+}

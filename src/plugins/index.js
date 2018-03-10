@@ -1,14 +1,19 @@
 // functions
 import { html } from "../rules"
+import localForage from "localforage"
+import uuidv1 from "uuid/v1"
+
+// functions
+import { forceImageRestrictions } from "../utils"
 
 // french-press-editor plugins
 import { LinkHotkey } from "./link-hotkey"
 import { Paste } from "./paste-html"
 import { MarkHotkey } from "./mark-hotkey"
 
-
-// plugins by others
+// plugins by others, including forked versions
 import AutoReplace from "slate-auto-replace"
+import InsertImages from "@roast-cms/slate-drop-or-paste-images"
 
 // plugins array
 export const plugins = [
@@ -138,4 +143,32 @@ export const plugins = [
     }
   }),
 
+  // drag & drop image inserter tool
+  InsertImages({
+    insertImage: (transform, file, editor) => {
+      return forceImageRestrictions(
+        file.size,
+        file.type,
+        editor.props.options.maxImageSize
+      )
+        .then(() => {
+          const key = uuidv1()
+          localForage.setItem(key, file)
+
+          console.log(key, transform, file, editor)
+          return transform.insertBlock({
+            type: "image",
+            isVoid: true,
+            data: {
+              file,
+              key,
+              src: editor.props.options.imagePlaceholder
+            }
+          })
+        })
+        .catch(reason => {
+          editor.props.callbackError("insert_image", reason)
+        })
+    }
+  })
 ]

@@ -78,6 +78,19 @@ export class FrenchPress extends React.PureComponent {
   }
   formatCommand = type => formatCommand(type, this)
 
+  handleBlur = () => {}
+  handleFocus = () => {}
+  handleDragOver = () => {
+    this.setState({
+      dragOver: true
+    })
+  }
+  handleDragEnd = () => {
+    this.setState({
+      dragOver: false
+    })
+  }
+
   render = () => {
     focusEvents(this)
     return [
@@ -98,7 +111,8 @@ export class FrenchPress extends React.PureComponent {
             background: this.state.dragOver ? "rgba(44,44,44,.075)" : ""
           }}
           ref={input => (this.slateEditor = input)}
-          options={this.props.options.domain}
+          options={this.props.options}
+          callbackError={this.props.callbackError}
         />
       </div>,
       <FormatMenu

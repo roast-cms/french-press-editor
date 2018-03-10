@@ -7,6 +7,8 @@ import { TinyButton } from "./components/Button"
 import Link from "./components/Link"
 import { makeRelative } from "@roast-cms/react-link-filter/dist/utils"
 
+import Picture from "./containers/Picture"
+
 // Picture
 // PictureDocket (conditional)
 
@@ -79,8 +81,7 @@ export const renderNode = props => {
           </blockquote>
         </div>
       )
-    case "image":
-      return <img {...props} />
+    case "image": return <Picture {...props} />
     case "link": {
       const { data } = node
       const href = data.get("href")

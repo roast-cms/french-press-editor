@@ -13,12 +13,17 @@ import { FrenchPress } from "../src/index"
 
 const Main = props =>
   <FrenchPress
-    // required
     options={{
-      domain: "localhost:3002"
+      domain: "localhost:3002", // REQUIRED
+      imagePlaceholder: // REQUIRED
+        "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      imageMaxSize: 10 // optional
     }}
     //optional
     callbackStatus={status => {}}
+    callbackError={error => {
+      alert(`Error: ${error}`)
+    }}
     controls={{
       MakeHeader: props => <span>H</span>,
       CancelHeader: props => <span>⇲</span>,

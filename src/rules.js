@@ -74,7 +74,7 @@ const rules = [
             object: "block",
             type: "image",
             isVoid: true,
-            data: { src: el.getAttribute("src") || el.getAttribute("srcset") } // this image needs to be uploaded
+            data: { src: el.getAttribute("src") || el.getAttribute("srcset") }
           }
         }
         case "link": {
