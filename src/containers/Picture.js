@@ -14,7 +14,7 @@ const Figure = styled.figure`
   }
 `
 
-export default class extends React.PureComponent {
+export class Picture extends React.PureComponent {
   constructor(props) {
     super(props)
     this.state = {

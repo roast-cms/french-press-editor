@@ -112,6 +112,7 @@ export class FrenchPress extends React.PureComponent {
           }}
           ref={input => (this.slateEditor = input)}
           options={this.props.options}
+          components={this.props.components}
           callbackError={this.props.callbackError}
         />
       </div>,

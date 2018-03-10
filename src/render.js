@@ -7,9 +7,6 @@ import { TinyButton } from "./components/Button"
 import Link from "./components/Link"
 import { makeRelative } from "@roast-cms/react-link-filter/dist/utils"
 
-import Picture from "./containers/Picture"
-
-// Picture
 // PictureDocket (conditional)
 
 const UnquoteButton = styled(TinyButton)`
@@ -23,18 +20,10 @@ const UnquoteButton = styled(TinyButton)`
   `};
 `
 
-// return
 export const renderNode = props => {
-  // Editor attributes & props
   const { node, attributes, children, isSelected, editor } = props
   const focus = editor.value.isFocused && isSelected
   const focusClassName = focus ? "focus" : "nofocus"
-
-  // custom components
-  // const Link =
-  //   components && components.Link
-  //     ? props.controls.MakeHeader
-  //     : props => <span>H</span>
 
   switch (node.type) {
     case "paragraph":
@@ -81,7 +70,21 @@ export const renderNode = props => {
           </blockquote>
         </div>
       )
-    case "image": return <Picture {...props} />
+    case "image": {
+      if (
+        props.editor.props.components &&
+        props.editor.props.components.Picture
+      ) {
+        const Picture = props.editor.props.components.Picture
+        return <Picture {...props} />
+      } else {
+        import("./containers/Picture").then(Picture => {
+          console.log(props)
+          return <Picture {...props} />
+        })
+      }
+    }
+
     case "link": {
       const { data } = node
       const href = data.get("href")

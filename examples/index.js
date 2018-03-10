@@ -11,6 +11,9 @@ import { Wrapper } from "./styles"
 // editor component
 import { FrenchPress } from "../src/index"
 
+// custom components
+// import Picture from "../src/containers/Picture"
+
 const Main = props =>
   <FrenchPress
     options={{
@@ -19,7 +22,7 @@ const Main = props =>
         "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
       imageMaxSize: 10 // optional
     }}
-    //optional
+    // below this line all props are optional:
     callbackStatus={status => {}}
     callbackError={error => {
       alert(`Error: ${error}`)
@@ -31,6 +34,9 @@ const Main = props =>
       MakeLink: props => <u>a</u>,
       MakeBold: props => <strong>b</strong>,
       MakeItalic: props => <em>i</em>
+    }}
+    components={{
+      // Picture
     }}
   />
 
