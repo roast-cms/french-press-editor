@@ -22,6 +22,10 @@ const Main = props =>
         "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
       imageMaxSize: 10 // optional
     }}
+    components={{
+      Picture, // REQUIRED (to render images)
+      PictureDocket: null // optional
+    }}
     // below this line all props are optional:
     callbackStatus={status => {}}
     callbackError={error => {
@@ -35,9 +39,9 @@ const Main = props =>
       MakeBold: props => <strong>b</strong>,
       MakeItalic: props => <em>i</em>
     }}
-    components={{
-      Picture // REQUIRED for images
-    }}
+    slatePlugins={[
+      // array of additional Slate plugins
+    ]}
   />
 
 render(

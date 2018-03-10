@@ -7,8 +7,6 @@ import { TinyButton } from "./components/Button"
 import Link from "./components/Link"
 import { makeRelative } from "@roast-cms/react-link-filter/dist/utils"
 
-// PictureDocket (conditional)
-
 const UnquoteButton = styled(TinyButton)`
   width: 6em;
   margin: 1.35em -${props => props.theme.size.block.column.safety}em -3.35em 0;
@@ -82,7 +80,17 @@ export const renderNode = props => {
         return null
       }
     }
-
+    case "docket": {
+      if (
+        props.editor.props.components &&
+        props.editor.props.components.PictureDocket
+      ) {
+        const Picture = props.editor.props.components.PictureDocket
+        return <PictureDocket {...props} />
+      } else {
+        return null
+      }
+    }
     case "link": {
       const { data } = node
       const href = data.get("href")

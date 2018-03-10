@@ -16,7 +16,7 @@ import {
   focusEvents,
   formatCommand,
   menuPosition,
-  imageButtonPosition,
+  imageButtonPosition
   // handleImageButton
 } from "./utils"
 
@@ -29,6 +29,7 @@ import { PLACEHOLDER_TEXT } from "./constants"
 // components
 import FormatMenu from "./components/FormatMenu"
 
+let slatePlugins = plugins
 export class FrenchPress extends React.PureComponent {
   constructor(props) {
     super(props)
@@ -42,6 +43,10 @@ export class FrenchPress extends React.PureComponent {
       dragOver: false,
       editorFocus: false
     }
+    this.slatePlugins =
+      props.slatePlugins.length > 0
+        ? plugins.concat(props.slatePlugins)
+        : plugins
   }
 
   componentDidMount = () => {
@@ -96,7 +101,7 @@ export class FrenchPress extends React.PureComponent {
     return [
       <div style={{ position: "relative" }} key="Editor">
         <Editor
-          plugins={plugins}
+          plugins={this.slatePlugins}
           placeholder={PLACEHOLDER_TEXT}
           value={this.state.value}
           onChange={this.handleChange}
