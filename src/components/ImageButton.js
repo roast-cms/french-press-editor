@@ -14,7 +14,11 @@ const ImageButton = styled(TinyButton)`
 // return
 export default props => {
   return (
-    <ImageButton followComposerCursor style={props.style}>
+    <ImageButton
+      followComposerCursor
+      style={props.style}
+      onClick={props.onClick}
+    >
       {props.children}
     </ImageButton>
   )

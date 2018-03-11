@@ -32,16 +32,20 @@ export default class extends React.PureComponent {
     this.setState({ key })
   }
   loadImage = (file, key, src) => {
+    //console.log(file, key, src);
     if (!key) {
       this.setState({ src })
-      // get image author
-      this.props.readOnly && this.props.getInfo(src)
+      // this calls function to populate optional image info (if available)
+      this.props.readOnly && this.props.getInfo && this.props.getInfo(src)
     } else {
       localForage.getItem(key).then(data => {
         const reader = new FileReader()
-        reader.addEventListener("load", () =>
+
+        reader.addEventListener("load", () => {
           this.setState({ src: reader.result })
-        )
+      //    console.log("load")
+        })
+      //  console.log(reader);
         if (
           data &&
           Object.keys(file).length === 0 &&

@@ -10,13 +10,13 @@ export const images = [
       return forceImageRestrictions(
         file.size,
         file.type,
-        editor.props.options.maxImageSize
+        editor.props.options.imageMaxSize
       )
         .then(() => {
+          console.log(file);
           const key = uuidv1()
           localForage.setItem(key, file)
 
-          console.log(key, transform, file, editor)
           return transform.insertBlock({
             type: "image",
             isVoid: true,

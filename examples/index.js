@@ -29,8 +29,8 @@ const Main = props =>
     }}
     // below this line all props are optional:
     callbackStatus={status => {}}
-    callbackError={error => {
-      alert(`Error: ${error}`)
+    callbackError={(error, reason) => {
+      console.log(error, reason)
     }}
     controls={{
       MakeHeader: props => <span>H</span>,

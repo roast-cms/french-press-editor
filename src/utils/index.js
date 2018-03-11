@@ -11,6 +11,7 @@ export { menuPosition } from "./format-menu"
 
 // functions that aid inserting image via button (rather than drag plugin)
 export { imageButtonPosition, handleImageButton } from "./image-button"
+export { handleFileUpload } from "./image-file"
 
 // function that restricts images to certain size and type
 export { forceImageRestrictions } from "./image-rules"

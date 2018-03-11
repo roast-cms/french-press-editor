@@ -22,6 +22,11 @@ export const handleImageButton = (event, _this) => {
   event.preventDefault()
   event.stopPropagation()
 
+  if (!_this.props.components.PictureDocket) {
+    _this.fileInput.click()
+    return
+  }
+
   const activeBlockKey = _this.state.value.focusBlock.key
   const resolvedState = _this.state.value
     .change({ save: false })
@@ -36,5 +41,4 @@ export const handleImageButton = (event, _this) => {
     value: resolvedState.value,
     cursorContext: { ...prevState.cursorContext, newLine: false }
   }))
-
 }

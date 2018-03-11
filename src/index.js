@@ -17,14 +17,15 @@ import {
   formatCommand,
   menuPosition,
   imageButtonPosition,
-  handleImageButton
+  handleImageButton,
+  handleFileUpload
 } from "./utils"
 
 // plugins
 import { plugins } from "./plugins"
 
 // constants
-import { PLACEHOLDER_TEXT } from "./constants"
+import { PLACEHOLDER_TEXT, PICTURE_ACCEPTED_UPLOAD_MIME } from "./constants"
 
 // components
 import FormatMenu from "./components/FormatMenu"
@@ -131,6 +132,8 @@ export class FrenchPress extends React.PureComponent {
   }
   handleImageButton = event => handleImageButton(event, this)
 
+  handleFileUpload = (event) => handleFileUpload(event, this)
+
   handleClickPropagation = event => {
     event.stopPropagation()
   }
@@ -182,7 +185,15 @@ export class FrenchPress extends React.PureComponent {
           ref={input => (this.slateEditor = input)}
           options={this.props.options}
           components={this.props.components}
+          fileInputRef={this.fileInput}
           callbackError={this.props.callbackError}
+        />
+        <input
+          type="file"
+          accept={PICTURE_ACCEPTED_UPLOAD_MIME.toString()}
+          style={{ display: "none" }}
+          onChange={this.handleFileUpload}
+          ref={input => (this.fileInput = input)}
         />
       </div>,
       <FormatMenu
