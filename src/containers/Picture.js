@@ -14,7 +14,7 @@ const Figure = styled.figure`
   }
 `
 
-export default class extends React.PureComponent {
+export const Picture = class extends React.PureComponent {
   constructor(props) {
     super(props)
     this.state = {
@@ -32,7 +32,6 @@ export default class extends React.PureComponent {
     this.setState({ key })
   }
   loadImage = (file, key, src) => {
-    //console.log(file, key, src);
     if (!key) {
       this.setState({ src })
       // this calls function to populate optional image info (if available)
@@ -40,12 +39,9 @@ export default class extends React.PureComponent {
     } else {
       localForage.getItem(key).then(data => {
         const reader = new FileReader()
-
         reader.addEventListener("load", () => {
           this.setState({ src: reader.result })
-      //    console.log("load")
         })
-      //  console.log(reader);
         if (
           data &&
           Object.keys(file).length === 0 &&

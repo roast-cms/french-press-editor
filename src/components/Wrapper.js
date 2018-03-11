@@ -1,10 +1,7 @@
 // tools
 import styled from "styled-components"
 
-// exports
 export const Wrapper = styled.div`
-
-  /***************** set editor styles *****************/
   background: ${props => props.theme.color.background};
   max-width: 600px;
   margin: 2em auto;
@@ -29,8 +26,6 @@ export const Wrapper = styled.div`
     margin: 0;
     font-style: italic;
   }
-
-  /***************** customize css for editor controls *****************/
   .french-press_unquote {
     float: left;
     margin-top: -1.25em;

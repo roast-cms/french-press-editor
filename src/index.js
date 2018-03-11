@@ -31,7 +31,7 @@ import { PLACEHOLDER_TEXT, PICTURE_ACCEPTED_UPLOAD_MIME } from "./constants"
 import FormatMenu from "./components/FormatMenu"
 import DefaultImageButton from "./components/ImageButton"
 
-let slatePlugins = plugins
+const slatePlugins = plugins
 export class FrenchPress extends React.PureComponent {
   constructor(props) {
     super(props)
@@ -43,14 +43,14 @@ export class FrenchPress extends React.PureComponent {
         parentBlockOffsets: { top: 0, left: 0 }
       },
       dragOver: false,
-      editorFocus: false
+      editorFocus: false,
+      pictureDocketNode: undefined
     }
     this.slatePlugins =
       props.slatePlugins.length > 0
-        ? plugins.concat(props.slatePlugins)
+        ? [].contact.apply([], [plugins, props.slatePlugins])
         : plugins
   }
-
   componentDidMount = () => {
     // clean up browser database of stored images
     if (!this.slateEditor.state.value.hasUndos) {
@@ -73,7 +73,6 @@ export class FrenchPress extends React.PureComponent {
           })
           unused && unusedImageKeys.push(storedKey)
         })
-
         // go through all unused keys and remove them from database
         unusedImageKeys.forEach((imageKey, index) => {
           localForage.removeItem(imageKey)
@@ -84,15 +83,17 @@ export class FrenchPress extends React.PureComponent {
           )
       })
     }
-
     // hover menu (below, onwards until `formatCommand()`)
     menuPosition(this)
   }
   componentDidUpdate = () => menuPosition(this)
-
+  componentWillReceiveProps = nextProps => {
+    // execute external functions when components props update
+    if (!this.props.callbackPropsUpdate) return
+    this.props.callbackPropsUpdate(this.props, nextProps)
+  }
   handleChange = ({ value }) => {
     this.setState({ value })
-
     // add information about cursor positions
     const cursorContextDelay = setTimeout(() => {
       const nodeKey = value.focusBlock.key
@@ -107,17 +108,16 @@ export class FrenchPress extends React.PureComponent {
       )
       clearTimeout(cursorContextDelay)
     }, 300)
-
     // save content to localStorage
-    setDraftStatusHelper()
+
+    this.props.callbackStatus(setDraftStatusHelper())
     saveContent(document, value, this.props.callbackStatus)
   }
-
-  menuRef = menu => {
-    this.menu = menu
+  handleImageButton = event => handleImageButton(event, this)
+  handleFileUpload = event => handleFileUpload(event, this)
+  handleClickPropagation = event => {
+    event.stopPropagation()
   }
-  formatCommand = type => formatCommand(type, this)
-
   handleBlur = () => {}
   handleFocus = () => {}
   handleDragOver = () => {
@@ -130,18 +130,10 @@ export class FrenchPress extends React.PureComponent {
       dragOver: false
     })
   }
-  handleImageButton = event => handleImageButton(event, this)
-
-  handleFileUpload = (event) => handleFileUpload(event, this)
-
-  handleClickPropagation = event => {
-    event.stopPropagation()
+  menuRef = menu => {
+    this.menu = menu
   }
-
-  componentWillReceiveProps = nextProps => {
-    // NOTE: need to be able to add functions here
-  }
-
+  formatCommand = type => formatCommand(type, this)
   render = () => {
     focusEvents(this)
     const ImageButton =
@@ -151,7 +143,6 @@ export class FrenchPress extends React.PureComponent {
       this.props.controls && this.props.controls.UploadImage
         ? this.props.controls.UploadImage
         : props => <span>Upload Image</span>
-
     return [
       <div style={{ position: "relative" }} key="Editor">
         <ImageButton
@@ -183,7 +174,13 @@ export class FrenchPress extends React.PureComponent {
             background: this.state.dragOver ? "rgba(44,44,44,.075)" : ""
           }}
           ref={input => (this.slateEditor = input)}
-          options={this.props.options}
+          options={{
+            ...this.props.options,
+            imagePlaceholder:
+              this.props.options.imagePlaceholder ||
+              "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+            domain: this.props.options.domain || ""
+          }}
           components={this.props.components}
           fileInputRef={this.fileInput}
           callbackError={this.props.callbackError}
@@ -208,3 +205,7 @@ export class FrenchPress extends React.PureComponent {
     ]
   }
 }
+
+// convenience exports
+export { Picture } from "./containers/Picture"
+export { Wrapper } from "./components/Wrapper"

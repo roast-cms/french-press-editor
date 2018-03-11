@@ -6,52 +6,70 @@ import { BrowserRouter } from "react-router-dom"
 
 // theme
 import { Sugar } from "@roast-cms/react-sugar-styled"
-import { Wrapper } from "./styles"
+
 
 // editor component
-import { FrenchPress } from "../src/index"
+import { FrenchPress, Picture, Wrapper } from "../src/index"
 
-// custom components
-import Picture from "../src/containers/Picture"
-
-const Main = props =>
-  <FrenchPress
-    options={{
-      domain: "localhost:3002", // REQUIRED
-      imagePlaceholder: // REQUIRED
-        "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-      imageMaxSize: 10 // optional
-    }}
-    components={{
-      Picture, // REQUIRED (to render images)
-      PictureDocket: null, // optional
-      // ImageButton: props => <span>Image</span>
-    }}
-    // below this line all props are optional:
-    callbackStatus={status => {}}
-    callbackError={(error, reason) => {
-      console.log(error, reason)
-    }}
-    controls={{
-      MakeHeader: props => <span>H</span>,
-      CancelHeader: props => <span>⇲</span>,
-      MakeQuote: props => <span>“</span>,
-      MakeLink: props => <u>a</u>,
-      MakeBold: props => <strong>b</strong>,
-      MakeItalic: props => <em>i</em>,
-      UploadImage: props => <span>Upload Image</span>
-    }}
-    slatePlugins={[
-      // array of additional Slate plugins
-    ]}
-  />
+class Editor extends React.PureComponent {
+  constructor(props) {
+    super(props)
+    this.state = {
+      status: "ok"
+    }
+  }
+  handleCallbackStatus = status => {
+    this.setState({
+      status
+    })
+  }
+  render = () => {
+    return (
+      <div>
+        <div style={{background: "#eee", color: "#999", padding: ".5em"}}>
+          {this.state.status === "ok" ? "Draft Saved." : "Saving..."}
+        </div>
+        <FrenchPress
+          components={{
+            Picture, // REQUIRED (to render images)
+            PictureDocket: null,
+            ImageButton: null
+          }}
+          options={{
+            domain: "localhost:3002",
+            imagePlaceholder:
+              "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+            imageMaxSize: 10
+          }}
+          callbackStatus={this.handleCallbackStatus}
+          callbackError={(error, reason) => {
+            // console.log(error, reason)
+          }}
+          callbackPropsUpdate={(prpos, nextProps) => {
+            // console.log(nextProps)
+          }}
+          controls={{
+            MakeHeader: () => <span>H</span>,
+            CancelHeader: () => <span>⇲</span>,
+            MakeQuote: () => <span>“</span>,
+            MakeLink: () => <u>a</u>,
+            MakeBold: () => <strong>b</strong>,
+            MakeItalic: () => <em>i</em>,
+            UploadImage: () => <span>Upload Image</span>
+          }}
+          slatePlugins={[]}
+        />
+      </div>
+    )
+  }
+}
 
 render(
   <div>
     <ThemeProvider theme={Sugar}>
       <BrowserRouter>
         <Wrapper>
-          <Main />
+          <Editor />
         </Wrapper>
       </BrowserRouter>
     </ThemeProvider>

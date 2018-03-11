@@ -13,7 +13,6 @@ export const images = [
         editor.props.options.imageMaxSize
       )
         .then(() => {
-          console.log(file);
           const key = uuidv1()
           localForage.setItem(key, file)
 

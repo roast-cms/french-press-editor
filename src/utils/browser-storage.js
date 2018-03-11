@@ -30,5 +30,5 @@ export const saveContent = throttle(
 )
 // intermediate status before actual saves
 export const setDraftStatusHelper = callbackStatus => {
-  callbackStatus && callbackStatus("pending")
+  return ("pending")
 }
