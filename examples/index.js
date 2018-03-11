@@ -24,7 +24,8 @@ const Main = props =>
     }}
     components={{
       Picture, // REQUIRED (to render images)
-      PictureDocket: null // optional
+      PictureDocket: null, // optional
+      // ImageButton: props => <span>Image</span>
     }}
     // below this line all props are optional:
     callbackStatus={status => {}}
@@ -37,7 +38,8 @@ const Main = props =>
       MakeQuote: props => <span>“</span>,
       MakeLink: props => <u>a</u>,
       MakeBold: props => <strong>b</strong>,
-      MakeItalic: props => <em>i</em>
+      MakeItalic: props => <em>i</em>,
+      UploadImage: props => <span>Upload Image</span>
     }}
     slatePlugins={[
       // array of additional Slate plugins

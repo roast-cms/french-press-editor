@@ -16,8 +16,8 @@ import {
   focusEvents,
   formatCommand,
   menuPosition,
-  imageButtonPosition
-  // handleImageButton
+  imageButtonPosition,
+  handleImageButton
 } from "./utils"
 
 // plugins
@@ -28,6 +28,7 @@ import { PLACEHOLDER_TEXT } from "./constants"
 
 // components
 import FormatMenu from "./components/FormatMenu"
+import DefaultImageButton from "./components/ImageButton"
 
 let slatePlugins = plugins
 export class FrenchPress extends React.PureComponent {
@@ -78,9 +79,7 @@ export class FrenchPress extends React.PureComponent {
         })
         unusedImageKeys.length > 0 &&
           console.log(
-            `Removed ${
-              unusedImageKeys.length
-            } unused image(s) from browser's database.`
+            `Removed ${unusedImageKeys.length} unused image(s) from browser's database.`
           )
       })
     }
@@ -130,15 +129,40 @@ export class FrenchPress extends React.PureComponent {
       dragOver: false
     })
   }
+  handleImageButton = event => handleImageButton(event, this)
 
   handleClickPropagation = event => {
     event.stopPropagation()
   }
 
+  componentWillReceiveProps = nextProps => {
+    // NOTE: need to be able to add functions here
+  }
+
   render = () => {
     focusEvents(this)
+    const ImageButton =
+      (this.props.components && this.props.components.ImageButton) ||
+      DefaultImageButton
+    const ImageButtonLabel =
+      this.props.controls && this.props.controls.UploadImage
+        ? this.props.controls.UploadImage
+        : props => <span>Upload Image</span>
+
     return [
       <div style={{ position: "relative" }} key="Editor">
+        <ImageButton
+          style={{
+            top: this.state.cursorContext
+              ? this.state.cursorContext.parentBlockOffsets.top
+              : 0,
+            display: this.state.cursorContext.newLine ? "block" : "none",
+            opacity: this.state.editorFocus ? "1" : "0"
+          }}
+          onClick={this.handleImageButton}
+        >
+          <ImageButtonLabel />
+        </ImageButton>
         <Editor
           plugins={this.slatePlugins}
           placeholder={PLACEHOLDER_TEXT}

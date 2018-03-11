@@ -3,5 +3,5 @@
     "es2015",
     "react"
   ],
-  "plugins": ["transform-class-properties", "dynamic-import-webpack"]
+  "plugins": ["transform-class-properties", "dynamic-import-webpack", "babel-plugin-transform-object-rest-spread"]
 }
