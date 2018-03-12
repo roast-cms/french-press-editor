@@ -36,6 +36,7 @@ To see if this tool is right for you, please have a look through the list of spe
 - `french-press-editor` is a ready-made, opinionated package, yet there is plenty that you can customize, far beyond CSS.
 
 <img src="README-mobile.gif?raw=true" width="420" alt="How the editor menu looks on mobile screens" />
+
 > Mobile screen menu appears as a large strip of buttons as opposed to desktop version. Not pictured: the strip moves above the iOS font selection menu so it is still perfectly useable.
 
 #### Built-in content block types.
