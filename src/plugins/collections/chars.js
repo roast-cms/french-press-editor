@@ -1,5 +1,10 @@
+//
+// An array of plugins that makes quotes smart, turns dashes into long dashes
+// and triple dots into an ellipsis.
+//
+// plugin
 import AutoReplace from "slate-auto-replace"
-
+//
 export const chars = [
   // smart quotes
   AutoReplace({

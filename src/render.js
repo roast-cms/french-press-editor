@@ -1,4 +1,7 @@
 //
+// A "prescription" set of React components which render given block types
+// and text marksups.
+//
 // tools
 import React from "react"
 import styled from "styled-components"

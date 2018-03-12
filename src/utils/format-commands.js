@@ -1,4 +1,4 @@
-
+//
 // transform inline to add link
 export const addLink = (value, returnType = "value") => {
   const href = window.prompt("Enter the URL for the link:")
@@ -11,12 +11,12 @@ export const addLink = (value, returnType = "value") => {
     })
   } else if (returnType === "data") return { href }
 }
-
+//
 // format commands for inline transformations
 export const formatCommand = (type, _this) => {
   const { value } = _this.state
   let resolvedState
-
+  //
   switch (type) {
     case "undo_heading":
       resolvedState = value.change().setBlocks({ type: "paragraph" })

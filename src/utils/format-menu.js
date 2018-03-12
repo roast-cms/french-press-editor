@@ -1,13 +1,18 @@
+//
+// Figures out where the format menu should appear, according to user's
+// selection within editor.
+//
 // tools
 import { fixHangingSelection } from "./HACKS"
-
+//
 // formate menu commands
 export const menuPosition = _this => {
   const { value } = _this.state
   const menu = _this.menu
-
+  //
+  // apply the hack
   fixHangingSelection(_this, value.change())
-
+  //
   if (!menu) return
   if (window.getSelection().rangeCount <= 0) return
   const selection = window.getSelection()
@@ -23,7 +28,7 @@ export const menuPosition = _this => {
   const topOffset = rect.top + window.scrollY - menu.offsetHeight + 3
   menu.style.top = `${topOffset}px`
   menu.style.left = `${leftOffset >= 0 ? leftOffset : 5}px`
-
+  //
   // devices with touch screens will have edit menu considerably above the
   // selected text to give way to the native hover menu
   "ontouchstart" in document.documentElement

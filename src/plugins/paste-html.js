@@ -1,6 +1,10 @@
+//
+// A plugin that preserves allowed HTML structure when user pastes HTML content,
+// and converts the rest into either plain text.
+//
 // tools
 import { getEventTransfer } from "slate-react"
-
+//
 // return
 export const Paste = options => {
   const { html } = options

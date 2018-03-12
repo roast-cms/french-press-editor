@@ -1,6 +1,9 @@
+//
+// Enforces image size and filetype.
+//
 // constants
 import { PICTURE_ACCEPTED_UPLOAD_MIME } from "../constants"
-
+//
 // image size limit for user uploads
 export const forceImageRestrictions = (size, type, max = 10) => {
   let correctFileType = false

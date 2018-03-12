@@ -1,4 +1,6 @@
 //
+// Global defaults, some of which may be overwritten by user.
+//
 // this is the default structure for Slate editor; an empty document
 export const DEFAULT_EDITOR_STATE = {
   document: {

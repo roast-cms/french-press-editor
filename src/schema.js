@@ -1,4 +1,6 @@
 //
+// A structure that Slate follows to display document content.
+//
 // tools
 import { Block } from "slate"
 //
@@ -6,7 +8,7 @@ import { Block } from "slate"
 // it normalized to a defined format
 export const schema = {
   //
-  // document-level perscription
+  // document-level prescription
   document: {
     //
     // acceptable nodes within editor document

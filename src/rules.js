@@ -1,4 +1,6 @@
 //
+// A "prescription" set that defines how HTML may be rendered via `render.js`
+//
 // tools
 import Html from "slate-html-serializer"
 import isUrl from "is-url"

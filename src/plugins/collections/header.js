@@ -1,5 +1,11 @@
+//
+// An array of plugins that creates headings out of markup (`# Text`) strings,
+// adds periods at the end of headings if there's no punctuation or cancels
+// headings if user hits Backspace at the beginning of the line.
+//
+// plugin
 import AutoReplace from "slate-auto-replace"
-
+//
 export const header = [
   AutoReplace({
     trigger: "space",

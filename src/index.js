@@ -1,4 +1,7 @@
 //
+// `<FrenchPress />` component,
+// "☕ A better editorial experience with React.js and Slate."
+//
 // tools
 import React from "react"
 import { Editor } from "slate-react"
@@ -43,7 +46,7 @@ export class FrenchPress extends React.PureComponent {
     super(props)
     this.state = {
       value: Value.fromJSON(loadContent()), // this is the document data
-      schema, // schema is the perscription on how to render document data
+      schema, // schema is the prescription on how to render document data
       //
       // track carriage position inside editor
       cursorContext: {

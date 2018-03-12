@@ -1,11 +1,15 @@
+//
+// A component with all of the UI logic for the floating format menu.
+//
 // tools
 import React from "react"
 import styled from "styled-components"
-
+//
 // components
 import { TinyButton } from "./Button"
 import { ButtonStrip, Item } from "./ButtonStrip"
-
+//
+// CSS
 const Menu = styled(ButtonStrip)`
   display: none;
   position: absolute;
@@ -44,10 +48,13 @@ const MenuItem = styled(Item)`
   padding: 1em;
 `};
 `
-
+//
+// menu component
 export default props => {
+  //
   // quotes have no hover menu
   if (props.value.blocks.some(node => node.type === "quote")) return null
+  //
   // selecting text containing paragraphs and heading has no menu
   // (selecting just a heading does have special menu, see below)
   if (
@@ -58,7 +65,7 @@ export default props => {
     )
   )
     return null
-
+  //
   // button compoents with an option to override
   const MakeHeader =
     props.controls && props.controls.MakeHeader
@@ -84,7 +91,7 @@ export default props => {
     props.controls && props.controls.MakeItalic
       ? props.controls.MakeItalic
       : props => <i>i</i>
-
+  //
   return (
     <Menu innerRef={props.menuRef}>
       {props.value.blocks.some(node => node.type === "heading")

@@ -1,5 +1,12 @@
+//
+// An array of plugins that creates quotes out of markup (`> Text`) strings,
+// cancels headings if user hits Backspace at the begginning of the line and
+// exits quote block into a new default paragraph if user hits Enter
+// at the end of the line.
+//
+// plugin
 import AutoReplace from "slate-auto-replace"
-
+//
 export const quote = [
   AutoReplace({
     trigger: "space",

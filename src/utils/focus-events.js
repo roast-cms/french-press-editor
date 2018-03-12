@@ -1,5 +1,9 @@
-// focus events
+//
+// a collection of functions that call appropriate functions in response to
+// user interactions.
+//
 export const focusEvents = _this => {
+  //
   // highlight potential drop target when the draggable element enters it
   document.addEventListener(
     "dragover",
@@ -16,7 +20,6 @@ export const focusEvents = _this => {
   document.addEventListener(
     "drop",
     event => {
-      // event.preventDefault()
       if (!_this.state.dragOver) return
       const delayDragEvent = setTimeout(() => {
         _this.handleDragEnd()
@@ -25,7 +28,7 @@ export const focusEvents = _this => {
     },
     false
   )
-
+  //
   // blur editor on Esc (remove highlights and guides for preview)
   document.addEventListener(
     "keydown",

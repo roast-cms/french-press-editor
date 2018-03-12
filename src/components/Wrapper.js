@@ -1,6 +1,11 @@
+//
+// Default CSS styles that visually render the editor component (nicely)
+// using Styled Components.
+//
 // tools
 import styled from "styled-components"
-
+//
+// CSS
 export const Wrapper = styled.div`
   background: ${props => props.theme.color.background};
   max-width: 600px;
