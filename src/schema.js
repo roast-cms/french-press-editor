@@ -1,8 +1,15 @@
+//
+// tools
 import { Block } from "slate"
-
-// return
+//
+// schema is a set of rules that transform document structure and keep
+// it normalized to a defined format
 export const schema = {
+  //
+  // document-level perscription
   document: {
+    //
+    // acceptable nodes within editor document
     nodes: [
       {
         types: [
@@ -16,13 +23,15 @@ export const schema = {
         ]
       }
     ],
+    //
+    // the following definition ensures that there's at least one empty
+    // paragraph block that follows a void block (such as picture);
+    // this is required to ensure that the user can continue adding content
+    // without additional effort below uploaded images (otherwise they will
+    // be forced to move the image up to free up a trailing paragraph space)
     last: { types: ["paragraph"] },
     normalize: (change, reason, { node, child }) => {
       switch (reason) {
-        // case "child_type_invalid": {
-        //   change.setNodeByKey(child.key, { type: "paragraph" })
-        //   return
-        // }
         case "last_child_type_invalid": {
           const paragraph = Block.create("paragraph")
           return change.insertNodeByKey(node.key, node.nodes.size, paragraph)
@@ -32,6 +41,8 @@ export const schema = {
       }
     }
   },
+  //
+  // definitions for the block types and what they may contain within editor
   blocks: {
     link: {
       nodes: [{ objects: ["text"] }]
@@ -49,6 +60,8 @@ export const schema = {
       isVoid: true
     }
   },
+  //
+  // inline node definitions
   inlines: {
     quote: {
       nodes: [{ types: ["text"] }]

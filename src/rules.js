@@ -1,44 +1,26 @@
+//
 // tools
 import Html from "slate-html-serializer"
 import isUrl from "is-url"
-
-// components
-
-// return
-
-// dictionary
-const BLOCK_TAGS = {
-  p: "paragraph",
-  blockquote: "quote",
-  hr: "divider",
-  h1: "heading",
-  h2: "heading",
-  h3: "heading",
-  h4: "heading",
-  a: "link",
-  img: "image"
-}
-const MARK_TAGS = {
-  em: "italic",
-  i: "italic",
-  strong: "bold",
-  b: "bold"
-}
-
-// extract just the text from node:
+//
+// constants
+import {BLOCK_TAGS, MARK_TAGS} from "./constants"
+//
+// this function flattens all HTML into plain text
 const squish = el => {
   el.innerHTML = el.innerText || el.textContent
   return el
 }
-
-// deserialize copy-paste html content
+//
+// rules array help transpile HTML itno slate document nodes and marks (and back)
 const rules = [
   {
     deserialize(el, next) {
+      //
       // cycle through block types
       const block = BLOCK_TAGS[el.tagName.toLowerCase()]
       if (!block) return
-
+      //
       switch (block) {
         case "paragraph": {
           return {

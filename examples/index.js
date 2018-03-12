@@ -30,6 +30,7 @@ class Editor extends React.PureComponent {
           {this.state.status === "ok" ? "Draft Saved." : "Saving..."}
         </div>
         <FrenchPress
+          placeholder="Write here..."
           components={{
             Picture, // REQUIRED (to render images)
             PictureDocket: null,
