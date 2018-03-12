@@ -35,9 +35,6 @@ To see if this tool is right for you, please have a look through the list of spe
 - Built to make it easy for you to create an experience that will mirror the final published article for your users, so that they don't have to click <btn>Preview</btn> button every time.
 - `french-press-editor` is a ready-made, opinionated package, yet there is plenty that you can customize, far beyond CSS.
 
-<img src="README-mobile.gif?raw=true" width="420" alt="How the editor menu looks on mobile screens" />
-> Mobile screen menu appears as a large strip of buttons as opposed to desktop version. Not pictured: the strip moves above the iOS font selection menu so it is still perfectly useable.
-
 #### Built-in content block types.
 - **Paragraph:** the default, rendered as `<p></p>`.
 - **Heading:** there is only one level of heading, which is rendered as `<h3></h3>` to allow for semantic HTML structure in a document that has a title `<h1></h1>` and a subtitle `<h2></h2>`. Headings do not allow any formatting (links, bold, italic) within in order to maintain clean content structure.
