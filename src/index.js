@@ -73,7 +73,6 @@ export class FrenchPress extends React.PureComponent {
         ? [].contact.apply([], [plugins, props.slatePlugins])
         : plugins
     //
-    this.handleClickPropagation = this.handleClickPropagation.bind(this)
   }
   componentDidMount = () => {
     //
@@ -122,19 +121,13 @@ export class FrenchPress extends React.PureComponent {
     //
     // initialize format menu position (via user text selection) on component mount
     menuPosition(this)
+    //
+    // return Slate Editor component ref to the props API for the developer
+    this.props.editorRef(this.slateEditor)
   }
   //
   // update format menu position (via user text selection)
   componentDidUpdate = () => menuPosition(this)
-  //
-  // user can define custom callback functions that can run when editor
-  // component receives new props
-  componentWillReceiveProps = nextProps => {
-    //
-    // execute external functions when components props update
-    if (!this.props.callbackPropsUpdate) return
-    this.props.callbackPropsUpdate(this, nextProps)
-  }
   //
   // track user interactions with editor in component state;
   // note that due to Slate editor's design only the default React state
@@ -172,10 +165,6 @@ export class FrenchPress extends React.PureComponent {
   // respond to user clicking/tapping "Insert Image" button that appears
   // on the new empty line of every paragraph
   handleImageButton = event => handleImageButton(event, this)
-
-  handleImageButtonUpstate = () => this.setState({imageButttonDownstate: false})
-
-
   //
   // this function uses the <input /> file handler and inserts user's
   // selected image from their device into the document

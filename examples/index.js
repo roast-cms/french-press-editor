@@ -128,11 +128,9 @@ class Editor extends React.PureComponent {
             console.log(error, reason)
           }}
           //
-          // you can specify your own function here that will be placed inside
-          // `componentWillReceiveProps` inside the editor
-          callbackPropsUpdate={(prpos, nextProps) => {
-            // console.log(nextProps)
-          }}
+          // this prop returns Slate Editor component ref to be used by developer
+          // (such as to set focus, events. and more)
+          editorRef={editorRef => {}}
           //
           // render components within user controls; you may substitute them
           // for images, SVG animations, or whatever else you may fancy
