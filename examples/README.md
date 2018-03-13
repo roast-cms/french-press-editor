@@ -82,4 +82,3 @@ Prop | Accepts | Explanation
 `callbackStatus` | `Function` | This prop will call a function with a parameter that specifies editor's localStorage save status (provides "ok" or "pending").
 `callbackError` | `Function` | This prop will call a function with error name and additional info that you may like to display within your own dialogue box or interface; i.e.: "Image is too large!" (provides `error` and `reason` strings parameters).
 `editorRef` | `Function` | Returns Slate Editor ref once it mounts. This is useful if you want to set events or manipulate the DOM of the `<Editor />` component.
- `componentWillReceiveProps` inside the editor (provides `props` and `nextProps` objects).
