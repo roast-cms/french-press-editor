@@ -132,7 +132,7 @@ export const renderNode = props => {
         props.editor.props.components &&
         props.editor.props.components.PictureDocket
       ) {
-        const Picture = props.editor.props.components.PictureDocket
+        const PictureDocket = props.editor.props.components.PictureDocket
         return <PictureDocket {...props} />
       } else {
         return null

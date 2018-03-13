@@ -2,7 +2,7 @@
 [![npm version](https://badge.fury.io/js/%40roast-cms%2Ffrench-press-editor.svg)](https://badge.fury.io/js/%40roast-cms%2Ffrench-press-editor)
 > ☕ A better editorial experience with React.js and Slate.
 
-<img src="README-banner.gif?raw=true" width="420" alt="Banner GIF" />
+![Demo GIF](README-banner.gif?raw=true)
 
 - **Offline-ready:** store content and images (!) in-browser.
 - **Much better than ContentEditable:** don't make your users and developers suffer!
