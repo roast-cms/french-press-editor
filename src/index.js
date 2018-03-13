@@ -234,7 +234,7 @@ export class FrenchPress extends React.PureComponent {
             display: this.state.cursorContext.newLine ? "block" : "none",
             opacity: this.state.editorFocus ? "1" : "0"
           }}
-          onClick={this.handleImageButton}
+          click={this.handleImageButton}
         >
           <ImageButtonLabel />
         </ImageButton>
