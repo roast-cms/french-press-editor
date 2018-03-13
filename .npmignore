@@ -1,0 +1,14 @@
+# Dependency directories
+node_modules/
+
+# Examples folder
+examples/
+
+# Raw code
+src/
+
+# Other
+.babelrc
+.yarnclean
+README-BANNER.gif
+yarn.lock
