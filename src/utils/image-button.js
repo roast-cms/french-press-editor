@@ -28,28 +28,34 @@ export const handleImageButton = (event, _this) => {
   event.preventDefault()
   event.stopPropagation()
   //
-  // if PictureDocket component isn't defined, bring up the dialogue
-  // to upload image file
-  if (!_this.props.components.PictureDocket) {
-    _this.fileInput.click()
-    return
-  }
-  //
-  // insert docket block into editor if the PictureDocket
-  // component is defiend
-  const activeBlockKey = _this.state.value.focusBlock.key
-  const resolvedState = _this.state.value
-    .change({ save: false })
-    .insertBlock({
-      type: "docket",
-      isVoid: true
-    })
-    .value.change({ save: false })
-    .removeNodeByKey(activeBlockKey)
-  //
-  // hide "Insert Image" button when docket is shown
-  _this.setState(prevState => ({
-    value: resolvedState.value,
-    cursorContext: { ...prevState.cursorContext, newLine: false }
-  }))
+  // timeout allows to paint the image button downstate
+  // before bringing up file upload dialogue or a docket component
+  const responseDelay = setTimeout(() => {
+    clearTimeout(responseDelay)
+    //
+    // if PictureDocket component isn't defined, bring up the dialogue
+    // to upload image file
+    if (!_this.props.components.PictureDocket) {
+      _this.fileInput.click()
+      return
+    }
+    //
+    // insert docket block into editor if the PictureDocket
+    // component is defiend
+    const activeBlockKey = _this.state.value.focusBlock.key
+    const resolvedState = _this.state.value
+      .change({ save: false })
+      .insertBlock({
+        type: "docket",
+        isVoid: true
+      })
+      .value.change({ save: false })
+      .removeNodeByKey(activeBlockKey)
+    //
+    // hide "Insert Image" button when docket is shown
+    _this.setState(prevState => ({
+      value: resolvedState.value,
+      cursorContext: { ...prevState.cursorContext, newLine: false }
+    }))
+  }, 50)
 }

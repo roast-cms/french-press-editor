@@ -32,7 +32,7 @@ export default props => {
       style={props.style}
       //
       // transfer user click back to the parent component
-      onClick={event => props.click(event)}
+      onMouseDown={event => props.click(event)}
     >
       {props.children}
     </ImageButton>
