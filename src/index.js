@@ -72,6 +72,8 @@ export class FrenchPress extends React.PureComponent {
       (props.slatePlugins && props.slatePlugins.length) > 0
         ? [].contact.apply([], [plugins, props.slatePlugins])
         : plugins
+    //
+    this.handleClickPropagation = this.handleClickPropagation.bind(this)
   }
   componentDidMount = () => {
     //
@@ -170,6 +172,10 @@ export class FrenchPress extends React.PureComponent {
   // respond to user clicking/tapping "Insert Image" button that appears
   // on the new empty line of every paragraph
   handleImageButton = event => handleImageButton(event, this)
+
+  handleImageButtonUpstate = () => this.setState({imageButttonDownstate: false})
+
+
   //
   // this function uses the <input /> file handler and inserts user's
   // selected image from their device into the document
@@ -200,10 +206,6 @@ export class FrenchPress extends React.PureComponent {
   //
   // perorm user commands from within the format menu
   formatCommand = type => formatCommand(type, this)
-  //
-  // below functions are reserved for future use
-  handleBlur = () => {}
-  handleFocus = () => {}
   //
   // render <FrenchPress /> compnent!
   render = () => {
