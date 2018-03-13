@@ -133,7 +133,7 @@ export class FrenchPress extends React.PureComponent {
     //
     // execute external functions when components props update
     if (!this.props.callbackPropsUpdate) return
-    this.props.callbackPropsUpdate(this.props, nextProps)
+    this.props.callbackPropsUpdate(this, nextProps)
   }
   //
   // track user interactions with editor in component state;
