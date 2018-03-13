@@ -10,5 +10,5 @@ src/
 # Other
 .babelrc
 .yarnclean
-README-BANNER.gif
+README-banner.gif
 yarn.lock
