@@ -41,7 +41,9 @@ import { BrowserRouter } from "react-router-dom"
 import { Sugar } from "@roast-cms/react-sugar-styled"
 //
 // editor and components that help render it
-import { FrenchPress, Wrapper } from "../src/index"
+// [ note that in this case components are loaded from NPM,
+// while in the example files they are loaded from project folder ]
+import { FrenchPress, Wrapper } from "@roast-cms/french-press-editor"
 //
 // this component will render the editor
 render(
