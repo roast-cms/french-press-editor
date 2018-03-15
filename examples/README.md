@@ -18,7 +18,15 @@ There are a few peer dependencies that you will need to install and manage yours
   "react": "^16.0.0",
   "react-dom": "^16.0.0",
   "react-router-dom": "^4.2.2",
-  "styled-components": "3.0.2"
+  "slate": "^0.33.0",
+  "slate-auto-replace": "^0.9.0",
+  "slate-html-serializer": "^0.5.0",
+  "slate-react": "^0.12.0",
+  "styled-components": "3.0.2",
+  "uuid": "^3.1.0",
+  "keycode": "^2.1.9",
+  "localforage": "^1.6.0",
+  "localforage-getitems": "^1.4.1"
 }
 ```
 You can run `yarn add immutable` (and so fourth) on all of the above packages, except for styled-components, which needs to be of a particular version since their latest releases tend to break styles: `yarn add styled-components@3.0.2`.
