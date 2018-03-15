@@ -1,6 +1,6 @@
 {
   "name": "@roast-cms/french-press-editor",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Rich text editor, built with React.js and Slate.",
   "main": "dist/index.js",
   "repository": "https://github.com/roast-cms/french-press-editor.git",
@@ -28,7 +28,7 @@
     "immutable": "^3.8.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "react-router-dom": "^4.2.2",
+    "react-router-dom": "^4.2.2"
   },
   "scripts": {
     "start": "webpack-dev-server",
@@ -48,8 +48,6 @@
     "localforage": "^1.6.0",
     "localforage-getitems": "^1.4.1",
     "is-url": "^1.2.2",
-
-
     "positions": "^1.6.1",
     "@roast-cms/slate-drop-or-paste-images": "^0.8.1",
     "is-url": "^1.2.2",
