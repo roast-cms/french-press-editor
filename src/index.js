@@ -223,7 +223,8 @@ export class FrenchPress extends React.PureComponent {
               ? this.state.cursorContext.parentBlockOffsets.top
               : 0,
             display:
-              this.state.cursorContext.newLine && this.props.components.Picture
+              this.state.cursorContext.newLine &&
+              (this.props.components && this.props.components.Picture)
                 ? "block"
                 : "none",
             opacity: this.state.editorFocus ? "1" : "0"
