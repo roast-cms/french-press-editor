@@ -1,6 +1,6 @@
 {
   "name": "@roast-cms/french-press-editor",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Rich text editor, built with React.js and Slate.",
   "main": "dist/index.js",
   "repository": "https://github.com/roast-cms/french-press-editor.git",
