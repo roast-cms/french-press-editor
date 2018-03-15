@@ -123,7 +123,7 @@ export class FrenchPress extends React.PureComponent {
     menuPosition(this)
     //
     // return Slate Editor component ref to the props API for the developer
-    this.props.editorRef(this.slateEditor)
+    this.props.editorRef && this.props.editorRef(this.slateEditor)
   }
   //
   // update format menu position (via user text selection)
@@ -222,7 +222,10 @@ export class FrenchPress extends React.PureComponent {
             top: this.state.cursorContext
               ? this.state.cursorContext.parentBlockOffsets.top
               : 0,
-            display: this.state.cursorContext.newLine ? "block" : "none",
+            display:
+              this.state.cursorContext.newLine && this.props.components.Picture
+                ? "block"
+                : "none",
             opacity: this.state.editorFocus ? "1" : "0"
           }}
           click={this.handleImageButton}

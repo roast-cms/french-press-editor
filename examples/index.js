@@ -114,7 +114,7 @@ class Editor extends React.PureComponent {
               "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
             //
             // maximum upload image size in megabytes
-            imageMaxSize: 10
+            //imageMaxSize: 10
           }}
           //
           // this prop will call a function with a parameter that specifies
