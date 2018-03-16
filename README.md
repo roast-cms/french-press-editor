@@ -25,7 +25,7 @@ If you've ever tried building a rich-text editorial experience for your users in
 
 `french-press-editor` simplifies the task of building a functional and beautiful editorial experience for your users further by packaging all of the plugins, components, and directives necessary in one easy to install module (using Slate as a platform of choice). **No `ContentEditable` bullshit**, **no lengthy research**, **no complex APIs**.
 
-> This project is being actively developed and debugged. Expect breaking changes with every minor release (i.e. v0.1.0 to v0.2.0). Your input on how to make it easier to work with and customized is greately appreciated.
+> This project is being actively developed and debugged. Expect breaking changes with every minor release (i.e. `v0.1.0` to `v0.2.0`). Your input on how to make it easier to work with and customized is greately appreciated.
 
 ## Specs.
 To see if this tool is right for you, please have a look through the list of specs below. Everything listed is pre-packaged.
