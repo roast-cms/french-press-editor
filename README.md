@@ -79,7 +79,9 @@ To see if this tool is right for you, please have a look through the list of spe
 #### Callback functions.
 - `callbackStatus()` will send you "ok" or "pending" indicating whether the content is being stored in browser or not.
 - `callbackError()` will send you error string and reason (i.e. if the image is too large).
-- `callbackPropsUpdate()` will send you `props` and `nextProps` that you can react to as the internal editor component receives new props.
+
+#### Object/component reference.
+- `editorRef()` returns Slate Editor reference once it mounts.
 
 To learn more about what you can customize and build for `french-press-editor` to make it yours, check out the [complete API guide](/examples/README.md).
 
