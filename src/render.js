@@ -96,7 +96,7 @@ export const renderNode = props => {
               // colour the button in to the main theme shade
               branded
             >
-              Unqoute
+              Unquote
             </UnquoteButton>}
           <blockquote {...attributes} className={focusClassName}>
             {children}
