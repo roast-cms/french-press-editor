@@ -2,7 +2,7 @@
 [![npm version](https://badge.fury.io/js/%40roast-cms%2Ffrench-press-editor.svg)](https://badge.fury.io/js/%40roast-cms%2Ffrench-press-editor)
 > ☕ A better editorial experience with React.js and Slate.
 
-![Demo GIF](/graphics/get-started.gif?raw=true)
+![demo](/graphics/get-started.gif?raw=true)
 
 - **Offline-ready:** store content and images (!) in-browser.
 - **Much better than ContentEditable:** don't make your users and developers suffer!
@@ -34,6 +34,8 @@ To see if this tool is right for you, please have a look through the list of spe
 - Mobile-ready. Even for iOS: there's a cleverly-designed format menu that works with iPhone and iPad. Android devices may still have bugs though.
 - Built to make it easy for you to create an experience that will mirror the final published article for your users, so that they don't have to click <btn>Preview</btn> button every time.
 - `french-press-editor` is a ready-made, opinionated package, yet there is plenty that you can customize, far beyond CSS.
+
+<p align="center"><img src="/graphics/mobile-demo-landscape.png?raw=true" width="400" /></p>
 
 #### Built-in content block types.
 - **Paragraph:** the default, rendered as `<p></p>`.
@@ -86,3 +88,5 @@ If you have a feature request, bug report or a question, please submit an issue.
 **Pull requests are very much welcome.** To get started with the code: clone the repo, run `yarn install` then `yarn start` and open up `http://localhost:3002` in your browser.
 
 **Every folder** in this repo has a `README.md` file to help you along 🤓
+
+<p align="center"><img src="/graphics/logo.gif?raw=true" width="200" height="200" /></p>
