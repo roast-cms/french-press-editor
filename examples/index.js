@@ -105,21 +105,21 @@ class Editor extends React.PureComponent {
             ImageButton: null
           }}
           //
-          // options={{
-          //   //
-          //   // domain prop helps rendering links better; for example, absolute
-          //   // links like `domain.com/page` can be automatically converted into
-          //   // `/page`
-          //   domain: "localhost:3002",
-          //   //
-          //   // by default an image placeholder is a grey pixel, however, you can
-          //   // specify your own here
-          //   imagePlaceholder:
-          //     "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-          //   //
-          //   // maximum upload image size in megabytes
-          //   //imageMaxSize: 10
-          // }}
+          options={{
+            //
+            // domain prop helps rendering links better; for example, absolute
+            // links like `domain.com/page` can be automatically converted into
+            // `/page`
+            domain: "localhost:3002",
+            //
+            // by default an image placeholder is a grey pixel, however, you can
+            // specify your own here
+            imagePlaceholder:
+              "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+            //
+            // maximum upload image size in megabytes
+            //imageMaxSize: 10
+          }}
           //
           // this prop will call a function with a parameter that specifies
           // editor's localStorage save status (see above)
@@ -128,43 +128,43 @@ class Editor extends React.PureComponent {
           // this prop will call a function with error name and additional info
           // that you may like to display within your own dialogue box or interface;
           // i.e.: "Image is too large!"
-          // callbackError={(error, reason) => {
-          //   console.log(error, reason)
-          // }}
-          // //
-          // // this prop returns Slate Editor component ref to be used by developer
-          // // (such as to set focus, events. and more)
-          // editorRef={editorRef => {}}
-          // //
-          // // render components within user controls; you may substitute them
-          // // for images, SVG animations, or whatever else you may fancy
-          // controls={{
-          //   //
-          //   // button that converts the text block into a header
-          //   MakeHeader: () => <span>H</span>,
-          //   //
-          //   // button that converts header block back into paragraph
-          //   CancelHeader: () => <span>⇲</span>,
-          //   //
-          //   // button that converts text block into a quote
-          //   MakeQuote: () => <span>“</span>,
-          //   //
-          //   // button that lets user add a link URL to selected text
-          //   MakeLink: () => <u>a</u>,
-          //   //
-          //   // button that marks selected text as bold (and the reverse)
-          //   MakeBold: () => <strong>b</strong>,
-          //   //
-          //   // button that marks selected text as italic (and the reverse)
-          //   MakeItalic: () => <em>i</em>,
-          //   // button label for image upload control
-          //   UploadImage: () => <span>Upload Image</span>
-          // }}
-          // //
-          // // <FrenchPress /> component contains a number of Slate plugins
-          // // customized for a specific user experience; you may add your own
-          // // plugins here as well should you want to extend them
-          // slatePlugins={[]}
+          callbackError={(error, reason) => {
+            console.log(error, reason)
+          }}
+          //
+          // this prop returns Slate Editor component ref to be used by developer
+          // (such as to set focus, events. and more)
+          editorRef={editorRef => {}}
+          //
+          // render components within user controls; you may substitute them
+          // for images, SVG animations, or whatever else you may fancy
+          controls={{
+            //
+            // button that converts the text block into a header
+            MakeHeader: () => <span>H</span>,
+            //
+            // button that converts header block back into paragraph
+            CancelHeader: () => <span>⇲</span>,
+            //
+            // button that converts text block into a quote
+            MakeQuote: () => <span>“</span>,
+            //
+            // button that lets user add a link URL to selected text
+            MakeLink: () => <u>link</u>,
+            //
+            // button that marks selected text as bold (and the reverse)
+            MakeBold: () => <strong>bold</strong>,
+            //
+            // button that marks selected text as italic (and the reverse)
+            MakeItalic: () => <em>italic</em>,
+            // button label for image upload control
+            UploadImage: () => <span>Upload Image</span>
+          }}
+          //
+          // <FrenchPress /> component contains a number of Slate plugins
+          // customized for a specific user experience; you may add your own
+          // plugins here as well should you want to extend them
+          slatePlugins={[]}
         />
       </div>
     )
@@ -179,19 +179,19 @@ render(
       // you can "theme" your editor components with react-sugar-styled
       // theming dictionary API
       //
-      // color_brand: "rgb(132,50,72)",
-      // //
-      // font_heading: "'Yanone Kaffeesatz', sans-serif",
-      // font_heading_weight: 400,
-      // //
-      // font_body: "'Rajdhani', sans-serif",
-      // //
-      // size_base: 20,
-      // size_column_medium: 700,
-      // size_column_large: 900,
-      // size_block_spacing: .75,
-      // //
-      // effects_border_radius: .75,
+      color_brand: "rgb(132,50,72)",
+      //
+      font_heading: "'Yanone Kaffeesatz', sans-serif",
+      font_heading_weight: 400,
+      //
+      font_body: "'Rajdhani', sans-serif",
+      //
+      size_base: 20,
+      size_column_medium: 700,
+      size_column_large: 900,
+      size_block_spacing: .75,
+      //
+      effects_border_radius: .75,
       //
       // for detailed docs on how to customize buttons' theme please refer to
       // the guide on https://github.com/roast-cms/react-sugar-styled
