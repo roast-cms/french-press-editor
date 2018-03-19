@@ -2,8 +2,10 @@
 
 `french-press-editor` was built for fast installation and with a pre-defined set of tools. It's meant to make a good editorial experience that has most of the required features of a typical blog or publication entry for your users with the absolute minimum required from you, the developer. This tool is extendable, via Slate's [plugins](https://github.com/ianstormtaylor/slate/blob/master/docs/general/plugins.md) infrastructure, however, it has some prerequisites and opinionated limitations.
 
-## Cheat mode
-If you're new to developing with React you **may** find it easier to just clone this repo, run `yarn install` and then `yarn start` to see how this works. However, unless you are planning to contribute code I recommend you work within your own environment and take advantage of NPM.
+## Quick start
+1. Get your WebPack/React.js environment ready (see **React.js environment** below).
+1. Install packages listed in **peer dependencies** section below.
+1. Run the code from **MVP** section (below) in your `index.js`.
 
 ## React.js environment
 In order for you to use this tool you'll need to have React.js development environment working on your machine. If you don't and don't know where to start, have a look at [create-react-app](https://github.com/facebook/create-react-app). CRA will take care of everything that you need for you, though if you have your own system please make sure that you've got Babel transpiler, with an ability to load imports dynamically, understand spread operators, and this: `babel-plugin-transform-class-properties`.

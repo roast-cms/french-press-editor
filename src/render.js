@@ -4,25 +4,14 @@
 //
 // tools
 import React from "react"
-import styled from "styled-components"
 //
 // components
-import { TinyButton } from "./components/Button"
-import Link from "./components/Link"
+import { UnquoteButton } from "./components/Unquote"
 import { makeRelative } from "@roast-cms/react-link-filter/dist/utils"
+import Link from "./components/Link"
 //
 // CSS for the Unquote button which appears inside the quote for an easy
 // way to revert formatting to plain text
-const UnquoteButton = styled(TinyButton)`
-  width: 6em;
-  margin: 1.35em -${props => props.theme.size.block.column.safety}em -3.35em 0;
-  float: right;
-  position: relative;
-  z-index: ${props => props.theme.layer.up};
-  ${props => props.theme.size.breakpoint.max.m`
-    right: ${props => props.theme.size.block.spacing / 2}em;
-  `};
-`
 //
 // this function defines how all block-level nodes within the document
 // are going to be rendered
@@ -96,7 +85,7 @@ export const renderNode = props => {
               // colour the button in to the main theme shade
               branded
             >
-              Unqoute
+              Unquote
             </UnquoteButton>}
           <blockquote {...attributes} className={focusClassName}>
             {children}
@@ -117,7 +106,7 @@ export const renderNode = props => {
         const Picture = props.editor.props.components.Picture
         return <Picture {...props} />
       } else {
-        console.warn("<Picture /> component required to render images");
+        console.warn("<Picture /> component required to render images")
         return null
       }
     }

@@ -1,12 +1,12 @@
 # french-press-editor
 [![npm version](https://badge.fury.io/js/%40roast-cms%2Ffrench-press-editor.svg)](https://badge.fury.io/js/%40roast-cms%2Ffrench-press-editor)
-> ☕ A better editorial experience with React.js and Slate.
+> ☕ An offline-first rich text editor component.
 
-![Demo GIF](README-banner.gif?raw=true)
+<p align="center"><img src="/graphics/demo-1.gif?raw=true)" width="600" alt="getting started with french-press-editor" /></p>
 
 - **Offline-ready:** store content and images (!) in-browser.
 - **Much better than ContentEditable:** don't make your users and developers suffer!
-- **You're done:** get it working in five minutes.
+- **You're done:** get it working in five minutes or customize it with your own styles, plugins, and components.
 
 ***
 ### Examples in production:
@@ -14,16 +14,40 @@
 - **[Archie.AI Blog](https://www.archie.ai/blog/new):** articles from the team behind Archie.AI, an artificially intelligent data scientist.
 ***
 
+<p align="center"><img src="/graphics/demo-2.gif?raw=true)" width="600" alt="adding images" /></p>
+
 ## Installation:
 ```
 yarn add @roast-cms/french-press-editor
 ```
-### 👉 Then follow **[these instructions](/examples/README.md)**.
+Then, in your project:
+```javascript
+import { BrowserRouter } from "react-router-dom"
+import { ThemeProvider } from "styled-components"
+import { Sugar } from "@roast-cms/react-sugar-styled"
+//
+import { FrenchPress, Picture, Wrapper } from "@roast-cms/french-press-editor"
+//
+const App props =>
+  <ThemeProvider theme={Sugar()}>
+    <BrowserRouter>
+      <Wrapper>
+        <Editor />
+      </Wrapper>
+    </BrowserRouter>
+  </ThemeProvider>
+```
+### 👉 Further installation instructions and API reference **[here](/examples/README.md)**.
+
+<p align="center"><img src="/graphics/demo-3.gif?raw=true)" width="600" alt="theming the controls" /></p>
 
 ## Why?
-If you've ever tried building a rich-text editorial experience for your users in-browser with `ContentEditable`, you [may know](https://medium.engineering/why-contenteditable-is-terrible-122d8a40e480) what true torture feels like. Nobody wants that, hence tools like [Slate](https://github.com/ianstormtaylor/slate), [Quill](https://github.com/quilljs/quill), [Draft.js](https://github.com/facebook/draft-js), [Prose Mirror](https://github.com/ProseMirror/prosemirror), and many more exist to alleviate the pain. However, there's a learning curve and possible limitations to each system which take time to learn and understand.
+If you've ever tried building a rich-text editorial experience for your users in-browser with `ContentEditable`, you [may know](https://medium.engineering/why-contenteditable-is-terrible-122d8a40e480) what true torture feels like. Nobody wants that, hence tools like [Slate](https://github.com/ianstormtaylor/slate), [Quill](https://github.com/quilljs/quill), [Draft.js](https://github.com/facebook/draft-js), [Prose Mirror](https://github.com/ProseMirror/prosemirror), and many more exist to alleviate the pain. However, there's a learning curve and possible limitations to each system, which take time to learn and understand.
 
-`french-press-editor` simplifies the task of building simple, beautiful, and functional experience for your users further by packaging all of the plugins, components, and directives necessary in one easy to implement package (using Slate as a platform of choice). **No `ContentEditable` bullshit**, **no lengthy research**, **no complex APIs**.
+`french-press-editor` simplifies the task of building a functional and beautiful editorial experience for your users further by packaging all of the plugins, components, and directives necessary in one easy to install module (using Slate as a platform of choice). **No `ContentEditable` bullshit**, **no lengthy research**, **no complex APIs**.
+
+> This project is being actively developed and debugged. Expect breaking changes with every minor release (i.e. `v0.1.0` to `v0.2.0`). Your input on how to make it easier to work with and customized is greately appreciated.
+
 
 ## Specs.
 To see if this tool is right for you, please have a look through the list of specs below. Everything listed is pre-packaged.
@@ -34,6 +58,8 @@ To see if this tool is right for you, please have a look through the list of spe
 - Mobile-ready. Even for iOS: there's a cleverly-designed format menu that works with iPhone and iPad. Android devices may still have bugs though.
 - Built to make it easy for you to create an experience that will mirror the final published article for your users, so that they don't have to click <btn>Preview</btn> button every time.
 - `french-press-editor` is a ready-made, opinionated package, yet there is plenty that you can customize, far beyond CSS.
+
+<p align="center"><img src="/graphics/demo-5.png?raw=true" width="400" alt="mobile hover menu" /></p>
 
 #### Built-in content block types.
 - **Paragraph:** the default, rendered as `<p></p>`.
@@ -75,7 +101,9 @@ To see if this tool is right for you, please have a look through the list of spe
 #### Callback functions.
 - `callbackStatus()` will send you "ok" or "pending" indicating whether the content is being stored in browser or not.
 - `callbackError()` will send you error string and reason (i.e. if the image is too large).
-- `callbackPropsUpdate()` will send you `props` and `nextProps` that you can react to as the internal editor component receives new props.
+
+#### Object/component reference.
+- `editorRef()` returns Slate Editor reference once it mounts.
 
 To learn more about what you can customize and build for `french-press-editor` to make it yours, check out the [complete API guide](/examples/README.md).
 
@@ -85,4 +113,4 @@ If you have a feature request, bug report or a question, please submit an issue.
 
 **Pull requests are very much welcome.** To get started with the code: clone the repo, run `yarn install` then `yarn start` and open up `http://localhost:3002` in your browser.
 
-**Every folder** in this repo has a `README.md` file to help you along 🤓
+**Every folder** in this repo has a `README.md` file to help you along.

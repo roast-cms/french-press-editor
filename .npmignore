@@ -7,8 +7,10 @@ examples/
 # Raw code
 src/
 
+# Design and graphics
+graphics/
+
 # Other
 .babelrc
 .yarnclean
-README-banner.gif
 yarn.lock

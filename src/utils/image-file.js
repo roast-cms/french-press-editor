@@ -9,7 +9,13 @@ import localForage from "localforage"
 //
 export const handleFileUpload = (event, _this) => {
   const file = event.target.files[0]
-  forceImageRestrictions(file.size, file.type, _this.props.options.imageMaxSize)
+  forceImageRestrictions(
+    file.size,
+    file.type,
+    _this.props.options &&
+      _this.props.options.imageMaxSize &&
+      _this.props.options.imageMaxSize
+  )
     .then(() => {
       const key = uuidv1()
       const editorProps = _this.slateEditor.props
@@ -25,9 +31,9 @@ export const handleFileUpload = (event, _this) => {
       // if PictureDocket component isn't defined, simply insert the image
       // into the document
       if (!docket) resolvedState = editorProps.value.change().insertBlock(block)
-      //
-      // otherwise, insert image AND remove the docket from the doc
       else
+        //
+        // otherwise, insert image AND remove the docket from the doc
         resolvedState = editorProps.value
           .change()
           .insertBlock(block)

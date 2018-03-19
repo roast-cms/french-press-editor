@@ -13,6 +13,10 @@ import { BrowserRouter } from "react-router-dom"
 // to figure out how to do this yourself
 import { Sugar } from "@roast-cms/react-sugar-styled"
 //
+// fonts for the theme
+import "typeface-yanone-kaffeesatz"
+import "typeface-rajdhani"
+//
 // editor and components that help render it
 import {
   //
@@ -146,13 +150,13 @@ class Editor extends React.PureComponent {
             MakeQuote: () => <span>“</span>,
             //
             // button that lets user add a link URL to selected text
-            MakeLink: () => <u>a</u>,
+            MakeLink: () => <u>link</u>,
             //
             // button that marks selected text as bold (and the reverse)
-            MakeBold: () => <strong>b</strong>,
+            MakeBold: () => <strong>bold</strong>,
             //
             // button that marks selected text as italic (and the reverse)
-            MakeItalic: () => <em>i</em>,
+            MakeItalic: () => <em>italic</em>,
             // button label for image upload control
             UploadImage: () => <span>Upload Image</span>
           }}
@@ -170,7 +174,30 @@ class Editor extends React.PureComponent {
 // render everything!
 render(
   <div>
-    <ThemeProvider theme={Sugar}>
+    <ThemeProvider theme={Sugar({
+      //
+      // you can "theme" your editor components with react-sugar-styled
+      // theming dictionary API
+      //
+      color_brand: "rgb(132,50,72)",
+      //
+      font_heading: "'Yanone Kaffeesatz', sans-serif",
+      font_heading_weight: 400,
+      //
+      font_body: "'Rajdhani', sans-serif",
+      //
+      size_base: 20,
+      size_column_medium: 700,
+      size_column_large: 900,
+      size_block_spacing: .75,
+      //
+      effects_border_radius: .75,
+      //
+      // for detailed docs on how to customize buttons' theme please refer to
+      // the guide on https://github.com/roast-cms/react-sugar-styled
+      // - it is a themeing dictionary used with Styled Components
+      //
+    })}>
       <BrowserRouter>
         <Wrapper>
           <Editor />
