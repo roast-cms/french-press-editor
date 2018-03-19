@@ -35,8 +35,12 @@ export const Wrapper = styled.div`
     float: left;
     margin-top: -1.25em;
     margin-left: -1.5em;
-    ${props =>
-      props.theme.size.breakpoint.max.s`margin-left:0`};
+
+    position: absolute;
+    left: 0;
+    ${props => props.theme.size.breakpoint.max.m`
+        left: ${props => props.theme.size.block.padding}em;
+    `};
   }
   .french-press_undo-heading, .french-press_undo-heading-container {
     padding: .5em;
