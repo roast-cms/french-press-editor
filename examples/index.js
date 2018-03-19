@@ -170,7 +170,7 @@ class Editor extends React.PureComponent {
 // render everything!
 render(
   <div>
-    <ThemeProvider theme={Sugar}>
+    <ThemeProvider theme={Sugar()}>
       <BrowserRouter>
         <Wrapper>
           <Editor />

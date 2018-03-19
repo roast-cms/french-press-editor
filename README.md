@@ -1,12 +1,12 @@
 # french-press-editor
 [![npm version](https://badge.fury.io/js/%40roast-cms%2Ffrench-press-editor.svg)](https://badge.fury.io/js/%40roast-cms%2Ffrench-press-editor)
-> ☕ A better editorial experience with React.js and Slate.
+> ☕ An offline-first rich text editor component.
 
 ![demo](/graphics/get-started.gif?raw=true)
 
 - **Offline-ready:** store content and images (!) in-browser.
 - **Much better than ContentEditable:** don't make your users and developers suffer!
-- **You're done:** get it working in five minutes.
+- **You're done:** get it working in five minutes or customize it with your own styles, plugins, and components.
 
 ***
 ### Examples in production:
@@ -18,10 +18,27 @@
 ```
 yarn add @roast-cms/french-press-editor
 ```
-### 👉 Then follow **[these instructions](/examples/README.md)**.
+Then, in your project:
+```javascript
+import { BrowserRouter } from "react-router-dom"
+import { ThemeProvider } from "styled-components"
+import { Sugar } from "@roast-cms/react-sugar-styled"
+//
+import { FrenchPress, Picture, Wrapper } from "@roast-cms/french-press-editor"
+//
+const App props =>
+  <ThemeProvider theme={Sugar()}>
+    <BrowserRouter>
+      <Wrapper>
+        <Editor />
+      </Wrapper>
+    </BrowserRouter>
+  </ThemeProvider>
+```
+### 👉 Further installation instructions and API reference **[here](/examples/README.md)**.
 
 ## Why?
-If you've ever tried building a rich-text editorial experience for your users in-browser with `ContentEditable`, you [may know](https://medium.engineering/why-contenteditable-is-terrible-122d8a40e480) what true torture feels like. Nobody wants that, hence tools like [Slate](https://github.com/ianstormtaylor/slate), [Quill](https://github.com/quilljs/quill), [Draft.js](https://github.com/facebook/draft-js), [Prose Mirror](https://github.com/ProseMirror/prosemirror), and many more exist to alleviate the pain. However, there's a learning curve and possible limitations to each system which take time to learn and understand.
+If you've ever tried building a rich-text editorial experience for your users in-browser with `ContentEditable`, you [may know](https://medium.engineering/why-contenteditable-is-terrible-122d8a40e480) what true torture feels like. Nobody wants that, hence tools like [Slate](https://github.com/ianstormtaylor/slate), [Quill](https://github.com/quilljs/quill), [Draft.js](https://github.com/facebook/draft-js), [Prose Mirror](https://github.com/ProseMirror/prosemirror), and many more exist to alleviate the pain. However, there's a learning curve and possible limitations to each system, which take time to learn and understand.
 
 `french-press-editor` simplifies the task of building a functional and beautiful editorial experience for your users further by packaging all of the plugins, components, and directives necessary in one easy to install module (using Slate as a platform of choice). **No `ContentEditable` bullshit**, **no lengthy research**, **no complex APIs**.
 

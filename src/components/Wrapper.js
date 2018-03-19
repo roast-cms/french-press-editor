@@ -14,10 +14,10 @@ export const Wrapper = styled.div`
   ${props => props.theme.size.font.auto} ${props =>
       props.theme.typography.text.auto} padding: ${props =>
       props.theme.size.block.spacing}em;
-  max-width: ${props => props.theme.size.block.column.maxwidth.m}px;
+  max-width: ${props => props.theme.size.block.column.m}px;
   ${props =>
     props.theme.size.breakpoint.min.xxl`max-width: ${props =>
-      props.theme.size.block.column.maxwidth.l}px;`};
+      props.theme.size.block.column.l}px;`};
 
   h3 {
     ${props => props.theme.typography.title.auto} font-size: ${props =>
@@ -25,7 +25,7 @@ export const Wrapper = styled.div`
     margin: .5em 0;
   }
   blockquote {
-    color: ${props => props.theme.color.alpha.foreground(0.5)};
+    color: ${props => props.theme.color.foreground(props.theme.opacity.half)};
     border-left: 4px solid;
     padding: 0 1em;
     margin: 0;

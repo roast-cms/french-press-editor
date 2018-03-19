@@ -3,18 +3,16 @@
 
 
 "@roast-cms/react-button-beans@*":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@roast-cms/react-button-beans/-/react-button-beans-0.1.2.tgz#17d8d26b3122a1a4022344616c92fb3756efb363"
-  dependencies:
-    babel-plugin-syntax-dynamic-import "^6.18.0"
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@roast-cms/react-button-beans/-/react-button-beans-1.0.0.tgz#1650650ccf76715911504e71dfdf7148f2c3e8ce"
 
 "@roast-cms/react-link-filter@*":
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/@roast-cms/react-link-filter/-/react-link-filter-0.1.2.tgz#0ac36ca11a288d120f05bd830af82720be800818"
 
 "@roast-cms/react-sugar-styled@*":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@roast-cms/react-sugar-styled/-/react-sugar-styled-0.1.1.tgz#d48c1a0c37ea15ffbee5a39af9ddadaeb2b8bac3"
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@roast-cms/react-sugar-styled/-/react-sugar-styled-1.0.1.tgz#75a64aa3f4ebf7f9a128a33f74f8411b5928d7a0"
 
 "@roast-cms/slate-drop-or-paste-images@^0.8.1":
   version "0.8.1"
