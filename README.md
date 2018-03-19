@@ -114,3 +114,5 @@ If you have a feature request, bug report or a question, please submit an issue.
 **Pull requests are very much welcome.** To get started with the code: clone the repo, run `yarn install` then `yarn start` and open up `http://localhost:3002` in your browser.
 
 **Every folder** in this repo has a `README.md` file to help you along.
+
+<p align="center"><img src="/graphics/logo.gif?raw=true)" width="125" alt="animated logo" /></p>
