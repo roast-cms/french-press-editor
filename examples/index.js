@@ -150,13 +150,13 @@ class Editor extends React.PureComponent {
             MakeQuote: () => <span>“</span>,
             //
             // button that lets user add a link URL to selected text
-            MakeLink: () => <u>link</u>,
+            MakeLink: () => <u>a</u>,
             //
             // button that marks selected text as bold (and the reverse)
-            MakeBold: () => <strong>bold</strong>,
+            MakeBold: () => <strong>b</strong>,
             //
             // button that marks selected text as italic (and the reverse)
-            MakeItalic: () => <em>italic</em>,
+            MakeItalic: () => <em>i</em>,
             // button label for image upload control
             UploadImage: () => <span>Upload Image</span>
           }}
