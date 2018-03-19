@@ -9,7 +9,7 @@ import localForage from "localforage"
 //
 export const handleFileUpload = (event, _this) => {
   const file = event.target.files[0]
-  forceImageRestrictions(file.size, file.type, _this.props.options.imageMaxSize)
+  forceImageRestrictions(file.size, file.type, _this.props.options && _this.props.options.imageMaxSize && _this.props.options.imageMaxSize)
     .then(() => {
       const key = uuidv1()
       const editorProps = _this.slateEditor.props
