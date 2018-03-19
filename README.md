@@ -2,7 +2,7 @@
 [![npm version](https://badge.fury.io/js/%40roast-cms%2Ffrench-press-editor.svg)](https://badge.fury.io/js/%40roast-cms%2Ffrench-press-editor)
 > ☕ An offline-first rich text editor component.
 
-<p align="center"><img src="/graphics/demo-1.gif?raw=true)" width="400" alt="getting started with french-press-editor" /></p>
+<p align="center"><img src="/graphics/demo-1.gif?raw=true)" width="600" alt="getting started with french-press-editor" /></p>
 
 - **Offline-ready:** store content and images (!) in-browser.
 - **Much better than ContentEditable:** don't make your users and developers suffer!
@@ -14,7 +14,7 @@
 - **[Archie.AI Blog](https://www.archie.ai/blog/new):** articles from the team behind Archie.AI, an artificially intelligent data scientist.
 ***
 
-<p align="center"><img src="/graphics/demo-2.gif?raw=true)" width="400" alt="adding images" /></p>
+<p align="center"><img src="/graphics/demo-2.gif?raw=true)" width="600" alt="adding images" /></p>
 
 ## Installation:
 ```
@@ -39,7 +39,7 @@ const App props =>
 ```
 ### 👉 Further installation instructions and API reference **[here](/examples/README.md)**.
 
-<p align="center"><img src="/graphics/demo-3.gif?raw=true)" width="400" alt="theming the controls" /></p>
+<p align="center"><img src="/graphics/demo-3.gif?raw=true)" width="600" alt="theming the controls" /></p>
 
 ## Why?
 If you've ever tried building a rich-text editorial experience for your users in-browser with `ContentEditable`, you [may know](https://medium.engineering/why-contenteditable-is-terrible-122d8a40e480) what true torture feels like. Nobody wants that, hence tools like [Slate](https://github.com/ianstormtaylor/slate), [Quill](https://github.com/quilljs/quill), [Draft.js](https://github.com/facebook/draft-js), [Prose Mirror](https://github.com/ProseMirror/prosemirror), and many more exist to alleviate the pain. However, there's a learning curve and possible limitations to each system, which take time to learn and understand.
@@ -47,8 +47,6 @@ If you've ever tried building a rich-text editorial experience for your users in
 `french-press-editor` simplifies the task of building a functional and beautiful editorial experience for your users further by packaging all of the plugins, components, and directives necessary in one easy to install module (using Slate as a platform of choice). **No `ContentEditable` bullshit**, **no lengthy research**, **no complex APIs**.
 
 > This project is being actively developed and debugged. Expect breaking changes with every minor release (i.e. `v0.1.0` to `v0.2.0`). Your input on how to make it easier to work with and customized is greately appreciated.
-
-<p align="center"><img src="/graphics/demo-4.gif?raw=true" width="400" alt="links and responsive design" /></p>
 
 
 ## Specs.
