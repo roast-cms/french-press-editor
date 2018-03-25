@@ -317,3 +317,4 @@ export {
   saveContent,
   setDraftStatusHelper
 } from "./utils"
+export { Reader } from "./components/Reader"
