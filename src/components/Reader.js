@@ -16,13 +16,13 @@ export const Reader = props => {
     //
     // props defineable by user
     options={{
-      ...this.props.options,
+      ...props.options,
       imagePlaceholder:
-        (this.props.options && this.props.options.imagePlaceholder) ||
+        (props.options && props.options.imagePlaceholder) ||
         "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-      domain: (this.props.options && this.props.options.domain) || ""
+      domain: (props.options && props.options.domain) || ""
     }}
-    components={this.props.components}
+    components={props.components}
     value={Value.fromJSON(props.value)}
     //
     // props inferred from Editor architecture
