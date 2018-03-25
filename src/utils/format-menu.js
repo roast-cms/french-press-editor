@@ -2,17 +2,10 @@
 // Figures out where the format menu should appear, according to user's
 // selection within editor.
 //
-// tools
-import { fixHangingSelection } from "./HACKS"
-//
 // formate menu commands
 export const menuPosition = _this => {
   const { value } = _this.state
   const menu = _this.menu
-  //
-  // apply the hack
-  fixHangingSelection(_this, value.change())
-  //
   if (!menu) return
   if (window.getSelection().rangeCount <= 0) return
   const selection = window.getSelection()

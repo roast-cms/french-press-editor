@@ -2,17 +2,17 @@
 # yarn lockfile v1
 
 
-"@roast-cms/react-button-beans@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@roast-cms/react-button-beans/-/react-button-beans-1.0.2.tgz#d2b068cdc0573d51939f4264b6578dec7af9417f"
+"@roast-cms/react-button-beans@^1.1.3":
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@roast-cms/react-button-beans/-/react-button-beans-1.1.3.tgz#c8c199606bd01d21f1c320eeb1023350d6a7dc34"
 
 "@roast-cms/react-link-filter@*":
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/@roast-cms/react-link-filter/-/react-link-filter-0.1.2.tgz#0ac36ca11a288d120f05bd830af82720be800818"
 
-"@roast-cms/react-sugar-styled@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@roast-cms/react-sugar-styled/-/react-sugar-styled-1.0.3.tgz#6385d94e0bfd3c1783a8490b7e8971f0595269ad"
+"@roast-cms/react-sugar-styled@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@roast-cms/react-sugar-styled/-/react-sugar-styled-1.0.4.tgz#cd51b29ee126212e7c6bce66605d119bcac01d07"
 
 "@roast-cms/slate-drop-or-paste-images@^0.8.1":
   version "0.8.1"
