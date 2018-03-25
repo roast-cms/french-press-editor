@@ -44,6 +44,7 @@ import { Sugar } from "@roast-cms/react-sugar-styled"
 // [ note that in this case components are loaded from NPM,
 // while in the example files they are loaded from project folder ]
 import { FrenchPress, Wrapper } from "@roast-cms/french-press-editor"
+import { Wrapper } from "@roast-cms/french-press-editor/dist/components/Wrapper"
 //
 // this component will render the editor
 render(
@@ -62,7 +63,9 @@ render(
 The above, however, won't let you add add and store images within your content. To do that simply add the provided `<Picture />` component as a prop:
 ```javascript
 // ...
-import { FrenchPress, Wrapper, Picture } from "@roast-cms/french-press-editor"
+import { FrenchPress } from "@roast-cms/french-press-editor"
+import { Wrapper } from "@roast-cms/french-press-editor/dist/components/Wrapper"
+import { Picture } from "@roast-cms/french-press-editor/dist/containers/Picture"
 // ...
 <FrenchPress components={{Picture}} />
 // ...

@@ -298,23 +298,3 @@ export class FrenchPress extends React.PureComponent {
     ]
   }
 }
-//
-// convenience exports
-export { Picture } from "./containers/Picture"
-export { Wrapper } from "./components/Wrapper"
-export {
-  focusEvents,
-  addLink,
-  formatCommand,
-  menuPosition,
-  imageButtonPosition,
-  handleImageButton,
-  handleFileUpload,
-  forceImageRestrictions,
-  loadContent,
-  loadTextContent,
-  storeContentState,
-  saveContent,
-  setDraftStatusHelper
-} from "./utils"
-export { Reader } from "./components/Reader"
