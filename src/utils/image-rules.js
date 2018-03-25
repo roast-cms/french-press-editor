@@ -14,7 +14,7 @@ export const forceImageRestrictions = (size, type, max = 10) => {
     if (size / 1000000 <= max && correctFileType) resolve()
     else {
       let message = size / 1000000 <= max ? "oversize" : "wront_type"
-      reject()
+      reject(message)
     }
   })
 }
