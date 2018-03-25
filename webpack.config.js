@@ -11,7 +11,7 @@ module.exports = {
         exclude: /node_modules/,
         loader: "babel-loader",
         query: {
-          presets: ["react", "es2015"],
+          presets: ["react", "env"],
           plugins: ["transform-class-properties", "dynamic-import-webpack", "babel-plugin-transform-object-rest-spread"]
         }
       },
