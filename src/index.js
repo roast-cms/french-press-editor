@@ -298,7 +298,3 @@ export class FrenchPress extends React.PureComponent {
     ]
   }
 }
-//
-// convenience exports
-export { Picture } from "./containers/Picture"
-export { Wrapper } from "./components/Wrapper"

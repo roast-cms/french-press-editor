@@ -21,7 +21,7 @@ There are a few peer dependencies that you will need to install and manage yours
   "react-router-dom": "^4.2.2"
 }
 ```
-You can run `yarn add immutable` (and so fourth) on all of the above packages. Note that if you are using Styled Components package in your app, `french-press-editor` is currently locked to version `3.0.2` due to unstable nature of latest releases. Keep this in mind to avoid package duplication.
+You can run `yarn add immutable` (and so fourth) on all of the above packages.
 
 ## MVP
 `index.js` in this folder gives you a complete example with full usage API (aside from importing custom components and plugins). However, to get started you don't need to build all that. Assuming you got your environment working and have all the dependencies installed this is what your component should have at minimum in order to render:
@@ -44,6 +44,7 @@ import { Sugar } from "@roast-cms/react-sugar-styled"
 // [ note that in this case components are loaded from NPM,
 // while in the example files they are loaded from project folder ]
 import { FrenchPress, Wrapper } from "@roast-cms/french-press-editor"
+import { Wrapper } from "@roast-cms/french-press-editor/dist/components/Wrapper"
 //
 // this component will render the editor
 render(
@@ -62,7 +63,9 @@ render(
 The above, however, won't let you add add and store images within your content. To do that simply add the provided `<Picture />` component as a prop:
 ```javascript
 // ...
-import { FrenchPress, Wrapper, Picture } from "@roast-cms/french-press-editor"
+import { FrenchPress } from "@roast-cms/french-press-editor"
+import { Wrapper } from "@roast-cms/french-press-editor/dist/components/Wrapper"
+import { Picture } from "@roast-cms/french-press-editor/dist/containers/Picture"
 // ...
 <FrenchPress components={{Picture}} />
 // ...

@@ -21,7 +21,13 @@ import "typeface-rajdhani"
 import {
   //
   // editor compoent itself
-  FrenchPress,
+  FrenchPress
+} from "../src/index"
+//
+// these components will help us build a more-featured editor experience;
+// when importing from an NPM package, they should be sourced from
+// "@roast-cms/french-press-editor/dist/components" folder
+import {
   //
   // picture component that you will need to pass as a prop in order to
   // render images within your documents; you can create your own Picture
@@ -29,7 +35,9 @@ import {
   // responsive image sizes etc, however that's outside the scope of this
   // project; advanced Picture components may be created later for you to
   // choose from within a different repo/package
-  Picture,
+  Picture
+} from "../src/containers/Picture"
+import {
   //
   // wrapper component contains some default styles that make your editor
   // useable on mobile and desktop; you may like to check this component
@@ -37,7 +45,7 @@ import {
   // css in another way
   Wrapper
   //
-} from "../src/index"
+} from "../src/components/Wrapper"
 //
 // this component will render the editor
 class Editor extends React.PureComponent {
@@ -150,13 +158,13 @@ class Editor extends React.PureComponent {
             MakeQuote: () => <span>“</span>,
             //
             // button that lets user add a link URL to selected text
-            MakeLink: () => <u>link</u>,
+            MakeLink: () => <u>a</u>,
             //
             // button that marks selected text as bold (and the reverse)
-            MakeBold: () => <strong>bold</strong>,
+            MakeBold: () => <strong>b</strong>,
             //
             // button that marks selected text as italic (and the reverse)
-            MakeItalic: () => <em>italic</em>,
+            MakeItalic: () => <em>i</em>,
             // button label for image upload control
             UploadImage: () => <span>Upload Image</span>
           }}
