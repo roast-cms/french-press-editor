@@ -41,9 +41,9 @@
     "prepare": "babel src --out-dir dist"
   },
   "dependencies": {
-    "@roast-cms/react-button-beans": "^1.0.2",
+    "@roast-cms/react-button-beans": "^1.1.3",
     "@roast-cms/react-link-filter": "*",
-    "@roast-cms/react-sugar-styled": "^1.0.3",
+    "@roast-cms/react-sugar-styled": "^1.0.4",
     "@roast-cms/slate-drop-or-paste-images": "^0.8.1",
     "is-url": "^1.2.2",
     "keycode": "^2.1.9",
