@@ -1,6 +1,6 @@
 {
   "name": "@roast-cms/french-press-editor",
-  "version": "0.5.0",
+  "version": "0.5.2",
   "description": "An offline-first rich text editor component.",
   "main": "dist/index.js",
   "repository": "https://github.com/roast-cms/french-press-editor.git",
@@ -41,9 +41,9 @@
     "prepare": "babel src --out-dir dist"
   },
   "dependencies": {
-    "@roast-cms/react-button-beans": "*",
+    "@roast-cms/react-button-beans": "^1.0.2",
     "@roast-cms/react-link-filter": "*",
-    "@roast-cms/react-sugar-styled": "*",
+    "@roast-cms/react-sugar-styled": "^1.0.3",
     "@roast-cms/slate-drop-or-paste-images": "^0.8.1",
     "is-url": "^1.2.2",
     "keycode": "^2.1.9",
@@ -55,7 +55,7 @@
     "slate-auto-replace": "^0.9.0",
     "slate-html-serializer": "^0.5.0",
     "slate-react": "^0.12.0",
-    "styled-components": "3.0.2",
+    "styled-components": "^3.2.3",
     "uuid": "^3.1.0"
   }
 }
