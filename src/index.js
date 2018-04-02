@@ -71,7 +71,7 @@ export class FrenchPress extends React.PureComponent {
     console.log(props)
     this.slatePlugins =
       props.slatePlugins && props.slatePlugins.length > 0
-        ? [].concat.apply([], [props.slatePlugins, plugins])
+        ? [].concat.apply([], [plugins, props.slatePlugins])
         : plugins
     //
   }
