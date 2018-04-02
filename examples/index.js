@@ -24,6 +24,10 @@ import {
   FrenchPress
 } from "../src/index"
 //
+// this is a test plugin used in this example to ensure the external
+// plugin extensions work
+import { TestPlugin} from "./plugin"
+//
 // these components will help us build a more-featured editor experience;
 // when importing from an NPM package, they should be sourced from
 // "@roast-cms/french-press-editor/dist/components" folder
@@ -172,7 +176,7 @@ class Editor extends React.PureComponent {
           // <FrenchPress /> component contains a number of Slate plugins
           // customized for a specific user experience; you may add your own
           // plugins here as well should you want to extend them
-          slatePlugins={[]}
+          slatePlugins={[TestPlugin({ key: "b" })]}
         />
       </div>
     )
