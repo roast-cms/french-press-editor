@@ -68,9 +68,10 @@ export class FrenchPress extends React.PureComponent {
     //
     // concatenated pre-defined Slate plugin array with user's selection of
     // Slate plugins
+    console.log(props)
     this.slatePlugins =
-      (props.slatePlugins && props.slatePlugins.length) > 0
-        ? [].contact.apply([], [plugins, props.slatePlugins])
+      props.slatePlugins && props.slatePlugins.length > 0
+        ? [].concat.apply([], [props.slatePlugins, plugins])
         : plugins
     //
   }
@@ -114,7 +115,9 @@ export class FrenchPress extends React.PureComponent {
         })
         unusedImageKeys.length > 0 &&
           console.log(
-            `Removed ${unusedImageKeys.length} unused image(s) from browser's database.`
+            `Removed ${
+              unusedImageKeys.length
+            } unused image(s) from browser's database.`
           )
       })
     }
