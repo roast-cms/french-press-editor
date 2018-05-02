@@ -68,7 +68,6 @@ export class FrenchPress extends React.PureComponent {
     //
     // concatenated pre-defined Slate plugin array with user's selection of
     // Slate plugins
-    console.log(props)
     this.slatePlugins =
       props.slatePlugins && props.slatePlugins.length > 0
         ? [].concat.apply([], [plugins, props.slatePlugins])
