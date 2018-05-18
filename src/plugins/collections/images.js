@@ -6,7 +6,7 @@
 import localForage from "localforage"
 import uuidv1 from "uuid/v1"
 import { forceImageRestrictions } from "../../utils"
-import InsertImages from "@roast-cms/slate-drop-or-paste-images"
+import InsertImages from "slate-drop-or-paste-images"
 //
 // a plugin for inserting images on drag & drop
 export const images = [
