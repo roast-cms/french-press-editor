@@ -6,13 +6,26 @@
 // position
 export const imageButtonPosition = (value, parentOffsets, _this) => {
   const { focusBlock } = value
+  const hideImageButton = () =>
+    _this.setState({
+      cursorContext: { ..._this.state.cursorContext, newLine: false }
+    })
   if (!focusBlock) return
   if (
     focusBlock.type !== "paragraph" &&
     focusBlock.type !== "heading" &&
     focusBlock.type !== "image"
-  )
+  ) {
+    hideImageButton()
     return
+  }
+  if (
+    window.getSelection().rangeCount !== 0 &&
+    window.getSelection().getRangeAt(0).collapsed === false
+  ) {
+    hideImageButton()
+    return
+  }
   const cursorContext = {
     firstEmptyLine: value.document.isEmpty && value.document.nodes.size === 1,
     // if user is focusing on image, "Add Image" button should disappear
