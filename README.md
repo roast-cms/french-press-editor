@@ -10,7 +10,7 @@
 
 ***
 ### Examples in production:
-- **[Analog.Cafe](https://www.analog.cafe/submit/compose):** a film photography publication.
+- **[Analog.Cafe](https://github.com/dmitrizzle/Analog.Cafe):** a film photography publication.
 - **[Archie.AI Blog](https://www.archie.ai/blog/new):** articles from the team behind Archie.AI, an artificially intelligent data scientist.
 ***
 
