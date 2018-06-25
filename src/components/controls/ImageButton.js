@@ -6,9 +6,9 @@
 // tools
 import React from "react"
 import styled from "styled-components"
-//
-// button component
+
 import { TinyButton } from "./Button"
+
 //
 // media query that ensures that the button isn't off-screen on tiny devices
 const ImageButton = styled(TinyButton)`

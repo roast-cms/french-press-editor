@@ -6,9 +6,9 @@
 import React from "react"
 //
 // components
-import { UnquoteButton } from "./components/Unquote"
+import { UnquoteButton } from "./components/controls/Unquote"
 import { makeRelative } from "@roast-cms/react-link-filter/dist/utils"
-import Link from "./components/Link"
+import Link from "./components/controls/Link"
 //
 // CSS for the Unquote button which appears inside the quote for an easy
 // way to revert formatting to plain text

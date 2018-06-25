@@ -6,8 +6,9 @@
 // within React application that works in React Router 4 context.
 //
 // tools
-import React from "react"
 import LinkFilter from "@roast-cms/react-link-filter"
+import React from "react"
+
 //
 export default props => {
   return (

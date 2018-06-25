@@ -3,19 +3,15 @@
 // "☕ A better editorial experience with React.js and Slate."
 //
 // tools
-import React from "react"
+import "localforage-getitems"
+
 import { Editor } from "slate-react"
 import { Value } from "slate"
+import React from "react"
 import getOffsets from "positions"
 import localForage from "localforage"
-import "localforage-getitems"
-//
-// render functions responsible for setting rules on how to render and
-// parse contnet
-import { schema } from "./schema"
-import { renderNode, renderMark } from "./render"
-//
-// utility functions
+
+import { PLACEHOLDER_TEXT, PICTURE_ACCEPTED_UPLOAD_MIME } from "./constants"
 import {
   loadContent, // loads content from localStorage
   saveContent, // saves content into localStorage
@@ -27,16 +23,12 @@ import {
   handleImageButton, // opens up file browser or intermediate component
   handleFileUpload // inserts image into editor and saves in browser's DB
 } from "./utils"
-//
-// a custom set of Slate plugins that could be extended by user
 import { plugins } from "./plugins"
-//
-// constants & defaults
-import { PLACEHOLDER_TEXT, PICTURE_ACCEPTED_UPLOAD_MIME } from "./constants"
-//
-// control components
-import FormatMenu from "./components/FormatMenu"
-import DefaultImageButton from "./components/ImageButton"
+import { renderNode, renderMark } from "./render"
+import { schema } from "./schema"
+import DefaultImageButton from "./components/controls/ImageButton"
+import FormatMenu from "./components/controls/FormatMenu"
+
 //
 // main component export
 export class FrenchPress extends React.PureComponent {

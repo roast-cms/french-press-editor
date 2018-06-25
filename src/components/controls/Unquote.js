@@ -2,11 +2,10 @@
 // Unquote button style for the editor.
 //
 // tools
-import React from "react"
 import styled from "styled-components"
-//
-// components
+
 import { TinyButton } from "./Button"
+
 //
 export const UnquoteButton = styled(TinyButton)`
   width: 6em;

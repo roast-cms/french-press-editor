@@ -4,10 +4,10 @@
 // tools
 import React from "react"
 import styled from "styled-components"
-//
-// components
-import { TinyButton } from "./Button"
+
 import { ButtonStrip, Item } from "./ButtonStrip"
+import { TinyButton } from "./Button"
+
 //
 // CSS
 const Menu = styled(ButtonStrip)`

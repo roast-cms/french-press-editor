@@ -3,11 +3,13 @@
 // a read-only version of the Slate Editor
 //
 // tools
-import React from "react"
 import { Editor } from "slate-react"
 import { Value } from "slate"
-import { schema } from "../schema"
+import React from "react"
+
 import { renderNode, renderMark } from "../render"
+import { schema } from "../schema"
+
 //
 // component export
 export const Reader = props => {

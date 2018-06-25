@@ -6,6 +6,7 @@
 import React from "react"
 import localForage from "localforage"
 import styled from "styled-components"
+
 //
 // CSS
 const Figure = styled.figure`

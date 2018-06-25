@@ -4,11 +4,11 @@
 // Styled Components.
 //
 // tools
-import React from "react"
-//
-// components
 import { TinyButton as TinyButtonInit } from "@roast-cms/react-button-beans"
+import React from "react"
+
 import Link from "./Link"
+
 //
 // Add Link functionality to button components
 export const TinyButton = props =>
