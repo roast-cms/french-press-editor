@@ -1,19 +1,17 @@
-//
-// A component that compiles buttons into a neat strip.
-//
-// tools
-import { Item as ItemInit } from "@roast-cms/react-button-beans"
-import React from "react"
+import { Item as ItemInit } from "@roast-cms/react-button-beans";
+import React from "react";
 
-import { ButtonStrip, ButtonStyles } from './ButtonStrip';
-import Link from "./Link"
+import { ButtonStrip, ButtonStyles } from "./ButtonStrip";
+import Link from "./Link";
 
-//
-// convenience exports
-export { ButtonStrip, ButtonStyles } from "@roast-cms/react-button-beans"
-//
+export { ButtonStrip, ButtonStyles } from "@roast-cms/react-button-beans";
+
+/**
+ * A component that compiles buttons into a neat strip.
+ * @module Item
+ */
 export const Item = props => (
   <ItemInit linkComponent={Link} {...props}>
     {props.children}
   </ItemInit>
-)
+);

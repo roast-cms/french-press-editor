@@ -39,7 +39,8 @@
   },
   "scripts": {
     "start": "webpack-dev-server --mode development",
-    "prepare": "babel src --out-dir dist"
+    "prepare": "babel src --out-dir dist",
+    "docs": "jsdoc2md src/*.js > docs/README.md; jsdoc2md src/components/**/*.js > docs/COMPONENTS.md"
   },
   "dependencies": {
     "@roast-cms/react-button-beans": "^1.1.3",

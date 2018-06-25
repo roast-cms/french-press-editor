@@ -20,24 +20,82 @@
 ```
 yarn add @roast-cms/french-press-editor
 ```
-Then, in your project:
+
+## API
+For complete API reference refer to [docummentation](./docs).
+
+# Usage Example
+
+`french-press-editor` was built for fast installation and with a pre-defined set of tools. It's meant to make a good editorial experience that has most of the required features of a typical blog or publication entry for your users with the absolute minimum required from you, the developer. This tool is extendable, via Slate's [plugins](https://github.com/ianstormtaylor/slate/blob/master/docs/general/plugins.md) infrastructure, however, it has some prerequisites and opinionated limitations.
+
+## Quick start
+1. Get your WebPack/React.js environment ready (see **React.js environment** below).
+1. Install packages listed in **peer dependencies** section below.
+1. Run the code from **MVP** section (below) in your `index.js`.
+
+## React.js environment
+In order for you to use this tool you'll need to have React.js development environment working on your machine. If you don't and don't know where to start, have a look at [create-react-app](https://github.com/facebook/create-react-app). CRA will take care of everything that you need for you, though if you have your own system please make sure that you've got Babel transpiler, with an ability to load imports dynamically, understand spread operators, and this: `babel-plugin-transform-class-properties`.
+
+## Peer dependencies
+There are a few peer dependencies that you will need to install and manage yourself in order to use `french-press-editor`. The reason for this is that they tend to be used in other parts of blog and publication apps, so to keep the bundle size as small as possible you are being forced to use a single version of those components throughout. Here's what you'll need:
+
+```
+"peerDependencies": {
+  "immutable": "^3.8.2",
+  "react": "^16.0.0",
+  "react-dom": "^16.0.0",
+  "react-router-dom": "^4.2.2"
+}
+```
+You can run `yarn add immutable` (and so fourth) on all of the above packages.
+
+## MVP
+`index.js` in this folder gives you a complete example with full usage API (aside from importing custom components and plugins). However, to get started you don't need to build all that. Assuming you got your environment working and have all the dependencies installed this is what your component should have at minimum in order to render:
+
 ```javascript
-import { BrowserRouter } from "react-router-dom"
+//
+// tools
+import React from "react"
+import { render } from "react-dom"
 import { ThemeProvider } from "styled-components"
+import { BrowserRouter } from "react-router-dom"
+//
+// theming is required to properly render the styled-components
+// elements, however you can change it as you wish;
+// please refer to the documentation and the code in the below component's repo
+// to figure out how to do this yourself
 import { Sugar } from "@roast-cms/react-sugar-styled"
 //
-import { FrenchPress, Picture, Wrapper } from "@roast-cms/french-press-editor"
+// editor and components that help render it
+// [ note that in this case components are loaded from NPM,
+// while in the example files they are loaded from project folder ]
+import { FrenchPress, Wrapper } from "@roast-cms/french-press-editor"
+import { Wrapper } from "@roast-cms/french-press-editor/dist/components/Wrapper"
 //
-const App props =>
-  <ThemeProvider theme={Sugar()}>
-    <BrowserRouter>
-      <Wrapper>
-        <Editor />
-      </Wrapper>
-    </BrowserRouter>
-  </ThemeProvider>
+// this component will render the editor
+render(
+  <div>
+    <ThemeProvider theme={Sugar}>
+      <BrowserRouter>
+        <Wrapper>
+          <FrenchPress />
+        </Wrapper>
+      </BrowserRouter>
+    </ThemeProvider>
+  </div>,
+  window.document.getElementById("app")
+)
 ```
-### 👉 Further installation instructions and API reference **[here](/examples/README.md)**.
+The above, however, won't let you add add and store images within your content. To do that simply add the provided `<Picture />` component as a prop:
+```javascript
+// ...
+import { FrenchPress } from "@roast-cms/french-press-editor"
+import { Wrapper } from "@roast-cms/french-press-editor/dist/components/Wrapper"
+import { Picture } from "@roast-cms/french-press-editor/dist/containers/Picture"
+// ...
+<FrenchPress components={{Picture}} />
+// ...
+```
 
 <p align="center"><img src="/graphics/demo-3.gif?raw=true)" width="600" alt="theming the controls" /></p>
 

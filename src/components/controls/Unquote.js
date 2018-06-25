@@ -1,12 +1,11 @@
-//
-// Unquote button style for the editor.
-//
-// tools
-import styled from "styled-components"
+import styled from "styled-components";
 
-import { TinyButton } from "./Button"
+import { TinyButton } from "./Button";
 
-//
+/**
+ * CSS for the Unquote button which appears inside the quote for an easy way to revert formatting to plain text.
+ * @module UnquoteButton
+ */
 export const UnquoteButton = styled(TinyButton)`
   width: 6em;
   margin: 1.35em -${props => props.theme.size.block.padding}em -3.35em 0;
@@ -16,4 +15,4 @@ export const UnquoteButton = styled(TinyButton)`
   ${props => props.theme.size.breakpoint.max.m`
     right: ${props => props.theme.size.block.spacing / 2}em;
   `};
-`
+`;
