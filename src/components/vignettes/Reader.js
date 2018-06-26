@@ -1,23 +1,20 @@
-//
-// `<Reader />` component,
-// a read-only version of the Slate Editor
-//
-// tools
-import { Editor } from "slate-react"
-import { Value } from "slate"
-import React from "react"
+import { Editor } from "slate-react";
+import { Value } from "slate";
+import React from "react";
 
-import { renderNode, renderMark } from "../render"
-import { schema } from "../schema"
+import { renderNode, renderMark } from "../render";
+import { schema } from "../schema";
 
-//
-// component export
+/**
+ * A read-only version of Slate Editor to easily render the JSON document state.
+ * @module Reader
+ * @prop {Object} options A pre-defined set of options to run the render, includes `domain` and `imagePlaceholder`
+ * @prop {Object} components Any additional components, like `Picture` and other.
+ * @prop {Object} value Slate `Value` state to be rendered into human-readable content.
+ */
 export const Reader = props => {
   return (
     <Editor
-      // this is the Slate editor component that renders Slate JSON value object
-      //
-      // props defineable by user
       options={{
         ...props.options,
         imagePlaceholder:
@@ -27,12 +24,11 @@ export const Reader = props => {
       }}
       components={props.components}
       value={Value.fromJSON(props.value)}
-      //
-      // props inferred from Editor architecture
+
       readOnly
       schema={schema}
       renderNode={renderNode}
       renderMark={renderMark}
     />
-  )
-}
+  );
+};

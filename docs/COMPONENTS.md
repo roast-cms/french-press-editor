@@ -19,6 +19,15 @@
 <dt><a href="#module_UnquoteButton">UnquoteButton</a></dt>
 <dd><p>CSS for the Unquote button which appears inside the quote for an easy way to revert formatting to plain text.</p>
 </dd>
+<dt><a href="#module_Picture">Picture</a></dt>
+<dd><p>This component will render an image if it&#39;s an URL or request <code>data-uri</code> from browser&#39;s database using <code>localForage</code>.</p>
+</dd>
+<dt><a href="#module_Reader">Reader</a></dt>
+<dd><p>A read-only version of Slate Editor to easily render the JSON document state.</p>
+</dd>
+<dt><a href="#module_Wrapper">Wrapper</a></dt>
+<dd><p>Default CSS styles that visually render the editor component (nicely) using Styled Components.</p>
+</dd>
 </dl>
 
 <a name="module_TinyButton"></a>
@@ -56,4 +65,45 @@ An implementation of `@roast-cms/react-link-filter` component that's built on to
 
 ## UnquoteButton
 CSS for the Unquote button which appears inside the quote for an easy way to revert formatting to plain text.
+
+<a name="module_Picture"></a>
+
+## Picture
+This component will render an image if it's an URL or request `data-uri` from browser's database using `localForage`.
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| node | <code>Object</code> | Slate Editor node object. |
+| attributes | <code>Object</code> | Attributes for the Slate Editor node. |
+| isSelected | <code>Boolean</code> | Specifies whether the image is in user's focus. |
+| editor | <code>Object</code> | Slate Editor state. |
+
+<a name="module_Picture..loadImage"></a>
+
+### Picture~loadImage()
+Load image from URL or browser database via localForage
+
+**Kind**: inner method of [<code>Picture</code>](#module_Picture)  
+**Parameter**: <code>Object</code> file image file  
+**Parameter**: <code>String</code> key key to image file in browser DB  
+**Parameter**: <code>String</code> src  
+<a name="module_Reader"></a>
+
+## Reader
+A read-only version of Slate Editor to easily render the JSON document state.
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| options | <code>Object</code> | A pre-defined set of options to run the render, includes `domain` and `imagePlaceholder` |
+| components | <code>Object</code> | Any additional components, like `Picture` and other. |
+| value | <code>Object</code> | Slate `Value` state to be rendered into human-readable content. |
+
+<a name="module_Wrapper"></a>
+
+## Wrapper
+Default CSS styles that visually render the editor component (nicely) using Styled Components.
 
