@@ -16,6 +16,9 @@
 <dt><a href="#module_images">images</a></dt>
 <dd><p>A plugin that lets user drag and drop images into the document (which then stores them in the browser database as files).</p>
 </dd>
+<dt><a href="#module_quote">quote</a></dt>
+<dd><p>An array of plugins that creates quotes out of markup (<code>&gt; Text</code>) strings, cancels headings if user hits Backspace at the begginning of the line and exits quote block into a new default paragraph if user hits Enter at the end of the line.</p>
+</dd>
 <dt><a href="#module_plugins">plugins</a></dt>
 <dd><p>A concatenation of all plugins required to run <code>french-press-editor</code> into a single array.</p>
 </dd>
@@ -106,6 +109,11 @@ Stores image file in browser database.
 Inserts image block into document.
 
 **Kind**: inner method of [<code>images</code>](#module_images)  
+<a name="module_quote"></a>
+
+## quote
+An array of plugins that creates quotes out of markup (`> Text`) strings, cancels headings if user hits Backspace at the begginning of the line and exits quote block into a new default paragraph if user hits Enter at the end of the line.
+
 <a name="module_plugins"></a>
 
 ## plugins

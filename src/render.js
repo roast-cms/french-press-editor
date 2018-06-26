@@ -8,6 +8,7 @@ import Link from "./components/controls/Link"
  * Defines how all block-level nodes within the document are going to be rendered.
  * @function renderNode
  * @param props
+ * @return {Object}
  */
 export const renderNode = props => {
   const { node, attributes, children, isSelected, editor } = props
@@ -114,6 +115,7 @@ export const renderNode = props => {
 /**
  * Marks are inline "rules" for text that apply bold and italic formatting.
  * @function renderMark
+ * @return {Object}
  */
 export const renderMark = props => {
   const { children, mark } = props

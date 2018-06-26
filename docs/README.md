@@ -38,13 +38,13 @@
 ## Functions
 
 <dl>
-<dt><a href="#renderNode">renderNode(props)</a></dt>
+<dt><a href="#renderNode">renderNode(props)</a> ⇒ <code>Object</code></dt>
 <dd><p>Defines how all block-level nodes within the document are going to be rendered.</p>
 </dd>
-<dt><a href="#renderMark">renderMark()</a></dt>
+<dt><a href="#renderMark">renderMark()</a> ⇒ <code>Object</code></dt>
 <dd><p>Marks are inline &quot;rules&quot; for text that apply bold and italic formatting.</p>
 </dd>
-<dt><a href="#squish">squish()</a></dt>
+<dt><a href="#squish">squish()</a> ⇒ <code>String</code></dt>
 <dd><p>Flattens HTML into plain text.</p>
 </dd>
 </dl>
@@ -262,7 +262,7 @@ A set of rules that transform document structure and keep it normalized to a def
 
 <a name="renderNode"></a>
 
-## renderNode(props)
+## renderNode(props) ⇒ <code>Object</code>
 Defines how all block-level nodes within the document are going to be rendered.
 
 **Kind**: global function  
@@ -273,13 +273,13 @@ Defines how all block-level nodes within the document are going to be rendered.
 
 <a name="renderMark"></a>
 
-## renderMark()
+## renderMark() ⇒ <code>Object</code>
 Marks are inline "rules" for text that apply bold and italic formatting.
 
 **Kind**: global function  
 <a name="squish"></a>
 
-## squish()
+## squish() ⇒ <code>String</code>
 Flattens HTML into plain text.
 
 **Kind**: global function  

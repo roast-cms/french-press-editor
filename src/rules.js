@@ -9,6 +9,7 @@ import { BLOCK_TAGS, MARK_TAGS } from "./constants";
 /**
  * Flattens HTML into plain text.
  * @function squish
+ * @return {String}
  */
 const squish = el => {
   el.innerHTML = el.innerText || el.textContent;
