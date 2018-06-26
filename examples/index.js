@@ -2,11 +2,11 @@ import "typeface-rajdhani"
 import "typeface-yanone-kaffeesatz"
 
 import { BrowserRouter } from "react-router-dom"
-import { Sugar } from "@roast-cms/react-sugar-styled"
 import { ThemeProvider } from "styled-components"
 import { render } from "react-dom"
 import React from "react"
 
+import { EXAMPLE_THEME } from './constants';
 import {
   //
   // editor compoent itself
@@ -169,30 +169,7 @@ class Editor extends React.PureComponent {
 // render everything!
 render(
   <div>
-    <ThemeProvider theme={Sugar({
-      //
-      // you can "theme" your editor components with react-sugar-styled
-      // theming dictionary API
-      //
-      color_brand: "rgb(132,50,72)",
-      //
-      font_heading: "'Yanone Kaffeesatz', sans-serif",
-      font_heading_weight: 400,
-      //
-      font_body: "'Rajdhani', sans-serif",
-      //
-      size_base: 20,
-      size_column_medium: 700,
-      size_column_large: 900,
-      size_block_spacing: .75,
-      //
-      effects_border_radius: .75,
-      //
-      // for detailed docs on how to customize buttons' theme please refer to
-      // the guide on https://github.com/roast-cms/react-sugar-styled
-      // - it is a themeing dictionary used with Styled Components
-      //
-    })}>
+    <ThemeProvider theme={EXAMPLE_THEME}>
       <BrowserRouter>
         <Wrapper>
           <Editor />

@@ -4,6 +4,6 @@ import { shallow } from "enzyme";
 
 import { TinyButton } from "./Button";
 
-it("Render TinyButton without crashing", () => {
+test("Render TinyButton without crashing", () => {
   shallow(<TinyButton />);
 });
