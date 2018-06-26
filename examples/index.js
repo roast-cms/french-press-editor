@@ -1,7 +1,3 @@
-//
-// An example file that you can use to build your own editor experience!
-//
-// tools
 import "typeface-rajdhani"
 import "typeface-yanone-kaffeesatz"
 

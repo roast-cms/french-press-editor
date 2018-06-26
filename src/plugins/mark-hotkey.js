@@ -1,29 +1,21 @@
-//
-// A plugin function that turns Slate plain text into formatted text with
-// bold or italic styles.
-//
-// tools
-import keycode from "keycode"
-//
+import keycode from "keycode";
+
+/**
+ * MarkHotkey - A plugin function that turns Slate plain text into formatted text with bold or italic styles.
+ *
+ * @param  {Object} options
+ * @return {Event}  Change Transformation for Slate.
+ */
+
 export function MarkHotkey(options) {
-  const { type, key } = options
-  //
-  // return our "plugin" object, containing the `onKeyDown` handler.
+  const { type, key } = options;
   return {
     onKeyDown(event, change) {
-      //
-      // marks are only allowed in paragraphs
-      if (change.value.focusBlock.type !== "paragraph") return
-      //
-      // check that the key pressed matches our `code` option.
-      if (!event.metaKey || keycode(event.which) !== key) return
-      //
-      // prevent the default characters from being inserted.
-      event.preventDefault()
-      //
-      // toggle the mark `type`.
-      change.toggleMark(type)
-      return true
+      if (change.value.focusBlock.type !== "paragraph") return;
+      if (!event.metaKey || keycode(event.which) !== key) return;
+      event.preventDefault();
+      change.toggleMark(type);
+      return true;
     }
-  }
+  };
 }
