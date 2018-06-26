@@ -1,19 +1,17 @@
-//
-// Default CSS styles that visually render the editor component (nicely)
-// using Styled Components.
-//
-// tools
-import styled from "styled-components"
-//
-// CSS
+import styled from "styled-components";
+
+/**
+ * Default CSS styles that visually render the editor component (nicely) using Styled Components.
+ * @module Wrapper
+ */
 export const Wrapper = styled.div`
   background: ${props => props.theme.color.background};
   max-width: 600px;
   margin: 2em auto;
   font-size: 1.24em;
   ${props => props.theme.size.font.auto} ${props =>
-      props.theme.typography.text.auto} padding: ${props =>
-      props.theme.size.block.spacing}em;
+  props.theme.typography.text.auto} padding: ${props =>
+  props.theme.size.block.spacing}em;
   max-width: ${props => props.theme.size.block.column.m}px;
   ${props =>
     props.theme.size.breakpoint.min.xxl`max-width: ${props =>
@@ -21,7 +19,7 @@ export const Wrapper = styled.div`
 
   h3 {
     ${props => props.theme.typography.title.auto} font-size: ${props =>
-        props.theme.size.font.make.larger}em;
+  props.theme.size.font.make.larger}em;
     margin: .5em 0;
   }
   blockquote {
@@ -45,4 +43,4 @@ export const Wrapper = styled.div`
   .french-press_undo-heading, .french-press_undo-heading-container {
     padding: .5em;
   }
-`
+`;

@@ -1,12 +1,14 @@
-//
-// An array of plugins that makes quotes smart, turns dashes into long dashes
-// and triple dots into an ellipsis.
-//
-// plugin
 import AutoReplace from "slate-auto-replace"
-//
+
+/**
+ * An array of plugins that makes quotes smart, turns dashes into long dashes and triple dots into an ellipsis.
+ * @module chars
+ */
 export const chars = [
-  // smart quotes
+  /**
+   * Smart quotes.
+   * @function AutoReplace
+   */
   AutoReplace({
     trigger: /(")/,
     before: /[^ ”]$/,
@@ -36,7 +38,10 @@ export const chars = [
     }
   }),
 
-  // long dash and ellipsis
+  /**
+   * Long dash and ellipsis.
+   * @function AutoReplace
+   */
   AutoReplace({
     trigger: "space",
     before: /( -)$/,

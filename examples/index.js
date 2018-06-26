@@ -1,36 +1,17 @@
-//
-// An example file that you can use to build your own editor experience!
-//
-// tools
-import React from "react"
-import { render } from "react-dom"
-import { ThemeProvider } from "styled-components"
-import { BrowserRouter } from "react-router-dom"
-//
-// theming is required to properly render the styled-components
-// elements, however you can change it as you wish;
-// please refer to the documentation and the code in the below component's repo
-// to figure out how to do this yourself
-import { Sugar } from "@roast-cms/react-sugar-styled"
-//
-// fonts for the theme
-import "typeface-yanone-kaffeesatz"
 import "typeface-rajdhani"
-//
-// editor and components that help render it
+import "typeface-yanone-kaffeesatz"
+
+import { BrowserRouter } from "react-router-dom"
+import { Sugar } from "@roast-cms/react-sugar-styled"
+import { ThemeProvider } from "styled-components"
+import { render } from "react-dom"
+import React from "react"
+
 import {
   //
   // editor compoent itself
   FrenchPress
 } from "../src/index"
-//
-// this is a test plugin used in this example to ensure the external
-// plugin extensions work
-import { TestPlugin} from "./plugin"
-//
-// these components will help us build a more-featured editor experience;
-// when importing from an NPM package, they should be sourced from
-// "@roast-cms/french-press-editor/dist/components" folder
 import {
   //
   // picture component that you will need to pass as a prop in order to
@@ -40,7 +21,8 @@ import {
   // project; advanced Picture components may be created later for you to
   // choose from within a different repo/package
   Picture
-} from "../src/containers/Picture"
+} from "../src/components/vignettes/Picture"
+import { TestPlugin} from "./plugin"
 import {
   //
   // wrapper component contains some default styles that make your editor
@@ -49,7 +31,8 @@ import {
   // css in another way
   Wrapper
   //
-} from "../src/components/Wrapper"
+} from '../src/components/vignettes/Wrapper';
+
 //
 // this component will render the editor
 class Editor extends React.PureComponent {

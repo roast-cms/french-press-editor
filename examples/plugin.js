@@ -1,7 +1,5 @@
-// tools
 import keycode from "keycode"
 
-// return
 export const TestPlugin = options => {
   const { key } = options
 
