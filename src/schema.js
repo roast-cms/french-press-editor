@@ -1,17 +1,13 @@
-//
-// A structure that Slate follows to display document content.
-//
-// tools
 import { Block } from "slate"
-//
-// schema is a set of rules that transform document structure and keep
-// it normalized to a defined format
+
+/**
+ * A set of rules that transform document structure and keep it normalized to a defined format.
+ * @constant schema
+ * @property {Array} nodes Acceptable nodes within editor document.
+ * @property {Object} last Defines at least one empty paragraph block that follows a void block (such as picture); this is required to ensure that the user can continue adding content without additional effort below uploaded images (otherwise they will be forced to move the image up to free up a trailing paragraph space).
+ */
 export const schema = {
-  //
-  // document-level prescription
   document: {
-    //
-    // acceptable nodes within editor document
     nodes: [
       {
         types: [
@@ -25,12 +21,6 @@ export const schema = {
         ]
       }
     ],
-    //
-    // the following definition ensures that there's at least one empty
-    // paragraph block that follows a void block (such as picture);
-    // this is required to ensure that the user can continue adding content
-    // without additional effort below uploaded images (otherwise they will
-    // be forced to move the image up to free up a trailing paragraph space)
     last: { types: ["paragraph"] },
     normalize: (change, reason, { node, child }) => {
       switch (reason) {
@@ -43,8 +33,6 @@ export const schema = {
       }
     }
   },
-  //
-  // definitions for the block types and what they may contain within editor
   blocks: {
     link: {
       nodes: [{ objects: ["text"] }]
@@ -62,8 +50,6 @@ export const schema = {
       isVoid: true
     }
   },
-  //
-  // inline node definitions
   inlines: {
     quote: {
       nodes: [{ types: ["text"] }]

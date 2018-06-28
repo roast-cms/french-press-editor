@@ -1,32 +1,20 @@
-//
-// A "prescription" set of React components which render given block types
-// and text marksups.
-//
-// tools
-import React from "react"
-//
-// components
-import { UnquoteButton } from "./components/Unquote"
 import { makeRelative } from "@roast-cms/react-link-filter/dist/utils"
-import Link from "./components/Link"
-//
-// CSS for the Unquote button which appears inside the quote for an easy
-// way to revert formatting to plain text
-//
-// this function defines how all block-level nodes within the document
-// are going to be rendered
+import React from "react"
+
+import Unquote from "./components/controls/Unquote"
+import Link from "./components/controls/Link"
+
+/**
+ * Defines how all block-level nodes within the document are going to be rendered.
+ * @function renderNode
+ * @param props
+ * @return {Object}
+ */
 export const renderNode = props => {
-  //
-  // derrive values from props
   const { node, attributes, children, isSelected, editor } = props
   const focus = editor.value.isFocused && isSelected
   const focusClassName = focus ? "focus" : "nofocus"
-  //
-  // cycle through nodes and assign appropriate rendering components
-  // depending on node type
   switch (node.type) {
-    //
-    // the simplest and the default type of block: a paragraph of text
     case "paragraph":
       return (
         <p {...attributes}>
@@ -34,42 +22,25 @@ export const renderNode = props => {
         </p>
       )
     case "heading":
-      //
-      // a single type of heading; the most common use of headings within
-      // text seems to be to just have one type, besides the main content
-      // title/subtitle etc.; in order to accomondate for two title levels
-      // for each document <h3/> was picked as the most likely DOM
-      // element to preserve best symantic structure
       return (
         <h3>
           {children}
         </h3>
       )
-    //
-    // divider line element
     case "divider":
       return <hr className={focusClassName} />
-    //
-    // this is a quote level block that comes with an internal "Unquote"
-    // button to help user reset the block to the default paragraph
     case "quote":
       return (
         <div style={{ clear: "both" }}>
           {!props.readOnly &&
             focus &&
-            <UnquoteButton
-              //
-              // css class to help easy styling by developer outside of
-              // this component
+            <Unquote
               className="french-press_unquote"
-              //
-              // below attributes remove this button from the usual
-              // text context of a browser input field
+
               contentEditable="false"
               spellCheck="false"
               suppressContentEditableWarning
-              //
-              // clear the quote style
+
               onClick={event => {
                 event.preventDefault()
                 editor.onChange(
@@ -81,23 +52,16 @@ export const renderNode = props => {
                     .focus()
                 )
               }}
-              //
-              // colour the button in to the main theme shade
+
               branded
             >
               Unquote
-            </UnquoteButton>}
+            </Unquote>}
           <blockquote {...attributes} className={focusClassName}>
             {children}
           </blockquote>
         </div>
       )
-    //
-    // this is the most complex block-element that requires to be developed
-    // outside; a default image component is provided within
-    // ./containers/Picture.js, however, user may develop their own, more
-    // advanced component (see Analog.Cafe as an example) and pass it in props
-    // when initializing <FrenchPress /> component
     case "image": {
       if (
         props.editor.props.components &&
@@ -127,12 +91,6 @@ export const renderNode = props => {
         return null
       }
     }
-    //
-    // link components are inline blocks that contain url data; <Link /> component
-    // is used here, which is built with @roast-cms/react-link-filter tool
-    // that allows for smoother browser experience with react-router
-    // a smarter way to deal with external links, internal and relative links
-    // as well as fixes user input should they forget to include http://
     case "link": {
       const { data } = node
       const href = data.get("href")
@@ -145,8 +103,6 @@ export const renderNode = props => {
         </Link>
       )
     }
-    //
-    // default block is a paragraph
     default:
       return (
         <p {...attributes}>
@@ -155,8 +111,12 @@ export const renderNode = props => {
       )
   }
 }
-//
-// marks are inline "rules" for text that apply bold and italic formatting
+
+/**
+ * Marks are inline "rules" for text that apply bold and italic formatting.
+ * @function renderMark
+ * @return {Object}
+ */
 export const renderMark = props => {
   const { children, mark } = props
   switch (mark.type) {

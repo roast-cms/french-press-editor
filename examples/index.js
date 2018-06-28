@@ -1,46 +1,18 @@
-//
-// An example file that you can use to build your own editor experience!
-//
-// tools
-import React from "react"
-import { render } from "react-dom"
-import { ThemeProvider } from "styled-components"
-import { BrowserRouter } from "react-router-dom"
-//
-// theming is required to properly render the styled-components
-// elements, however you can change it as you wish;
-// please refer to the documentation and the code in the below component's repo
-// to figure out how to do this yourself
-import { Sugar } from "@roast-cms/react-sugar-styled"
-//
-// fonts for the theme
-import "typeface-yanone-kaffeesatz"
-import "typeface-rajdhani"
-//
-// editor and components that help render it
+import "typeface-rajdhani";
+import "typeface-yanone-kaffeesatz";
+
+import { BrowserRouter } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
+import { render } from "react-dom";
+import React from "react";
+
+import { EXAMPLE_THEME } from "./constants";
 import {
   //
   // editor compoent itself
   FrenchPress
-} from "../src/index"
-//
-// this is a test plugin used in this example to ensure the external
-// plugin extensions work
-import { TestPlugin} from "./plugin"
-//
-// these components will help us build a more-featured editor experience;
-// when importing from an NPM package, they should be sourced from
-// "@roast-cms/french-press-editor/dist/components" folder
-import {
-  //
-  // picture component that you will need to pass as a prop in order to
-  // render images within your documents; you can create your own Picture
-  // compnent with advanced features like subtitles, various custom positions,
-  // responsive image sizes etc, however that's outside the scope of this
-  // project; advanced Picture components may be created later for you to
-  // choose from within a different repo/package
-  Picture
-} from "../src/containers/Picture"
+} from "../src/index";
+import { TestPlugin } from "./plugin";
 import {
   //
   // wrapper component contains some default styles that make your editor
@@ -49,17 +21,26 @@ import {
   // css in another way
   Wrapper
   //
-} from "../src/components/Wrapper"
+} from "../src/components/vignettes/Wrapper";
+import //
+// picture component that you will need to pass as a prop in order to
+// render images within your documents; you can create your own Picture
+// compnent with advanced features like subtitles, various custom positions,
+// responsive image sizes etc, however that's outside the scope of this
+// project; advanced Picture components may be created later for you to
+// choose from within a different repo/package
+Picture from "../src/components/vignettes/Picture";
+
 //
 // this component will render the editor
-class Editor extends React.PureComponent {
+export class Editor extends React.PureComponent {
   //
   // initializing component state
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       status: "ok"
-    }
+    };
   }
   //
   // handle editor's save status callback function, this function
@@ -67,8 +48,8 @@ class Editor extends React.PureComponent {
   handleCallbackStatus = status => {
     this.setState({
       status
-    })
-  }
+    });
+  };
   //
   // render editor compnent!
   render = () => {
@@ -79,7 +60,7 @@ class Editor extends React.PureComponent {
           this component displays the save status that's being updated
           every time the content is saved into localStorage
         */}
-        <div style={{background: "#eee", color: "#999", padding: ".5em"}}>
+        <div style={{ background: "#eee", color: "#999", padding: ".5em" }}>
           {this.state.status === "ok" ? "Draft Saved." : "Saving..."}
         </div>
         {/*
@@ -127,7 +108,7 @@ class Editor extends React.PureComponent {
             // by default an image placeholder is a grey pixel, however, you can
             // specify your own here
             imagePlaceholder:
-              "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+              "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
             //
             // maximum upload image size in megabytes
             //imageMaxSize: 10
@@ -141,7 +122,7 @@ class Editor extends React.PureComponent {
           // that you may like to display within your own dialogue box or interface;
           // i.e.: "Image is too large!"
           callbackError={(error, reason) => {
-            console.log(error, reason)
+            console.log(error, reason);
           }}
           //
           // this prop returns Slate Editor component ref to be used by developer
@@ -179,37 +160,14 @@ class Editor extends React.PureComponent {
           slatePlugins={[TestPlugin({ key: "b" })]}
         />
       </div>
-    )
-  }
+    );
+  };
 }
 //
 // render everything!
 render(
   <div>
-    <ThemeProvider theme={Sugar({
-      //
-      // you can "theme" your editor components with react-sugar-styled
-      // theming dictionary API
-      //
-      color_brand: "rgb(132,50,72)",
-      //
-      font_heading: "'Yanone Kaffeesatz', sans-serif",
-      font_heading_weight: 400,
-      //
-      font_body: "'Rajdhani', sans-serif",
-      //
-      size_base: 20,
-      size_column_medium: 700,
-      size_column_large: 900,
-      size_block_spacing: .75,
-      //
-      effects_border_radius: .75,
-      //
-      // for detailed docs on how to customize buttons' theme please refer to
-      // the guide on https://github.com/roast-cms/react-sugar-styled
-      // - it is a themeing dictionary used with Styled Components
-      //
-    })}>
+    <ThemeProvider theme={EXAMPLE_THEME}>
       <BrowserRouter>
         <Wrapper>
           <Editor />
@@ -218,4 +176,4 @@ render(
     </ThemeProvider>
   </div>,
   window.document.getElementById("app")
-)
+);
