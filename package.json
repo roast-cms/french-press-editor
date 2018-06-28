@@ -21,8 +21,10 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "file-loader": "^1.1.11",
+    "identity-obj-proxy": "^3.0.0",
     "immutable": "^3.8.2",
     "jest": "^23.2.0",
+    "jest-localstorage-mock": "^2.2.0",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
     "react-router-dom": "^4.2.2",
@@ -66,9 +68,8 @@
   },
   "jest": {
     "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
-        "<rootDir>/__mocks__/fileMock.js",
-      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "identity-obj-proxy"
     },
     "setupTestFrameworkScriptFile": "<rootDir>/setupTests.js"
   }

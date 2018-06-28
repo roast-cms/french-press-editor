@@ -2093,6 +2093,15 @@ css-what@2.1:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/css-what/-/css-what-2.1.0.tgz#9467d032c38cfaefb9f2d79501253062f87fa1bd"
 
+css@^2.2.1:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/css/-/css-2.2.3.tgz#f861f4ba61e79bedc962aa548e5780fd95cbc6be"
+  dependencies:
+    inherits "^2.0.1"
+    source-map "^0.1.38"
+    source-map-resolve "^0.5.1"
+    urix "^0.1.0"
+
 cssesc@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/cssesc/-/cssesc-0.1.0.tgz#c814903e45623371a0477b40109aaafbeeaddbb4"
@@ -3339,6 +3348,10 @@ har-validator@~5.0.3:
     ajv "^5.1.0"
     har-schema "^2.0.0"
 
+harmony-reflect@^1.4.6:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/harmony-reflect/-/harmony-reflect-1.6.0.tgz#9c28a77386ec225f7b5d370f9861ba09c4eea58f"
+
 has-ansi@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/has-ansi/-/has-ansi-2.0.0.tgz#34f5049ce1ecdf2b0649af3ef24e45ed35416d91"
@@ -3573,6 +3586,12 @@ icss-utils@^2.1.0:
   resolved "https://registry.yarnpkg.com/icss-utils/-/icss-utils-2.1.0.tgz#83f0a0ec378bf3246178b6c2ad9136f135b1c962"
   dependencies:
     postcss "^6.0.1"
+
+identity-obj-proxy@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/identity-obj-proxy/-/identity-obj-proxy-3.0.0.tgz#94d2bda96084453ef36fbc5aaec37e0f79f1fc14"
+  dependencies:
+    harmony-reflect "^1.4.6"
 
 ieee754@^1.1.11, ieee754@^1.1.4:
   version "1.1.12"
@@ -4281,6 +4300,10 @@ jest-leak-detector@^23.2.0:
   dependencies:
     pretty-format "^23.2.0"
 
+jest-localstorage-mock@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/jest-localstorage-mock/-/jest-localstorage-mock-2.2.0.tgz#ce9a9de01dfdde2ad8aa08adf73acc7e5cc394cf"
+
 jest-matcher-utils@^23.2.0:
   version "23.2.0"
   resolved "https://registry.yarnpkg.com/jest-matcher-utils/-/jest-matcher-utils-23.2.0.tgz#4d4981f23213e939e3cedf23dc34c747b5ae1913"
@@ -4380,6 +4403,12 @@ jest-snapshot@^23.2.0:
     mkdirp "^0.5.1"
     natural-compare "^1.4.0"
     pretty-format "^23.2.0"
+
+jest-styled-components@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/jest-styled-components/-/jest-styled-components-5.0.1.tgz#386c5a161a0f5e783444d624bfc18c6d228d1277"
+  dependencies:
+    css "^2.2.1"
 
 jest-util@^23.2.0:
   version "23.2.0"
@@ -7053,7 +7082,7 @@ source-list-map@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/source-list-map/-/source-list-map-2.0.0.tgz#aaa47403f7b245a92fbc97ea08f250d6087ed085"
 
-source-map-resolve@^0.5.0:
+source-map-resolve@^0.5.0, source-map-resolve@^0.5.1:
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/source-map-resolve/-/source-map-resolve-0.5.2.tgz#72e2cc34095543e43b2c62b2c4c10d4a9054f259"
   dependencies:
@@ -7079,6 +7108,12 @@ source-map-support@^0.5.6:
 source-map-url@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/source-map-url/-/source-map-url-0.4.0.tgz#3e935d7ddd73631b97659956d55128e87b5084a3"
+
+source-map@^0.1.38:
+  version "0.1.43"
+  resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.1.43.tgz#c24bc146ca517c1471f5dacbe2571b2b7f9e3346"
+  dependencies:
+    amdefine ">=0.0.4"
 
 source-map@^0.4.4:
   version "0.4.4"

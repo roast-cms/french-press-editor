@@ -1,4 +1,4 @@
-import { Item as ItemInit } from "@roast-cms/react-button-beans";
+import { Item as ItemChild } from "@roast-cms/react-button-beans";
 import React from "react";
 
 import { ButtonStrip, ButtonStyles } from "./ButtonStrip";
@@ -11,7 +11,7 @@ export { ButtonStrip, ButtonStyles } from "@roast-cms/react-button-beans";
  * @module Item
  */
 export const Item = props => (
-  <ItemInit linkComponent={Link} {...props}>
+  <ItemChild linkComponent={Link} {...props}>
     {props.children}
-  </ItemInit>
+  </ItemChild>
 );
