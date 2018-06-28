@@ -1,5 +1,5 @@
 # french-press-editor
-[![npm version](https://badge.fury.io/js/%40roast-cms%2Ffrench-press-editor.svg)](https://badge.fury.io/js/%40roast-cms%2Ffrench-press-editor)
+[![npm version](https://badge.fury.io/js/%40roast-cms%2Ffrench-press-editor.svg)](https://badge.fury.io/js/%40roast-cms%2Ffrench-press-editor) [![Build Status](https://travis-ci.com/roast-cms/french-press-editor.svg?branch=develop)](https://travis-ci.com/roast-cms/french-press-editor)
 > ☕ An offline-first rich text editor component.
 
 <p align="center"><img src="/graphics/demo-1.gif?raw=true)" width="600" alt="getting started with french-press-editor" /></p>
