@@ -4,12 +4,12 @@ import React from "react";
 import { shallow } from "enzyme";
 
 import { EXAMPLE_THEME } from '../../../examples/constants';
-import { UnquoteButton } from "./Unquote";
+import Unquote from "./Unquote";
 
 test("Render UnquoteButton without crashing", () => {
   shallow(
     <ThemeProvider theme={EXAMPLE_THEME}>
-      <UnquoteButton />
+      <Unquote />
     </ThemeProvider>
   );
 });

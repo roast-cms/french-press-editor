@@ -66,7 +66,11 @@ export class FrenchPress extends React.PureComponent {
    * @function componentDidMount
    */
   componentDidMount = () => {
-    if (!this.slateEditor.state.value.hasUndos) {
+    if (
+      this.slateEditor &&
+      this.slateEditor.state &&
+      !this.slateEditor.state.value.hasUndos
+    ) {
       /**
        * Finds all used image keys in the document.
        * @const contentImageKeys

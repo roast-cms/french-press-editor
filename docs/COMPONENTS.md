@@ -1,7 +1,7 @@
 ## Modules
 
 <dl>
-<dt><a href="#module_TinyButton">TinyButton</a></dt>
+<dt><a href="#module_Button">Button</a></dt>
 <dd><p>Primitive component built based on <code>@roast-cms/react-button-beans</code> package that renders responsive, easy to use React.js buttons using Styled Components.</p>
 </dd>
 <dt><a href="#module_Item">Item</a></dt>
@@ -16,7 +16,7 @@
 <dt><a href="#module_Link">Link</a></dt>
 <dd><p>An implementation of <code>@roast-cms/react-link-filter</code> component that&#39;s built on top of React Router 4 with additional features, such as correcting user input (if they forgot to type http://), transforming absolute URLs on your domain to relative ones, and a proper function within React application that works in React Router 4 context.</p>
 </dd>
-<dt><a href="#module_UnquoteButton">UnquoteButton</a></dt>
+<dt><a href="#module_Unquote">Unquote</a></dt>
 <dd><p>CSS for the Unquote button which appears inside the quote for an easy way to revert formatting to plain text.</p>
 </dd>
 <dt><a href="#module_Picture">Picture</a></dt>
@@ -30,9 +30,9 @@
 </dd>
 </dl>
 
-<a name="module_TinyButton"></a>
+<a name="module_Button"></a>
 
-## TinyButton
+## Button
 Primitive component built based on `@roast-cms/react-button-beans` package that renders responsive, easy to use React.js buttons using Styled Components.
 
 <a name="module_Item"></a>
@@ -61,9 +61,9 @@ A button component that appears in the editor when user's carriage is on a new e
 ## Link
 An implementation of `@roast-cms/react-link-filter` component that's built on top of React Router 4 with additional features, such as correcting user input (if they forgot to type http://), transforming absolute URLs on your domain to relative ones, and a proper function within React application that works in React Router 4 context.
 
-<a name="module_UnquoteButton"></a>
+<a name="module_Unquote"></a>
 
-## UnquoteButton
+## Unquote
 CSS for the Unquote button which appears inside the quote for an easy way to revert formatting to plain text.
 
 <a name="module_Picture"></a>

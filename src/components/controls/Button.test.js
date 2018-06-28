@@ -2,8 +2,8 @@ import React from "react";
 
 import { shallow } from "enzyme";
 
-import { TinyButton } from "./Button";
+import Button from "./Button";
 
-test("Render TinyButton without crashing", () => {
-  shallow(<TinyButton />);
+test("Render Button without crashing", () => {
+  shallow(<Button />);
 });

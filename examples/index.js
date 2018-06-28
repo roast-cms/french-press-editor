@@ -1,28 +1,18 @@
-import "typeface-rajdhani"
-import "typeface-yanone-kaffeesatz"
+import "typeface-rajdhani";
+import "typeface-yanone-kaffeesatz";
 
-import { BrowserRouter } from "react-router-dom"
-import { ThemeProvider } from "styled-components"
-import { render } from "react-dom"
-import React from "react"
+import { BrowserRouter } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
+import { render } from "react-dom";
+import React from "react";
 
-import { EXAMPLE_THEME } from './constants';
+import { EXAMPLE_THEME } from "./constants";
 import {
   //
   // editor compoent itself
   FrenchPress
-} from "../src/index"
-import {
-  //
-  // picture component that you will need to pass as a prop in order to
-  // render images within your documents; you can create your own Picture
-  // compnent with advanced features like subtitles, various custom positions,
-  // responsive image sizes etc, however that's outside the scope of this
-  // project; advanced Picture components may be created later for you to
-  // choose from within a different repo/package
-  Picture
-} from "../src/components/vignettes/Picture"
-import { TestPlugin} from "./plugin"
+} from "../src/index";
+import { TestPlugin } from "./plugin";
 import {
   //
   // wrapper component contains some default styles that make your editor
@@ -31,18 +21,26 @@ import {
   // css in another way
   Wrapper
   //
-} from '../src/components/vignettes/Wrapper';
+} from "../src/components/vignettes/Wrapper";
+import //
+// picture component that you will need to pass as a prop in order to
+// render images within your documents; you can create your own Picture
+// compnent with advanced features like subtitles, various custom positions,
+// responsive image sizes etc, however that's outside the scope of this
+// project; advanced Picture components may be created later for you to
+// choose from within a different repo/package
+Picture from "../src/components/vignettes/Picture";
 
 //
 // this component will render the editor
-class Editor extends React.PureComponent {
+export class Editor extends React.PureComponent {
   //
   // initializing component state
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       status: "ok"
-    }
+    };
   }
   //
   // handle editor's save status callback function, this function
@@ -50,8 +48,8 @@ class Editor extends React.PureComponent {
   handleCallbackStatus = status => {
     this.setState({
       status
-    })
-  }
+    });
+  };
   //
   // render editor compnent!
   render = () => {
@@ -62,7 +60,7 @@ class Editor extends React.PureComponent {
           this component displays the save status that's being updated
           every time the content is saved into localStorage
         */}
-        <div style={{background: "#eee", color: "#999", padding: ".5em"}}>
+        <div style={{ background: "#eee", color: "#999", padding: ".5em" }}>
           {this.state.status === "ok" ? "Draft Saved." : "Saving..."}
         </div>
         {/*
@@ -110,7 +108,7 @@ class Editor extends React.PureComponent {
             // by default an image placeholder is a grey pixel, however, you can
             // specify your own here
             imagePlaceholder:
-              "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+              "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
             //
             // maximum upload image size in megabytes
             //imageMaxSize: 10
@@ -124,7 +122,7 @@ class Editor extends React.PureComponent {
           // that you may like to display within your own dialogue box or interface;
           // i.e.: "Image is too large!"
           callbackError={(error, reason) => {
-            console.log(error, reason)
+            console.log(error, reason);
           }}
           //
           // this prop returns Slate Editor component ref to be used by developer
@@ -162,8 +160,8 @@ class Editor extends React.PureComponent {
           slatePlugins={[TestPlugin({ key: "b" })]}
         />
       </div>
-    )
-  }
+    );
+  };
 }
 //
 // render everything!
@@ -178,4 +176,4 @@ render(
     </ThemeProvider>
   </div>,
   window.document.getElementById("app")
-)
+);

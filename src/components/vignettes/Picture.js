@@ -21,7 +21,7 @@ const Figure = styled.figure`
  * @prop {Boolean} isSelected Specifies whether the image is in user's focus.
  * @prop {Object} editor Slate Editor state.
  */
-export const Picture = class extends React.PureComponent {
+export default class extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
