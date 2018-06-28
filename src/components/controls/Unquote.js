@@ -4,7 +4,7 @@ import Button from "./Button";
 
 /**
  * CSS for the Unquote button which appears inside the quote for an easy way to revert formatting to plain text.
- * @module default
+ * @module Unquote
  */
 export default styled(Button)`
   width: 6em;
