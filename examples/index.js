@@ -12,7 +12,7 @@ import {
   // editor compoent itself
   FrenchPress
 } from "../src/index"
-import {
+import
   //
   // picture component that you will need to pass as a prop in order to
   // render images within your documents; you can create your own Picture
@@ -20,8 +20,7 @@ import {
   // responsive image sizes etc, however that's outside the scope of this
   // project; advanced Picture components may be created later for you to
   // choose from within a different repo/package
-  Picture
-} from "../src/components/vignettes/Picture"
+  Picture from "../src/components/vignettes/Picture"
 import { TestPlugin} from "./plugin"
 import {
   //

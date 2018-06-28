@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import { ButtonStrip, Item } from "./ButtonStrip";
-import { TinyButton } from "./Button";
+import Button from "./Button";
 
 const Menu = styled(ButtonStrip)`
   display: none;
@@ -88,7 +88,7 @@ export default props => {
           style={{ marginBottom: "-1em", display: "block" }}
           className="french-press_undo-heading-container"
         >
-          <TinyButton
+          <Button
             onMouseDown={event => event.preventDefault()}
             onMouseUp={event => {
               event.preventDefault();
@@ -102,7 +102,7 @@ export default props => {
             className="french-press_undo-heading"
           >
             <CancelHeader />
-          </TinyButton>
+          </Button>
         </div>
       ) : (
         <div>

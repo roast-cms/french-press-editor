@@ -1,7 +1,7 @@
 import { makeRelative } from "@roast-cms/react-link-filter/dist/utils"
 import React from "react"
 
-import { UnquoteButton } from "./components/controls/Unquote"
+import Unquote from "./components/controls/Unquote"
 import Link from "./components/controls/Link"
 
 /**
@@ -34,7 +34,7 @@ export const renderNode = props => {
         <div style={{ clear: "both" }}>
           {!props.readOnly &&
             focus &&
-            <UnquoteButton
+            <Unquote
               className="french-press_unquote"
 
               contentEditable="false"
@@ -56,7 +56,7 @@ export const renderNode = props => {
               branded
             >
               Unquote
-            </UnquoteButton>}
+            </Unquote>}
           <blockquote {...attributes} className={focusClassName}>
             {children}
           </blockquote>
