@@ -1,6 +1,6 @@
 {
   "name": "@roast-cms/french-press-editor",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "An offline-first rich text editor component.",
   "main": "dist/index.js",
   "repository": "https://github.com/roast-cms/french-press-editor.git",
