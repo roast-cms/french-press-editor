@@ -46,7 +46,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server --mode development",
-    "prepare": "babel src --out-dir dist",
+    "prepare": "npm test && babel src --out-dir dist",
     "docs": "jsdoc2md src/*.js > docs/README.md; jsdoc2md src/components/**/*.js > docs/COMPONENTS.md; jsdoc2md src/plugins/*.js > docs/PLUGINS.md; jsdoc2md src/utils/*.js > docs/UTILS.md",
     "test": "jest"
   },
@@ -73,6 +73,7 @@
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|less)$": "identity-obj-proxy"
     },
-    "setupTestFrameworkScriptFile": "<rootDir>/setupTests.js"
+    "setupTestFrameworkScriptFile": "<rootDir>/setupTests.js",
+    "coveragePathIgnorePatterns": ["/node_modules/", "/dist/", "/examples/", "/graphics/"]
   }
 }
