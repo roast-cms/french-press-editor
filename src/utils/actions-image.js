@@ -11,7 +11,7 @@ import { PICTURE_ACCEPTED_UPLOAD_MIME } from "../constants";
  * @param {Int} max Cut-off image size in megabytes.
  * @return {Promise}
  */
-const forceImageRestrictions = (size, type, max = 10) => {
+export const forceImageRestrictions = (size, type, max = 10) => {
   let correctFileType = false;
   PICTURE_ACCEPTED_UPLOAD_MIME.forEach(acceptedFiletype => {
     if (acceptedFiletype === type) correctFileType = true;
