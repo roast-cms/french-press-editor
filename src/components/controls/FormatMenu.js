@@ -9,7 +9,6 @@ const Menu = styled(ButtonStrip)`
   position: absolute;
   bottom: initial !important;
   z-index: ${props => props.theme.layer.up + 1};
-  width: 14em;
 
   &.touch {
     margin-top: -65px;
@@ -39,6 +38,7 @@ const Menu = styled(ButtonStrip)`
 `;
 const MenuItem = styled(Item)`
   width: auto;
+  flex-grow: 1;
   ${props => props.theme.size.breakpoint.max.s`
   border-radius: 0;
   padding: 1em;
