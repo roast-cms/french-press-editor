@@ -36,7 +36,7 @@ module.exports = {
   },
   resolve: { extensions: ["*", ".js"] },
   devServer: {
-    port: 3002,
+    port: process.env.PORT || 3002,
     historyApiFallback: {
       index: "examples/index.html"
     }
