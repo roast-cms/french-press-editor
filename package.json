@@ -50,7 +50,7 @@
     "prepare": "npm test && babel src --out-dir dist",
     "docs": "jsdoc2md src/*.js > docs/README.md; jsdoc2md src/components/**/*.js > docs/COMPONENTS.md; jsdoc2md src/plugins/*.js > docs/PLUGINS.md; jsdoc2md src/utils/*.js > docs/UTILS.md",
     "test": "jest",
-    "heroku-postbuild": "webpack-dev-server --mode production"
+    "heroku-postbuild": "webpack-dev-server --mode production && NODE_ENV=production node server.js"
   },
   "dependencies": {
     "@roast-cms/react-button-beans": "^1.1.3",
