@@ -37,7 +37,6 @@ module.exports = {
   resolve: { extensions: ["*", ".js"] },
   devServer: {
     port: process.env.PORT || 3002,
-    host: process.env.HEROKU_IP || "localhost",
     historyApiFallback: {
       index: "examples/index.html"
     }
