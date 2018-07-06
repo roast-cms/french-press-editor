@@ -1,8 +1,14 @@
+const path = require('path');
 module.exports = {
   entry: "./examples/index.js",
   output: {
     filename: "bundle.js",
-    publicPath: "/lib/"
+    publicPath: "/lib/",
+    path: path.resolve(__dirname, 'lib')
+  },
+  plugins: [],
+  optimization: {
+    minimizer: []
   },
   module: {
     rules: [
@@ -31,8 +37,6 @@ module.exports = {
         }
       }
     ]
-
-
   },
   resolve: { extensions: ["*", ".js"] },
   devServer: {
