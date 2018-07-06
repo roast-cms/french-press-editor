@@ -20,6 +20,7 @@
     "css-loader": "^0.28.11",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "express": "^4.15.5",
     "file-loader": "^1.1.11",
     "identity-obj-proxy": "^3.0.0",
     "immutable": "^3.8.2",
