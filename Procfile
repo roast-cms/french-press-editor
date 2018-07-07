@@ -1,1 +1,1 @@
-worker: webpack-dev-server  --mode production
+worker: node app.js
