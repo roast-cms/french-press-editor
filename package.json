@@ -74,6 +74,11 @@
       "\\.(css|less)$": "identity-obj-proxy"
     },
     "setupTestFrameworkScriptFile": "<rootDir>/setupTests.js",
-    "coveragePathIgnorePatterns": ["/node_modules/", "/dist/", "/examples/", "/graphics/"]
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/",
+      "/examples/",
+      "/graphics/"
+    ]
   }
 }
