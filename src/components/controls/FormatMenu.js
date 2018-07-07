@@ -9,6 +9,7 @@ const Menu = styled(ButtonStrip)`
   position: absolute;
   bottom: initial !important;
   z-index: ${props => props.theme.layer.up + 1};
+  width: auto;
 
   &.touch {
     margin-top: -65px;
