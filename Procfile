@@ -1,1 +1,1 @@
-web: webpack-dev-server  --mode production
+worker: webpack-dev-server  --mode production
