@@ -1,0 +1,222 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Wrapper without crashing, matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ThemeProvider
+    theme={
+      Object {
+        "color": Object {
+          "background": [Function],
+          "brand": [Function],
+          "foreground": [Function],
+          "highlight": [Function],
+        },
+        "effects": Object {
+          "borderRadius": Object {
+            "med": 0.75,
+            "small": [Function],
+          },
+        },
+        "layer": Object {
+          "card": 30,
+          "nav": 20,
+          "overlay": 40,
+          "tuck": -1,
+          "up": 10,
+        },
+        "opacity": Object {
+          "half": 0.5,
+          "least": 0.125,
+          "most": 0.85,
+        },
+        "size": Object {
+          "block": Object {
+            "border": 4,
+            "column": Object {
+              "l": 900,
+              "m": 700,
+            },
+            "padding": 1.5,
+            "spacing": 0.75,
+          },
+          "breakpoint": Object {
+            "exact": Object {
+              "l": [Function],
+              "m": [Function],
+              "s": [Function],
+              "xl": [Function],
+              "xs": [Function],
+              "xxl": [Function],
+            },
+            "max": Object {
+              "l": [Function],
+              "m": [Function],
+              "s": [Function],
+              "xl": [Function],
+              "xs": [Function],
+              "xxl": [Function],
+            },
+            "min": Object {
+              "l": [Function],
+              "m": [Function],
+              "s": [Function],
+              "xl": [Function],
+              "xs": [Function],
+              "xxl": [Function],
+            },
+            "stops": Object {
+              "max": 1600,
+              "min": 320,
+            },
+          },
+          "font": Object {
+            "auto": Array [
+              "
+        ",
+              "
+		@media (min-width: ",
+              "32.5625",
+              "em) {
+			",
+              "font-size: 	",
+              [Function],
+              "px;",
+              "
+		}
+	",
+              " ",
+              "
+		@media (max-width: ",
+              "32.5",
+              "em) {
+			",
+              "font-size: 	",
+              [Function],
+              "px;",
+              "
+		}
+	",
+              " ",
+              "
+		@media (max-width: ",
+              "20",
+              "em) {
+			",
+              "font-size: 	",
+              [Function],
+              "px;",
+              "
+		}
+	",
+              " ",
+              "
+		@media (min-width: ",
+              "100.0625",
+              "em) {
+			",
+              "font-size:	",
+              [Function],
+              "px;",
+              "
+		}
+	",
+              ";
+      ",
+            ],
+            "l": 23,
+            "m": 20,
+            "make": Object {
+              "larger": 2,
+              "normal": 1,
+              "smaller": 0.85,
+              "tiny": 0.5,
+            },
+            "s": 18,
+            "xs": 17,
+          },
+        },
+        "typography": Object {
+          "text": Object {
+            "auto": Array [
+              "
+          color: ",
+              [Function],
+              ";
+          font-family: ",
+              "'Rajdhani', sans-serif",
+              ";
+          letter-spacing: 0.025em;
+          line-height: ",
+              [Function],
+              "em;
+        ",
+            ],
+            "font": "'Rajdhani', sans-serif",
+            "lineHeight": 1.75,
+          },
+          "title": Object {
+            "auto": Array [
+              "
+          color: ",
+              [Function],
+              ";
+          font-family: ",
+              "'Yanone Kaffeesatz', sans-serif",
+              ";
+          letter-spacing: 0.025em;
+          line-height: ",
+              [Function],
+              "em;
+          font-weight: ",
+              "400",
+              ";
+          margin: 0;
+        ",
+            ],
+            "font": "'Yanone Kaffeesatz', sans-serif",
+            "lineHeight": 1.15,
+          },
+        },
+      }
+    }
+  >
+    <styled.div />
+  </ThemeProvider>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {},
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {},
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
