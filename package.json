@@ -49,7 +49,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server --mode development",
-    "prepare": "npm test && babel src --out-dir dist",
+    "prepare": "npm test",
     "docs": "jsdoc2md src/*.js > docs/README.md; jsdoc2md src/components/**/*.js > docs/COMPONENTS.md; jsdoc2md src/plugins/*.js > docs/PLUGINS.md; jsdoc2md src/utils/*.js > docs/UTILS.md",
     "size": "size-limit",
     "test": "jest && babel src --out-dir dist && npm run size"
@@ -74,8 +74,10 @@
   },
   "size-limit": [
     {
-      "path": "./dist/bundle.js",
-      "limit": "170 KB"
+      "path": "dist",
+      "limit": "40 KB",
+      "webpack": false,
+      "ignore": ["*.js.snap", "*.test.js"]
     }
   ],
   "jest": {
