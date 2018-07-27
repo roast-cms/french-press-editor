@@ -52,7 +52,7 @@
     "prepare": "npm test && babel src --out-dir dist",
     "docs": "jsdoc2md src/*.js > docs/README.md; jsdoc2md src/components/**/*.js > docs/COMPONENTS.md; jsdoc2md src/plugins/*.js > docs/PLUGINS.md; jsdoc2md src/utils/*.js > docs/UTILS.md",
     "size": "size-limit",
-    "test": "jest && npm run size"
+    "test": "jest && babel src --out-dir dist && npm run size"
   },
   "dependencies": {
     "@roast-cms/react-button-beans": "^1.1.3",
