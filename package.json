@@ -1,6 +1,6 @@
 {
   "name": "@roast-cms/french-press-editor",
-  "version": "0.7.4",
+  "version": "0.7.5",
   "description": "An offline-first rich text editor component.",
   "main": "dist/index.js",
   "repository": "https://github.com/roast-cms/french-press-editor.git",
@@ -77,7 +77,10 @@
       "path": "dist",
       "limit": "40 KB",
       "webpack": false,
-      "ignore": ["*.js.snap", "*.test.js"]
+      "ignore": [
+        "*.js.snap",
+        "*.test.js"
+      ]
     }
   ],
   "jest": {
