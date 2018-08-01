@@ -104,11 +104,11 @@ export class FrenchPress extends React.PureComponent {
           );
       });
     }
-    menuPosition.call(this);
+    menuPosition.bind(this);
     this.props.editorRef && this.props.editorRef(this.slateEditor);
   };
 
-  componentDidUpdate = () => menuPosition.call(this);
+  componentDidUpdate = () => menuPosition.bind(this);
 
   /**
    * Tracks user interactions with editor in component state. Note that due to Slate Editor's design only the default React state management works out of the box.
@@ -128,7 +128,7 @@ export class FrenchPress extends React.PureComponent {
       this.setState({
         editorFocus: value.isFocused
       });
-      imageButtonPosition.call(
+      () => imageButtonPosition.bind(
         this,
         value,
         block ? getOffsets(block, "top left", block, "top left") : {}
@@ -146,14 +146,14 @@ export class FrenchPress extends React.PureComponent {
    * @function handleImageButton
    * @param event
    */
-  handleImageButton = event => handleImageButton.call(this, event);
+  handleImageButton = event => handleImageButton.bind(this, event);
 
   /**
    * Use the <input /> file handler and inserts user's selected image from their device into the document.
    * @function handleFileUpload
    * @param event
    */
-  handleFileUpload = event => handleFileUpload.call(this, event);
+  handleFileUpload = event => handleFileUpload.bind(this, event);
 
   /**
    * Prevents unexpected propagations on the components which are part of the editor.
@@ -196,10 +196,10 @@ export class FrenchPress extends React.PureComponent {
    * @function formatCommand
    * @param type
    */
-  formatCommand = type => formatCommand.call(this, type);
+  formatCommand = type => formatCommand.bind(this, type);
 
   render = () => {
-    focusEvents.call(this);
+    focusEvents.bind(this);
 
     /**
      * Image upload button (prop) can be defined or created by user.
