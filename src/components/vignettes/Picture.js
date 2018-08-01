@@ -52,7 +52,7 @@ export default class extends React.PureComponent {
     } else {
       localForage.getItem(key).then(data => {
         if (data) {
-          this.setState({ src: data });
+          fileToBase64(data).then(string => this.setState({ src: string }));
         } else if (file && file.constructor !== Object) {
           fileToBase64(file).then(string => this.setState({ src: string }));
         }
