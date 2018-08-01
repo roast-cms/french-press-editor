@@ -42,6 +42,9 @@
 ## Functions
 
 <dl>
+<dt><a href="#fileToBase64">fileToBase64()</a> ⇒ <code>String</code></dt>
+<dd><p>Converts file to base64 string</p>
+</dd>
 <dt><a href="#forceImageRestrictions">forceImageRestrictions(size, type, max)</a> ⇒ <code>Promise</code></dt>
 <dd><p>Enforces image size and filetype.</p>
 </dd>
@@ -230,6 +233,17 @@ Highlights potential drop target when the draggable element enters it.
 Blurs editor on Esc (remove highlights and guides for preview).
 
 **Kind**: inner method of [<code>focusEvents</code>](#module_focusEvents)  
+<a name="fileToBase64"></a>
+
+## fileToBase64() ⇒ <code>String</code>
+Converts file to base64 string
+
+**Kind**: global function  
+
+| Type |
+| --- |
+| <code>File</code> | 
+
 <a name="forceImageRestrictions"></a>
 
 ## forceImageRestrictions(size, type, max) ⇒ <code>Promise</code>
