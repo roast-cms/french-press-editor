@@ -2,6 +2,8 @@ import React from "react";
 import localForage from "localforage";
 import styled from "styled-components";
 
+import { fileToBase64 } from '../../utils/actions-image';
+
 const Figure = styled.figure`
   margin: ${props => props.theme.size.block.spacing}em 0;
   &.focus {
@@ -49,18 +51,10 @@ export default class extends React.PureComponent {
       this.setState({ src });
     } else {
       localForage.getItem(key).then(data => {
-        const reader = new FileReader();
-        reader.addEventListener("load", () => {
-          this.setState({ src: reader.result });
-        });
-        if (
-          data &&
-          Object.keys(file).length === 0 &&
-          file.constructor === Object
-        ) {
-          reader.readAsDataURL(data);
+        if (data) {
+          this.setState({ src: data });
         } else if (file && file.constructor !== Object) {
-          reader.readAsDataURL(file);
+          fileToBase64(file).then(string => this.setState({ src: string }));
         }
       });
       this.setState({ key });
@@ -79,4 +73,4 @@ export default class extends React.PureComponent {
       </Figure>
     );
   };
-};
+}

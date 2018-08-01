@@ -4,6 +4,25 @@ import uuidv1 from "uuid/v1";
 import { PICTURE_ACCEPTED_UPLOAD_MIME } from "../constants";
 
 /**
+  * Converts file to base64 string
+  * @function fileToBase64
+  * @param {File}
+  * @return {String}
+*/
+export const fileToBase64 = file => {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.addEventListener("load", () => {
+      resolve(reader.result);
+    });
+    reader.addEventListener("error", error => {
+      reject(error);
+    });
+  });
+};
+
+/**
  * Enforces image size and filetype.
  * @function forceImageRestrictions
  * @param {Int} size Size in bytes.
@@ -139,7 +158,7 @@ export const handleFileUpload = (event, _this) => {
       };
       const docket = _this.state.pictureDocketNode;
       let resolvedState;
-      localForage.setItem(key, file);
+      fileToBase64(file).then(string => localForage.setItem(key, string));
 
       /**
        * If PictureDocket component isn't defined, simply inserts the image into the document.
@@ -148,12 +167,12 @@ export const handleFileUpload = (event, _this) => {
        */
       if (!docket)
         resolvedState = editorProps.value.change().insertBlock(block);
-      /**
+      else
+        /**
        * If PictureDocket component is defined, inserts the image into the document AND removes the docket from the doc.
        * @function insertBlock
        * @param {Object} block
-       */ else
-        resolvedState = editorProps.value
+       */ resolvedState = editorProps.value
           .change()
           .insertBlock(block)
           .value.change()
