@@ -6867,6 +6867,10 @@ v8flags@^2.1.1:
   dependencies:
     user-home "^1.1.1"
 
+valid-data-url@^0.1.6:
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/valid-data-url/-/valid-data-url-0.1.6.tgz#d8dffab9b0ba1a0239580f71377386e75df340a7"
+
 validate-npm-package-license@^3.0.1:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/validate-npm-package-license/-/validate-npm-package-license-3.0.3.tgz#81643bcbef1bdfecd4623793dc4648948ba98338"

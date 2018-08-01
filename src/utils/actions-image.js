@@ -1,5 +1,6 @@
 import localForage from "localforage";
 import uuidv1 from "uuid/v1";
+import isDataString from "valid-data-url";
 
 import { PICTURE_ACCEPTED_UPLOAD_MIME } from "../constants";
 
@@ -11,14 +12,21 @@ import { PICTURE_ACCEPTED_UPLOAD_MIME } from "../constants";
 */
 export const fileToBase64 = file => {
   return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.addEventListener("load", () => {
-      resolve(reader.result);
-    });
-    reader.addEventListener("error", error => {
-      reject(error);
-    });
+    if (file instanceof Blob) {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.addEventListener("load", () => {
+        resolve(reader.result);
+      });
+      reader.addEventListener("error", error => {
+        reject(error);
+      });
+    } else if (isDataString(file)) {
+      resolve(file);
+    } else
+      reject({
+        error: "TypeError: parameter must be a File/blob or a data-uri string."
+      });
   });
 };
 

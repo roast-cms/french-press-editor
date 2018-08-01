@@ -4,7 +4,8 @@ import {
   // imageButtonPosition,
   // handleImageButton,
   // handleFileUpload,
-  forceImageRestrictions
+  forceImageRestrictions,
+  fileToBase64
 } from "./actions-image";
 // import {
 //   loadContent,
@@ -13,6 +14,19 @@ import {
 //   saveContent,
 //   setDraftStatusHelper
 // } from "./actions-storage";
+
+test("File to data-uri converter return data-uri if a valid one is provided", () => {
+  const validData = "data:image/png;base64,iVBORw0KGgoA";
+  return fileToBase64(validData).then(string =>
+    expect(string).toEqual(validData)
+  );
+});
+test("File to data-uri converter return error if an invalid input type provided", () => {
+  const invalidData = "asdf";
+  return expect(fileToBase64(invalidData)).rejects.toEqual({
+    error: "TypeError: parameter must be a File/blob or a data-uri string."
+  });
+});
 
 test("Reject images over 10mb via forceImageRestrictions()", () => {
   return expect(forceImageRestrictions(10000001, "image/jpeg")).rejects.toEqual(
