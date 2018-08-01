@@ -2,6 +2,7 @@ import InsertImages from "slate-drop-or-paste-images";
 import localForage from "localforage";
 import uuidv1 from "uuid/v1";
 
+import { fileToBase64 } from '../utils/actions-image';
 import { forceImageRestrictions } from "../utils";
 
 /**
@@ -28,7 +29,7 @@ export const images = [
            * Stores image file in browser database.
            * @function localForage
            */
-          localForage.setItem(key, file);
+          fileToBase64(file).then(string => localForage.setItem(key, string));
 
           /**
            * Inserts image block into document.
