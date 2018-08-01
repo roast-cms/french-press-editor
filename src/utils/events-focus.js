@@ -1,9 +1,8 @@
 /**
  * A collection of functions that call appropriate functions in response to user interactions.
  * @module focusEvents
- * @param {Object} _this
  */
-export const focusEvents = _this => {
+export const focusEvents = () => {
   /**
    * Highlights potential drop target when the draggable element enters it.
    * @function addEventListener
@@ -13,9 +12,9 @@ export const focusEvents = _this => {
     "dragover",
     event => {
       event.preventDefault();
-      if (_this.state.dragOver) return;
+      if (this.state.dragOver) return;
       const delayDragEvent = setTimeout(() => {
-        _this.handleDragOver();
+        this.handleDragOver();
         clearTimeout(delayDragEvent);
       }, 100);
     },
@@ -24,9 +23,9 @@ export const focusEvents = _this => {
   document.addEventListener(
     "drop",
     event => {
-      if (!_this.state.dragOver) return;
+      if (!this.state.dragOver) return;
       const delayDragEvent = setTimeout(() => {
-        _this.handleDragEnd();
+        this.handleDragEnd();
         clearTimeout(delayDragEvent);
       }, 100);
     },
@@ -41,8 +40,8 @@ export const focusEvents = _this => {
   document.addEventListener(
     "keydown",
     event => {
-      if (event.keyCode === 27 && _this.slateEditor) {
-        _this.slateEditor.blur();
+      if (event.keyCode === 27 && this.slateEditor) {
+        this.slateEditor.blur();
       }
     },
     false
