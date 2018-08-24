@@ -21,7 +21,7 @@ export const addLink = (value, returnType = "value") => {
  * @module formatCommand
  * @param {String} type
  */
-export const formatCommand = (type) => {
+export const formatCommand = function(type) {
   const { value } = this.state;
   let resolvedState;
   switch (type) {
@@ -88,7 +88,7 @@ export const formatCommand = (type) => {
  *  Figures out where the format menu should appear, according to user's selection location within editor.
  * @module menuPosition
  */
-export const menuPosition = () => {
+export const menuPosition = function() {
   const { value } = this.state;
   const menu = this.menu;
   if (!menu) return;

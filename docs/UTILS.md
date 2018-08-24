@@ -71,17 +71,11 @@ Format commands switch for inline transformations.
 | Param | Type |
 | --- | --- |
 | type | <code>String</code> | 
-| _this | <code>Object</code> | 
 
 <a name="module_menuPosition"></a>
 
 ## menuPosition
 Figures out where the format menu should appear, according to user's selection location within editor.
-
-
-| Param | Type |
-| --- | --- |
-| _this | <code>Object</code> | 
 
 <a name="module_imageButtonPosition"></a>
 
@@ -93,7 +87,6 @@ Figures out the image button location and appearance, depending on user's carria
 | --- | --- | --- |
 | value | <code>Object</code> | Slate Editor Value. |
 | parentOffsets | <code>Object</code> | Offset pixel values. |
-| _this | <code>Object</code> |  |
 
 <a name="module_handleImageButton"></a>
 
@@ -140,7 +133,6 @@ Handles insertion of image file into the document and storing it in the browser'
 | Param | Type |
 | --- | --- |
 | event | <code>Event</code> | 
-| _this | <code>Object</code> | 
 
 
 * [handleFileUpload](#module_handleFileUpload)
@@ -210,11 +202,6 @@ Sets intermedia status between saves.
 
 ## focusEvents
 A collection of functions that call appropriate functions in response to user interactions.
-
-
-| Param | Type |
-| --- | --- |
-| _this | <code>Object</code> | 
 
 
 * [focusEvents](#module_focusEvents)

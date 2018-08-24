@@ -58,7 +58,7 @@ export const forceImageRestrictions = (size, type, max = 10) => {
  * @param {Object} value Slate Editor Value.
  * @param {Object} parentOffsets Offset pixel values.
  */
-export const imageButtonPosition = (value, parentOffsets) => {
+export const imageButtonPosition = function(value, parentOffsets) {
   const { focusBlock } = value;
   const hideImageButton = () =>
     this.setState({
@@ -92,7 +92,7 @@ export const imageButtonPosition = (value, parentOffsets) => {
  * Image button click action.
  * @module handleImageButton
  */
-export const handleImageButton = (event) => {
+export const handleImageButton = function(event) {
   if (!event) return;
   event.preventDefault();
   event.stopPropagation();
@@ -145,7 +145,7 @@ export const handleImageButton = (event) => {
  * @module handleFileUpload
  * @param {Event} event
  */
-export const handleFileUpload = (event) => {
+export const handleFileUpload = function(event) {
   const file = event.target.files[0];
   forceImageRestrictions(
     file.size,
