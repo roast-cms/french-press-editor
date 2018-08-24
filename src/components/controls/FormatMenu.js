@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-import { ButtonStrip, Item } from "./ButtonStrip"
+import {ButtonStrip, Item} from "./ButtonStrip"
 import Button from "./Button"
 
 const Menu = styled(ButtonStrip)`
@@ -62,33 +62,33 @@ export default props => {
   const MakeHeader =
     props.controls && props.controls.MakeHeader
       ? props.controls.MakeHeader
-      : props => <span>H</span>
+      : () => <span>H</span>
   const CancelHeader =
     props.controls && props.controls.CancelHeader
       ? props.controls.CancelHeader
-      : props => <small>⇲</small>
+      : () => <small>⇲</small>
   const MakeQuote =
     props.controls && props.controls.MakeQuote
       ? props.controls.MakeQuote
-      : props => <span>❝</span>
+      : () => <span>❝</span>
   const MakeLink =
     props.controls && props.controls.MakeLink
       ? props.controls.MakeLink
-      : props => <u>a</u>
+      : () => <u>a</u>
   const MakeBold =
     props.controls && props.controls.MakeBold
       ? props.controls.MakeBold
-      : props => <strong>b</strong>
+      : () => <strong>b</strong>
   const MakeItalic =
     props.controls && props.controls.MakeItalic
       ? props.controls.MakeItalic
-      : props => <i>i</i>
+      : () => <i>i</i>
   //
   return (
     <Menu innerRef={props.menuRef}>
       {props.value.blocks.some(node => node.type === "heading") ? (
         <div
-          style={{ marginBottom: "-1em", display: "block" }}
+          style={{marginBottom: "-1em", display: "block"}}
           className="french-press_undo-heading-container"
         >
           <Button
@@ -99,7 +99,7 @@ export default props => {
             }}
             branded
             style={{
-              width: "1.55em"
+              width: "1.55em",
             }}
             title="Undo heading"
             className="french-press_undo-heading"
@@ -141,7 +141,7 @@ export default props => {
               event.preventDefault()
               props.formatCommand("toggle_link")
             }}
-            style={{ borderLeft: "4px solid #2c2c2c" }}
+            style={{borderLeft: "4px solid #2c2c2c"}}
           >
             <MakeLink />
           </MenuItem>
@@ -164,7 +164,7 @@ export default props => {
               props.formatCommand("toggle_bold")
             }}
           >
-            <MakeBold style={{ fontWeight: "700 !important" }} />
+            <MakeBold style={{fontWeight: "700 !important"}} />
           </MenuItem>
           <MenuItem
             script

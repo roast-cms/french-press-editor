@@ -1,4 +1,4 @@
-import { TinyButton } from "@roast-cms/react-button-beans"
+import {TinyButton} from "@roast-cms/react-button-beans"
 import React from "react"
 
 import Link from "./Link"

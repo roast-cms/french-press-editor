@@ -2,7 +2,7 @@
  * A collection of functions that call appropriate functions in response to user interactions.
  * @module focusEvents
  */
-export const focusEvents = function(){
+export const focusEvents = function() {
   /**
    * Highlights potential drop target when the draggable element enters it.
    * @function addEventListener
@@ -22,7 +22,7 @@ export const focusEvents = function(){
   )
   document.addEventListener(
     "drop",
-    event => {
+    () => {
       if (!this.state.dragOver) return
       const delayDragEvent = setTimeout(() => {
         this.handleDragEnd()

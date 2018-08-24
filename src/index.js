@@ -86,7 +86,7 @@ export class FrenchPress extends React.PureComponent {
          * @var unusedImageKeys
          */
         let unusedImageKeys = []
-        Object.keys(storedImageKeys).forEach((storedKey, index) => {
+        Object.keys(storedImageKeys).forEach(storedKey => {
           let unused = true
           contentImageKeys.forEach(usedKey => {
             if (storedKey === usedKey) {
@@ -95,10 +95,11 @@ export class FrenchPress extends React.PureComponent {
           })
           unused && unusedImageKeys.push(storedKey)
         })
-        unusedImageKeys.forEach((imageKey, index) => {
+        unusedImageKeys.forEach(imageKey => {
           localForage.removeItem(imageKey)
         })
         unusedImageKeys.length > 0 &&
+          // eslint-disable-next-line
           console.log(
             `Removed ${
               unusedImageKeys.length
@@ -218,7 +219,7 @@ export class FrenchPress extends React.PureComponent {
     const ImageButtonLabel =
       this.props.controls && this.props.controls.UploadImage
         ? this.props.controls.UploadImage
-        : props => <span>Upload Image</span>
+        : () => <span>Upload Image</span>
 
     return [
       <div style={{position: "relative"}} key="Editor">

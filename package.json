@@ -10,6 +10,7 @@
   "devDependencies": {
     "babel-cli": "^6.0.0",
     "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.6",
     "babel-loader": "^7.1.2",
     "babel-plugin-dynamic-import-webpack": "^1.0.2",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
@@ -55,7 +56,9 @@
     "prepare": "npm test && babel src --out-dir dist",
     "docs": "jsdoc2md src/*.js > docs/README.md; jsdoc2md src/components/**/*.js > docs/COMPONENTS.md; jsdoc2md src/plugins/*.js > docs/PLUGINS.md; jsdoc2md src/utils/*.js > docs/UTILS.md",
     "size": "size-limit",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint ./src/.",
+    "lint:fix": "eslint --fix ./src/."
   },
   "dependencies": {
     "@roast-cms/react-button-beans": "^1.1.3",

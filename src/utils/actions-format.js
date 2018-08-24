@@ -11,9 +11,9 @@ export const addLink = (value, returnType = "value") => {
     if (!href) return value.change().unwrapInline("link")
     return value.change().wrapInline({
       type: "link",
-      data: { href }
+      data: {href},
     })
-  } else if (returnType === "data") return { href }
+  } else if (returnType === "data") return {href}
 }
 
 /**
@@ -22,13 +22,13 @@ export const addLink = (value, returnType = "value") => {
  * @param {String} type
  */
 export const formatCommand = function(type) {
-  const { value } = this.state
+  const {value} = this.state
   let resolvedState
   switch (type) {
   case "undo_heading":
-    resolvedState = value.change().setBlocks({ type: "paragraph" })
+    resolvedState = value.change().setBlocks({type: "paragraph"})
     this.setState({
-      value: resolvedState.value
+      value: resolvedState.value,
     })
     break
   case "make_heading":
@@ -40,9 +40,9 @@ export const formatCommand = function(type) {
       .value.change()
       .removeMark("italic")
       .value.change()
-      .setBlocks({ type: "heading" })
+      .setBlocks({type: "heading"})
     this.setState({
-      value: resolvedState.value
+      value: resolvedState.value,
     })
     break
   case "make_quote":
@@ -54,31 +54,32 @@ export const formatCommand = function(type) {
       .value.change()
       .removeMark("italic")
       .value.change()
-      .setBlocks({ type: "quote" })
+      .setBlocks({type: "quote"})
     this.setState({
-      value: resolvedState.value
+      value: resolvedState.value,
     })
     break
   case "toggle_bold":
-    resolvedState = value.change().toggleMark({ type: "bold" })
+    resolvedState = value.change().toggleMark({type: "bold"})
     this.setState({
-      value: resolvedState.value
+      value: resolvedState.value,
     })
     break
   case "toggle_italic":
-    resolvedState = value.change().toggleMark({ type: "italic" })
+    resolvedState = value.change().toggleMark({type: "italic"})
     this.setState({
-      value: resolvedState.value
+      value: resolvedState.value,
     })
     break
-  case "toggle_link":
+  case "toggle_link": {
     const hasLinks = value.inlines.some(inline => inline.type === "link")
     if (hasLinks) resolvedState = value.change().unwrapInline("link")
     else resolvedState = addLink(value)
     this.setState({
-      value: resolvedState.value
+      value: resolvedState.value,
     })
     break
+  }
   default:
     return false
   }
@@ -89,7 +90,7 @@ export const formatCommand = function(type) {
  * @module menuPosition
  */
 export const menuPosition = function() {
-  const { value } = this.state
+  const {value} = this.state
   const menu = this.menu
   if (!menu) return
   if (window.getSelection().rangeCount <= 0) return

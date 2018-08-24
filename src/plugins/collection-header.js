@@ -8,9 +8,9 @@ export const header = [
   AutoReplace({
     trigger: "space",
     before: /^(#)$/,
-    transform: (transform, event, matches) => {
-      return transform.setBlocks({ type: "heading" }) // heading
-    }
+    transform: transform => {
+      return transform.setBlocks({type: "heading"}) // heading
+    },
   }),
   AutoReplace({
     trigger: "enter",
@@ -24,17 +24,17 @@ export const header = [
         return transform
           .insertText(".")
           .splitBlock()
-          .setBlocks({ type: "paragraph" })
-      else return transform.splitBlock().setBlocks({ type: "paragraph" })
-    }
+          .setBlocks({type: "paragraph"})
+      else return transform.splitBlock().setBlocks({type: "paragraph"})
+    },
   }),
   AutoReplace({
     trigger: "backspace",
     after: /./,
     before: /^$/,
     onlyIn: "heading",
-    transform: (transform, event, matches) => {
-      return transform.setBlocks({ type: "paragraph" }) // cancel heading
-    }
-  })
+    transform: transform => {
+      return transform.setBlocks({type: "paragraph"}) // cancel heading
+    },
+  }),
 ]

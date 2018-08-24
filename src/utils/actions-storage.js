@@ -1,6 +1,6 @@
 import throttle from "lodash/throttle"
 
-import { DEFAULT_EDITOR_STATE } from "../constants"
+import {DEFAULT_EDITOR_STATE} from "../constants"
 
 /**
  * Loads stored Slate Value object from localStorage.
@@ -50,6 +50,6 @@ export const saveContent = throttle((document, state, callbackStatus) => {
  * @module setDraftStatusHelper
  * @return {String}
  */
-export const setDraftStatusHelper = callbackStatus => {
+export const setDraftStatusHelper = () => {
   return "pending"
 }

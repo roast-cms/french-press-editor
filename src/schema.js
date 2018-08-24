@@ -1,4 +1,4 @@
-import { Block } from "slate"
+import {Block} from "slate"
 
 /**
  * A set of rules that transform document structure and keep it normalized to a defined format.
@@ -17,12 +17,12 @@ export const schema = {
           "quote",
           "image",
           "docket",
-          "link"
-        ]
-      }
+          "link",
+        ],
+      },
     ],
-    last: { types: ["paragraph"] },
-    normalize: (change, reason, { node, child }) => {
+    last: {types: ["paragraph"]},
+    normalize: (change, reason, {node}) => {
       switch (reason) {
       case "last_child_type_invalid": {
         const paragraph = Block.create("paragraph")
@@ -31,34 +31,34 @@ export const schema = {
       default:
         return null
       }
-    }
+    },
   },
   blocks: {
     link: {
-      nodes: [{ objects: ["text"] }]
+      nodes: [{objects: ["text"]}],
     },
     divider: {
-      isVoid: true
+      isVoid: true,
     },
     image: {
       isVoid: true,
       data: {
-        src: v => v
-      }
+        src: v => v,
+      },
     },
     docket: {
-      isVoid: true
-    }
+      isVoid: true,
+    },
   },
   inlines: {
     quote: {
-      nodes: [{ types: ["text"] }]
+      nodes: [{types: ["text"]}],
     },
     paragraph: {
-      nodes: [{ types: ["text", "link"] }]
+      nodes: [{types: ["text", "link"]}],
     },
     heading: {
-      nodes: [{ types: ["text"] }]
-    }
-  }
+      nodes: [{types: ["text"]}],
+    },
+  },
 }
