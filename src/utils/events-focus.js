@@ -11,26 +11,26 @@ export const focusEvents = function(){
   document.addEventListener(
     "dragover",
     event => {
-      event.preventDefault();
-      if (this.state.dragOver) return;
+      event.preventDefault()
+      if (this.state.dragOver) return
       const delayDragEvent = setTimeout(() => {
-        this.handleDragOver();
-        clearTimeout(delayDragEvent);
-      }, 100);
+        this.handleDragOver()
+        clearTimeout(delayDragEvent)
+      }, 100)
     },
     false
-  );
+  )
   document.addEventListener(
     "drop",
     event => {
-      if (!this.state.dragOver) return;
+      if (!this.state.dragOver) return
       const delayDragEvent = setTimeout(() => {
-        this.handleDragEnd();
-        clearTimeout(delayDragEvent);
-      }, 100);
+        this.handleDragEnd()
+        clearTimeout(delayDragEvent)
+      }, 100)
     },
     false
-  );
+  )
 
   /**
    * Blurs editor on Esc (remove highlights and guides for preview).
@@ -41,9 +41,9 @@ export const focusEvents = function(){
     "keydown",
     event => {
       if (event.keyCode === 27 && this.slateEditor) {
-        this.slateEditor.blur();
+        this.slateEditor.blur()
       }
     },
     false
-  );
-};
+  )
+}

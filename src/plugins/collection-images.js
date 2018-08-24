@@ -1,9 +1,9 @@
-import InsertImages from "slate-drop-or-paste-images";
-import localForage from "localforage";
-import uuidv1 from "uuid/v1";
+import InsertImages from "slate-drop-or-paste-images"
+import localForage from "localforage"
+import uuidv1 from "uuid/v1"
 
-import { fileToBase64 } from '../utils/actions-image';
-import { forceImageRestrictions } from "../utils";
+import { fileToBase64 } from "../utils/actions-image"
+import { forceImageRestrictions } from "../utils"
 
 /**
  * A plugin that lets user drag and drop images into the document (which then stores them in the browser database as files).
@@ -23,13 +23,13 @@ export const images = [
            * Unique ID for inserted image file.
            * @constant key
            */
-          const key = uuidv1();
+          const key = uuidv1()
 
           /**
            * Stores image file in browser database.
            * @function localForage
            */
-          fileToBase64(file).then(string => localForage.setItem(key, string));
+          fileToBase64(file).then(string => localForage.setItem(key, string))
 
           /**
            * Inserts image block into document.
@@ -43,11 +43,11 @@ export const images = [
               key,
               src: editor.props.options.imagePlaceholder
             }
-          });
+          })
         })
         .catch(reason => {
-          editor.props.callbackError("insert_image", reason);
-        });
+          editor.props.callbackError("insert_image", reason)
+        })
     }
   })
-];
+]

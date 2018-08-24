@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 /**
  * Default CSS styles that visually render the editor component (nicely) using Styled Components.
@@ -43,4 +43,4 @@ export const Wrapper = styled.div`
   .french-press_undo-heading, .french-press_undo-heading-container {
     padding: .5em;
   }
-`;
+`

@@ -1,13 +1,13 @@
-import "jest-styled-components";
+import "jest-styled-components"
 
-import React from "react";
+import React from "react"
 
-import { shallow } from "enzyme";
+import { shallow } from "enzyme"
 
-import { Item } from "./ButtonStrip";
+import { Item } from "./ButtonStrip"
 
 
 test("Render Item without crashing, matches snapshot", () => {
-  const element = shallow(<Item />);
-  expect(element).toMatchSnapshot();
-});
+  const element = shallow(<Item />)
+  expect(element).toMatchSnapshot()
+})
