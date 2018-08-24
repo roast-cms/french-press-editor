@@ -15,12 +15,11 @@
 
 # Set working directory to project root
 WORKDIR=$PWD
-PROJECTROOT=/src
-PROJECTDIR=$PROJECTROOT
+PROJECTDIR=src
 
 # Determine if any JS files changed
 cd $WORKDIR
-JSCHANGES=$(git diff --cached --name-only --diff-filter=ACM -- "$PROJECTDIR/**/*.js" "$PROJECTDIR/**/*.js" "!($PROJECTROOT/node_modules)" | tr '\n' ' ')
+JSCHANGES=$(git diff --cached --name-only --diff-filter=ACM -- "$PROJECTDIR/**/*.js" "$PROJECTDIR/**/*.js" "!(/node_modules)" | tr '\n' ' ')
 if [ ! -z "$JSCHANGES" ]
 then
 
