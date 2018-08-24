@@ -1,10 +1,10 @@
-import "jest-styled-components";
+import "jest-styled-components"
 
-import React from "react";
+import React from "react"
 
-import { shallow } from "enzyme";
+import { shallow } from "enzyme"
 
-import Picture from "./Picture";
+import Picture from "./Picture"
 
 test("Render Picture without crashing, matches snapshot", () => {
   const element = shallow(
@@ -18,6 +18,6 @@ test("Render Picture without crashing, matches snapshot", () => {
         value: {}
       }}
     />
-  );
-  expect(element).toMatchSnapshot();
-});
+  )
+  expect(element).toMatchSnapshot()
+})

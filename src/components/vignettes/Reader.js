@@ -1,9 +1,9 @@
-import { Editor } from "slate-react";
-import { Value } from "slate";
-import React from "react";
+import { Editor } from "slate-react"
+import { Value } from "slate"
+import React from "react"
 
-import { renderNode, renderMark } from "../../render";
-import { schema } from "../../schema";
+import { renderNode, renderMark } from "../../render"
+import { schema } from "../../schema"
 
 /**
  * A read-only version of Slate Editor to easily render the JSON document state.
@@ -30,5 +30,5 @@ export const Reader = props => {
       renderNode={renderNode}
       renderMark={renderMark}
     />
-  );
-};
+  )
+}

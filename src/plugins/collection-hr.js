@@ -1,4 +1,4 @@
-import AutoReplace from "slate-auto-replace";
+import AutoReplace from "slate-auto-replace"
 
 /**
  * A plugin function that creates divider line via markup command (`***` on new line + Enter).
@@ -8,11 +8,11 @@ export const hr = [
   AutoReplace({
     trigger: "enter",
     before: /^(\*\*\*)$/,
-    transform: (transform, event, matches) => {
+    transform: transform => {
       return transform
-        .setBlocks({ type: "divider", isVoid: true })
+        .setBlocks({type: "divider", isVoid: true})
         .collapseToEndOfNextBlock()
-        .collapseToEndOfNextBlock(); // page break
-    }
-  })
-];
+        .collapseToEndOfNextBlock() // page break
+    },
+  }),
+]

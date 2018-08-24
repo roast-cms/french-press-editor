@@ -1,34 +1,34 @@
-import localForage from "localforage";
-import uuidv1 from "uuid/v1";
-import isDataString from "valid-data-url";
+import localForage from "localforage"
+import uuidv1 from "uuid/v1"
+import isDataString from "valid-data-url"
 
-import { PICTURE_ACCEPTED_UPLOAD_MIME } from "../constants";
+import {PICTURE_ACCEPTED_UPLOAD_MIME} from "../constants"
 
 /**
-  * Converts file to base64 string
-  * @function fileToBase64
-  * @param {File}
-  * @return {String}
-*/
+ * Converts file to base64 string
+ * @function fileToBase64
+ * @param {File}
+ * @return {String}
+ */
 export const fileToBase64 = file => {
   return new Promise((resolve, reject) => {
     if (file instanceof Blob) {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
+      const reader = new FileReader()
+      reader.readAsDataURL(file)
       reader.addEventListener("load", () => {
-        resolve(reader.result);
-      });
+        resolve(reader.result)
+      })
       reader.addEventListener("error", error => {
-        reject(error);
-      });
+        reject(error)
+      })
     } else if (isDataString(file)) {
-      resolve(file);
+      resolve(file)
     } else
       reject({
-        error: "TypeError: parameter must be a File/blob or a data-uri string."
-      });
-  });
-};
+        error: "TypeError: parameter must be a File/blob or a data-uri string.",
+      })
+  })
+}
 
 /**
  * Enforces image size and filetype.
@@ -39,18 +39,18 @@ export const fileToBase64 = file => {
  * @return {Promise}
  */
 export const forceImageRestrictions = (size, type, max = 10) => {
-  let correctFileType = false;
+  let correctFileType = false
   PICTURE_ACCEPTED_UPLOAD_MIME.forEach(acceptedFiletype => {
-    if (acceptedFiletype === type) correctFileType = true;
-  });
+    if (acceptedFiletype === type) correctFileType = true
+  })
   return new Promise((resolve, reject) => {
-    if (size / 1000000 <= max && correctFileType) resolve();
+    if (size / 1000000 <= max && correctFileType) resolve()
     else {
-      let message = size / 1000000 > max ? "size" : "mime";
-      reject(message);
+      let message = size / 1000000 > max ? "size" : "mime"
+      reject(message)
     }
-  });
-};
+  })
+}
 
 /**
  * Figures out the image button location and appearance, depending on user's carriage position within the editor and calls appropriate functions when the user clicks "Add Image" button.
@@ -59,57 +59,57 @@ export const forceImageRestrictions = (size, type, max = 10) => {
  * @param {Object} parentOffsets Offset pixel values.
  */
 export const imageButtonPosition = function(value, parentOffsets) {
-  const { focusBlock } = value;
+  const {focusBlock} = value
   const hideImageButton = () =>
     this.setState({
-      cursorContext: { ...this.state.cursorContext, newLine: false }
-    });
-  if (!focusBlock) return;
+      cursorContext: {...this.state.cursorContext, newLine: false},
+    })
+  if (!focusBlock) return
   if (
     focusBlock.type !== "paragraph" &&
     focusBlock.type !== "heading" &&
     focusBlock.type !== "image"
   ) {
-    hideImageButton();
-    return;
+    hideImageButton()
+    return
   }
   if (
     window.getSelection().rangeCount !== 0 &&
     window.getSelection().getRangeAt(0).collapsed === false
   ) {
-    hideImageButton();
-    return;
+    hideImageButton()
+    return
   }
   const cursorContext = {
     firstEmptyLine: value.document.isEmpty && value.document.nodes.size === 1,
     newLine: focusBlock.type === "image" ? false : value.focusBlock.isEmpty,
-    parentBlockOffsets: parentOffsets
-  };
-  this.setState({ cursorContext });
-};
+    parentBlockOffsets: parentOffsets,
+  }
+  this.setState({cursorContext})
+}
 
 /**
  * Image button click action.
  * @module handleImageButton
  */
 export const handleImageButton = function(event) {
-  if (!event) return;
-  event.preventDefault();
-  event.stopPropagation();
+  if (!event) return
+  event.preventDefault()
+  event.stopPropagation()
 
   /**
    * Timeout allows to paint the image button downstate before bringing up file upload dialogue or a docket component.
    * @function responseDelay
    */
   const responseDelay = setTimeout(() => {
-    clearTimeout(responseDelay);
+    clearTimeout(responseDelay)
     if (!this.props.components.PictureDocket) {
       /**
        * If PictureDocket component isn't defined, brings up the dialogue to upload image file.
        * @function click
        */
-      this.fileInput.click();
-      return;
+      this.fileInput.click()
+      return
     }
     //
     // insert docket block into editor if the PictureDocket
@@ -119,15 +119,15 @@ export const handleImageButton = function(event) {
      * Inserts docket block into editor if the PictureDocket component is defiend.
      * @function insertBlock
      */
-    const activeBlockKey = this.state.value.focusBlock.key;
+    const activeBlockKey = this.state.value.focusBlock.key
     const resolvedState = this.state.value
-      .change({ save: false })
+      .change({save: false})
       .insertBlock({
         type: "docket",
-        isVoid: true
+        isVoid: true,
       })
-      .value.change({ save: false })
-      .removeNodeByKey(activeBlockKey);
+      .value.change({save: false})
+      .removeNodeByKey(activeBlockKey)
 
     /**
      * Hides "Insert Image" button when docket is shown.
@@ -135,10 +135,10 @@ export const handleImageButton = function(event) {
      */
     this.setState(prevState => ({
       value: resolvedState.value,
-      cursorContext: { ...prevState.cursorContext, newLine: false }
-    }));
-  }, 50);
-};
+      cursorContext: {...prevState.cursorContext, newLine: false},
+    }))
+  }, 50)
+}
 
 /**
  * Handles insertion of image file into the document and storing it in the browser's database.
@@ -146,7 +146,7 @@ export const handleImageButton = function(event) {
  * @param {Event} event
  */
 export const handleFileUpload = function(event) {
-  const file = event.target.files[0];
+  const file = event.target.files[0]
   forceImageRestrictions(
     file.size,
     file.type,
@@ -155,40 +155,39 @@ export const handleFileUpload = function(event) {
       this.props.options.imageMaxSize
   )
     .then(() => {
-      const key = uuidv1();
-      const editorProps = this.slateEditor.props;
+      const key = uuidv1()
+      const editorProps = this.slateEditor.props
       const block = {
         type: "image",
         isVoid: true,
-        data: { file, key, src: editorProps.options.imagePlaceholder }
-      };
-      const docket = this.state.pictureDocketNode;
-      let resolvedState;
-      fileToBase64(file).then(string => localForage.setItem(key, string));
+        data: {file, key, src: editorProps.options.imagePlaceholder},
+      }
+      const docket = this.state.pictureDocketNode
+      let resolvedState
+      fileToBase64(file).then(string => localForage.setItem(key, string))
 
       /**
        * If PictureDocket component isn't defined, simply inserts the image into the document.
        * @function insertBlock
        * @param {Object} block
        */
-      if (!docket)
-        resolvedState = editorProps.value.change().insertBlock(block);
-      else
-        /**
+      if (!docket) resolvedState = editorProps.value.change().insertBlock(block)
+      /**
        * If PictureDocket component is defined, inserts the image into the document AND removes the docket from the doc.
        * @function insertBlock
        * @param {Object} block
-       */ resolvedState = editorProps.value
+       */ else
+        resolvedState = editorProps.value
           .change()
           .insertBlock(block)
           .value.change()
-          .removeNodeByKey(docket);
+          .removeNodeByKey(docket)
       window.requestAnimationFrame(() => {
-        this.handleChange(resolvedState);
-        docket && this.setState({ pictureDocketNode: undefined });
-      });
+        this.handleChange(resolvedState)
+        docket && this.setState({pictureDocketNode: undefined})
+      })
     })
     .catch(reason => {
-      this.props.callbackError("insert_image", reason);
-    });
-};
+      this.props.callbackError("insert_image", reason)
+    })
+}

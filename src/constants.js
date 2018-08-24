@@ -65,4 +65,4 @@ export const PICTURE_ACCEPTED_UPLOAD_MIME = ["image/png", "image/jpeg"]
  * Default accepted upload file types, written in human language.
  * @constant PICTURE_ACCEPTED_UPLOAD_MIME_HUMAN
  */
- export const PICTURE_ACCEPTED_UPLOAD_MIME_HUMAN = "PNG or JPEG"
+export const PICTURE_ACCEPTED_UPLOAD_MIME_HUMAN = "PNG or JPEG"
