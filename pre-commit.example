@@ -19,7 +19,7 @@ PROJECTDIR=src
 
 # Determine if any JS files changed
 cd $WORKDIR
-JSCHANGES=$(git diff --cached --name-only --diff-filter=ACM -- "$PROJECTDIR/**/*.js" "$PROJECTDIR/**/*.js" "!(/node_modules)" | tr '\n' ' ')
+JSCHANGES=$(git diff --cached --name-only --diff-filter=ACM -- "$PROJECTDIR/**/*.js" "$PROJECTDIR/**/*.js" "!($PROJECTROOT/node_modules)" | tr '\n' ' ')
 if [ ! -z "$JSCHANGES" ]
 then
 
@@ -34,48 +34,6 @@ fi
 
 # Enter app core directory
 cd $WORKDIR/$PROJECTDIR
-
-# Lint and abort if fails
-npm run lint:fix
-RESULT=$?
-if [ "$RESULT" -ne 0 ]
-then
-    echo Linting failed. Please resolve. Not committing.
-    exit 1
-fi
-
-cd $WORKDIR
-git add -A $PROJECTDIR
-
-# Enter $PROJECTROOT core directory
-cd $WORKDIR/$PROJECTDIR
-
-# Run integration/unit tests and abort if fails
-# npm test
-# RESULT=$?
-# if [ "$RESULT" -ne 0 ]
-# then
-#     echo Integration/unit tests failed. Please resolve. Not committing.
-#     exit 1
-# fi
-
-# Determine if any JS files changed
-cd $WORKDIR
-JSCHANGES=$(git diff --cached --name-only --diff-filter=ACM -- "$PROJECTDIR/**/*.js" "$PROJECTDIR/**/*.js" "!($PROJECTROOT/node_modules)" | tr '\n' ' ')
-if [ ! -z "$JSCHANGES" ]
-then
-
-    # Prettify all staged .js files
-    cd $WORKDIR/app/core
-    npm run prettier
-
-    # Add back the modified/prettified files to staging
-    cd $WORKDIR
-    git add -A app/core
-fi
-
-# Enter app core directory
-cd $WORKDIR/app/core
 
 # Lint and abort if fails
 npm run lint:fix
