@@ -100,17 +100,15 @@ export class FrenchPress extends React.PureComponent {
         });
         unusedImageKeys.length > 0 &&
           console.log(
-            `Removed ${
-              unusedImageKeys.length
-            } unused image(s) from browser's database.`
+            `Removed ${unusedImageKeys.length} unused image(s) from browser's database.`
           );
       });
     }
-    menuPosition(this);
+    menuPosition.call(this)
     this.props.editorRef && this.props.editorRef(this.slateEditor);
   };
 
-  componentDidUpdate = () => menuPosition(this);
+  componentDidUpdate = () => menuPosition.call(this)
 
   /**
    * Tracks user interactions with editor in component state. Note that due to Slate Editor's design only the default React state management works out of the box.
@@ -130,10 +128,10 @@ export class FrenchPress extends React.PureComponent {
       this.setState({
         editorFocus: value.isFocused
       });
-      imageButtonPosition(
+      imageButtonPosition.call(
+        this,
         value,
-        block ? getOffsets(block, "top left", block, "top left") : {},
-        this
+        block ? getOffsets(block, "top left", block, "top left") : {}
       );
       clearTimeout(cursorContextDelay);
     }, 300);
@@ -148,14 +146,14 @@ export class FrenchPress extends React.PureComponent {
    * @function handleImageButton
    * @param event
    */
-  handleImageButton = event => handleImageButton(event, this);
+  handleImageButton = event => handleImageButton.call(this, event);
 
   /**
    * Use the <input /> file handler and inserts user's selected image from their device into the document.
    * @function handleFileUpload
    * @param event
    */
-  handleFileUpload = event => handleFileUpload(event, this);
+  handleFileUpload = event => handleFileUpload.call(this, event);
 
   /**
    * Prevents unexpected propagations on the components which are part of the editor.
@@ -198,10 +196,10 @@ export class FrenchPress extends React.PureComponent {
    * @function formatCommand
    * @param type
    */
-  formatCommand = type => formatCommand(type, this);
+  formatCommand = type => formatCommand.call(this, type);
 
   render = () => {
-    focusEvents(this);
+    focusEvents.call(this);
 
     /**
      * Image upload button (prop) can be defined or created by user.
