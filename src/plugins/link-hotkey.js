@@ -1,6 +1,6 @@
 import keycode from "keycode"
 
-import { addLink } from "../utils"
+import {addLink} from "../utils"
 
 /**
  * LinkHotkey - A plugin function that can add a link to a Slate text string.
@@ -9,10 +9,10 @@ import { addLink } from "../utils"
  * @return {Event}  Change Transformation for Slate.
  */
 export function LinkHotkey(options) {
-  const { key } = options
+  const {key} = options
   return {
     onKeyDown(event, change) {
-      const { value } = change
+      const {value} = change
       if (value.focusBlock.type !== "paragraph") return
       if (!event.metaKey || keycode(event.which) !== key) return
       event.preventDefault()
@@ -26,8 +26,8 @@ export function LinkHotkey(options) {
       else
         change.wrapInline({
           type: "link",
-          data: link
+          data: link,
         })
-    }
+    },
   }
 }

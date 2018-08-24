@@ -8,7 +8,7 @@ import keycode from "keycode"
  */
 
 export function MarkHotkey(options) {
-  const { type, key } = options
+  const {type, key} = options
   return {
     onKeyDown(event, change) {
       if (change.value.focusBlock.type !== "paragraph") return
@@ -16,6 +16,6 @@ export function MarkHotkey(options) {
       event.preventDefault()
       change.toggleMark(type)
       return true
-    }
+    },
   }
 }

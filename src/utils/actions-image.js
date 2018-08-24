@@ -2,14 +2,14 @@ import localForage from "localforage"
 import uuidv1 from "uuid/v1"
 import isDataString from "valid-data-url"
 
-import { PICTURE_ACCEPTED_UPLOAD_MIME } from "../constants"
+import {PICTURE_ACCEPTED_UPLOAD_MIME} from "../constants"
 
 /**
-  * Converts file to base64 string
-  * @function fileToBase64
-  * @param {File}
-  * @return {String}
-*/
+ * Converts file to base64 string
+ * @function fileToBase64
+ * @param {File}
+ * @return {String}
+ */
 export const fileToBase64 = file => {
   return new Promise((resolve, reject) => {
     if (file instanceof Blob) {
@@ -25,7 +25,7 @@ export const fileToBase64 = file => {
       resolve(file)
     } else
       reject({
-        error: "TypeError: parameter must be a File/blob or a data-uri string."
+        error: "TypeError: parameter must be a File/blob or a data-uri string.",
       })
   })
 }
@@ -59,10 +59,10 @@ export const forceImageRestrictions = (size, type, max = 10) => {
  * @param {Object} parentOffsets Offset pixel values.
  */
 export const imageButtonPosition = function(value, parentOffsets) {
-  const { focusBlock } = value
+  const {focusBlock} = value
   const hideImageButton = () =>
     this.setState({
-      cursorContext: { ...this.state.cursorContext, newLine: false }
+      cursorContext: {...this.state.cursorContext, newLine: false},
     })
   if (!focusBlock) return
   if (
@@ -83,9 +83,9 @@ export const imageButtonPosition = function(value, parentOffsets) {
   const cursorContext = {
     firstEmptyLine: value.document.isEmpty && value.document.nodes.size === 1,
     newLine: focusBlock.type === "image" ? false : value.focusBlock.isEmpty,
-    parentBlockOffsets: parentOffsets
+    parentBlockOffsets: parentOffsets,
   }
-  this.setState({ cursorContext })
+  this.setState({cursorContext})
 }
 
 /**
@@ -121,12 +121,12 @@ export const handleImageButton = function(event) {
      */
     const activeBlockKey = this.state.value.focusBlock.key
     const resolvedState = this.state.value
-      .change({ save: false })
+      .change({save: false})
       .insertBlock({
         type: "docket",
-        isVoid: true
+        isVoid: true,
       })
-      .value.change({ save: false })
+      .value.change({save: false})
       .removeNodeByKey(activeBlockKey)
 
     /**
@@ -135,7 +135,7 @@ export const handleImageButton = function(event) {
      */
     this.setState(prevState => ({
       value: resolvedState.value,
-      cursorContext: { ...prevState.cursorContext, newLine: false }
+      cursorContext: {...prevState.cursorContext, newLine: false},
     }))
   }, 50)
 }
@@ -160,7 +160,7 @@ export const handleFileUpload = function(event) {
       const block = {
         type: "image",
         isVoid: true,
-        data: { file, key, src: editorProps.options.imagePlaceholder }
+        data: {file, key, src: editorProps.options.imagePlaceholder},
       }
       const docket = this.state.pictureDocketNode
       let resolvedState
@@ -171,21 +171,20 @@ export const handleFileUpload = function(event) {
        * @function insertBlock
        * @param {Object} block
        */
-      if (!docket)
-        resolvedState = editorProps.value.change().insertBlock(block)
-      else
-        /**
+      if (!docket) resolvedState = editorProps.value.change().insertBlock(block)
+      /**
        * If PictureDocket component is defined, inserts the image into the document AND removes the docket from the doc.
        * @function insertBlock
        * @param {Object} block
-       */ resolvedState = editorProps.value
+       */ else
+        resolvedState = editorProps.value
           .change()
           .insertBlock(block)
           .value.change()
           .removeNodeByKey(docket)
       window.requestAnimationFrame(() => {
         this.handleChange(resolvedState)
-        docket && this.setState({ pictureDocketNode: undefined })
+        docket && this.setState({pictureDocketNode: undefined})
       })
     })
     .catch(reason => {

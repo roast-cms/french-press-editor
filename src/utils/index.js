@@ -1,15 +1,15 @@
-export { focusEvents } from "./events-focus"
-export { addLink, formatCommand, menuPosition } from "./actions-format"
+export {focusEvents} from "./events-focus"
+export {addLink, formatCommand, menuPosition} from "./actions-format"
 export {
   imageButtonPosition,
   handleImageButton,
   handleFileUpload,
-  forceImageRestrictions
+  forceImageRestrictions,
 } from "./actions-image"
 export {
   loadContent,
   loadTextContent,
   storeContentState,
   saveContent,
-  setDraftStatusHelper
+  setDraftStatusHelper,
 } from "./actions-storage"

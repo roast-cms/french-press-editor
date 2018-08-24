@@ -5,7 +5,7 @@ import {
   // handleImageButton,
   // handleFileUpload,
   forceImageRestrictions,
-  fileToBase64
+  fileToBase64,
 } from "./actions-image"
 // import {
 //   loadContent,
@@ -24,7 +24,7 @@ test("File to data-uri converter return data-uri if a valid one is provided", ()
 test("File to data-uri converter return error if an invalid input type provided", () => {
   const invalidData = "asdf"
   return expect(fileToBase64(invalidData)).rejects.toEqual({
-    error: "TypeError: parameter must be a File/blob or a data-uri string."
+    error: "TypeError: parameter must be a File/blob or a data-uri string.",
   })
 })
 

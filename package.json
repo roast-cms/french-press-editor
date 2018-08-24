@@ -58,7 +58,8 @@
     "size": "size-limit",
     "test": "jest",
     "lint": "eslint ./src/.",
-    "lint:fix": "eslint --fix ./src/."
+    "lint:fix": "eslint --fix ./src/.",
+    "lint:prettier": "prettier --write src/**/*.js"
   },
   "dependencies": {
     "@roast-cms/react-button-beans": "^1.1.3",
