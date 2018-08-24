@@ -15,7 +15,7 @@
 
 # Set working directory to project root
 WORKDIR=$PWD
-PROJECTROOT=$WORKDIR
+PROJECTROOT=
 PROJECTDIR=$PROJECTROOT/src
 
 # Determine if any JS files changed
