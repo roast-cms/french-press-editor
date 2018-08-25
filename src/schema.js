@@ -22,14 +22,20 @@ export const schema = {
       },
     ],
     last: {types: ["paragraph"]},
+    // normalize: (change, error) => {
+    //   if (error.code === "last_child_type_invalid") {
+    //     const paragraph = Block.create("paragraph")
+    //     return change.insertNodeByKey(error.key, error.nodes.size, paragraph)
+    //   }
+    // },
     normalize: (change, reason, {node}) => {
       switch (reason) {
-      case "last_child_type_invalid": {
-        const paragraph = Block.create("paragraph")
-        return change.insertNodeByKey(node.key, node.nodes.size, paragraph)
-      }
-      default:
-        return null
+        case "last_child_type_invalid": {
+          const paragraph = Block.create("paragraph")
+          return change.insertNodeByKey(node.key, node.nodes.size, paragraph)
+        }
+        default:
+          return null
       }
     },
   },
