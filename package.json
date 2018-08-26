@@ -57,6 +57,7 @@
     "docs": "jsdoc2md src/*.js > docs/README.md; jsdoc2md src/components/**/*.js > docs/COMPONENTS.md; jsdoc2md src/plugins/*.js > docs/PLUGINS.md; jsdoc2md src/utils/*.js > docs/UTILS.md",
     "size": "size-limit",
     "test": "jest",
+    "prettier": "prettier --write \"src/**/*.js\"",
     "lint": "eslint ./src/.",
     "lint:fix": "eslint --fix ./src/.",
     "lint:prettier": "prettier --write src/**/*.js"

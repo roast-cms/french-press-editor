@@ -25,63 +25,63 @@ export const formatCommand = function(type) {
   const {value} = this.state
   let resolvedState
   switch (type) {
-  case "undo_heading":
-    resolvedState = value.change().setBlocks({type: "paragraph"})
-    this.setState({
-      value: resolvedState.value,
-    })
-    break
-  case "make_heading":
-    resolvedState = value
-      .change()
-      .unwrapInline("link")
-      .value.change()
-      .removeMark("bold")
-      .value.change()
-      .removeMark("italic")
-      .value.change()
-      .setBlocks({type: "heading"})
-    this.setState({
-      value: resolvedState.value,
-    })
-    break
-  case "make_quote":
-    resolvedState = value
-      .change()
-      .unwrapInline("link")
-      .value.change()
-      .removeMark("bold")
-      .value.change()
-      .removeMark("italic")
-      .value.change()
-      .setBlocks({type: "quote"})
-    this.setState({
-      value: resolvedState.value,
-    })
-    break
-  case "toggle_bold":
-    resolvedState = value.change().toggleMark({type: "bold"})
-    this.setState({
-      value: resolvedState.value,
-    })
-    break
-  case "toggle_italic":
-    resolvedState = value.change().toggleMark({type: "italic"})
-    this.setState({
-      value: resolvedState.value,
-    })
-    break
-  case "toggle_link": {
-    const hasLinks = value.inlines.some(inline => inline.type === "link")
-    if (hasLinks) resolvedState = value.change().unwrapInline("link")
-    else resolvedState = addLink(value)
-    this.setState({
-      value: resolvedState.value,
-    })
-    break
-  }
-  default:
-    return false
+    case "undo_heading":
+      resolvedState = value.change().setBlocks({type: "paragraph"})
+      this.setState({
+        value: resolvedState.value,
+      })
+      break
+    case "make_heading":
+      resolvedState = value
+        .change()
+        .unwrapInline("link")
+        .value.change()
+        .removeMark("bold")
+        .value.change()
+        .removeMark("italic")
+        .value.change()
+        .setBlocks({type: "heading"})
+      this.setState({
+        value: resolvedState.value,
+      })
+      break
+    case "make_quote":
+      resolvedState = value
+        .change()
+        .unwrapInline("link")
+        .value.change()
+        .removeMark("bold")
+        .value.change()
+        .removeMark("italic")
+        .value.change()
+        .setBlocks({type: "quote"})
+      this.setState({
+        value: resolvedState.value,
+      })
+      break
+    case "toggle_bold":
+      resolvedState = value.change().toggleMark({type: "bold"})
+      this.setState({
+        value: resolvedState.value,
+      })
+      break
+    case "toggle_italic":
+      resolvedState = value.change().toggleMark({type: "italic"})
+      this.setState({
+        value: resolvedState.value,
+      })
+      break
+    case "toggle_link": {
+      const hasLinks = value.inlines.some(inline => inline.type === "link")
+      if (hasLinks) resolvedState = value.change().unwrapInline("link")
+      else resolvedState = addLink(value)
+      this.setState({
+        value: resolvedState.value,
+      })
+      break
+    }
+    default:
+      return false
   }
 }
 
