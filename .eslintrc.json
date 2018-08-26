@@ -5,7 +5,11 @@
     "es6": true,
     "jest": true
   },
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "extends": [
+    "plugin:prettier/recommended",
+    "plugin:react/recommended",
+    "prettier"
+  ],
   "settings": {
     "react": {
       "version": "16.0"
@@ -20,12 +24,9 @@
     "ecmaVersion": 2019,
     "sourceType": "module"
   },
-  "plugins": ["react"],
+  "plugins": ["react", "prettier"],
   "rules": {
-    "indent": ["error", 2],
-    "linebreak-style": ["error", "unix"],
-    "quotes": ["error", "double"],
-    "semi": ["error", "never"],
+    "prettier/prettier": "error",
     "react/prop-types": 0,
     "react/display-name": 0
   }
