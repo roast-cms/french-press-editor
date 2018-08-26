@@ -7,7 +7,7 @@ import {fileToBase64} from "../../utils/actions-image"
 const Figure = styled.figure`
   margin: ${props => props.theme.size.block.spacing}em 0;
   &.focus {
-    box-shadow: 0 0 0 4px ${props => props.theme.color.brand};
+    box-shadow: 0 0 0 4px ${props => props.theme.color.brand()};
   }
   img {
     display: block;
