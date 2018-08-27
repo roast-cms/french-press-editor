@@ -13,14 +13,14 @@ export const DEFAULT_EDITOR_STATE = {
             object: "text",
             leaves: [
               {
-                text: ""
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
+                text: "",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
 }
 
 /**
@@ -36,7 +36,7 @@ export const BLOCK_TAGS = {
   h3: "heading",
   h4: "heading",
   a: "link",
-  img: "image"
+  img: "image",
 }
 /**
  * Dictionary list that transpiles HTML/DOM elements into Slate mark types.
@@ -46,7 +46,7 @@ export const MARK_TAGS = {
   em: "italic",
   i: "italic",
   strong: "bold",
-  b: "bold"
+  b: "bold",
 }
 
 /**

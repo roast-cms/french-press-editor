@@ -6,36 +6,37 @@ import {Block} from "slate"
  * @property {Array} nodes Acceptable nodes within editor document.
  * @property {Object} last Defines at least one empty paragraph block that follows a void block (such as picture); this is required to ensure that the user can continue adding content without additional effort below uploaded images (otherwise they will be forced to move the image up to free up a trailing paragraph space).
  */
+
 export const schema = {
   document: {
     nodes: [
       {
-        types: [
-          "paragraph",
-          "heading",
-          "divider",
-          "quote",
-          "image",
-          "docket",
-          "link",
+        match: [
+          {type: "paragraph"},
+          {type: "heading"},
+          {type: "divider"},
+          {type: "quote"},
+          {type: "image"},
+          {type: "docket"},
+          {type: "link"},
         ],
       },
     ],
-    last: {types: ["paragraph"]},
-    normalize: (change, reason, {node}) => {
-      switch (reason) {
-      case "last_child_type_invalid": {
+    last: [{type: "quote"}, {type: "paragraph"}],
+    normalize: (change, error) => {
+      if (error.code === "last_child_type_invalid") {
         const paragraph = Block.create("paragraph")
-        return change.insertNodeByKey(node.key, node.nodes.size, paragraph)
-      }
-      default:
-        return null
-      }
+        return change.insertNodeByKey(
+          error.node.key,
+          error.node.nodes.size,
+          paragraph
+        )
+      } else return null
     },
   },
   blocks: {
     link: {
-      nodes: [{objects: ["text"]}],
+      match: {object: "text"},
     },
     divider: {
       isVoid: true,
@@ -43,22 +44,20 @@ export const schema = {
     image: {
       isVoid: true,
       data: {
-        src: v => v,
+        src: value => value,
       },
     },
     docket: {
       isVoid: true,
     },
-  },
-  inlines: {
     quote: {
-      nodes: [{types: ["text"]}],
+      match: {object: "text"},
     },
     paragraph: {
-      nodes: [{types: ["text", "link"]}],
+      match: [{object: "text"}, {object: "link"}],
     },
     heading: {
-      nodes: [{types: ["text"]}],
+      match: {object: "text"},
     },
   },
 }

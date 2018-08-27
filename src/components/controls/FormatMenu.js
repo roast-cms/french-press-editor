@@ -33,7 +33,7 @@ const Menu = styled(ButtonStrip)`
     }
     & > div {
       background: ${props =>
-    props.theme.color.foreground(props.theme.opacity.most)};
+        props.theme.color.foreground(props.theme.opacity.most)};
     }
   `};
 `
