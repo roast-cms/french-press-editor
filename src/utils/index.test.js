@@ -6,7 +6,7 @@ import {
   // handleFileUpload,
   forceImageRestrictions,
   fileToBase64,
-} from "./actions-image"
+} from "./"
 // import {
 //   loadContent,
 //   loadTextContent,
