@@ -2,7 +2,7 @@ import React from "react"
 import localForage from "localforage"
 import styled from "styled-components"
 
-import {fileToBase64} from "../../utils/actions-image"
+import {fileToBase64} from "../../utils"
 
 const Figure = styled.figure`
   margin: ${props => props.theme.size.block.spacing}em 0;
