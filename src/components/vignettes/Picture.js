@@ -2,9 +2,9 @@ import React from "react"
 import localForage from "localforage"
 import styled from "styled-components"
 
-import {base64ToBlob} from "../../utils"
+import {base64ToBlob} from "../../utils/image"
 
-const Figure = styled.figure`
+export const Figure = styled.figure`
   margin: ${props => props.theme.size.block.spacing}em 0;
   &.focus {
     box-shadow: 0 0 0 4px ${props => props.theme.color.brand()};

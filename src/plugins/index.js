@@ -3,7 +3,7 @@ import {chars} from "./collection-chars"
 import {header} from "./collection-header"
 import {hotkeys} from "./collection-hotkeys"
 import {hr} from "./collection-hr"
-import {html} from "../rules"
+import {html} from "../utils/deserialize-html"
 import {images} from "./collection-images"
 import {quote} from "./collection-quote"
 

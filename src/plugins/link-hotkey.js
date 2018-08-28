@@ -1,6 +1,6 @@
 import keycode from "keycode"
 
-import {addLink} from "../utils"
+import {addLink} from "../utils/format"
 
 /**
  * LinkHotkey - A plugin function that can add a link to a Slate text string.

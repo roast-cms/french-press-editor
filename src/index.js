@@ -6,21 +6,21 @@ import React from "react"
 import getOffsets from "positions"
 import localForage from "localforage"
 
-import {PLACEHOLDER_TEXT, PICTURE_ACCEPTED_UPLOAD_MIME} from "./constants"
 import {
-  loadContent,
-  saveContent,
-  setDraftStatusHelper,
-  focusEvents,
-  formatCommand,
-  menuPosition,
-  imageButtonPosition,
-  handleImageButton,
+  PICTURE_ACCEPTED_UPLOAD_MIME,
+  PLACEHOLDER_TEXT,
+} from "./constants/defaults"
+import {focusEvents} from "./utils/focus"
+import {formatCommand, menuPosition} from "./utils/format"
+import {
   handleFileUpload,
-} from "./utils"
+  handleImageButton,
+  imageButtonPosition,
+} from "./utils/image"
+import {loadContent, saveContent, setDraftStatusHelper} from "./utils/storage"
 import {plugins} from "./plugins"
-import {renderNode, renderMark} from "./render"
-import {schema} from "./schema"
+import {renderMark, renderNode} from "./utils/render"
+import {schema} from "../dist/schema"
 import DefaultImageButton from "./components/controls/ImageButton"
 import FormatMenu from "./components/controls/FormatMenu"
 

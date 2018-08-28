@@ -1,6 +1,6 @@
 import throttle from "lodash/throttle"
 
-import {DEFAULT_EDITOR_STATE} from "../constants"
+import {DEFAULT_EDITOR_STATE} from "../constants/defaults"
 
 /**
  * Loads stored Slate Value object from localStorage.
