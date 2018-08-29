@@ -1,19 +1,4 @@
-// import { focusEvents } from "./events-focus";
-// import { addLink, formatCommand, menuPosition } from "./actions-format";
-import {
-  // imageButtonPosition,
-  // handleImageButton,
-  // handleFileUpload,
-  forceImageRestrictions,
-  fileToBase64,
-} from "./"
-// import {
-//   loadContent,
-//   loadTextContent,
-//   storeContentState,
-//   saveContent,
-//   setDraftStatusHelper
-// } from "./actions-storage";
+import {fileToBase64, forceImageRestrictions} from "./image"
 
 test("File to data-uri converter return data-uri if a valid one is provided", () => {
   const validData = "data:image/png;base64,iVBORw0KGgoA"

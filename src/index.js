@@ -10,6 +10,7 @@ import {
   PICTURE_ACCEPTED_UPLOAD_MIME,
   PLACEHOLDER_TEXT,
 } from "./constants/defaults"
+import {SCHEMA} from "./constants/schema"
 import {focusEvents} from "./utils/focus"
 import {formatCommand, menuPosition} from "./utils/format"
 import {
@@ -20,7 +21,6 @@ import {
 import {loadContent, saveContent, setDraftStatusHelper} from "./utils/storage"
 import {plugins} from "./plugins"
 import {renderMark, renderNode} from "./utils/render"
-import {schema} from "../dist/schema"
 import DefaultImageButton from "./components/controls/ImageButton"
 import FormatMenu from "./components/controls/FormatMenu"
 
@@ -41,7 +41,7 @@ export class FrenchPress extends React.PureComponent {
     super(props)
     this.state = {
       value: Value.fromJSON(loadContent()),
-      schema,
+      SCHEMA,
       cursorContext: {
         newLine: false,
         parentBlockOffsets: {top: 0, left: 0},
