@@ -13,7 +13,7 @@ ShallowWrapper {
   },
   Symbol(enzyme.__node__): Object {
     "instance": null,
-    "key": "38",
+    "key": "43",
     "nodeType": "host",
     "props": Object {
       "children": Array [
@@ -22,9 +22,7 @@ ShallowWrapper {
         ],
       ],
       "node": null,
-      "parent": Object {
-        "getNextBlock": [Function],
-      },
+      "parent": undefined,
     },
     "ref": null,
     "rendered": Array [
@@ -35,7 +33,7 @@ ShallowWrapper {
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
-      "key": "38",
+      "key": "43",
       "nodeType": "host",
       "props": Object {
         "children": Array [
@@ -44,9 +42,7 @@ ShallowWrapper {
           ],
         ],
         "node": null,
-        "parent": Object {
-          "getNextBlock": [Function],
-        },
+        "parent": undefined,
       },
       "ref": null,
       "rendered": Array [
@@ -75,4 +71,30 @@ ShallowWrapper {
     "hydrateIn": undefined,
   },
 }
+`;
+
+exports[`addKey creates React elements that match snapshot. 1`] = `
+<type
+  node={null}
+/>
+`;
+
+exports[`serializeLeaf maps leaves into marks components with keys 1`] = `
+<em
+  node={null}
+>
+  <span
+    node={null}
+  >
+    This is the first post to go onto this website.
+  </span>
+</em>
+`;
+
+exports[`serializeString returns string, wrapped in consistent components. 1`] = `
+<span
+  node={null}
+>
+  This is the first post to go onto this website.
+</span>
 `;
