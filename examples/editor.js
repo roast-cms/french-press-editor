@@ -8,6 +8,7 @@ import {
   //
 } from "../src/index"
 import {TestPlugin} from "./plugin"
+import {EXAMPLE_VALUE} from "./constants"
 import //
 // picture component that you will need to pass as a prop in order to
 // render images within your documents; you can create your own Picture
@@ -59,6 +60,9 @@ export class Editor extends React.PureComponent {
           //
           // placeholder text that's displayed inside empty editor
           placeholder="Write here..."
+          //
+          //
+          value={EXAMPLE_VALUE}
           //
           // components prop accepts three possible components: Picture,
           // PictureDocket, and ImageButton

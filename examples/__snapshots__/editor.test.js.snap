@@ -64,6 +64,223 @@ ShallowWrapper {
               },
             ]
           }
+          value={
+            Object {
+              "document": Object {
+                "data": Object {},
+                "nodes": Array [
+                  Object {
+                    "data": Object {},
+                    "isVoid": false,
+                    "nodes": Array [
+                      Object {
+                        "leaves": Array [
+                          Object {
+                            "marks": Array [],
+                            "object": "leaf",
+                            "text": "Paragraph test.",
+                          },
+                        ],
+                        "object": "text",
+                      },
+                    ],
+                    "object": "block",
+                    "type": "paragraph",
+                  },
+                  Object {
+                    "data": Object {},
+                    "isVoid": false,
+                    "nodes": Array [
+                      Object {
+                        "leaves": Array [
+                          Object {
+                            "marks": Array [
+                              Object {
+                                "data": Object {},
+                                "object": "mark",
+                                "type": "italic",
+                              },
+                            ],
+                            "object": "leaf",
+                            "text": "Inline",
+                          },
+                          Object {
+                            "marks": Array [],
+                            "object": "leaf",
+                            "text": " ",
+                          },
+                          Object {
+                            "marks": Array [
+                              Object {
+                                "data": Object {},
+                                "object": "mark",
+                                "type": "bold",
+                              },
+                            ],
+                            "object": "leaf",
+                            "text": "marks",
+                          },
+                          Object {
+                            "marks": Array [],
+                            "object": "leaf",
+                            "text": " ",
+                          },
+                          Object {
+                            "marks": Array [
+                              Object {
+                                "data": Object {},
+                                "object": "mark",
+                                "type": "bold",
+                              },
+                              Object {
+                                "data": Object {},
+                                "object": "mark",
+                                "type": "italic",
+                              },
+                            ],
+                            "object": "leaf",
+                            "text": "test",
+                          },
+                          Object {
+                            "marks": Array [],
+                            "object": "leaf",
+                            "text": ".",
+                          },
+                        ],
+                        "object": "text",
+                      },
+                    ],
+                    "object": "block",
+                    "type": "paragraph",
+                  },
+                  Object {
+                    "data": Object {},
+                    "isVoid": false,
+                    "nodes": Array [
+                      Object {
+                        "leaves": Array [
+                          Object {
+                            "marks": Array [],
+                            "object": "leaf",
+                            "text": "Links ",
+                          },
+                        ],
+                        "object": "text",
+                      },
+                      Object {
+                        "data": Object {
+                          "href": "https://github.com/roast-cms/french-press-editor",
+                        },
+                        "isVoid": false,
+                        "nodes": Array [
+                          Object {
+                            "leaves": Array [
+                              Object {
+                                "marks": Array [],
+                                "object": "leaf",
+                                "text": "test",
+                              },
+                            ],
+                            "object": "text",
+                          },
+                        ],
+                        "object": "inline",
+                        "type": "link",
+                      },
+                      Object {
+                        "leaves": Array [
+                          Object {
+                            "marks": Array [],
+                            "object": "leaf",
+                            "text": ".",
+                          },
+                        ],
+                        "object": "text",
+                      },
+                    ],
+                    "object": "block",
+                    "type": "paragraph",
+                  },
+                  Object {
+                    "data": Object {},
+                    "isVoid": false,
+                    "nodes": Array [
+                      Object {
+                        "leaves": Array [
+                          Object {
+                            "marks": Array [],
+                            "object": "leaf",
+                            "text": "Header test.",
+                          },
+                        ],
+                        "object": "text",
+                      },
+                    ],
+                    "object": "block",
+                    "type": "heading",
+                  },
+                  Object {
+                    "data": Object {},
+                    "isVoid": false,
+                    "nodes": Array [
+                      Object {
+                        "leaves": Array [
+                          Object {
+                            "marks": Array [],
+                            "object": "leaf",
+                            "text": "Quote test.",
+                          },
+                        ],
+                        "object": "text",
+                      },
+                    ],
+                    "object": "block",
+                    "type": "quote",
+                  },
+                  Object {
+                    "data": Object {
+                      "src": "https://instagram.fyvr3-1.fna.fbcdn.net/vp/08c7b82dfdb7bdbac00bfac0afd49dd7/5C233865/t51.2885-15/e35/29740602_208947276504723_8552082654378328064_n.jpg",
+                    },
+                    "isVoid": true,
+                    "nodes": Array [
+                      Object {
+                        "leaves": Array [
+                          Object {
+                            "marks": Array [],
+                            "object": "leaf",
+                            "text": "",
+                          },
+                        ],
+                        "object": "text",
+                      },
+                    ],
+                    "object": "block",
+                    "type": "image",
+                  },
+                  Object {
+                    "data": Object {},
+                    "isVoid": false,
+                    "nodes": Array [
+                      Object {
+                        "leaves": Array [
+                          Object {
+                            "marks": Array [],
+                            "object": "leaf",
+                            "text": "",
+                          },
+                        ],
+                        "object": "text",
+                      },
+                    ],
+                    "object": "block",
+                    "type": "paragraph",
+                  },
+                ],
+                "object": "document",
+              },
+              "object": "value",
+            }
+          }
         />,
       ],
     },
@@ -117,6 +334,221 @@ ShallowWrapper {
               "onKeyDown": [Function],
             },
           ],
+          "value": Object {
+            "document": Object {
+              "data": Object {},
+              "nodes": Array [
+                Object {
+                  "data": Object {},
+                  "isVoid": false,
+                  "nodes": Array [
+                    Object {
+                      "leaves": Array [
+                        Object {
+                          "marks": Array [],
+                          "object": "leaf",
+                          "text": "Paragraph test.",
+                        },
+                      ],
+                      "object": "text",
+                    },
+                  ],
+                  "object": "block",
+                  "type": "paragraph",
+                },
+                Object {
+                  "data": Object {},
+                  "isVoid": false,
+                  "nodes": Array [
+                    Object {
+                      "leaves": Array [
+                        Object {
+                          "marks": Array [
+                            Object {
+                              "data": Object {},
+                              "object": "mark",
+                              "type": "italic",
+                            },
+                          ],
+                          "object": "leaf",
+                          "text": "Inline",
+                        },
+                        Object {
+                          "marks": Array [],
+                          "object": "leaf",
+                          "text": " ",
+                        },
+                        Object {
+                          "marks": Array [
+                            Object {
+                              "data": Object {},
+                              "object": "mark",
+                              "type": "bold",
+                            },
+                          ],
+                          "object": "leaf",
+                          "text": "marks",
+                        },
+                        Object {
+                          "marks": Array [],
+                          "object": "leaf",
+                          "text": " ",
+                        },
+                        Object {
+                          "marks": Array [
+                            Object {
+                              "data": Object {},
+                              "object": "mark",
+                              "type": "bold",
+                            },
+                            Object {
+                              "data": Object {},
+                              "object": "mark",
+                              "type": "italic",
+                            },
+                          ],
+                          "object": "leaf",
+                          "text": "test",
+                        },
+                        Object {
+                          "marks": Array [],
+                          "object": "leaf",
+                          "text": ".",
+                        },
+                      ],
+                      "object": "text",
+                    },
+                  ],
+                  "object": "block",
+                  "type": "paragraph",
+                },
+                Object {
+                  "data": Object {},
+                  "isVoid": false,
+                  "nodes": Array [
+                    Object {
+                      "leaves": Array [
+                        Object {
+                          "marks": Array [],
+                          "object": "leaf",
+                          "text": "Links ",
+                        },
+                      ],
+                      "object": "text",
+                    },
+                    Object {
+                      "data": Object {
+                        "href": "https://github.com/roast-cms/french-press-editor",
+                      },
+                      "isVoid": false,
+                      "nodes": Array [
+                        Object {
+                          "leaves": Array [
+                            Object {
+                              "marks": Array [],
+                              "object": "leaf",
+                              "text": "test",
+                            },
+                          ],
+                          "object": "text",
+                        },
+                      ],
+                      "object": "inline",
+                      "type": "link",
+                    },
+                    Object {
+                      "leaves": Array [
+                        Object {
+                          "marks": Array [],
+                          "object": "leaf",
+                          "text": ".",
+                        },
+                      ],
+                      "object": "text",
+                    },
+                  ],
+                  "object": "block",
+                  "type": "paragraph",
+                },
+                Object {
+                  "data": Object {},
+                  "isVoid": false,
+                  "nodes": Array [
+                    Object {
+                      "leaves": Array [
+                        Object {
+                          "marks": Array [],
+                          "object": "leaf",
+                          "text": "Header test.",
+                        },
+                      ],
+                      "object": "text",
+                    },
+                  ],
+                  "object": "block",
+                  "type": "heading",
+                },
+                Object {
+                  "data": Object {},
+                  "isVoid": false,
+                  "nodes": Array [
+                    Object {
+                      "leaves": Array [
+                        Object {
+                          "marks": Array [],
+                          "object": "leaf",
+                          "text": "Quote test.",
+                        },
+                      ],
+                      "object": "text",
+                    },
+                  ],
+                  "object": "block",
+                  "type": "quote",
+                },
+                Object {
+                  "data": Object {
+                    "src": "https://instagram.fyvr3-1.fna.fbcdn.net/vp/08c7b82dfdb7bdbac00bfac0afd49dd7/5C233865/t51.2885-15/e35/29740602_208947276504723_8552082654378328064_n.jpg",
+                  },
+                  "isVoid": true,
+                  "nodes": Array [
+                    Object {
+                      "leaves": Array [
+                        Object {
+                          "marks": Array [],
+                          "object": "leaf",
+                          "text": "",
+                        },
+                      ],
+                      "object": "text",
+                    },
+                  ],
+                  "object": "block",
+                  "type": "image",
+                },
+                Object {
+                  "data": Object {},
+                  "isVoid": false,
+                  "nodes": Array [
+                    Object {
+                      "leaves": Array [
+                        Object {
+                          "marks": Array [],
+                          "object": "leaf",
+                          "text": "",
+                        },
+                      ],
+                      "object": "text",
+                    },
+                  ],
+                  "object": "block",
+                  "type": "paragraph",
+                },
+              ],
+              "object": "document",
+            },
+            "object": "value",
+          },
         },
         "ref": null,
         "rendered": null,
@@ -179,6 +611,223 @@ ShallowWrapper {
                 },
               ]
             }
+            value={
+              Object {
+                "document": Object {
+                  "data": Object {},
+                  "nodes": Array [
+                    Object {
+                      "data": Object {},
+                      "isVoid": false,
+                      "nodes": Array [
+                        Object {
+                          "leaves": Array [
+                            Object {
+                              "marks": Array [],
+                              "object": "leaf",
+                              "text": "Paragraph test.",
+                            },
+                          ],
+                          "object": "text",
+                        },
+                      ],
+                      "object": "block",
+                      "type": "paragraph",
+                    },
+                    Object {
+                      "data": Object {},
+                      "isVoid": false,
+                      "nodes": Array [
+                        Object {
+                          "leaves": Array [
+                            Object {
+                              "marks": Array [
+                                Object {
+                                  "data": Object {},
+                                  "object": "mark",
+                                  "type": "italic",
+                                },
+                              ],
+                              "object": "leaf",
+                              "text": "Inline",
+                            },
+                            Object {
+                              "marks": Array [],
+                              "object": "leaf",
+                              "text": " ",
+                            },
+                            Object {
+                              "marks": Array [
+                                Object {
+                                  "data": Object {},
+                                  "object": "mark",
+                                  "type": "bold",
+                                },
+                              ],
+                              "object": "leaf",
+                              "text": "marks",
+                            },
+                            Object {
+                              "marks": Array [],
+                              "object": "leaf",
+                              "text": " ",
+                            },
+                            Object {
+                              "marks": Array [
+                                Object {
+                                  "data": Object {},
+                                  "object": "mark",
+                                  "type": "bold",
+                                },
+                                Object {
+                                  "data": Object {},
+                                  "object": "mark",
+                                  "type": "italic",
+                                },
+                              ],
+                              "object": "leaf",
+                              "text": "test",
+                            },
+                            Object {
+                              "marks": Array [],
+                              "object": "leaf",
+                              "text": ".",
+                            },
+                          ],
+                          "object": "text",
+                        },
+                      ],
+                      "object": "block",
+                      "type": "paragraph",
+                    },
+                    Object {
+                      "data": Object {},
+                      "isVoid": false,
+                      "nodes": Array [
+                        Object {
+                          "leaves": Array [
+                            Object {
+                              "marks": Array [],
+                              "object": "leaf",
+                              "text": "Links ",
+                            },
+                          ],
+                          "object": "text",
+                        },
+                        Object {
+                          "data": Object {
+                            "href": "https://github.com/roast-cms/french-press-editor",
+                          },
+                          "isVoid": false,
+                          "nodes": Array [
+                            Object {
+                              "leaves": Array [
+                                Object {
+                                  "marks": Array [],
+                                  "object": "leaf",
+                                  "text": "test",
+                                },
+                              ],
+                              "object": "text",
+                            },
+                          ],
+                          "object": "inline",
+                          "type": "link",
+                        },
+                        Object {
+                          "leaves": Array [
+                            Object {
+                              "marks": Array [],
+                              "object": "leaf",
+                              "text": ".",
+                            },
+                          ],
+                          "object": "text",
+                        },
+                      ],
+                      "object": "block",
+                      "type": "paragraph",
+                    },
+                    Object {
+                      "data": Object {},
+                      "isVoid": false,
+                      "nodes": Array [
+                        Object {
+                          "leaves": Array [
+                            Object {
+                              "marks": Array [],
+                              "object": "leaf",
+                              "text": "Header test.",
+                            },
+                          ],
+                          "object": "text",
+                        },
+                      ],
+                      "object": "block",
+                      "type": "heading",
+                    },
+                    Object {
+                      "data": Object {},
+                      "isVoid": false,
+                      "nodes": Array [
+                        Object {
+                          "leaves": Array [
+                            Object {
+                              "marks": Array [],
+                              "object": "leaf",
+                              "text": "Quote test.",
+                            },
+                          ],
+                          "object": "text",
+                        },
+                      ],
+                      "object": "block",
+                      "type": "quote",
+                    },
+                    Object {
+                      "data": Object {
+                        "src": "https://instagram.fyvr3-1.fna.fbcdn.net/vp/08c7b82dfdb7bdbac00bfac0afd49dd7/5C233865/t51.2885-15/e35/29740602_208947276504723_8552082654378328064_n.jpg",
+                      },
+                      "isVoid": true,
+                      "nodes": Array [
+                        Object {
+                          "leaves": Array [
+                            Object {
+                              "marks": Array [],
+                              "object": "leaf",
+                              "text": "",
+                            },
+                          ],
+                          "object": "text",
+                        },
+                      ],
+                      "object": "block",
+                      "type": "image",
+                    },
+                    Object {
+                      "data": Object {},
+                      "isVoid": false,
+                      "nodes": Array [
+                        Object {
+                          "leaves": Array [
+                            Object {
+                              "marks": Array [],
+                              "object": "leaf",
+                              "text": "",
+                            },
+                          ],
+                          "object": "text",
+                        },
+                      ],
+                      "object": "block",
+                      "type": "paragraph",
+                    },
+                  ],
+                  "object": "document",
+                },
+                "object": "value",
+              }
+            }
           />,
         ],
       },
@@ -232,6 +881,221 @@ ShallowWrapper {
                 "onKeyDown": [Function],
               },
             ],
+            "value": Object {
+              "document": Object {
+                "data": Object {},
+                "nodes": Array [
+                  Object {
+                    "data": Object {},
+                    "isVoid": false,
+                    "nodes": Array [
+                      Object {
+                        "leaves": Array [
+                          Object {
+                            "marks": Array [],
+                            "object": "leaf",
+                            "text": "Paragraph test.",
+                          },
+                        ],
+                        "object": "text",
+                      },
+                    ],
+                    "object": "block",
+                    "type": "paragraph",
+                  },
+                  Object {
+                    "data": Object {},
+                    "isVoid": false,
+                    "nodes": Array [
+                      Object {
+                        "leaves": Array [
+                          Object {
+                            "marks": Array [
+                              Object {
+                                "data": Object {},
+                                "object": "mark",
+                                "type": "italic",
+                              },
+                            ],
+                            "object": "leaf",
+                            "text": "Inline",
+                          },
+                          Object {
+                            "marks": Array [],
+                            "object": "leaf",
+                            "text": " ",
+                          },
+                          Object {
+                            "marks": Array [
+                              Object {
+                                "data": Object {},
+                                "object": "mark",
+                                "type": "bold",
+                              },
+                            ],
+                            "object": "leaf",
+                            "text": "marks",
+                          },
+                          Object {
+                            "marks": Array [],
+                            "object": "leaf",
+                            "text": " ",
+                          },
+                          Object {
+                            "marks": Array [
+                              Object {
+                                "data": Object {},
+                                "object": "mark",
+                                "type": "bold",
+                              },
+                              Object {
+                                "data": Object {},
+                                "object": "mark",
+                                "type": "italic",
+                              },
+                            ],
+                            "object": "leaf",
+                            "text": "test",
+                          },
+                          Object {
+                            "marks": Array [],
+                            "object": "leaf",
+                            "text": ".",
+                          },
+                        ],
+                        "object": "text",
+                      },
+                    ],
+                    "object": "block",
+                    "type": "paragraph",
+                  },
+                  Object {
+                    "data": Object {},
+                    "isVoid": false,
+                    "nodes": Array [
+                      Object {
+                        "leaves": Array [
+                          Object {
+                            "marks": Array [],
+                            "object": "leaf",
+                            "text": "Links ",
+                          },
+                        ],
+                        "object": "text",
+                      },
+                      Object {
+                        "data": Object {
+                          "href": "https://github.com/roast-cms/french-press-editor",
+                        },
+                        "isVoid": false,
+                        "nodes": Array [
+                          Object {
+                            "leaves": Array [
+                              Object {
+                                "marks": Array [],
+                                "object": "leaf",
+                                "text": "test",
+                              },
+                            ],
+                            "object": "text",
+                          },
+                        ],
+                        "object": "inline",
+                        "type": "link",
+                      },
+                      Object {
+                        "leaves": Array [
+                          Object {
+                            "marks": Array [],
+                            "object": "leaf",
+                            "text": ".",
+                          },
+                        ],
+                        "object": "text",
+                      },
+                    ],
+                    "object": "block",
+                    "type": "paragraph",
+                  },
+                  Object {
+                    "data": Object {},
+                    "isVoid": false,
+                    "nodes": Array [
+                      Object {
+                        "leaves": Array [
+                          Object {
+                            "marks": Array [],
+                            "object": "leaf",
+                            "text": "Header test.",
+                          },
+                        ],
+                        "object": "text",
+                      },
+                    ],
+                    "object": "block",
+                    "type": "heading",
+                  },
+                  Object {
+                    "data": Object {},
+                    "isVoid": false,
+                    "nodes": Array [
+                      Object {
+                        "leaves": Array [
+                          Object {
+                            "marks": Array [],
+                            "object": "leaf",
+                            "text": "Quote test.",
+                          },
+                        ],
+                        "object": "text",
+                      },
+                    ],
+                    "object": "block",
+                    "type": "quote",
+                  },
+                  Object {
+                    "data": Object {
+                      "src": "https://instagram.fyvr3-1.fna.fbcdn.net/vp/08c7b82dfdb7bdbac00bfac0afd49dd7/5C233865/t51.2885-15/e35/29740602_208947276504723_8552082654378328064_n.jpg",
+                    },
+                    "isVoid": true,
+                    "nodes": Array [
+                      Object {
+                        "leaves": Array [
+                          Object {
+                            "marks": Array [],
+                            "object": "leaf",
+                            "text": "",
+                          },
+                        ],
+                        "object": "text",
+                      },
+                    ],
+                    "object": "block",
+                    "type": "image",
+                  },
+                  Object {
+                    "data": Object {},
+                    "isVoid": false,
+                    "nodes": Array [
+                      Object {
+                        "leaves": Array [
+                          Object {
+                            "marks": Array [],
+                            "object": "leaf",
+                            "text": "",
+                          },
+                        ],
+                        "object": "text",
+                      },
+                    ],
+                    "object": "block",
+                    "type": "paragraph",
+                  },
+                ],
+                "object": "document",
+              },
+              "object": "value",
+            },
           },
           "ref": null,
           "rendered": null,
