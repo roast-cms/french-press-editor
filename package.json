@@ -56,7 +56,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server --mode development",
-    "prepare": "rm -rf dist && npm test && npx babel src --out-dir dist && size-limit",
+    "prepare": "npm test && npx babel src --delete-dir-on-start --out-dir dist --ignore '**/*.test.js' && size-limit",
     "docs": "jsdoc2md src/*.js > docs/README.md; jsdoc2md src/components/**/*.js > docs/COMPONENTS.md; jsdoc2md src/plugins/*.js > docs/PLUGINS.md; jsdoc2md src/utils/*.js > docs/UTILS.md",
     "size": "size-limit",
     "test": "jest",
@@ -86,7 +86,7 @@
   "size-limit": [
     {
       "path": "dist",
-      "limit": "40 KB",
+      "limit": "35 KB",
       "webpack": false,
       "ignore": []
     }
