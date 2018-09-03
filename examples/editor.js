@@ -62,7 +62,18 @@ export class Editor extends React.PureComponent {
           placeholder="Write here..."
           //
           //
-          value={EXAMPLE_VALUE}
+          // If this is the first time the editor is opened, there is no memory
+          // in localStorage. In that case, an EXAMPLE_VALUE content is to be
+          // loaded. However, once it's modified, the saved version will be
+          // loaded every time. Note that
+          // localStorage.getItem("composer-content-state") is never NULL, even
+          // for empty documents after first auto save, since even an empty
+          // document has a structure that's stored in the LS.
+          value={
+            localStorage.getItem("composer-content-state")
+              ? null
+              : EXAMPLE_VALUE
+          }
           //
           // components prop accepts three possible components: Picture,
           // PictureDocket, and ImageButton
