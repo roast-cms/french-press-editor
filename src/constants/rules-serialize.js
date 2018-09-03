@@ -1,5 +1,6 @@
 import React from "react"
 
+import {addKey} from "../components/vignettes/Reader"
 import Link from "../components/controls/Link"
 
 export const rulesSerializeWithProps = props => [
@@ -10,14 +11,19 @@ export const rulesSerializeWithProps = props => [
         case "link": {
           const href = node.data.href
           return addKey(
-            <Link to={makeRelative(href, props.options.domain)}>
+            <Link
+              to={href}
+              domain={props.options ? props.options.domain : null}
+            >
               {children}
             </Link>
           )
         }
         case "image": {
           if (props.components && props.components.Picture) {
-            const Picture = props.editor.props.components.Picture
+            const Picture = props.editor
+              ? props.editor.props.components.Picture
+              : props.components.Picture
             return addKey(
               <Picture
                 editor={{value: {isFocused: false, isSelected: false}}}

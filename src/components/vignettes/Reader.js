@@ -1,5 +1,6 @@
 import React from "react"
 
+import {DEFAULT_EDITOR_STATE} from "../../constants/defaults"
 import {
   RULES_SERIALIZE,
   rulesSerializeWithProps,
@@ -28,19 +29,19 @@ export const addRootSerialNumbers = nodes => {
   return nodes
 }
 let nodes = []
-export const Reader = props => {
-  const {document} = props.value
+export const nodeFactory = props => {
+  const {document} = props.value || DEFAULT_EDITOR_STATE
   nodes = addRootSerialNumbers(document.nodes)
-  const elements = nodes.map(serializeNode).filter(Boolean)
+  const elements = nodes.map(node => serializeNode(node, props)).filter(Boolean)
   return elements
 }
-export const serializeNode = node => {
+export const serializeNode = (node, props) => {
   if (node.object === "text") {
     const {leaves} = node
-    return leaves.map(serializeLeaf)
+    return leaves.map(leaf => serializeLeaf(leaf, props))
   }
   const children = node.nodes.map(serializeNode)
-  for (const rule of rules) {
+  for (const rule of rules(props)) {
     if (!rule.serialize) continue
     const ret = rule.serialize(node, children)
     if (ret === null) return
@@ -48,13 +49,13 @@ export const serializeNode = node => {
   }
   throw new Error(`No serializer defined for node of type "${node.type}".`)
 }
-export const serializeLeaf = leaf => {
+export const serializeLeaf = (leaf, props) => {
   const string = {object: "string", text: leaf.text}
-  const text = serializeString(string)
+  const text = serializeString(string, props)
   if (!leaf.marks) return leaf.text
 
   return leaf.marks.reduce((children, mark) => {
-    for (const rule of rules) {
+    for (const rule of rules(props)) {
       if (!rule.serialize) continue
       const ret = rule.serialize(mark, children)
       if (ret === null) return null
@@ -63,8 +64,8 @@ export const serializeLeaf = leaf => {
     throw new Error(`No serializer defined for mark of type "${mark.type}".`)
   }, text)
 }
-export const serializeString = string => {
-  for (const rule of rules) {
+export const serializeString = (string, props) => {
+  for (const rule of rules(props)) {
     if (!rule.serialize) continue
     const ret = rule.serialize(string, string.text)
     if (ret) return ret
@@ -100,4 +101,4 @@ export const addKey = element => {
   })
 }
 
-export default Reader
+export default props => nodeFactory(props)
