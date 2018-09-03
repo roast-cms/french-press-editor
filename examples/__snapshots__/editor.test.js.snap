@@ -1,0 +1,264 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Editor without crashing, matches snapshot 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Editor />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          style={
+            Object {
+              "background": "#eee",
+              "color": "#999",
+              "padding": ".5em",
+            }
+          }
+        >
+          Draft Saved.
+        </div>,
+        <FrenchPress
+          callbackError={[Function]}
+          callbackStatus={[Function]}
+          components={
+            Object {
+              "ImageButton": null,
+              "Picture": [Function],
+              "PictureDocket": null,
+            }
+          }
+          controls={
+            Object {
+              "CancelHeader": [Function],
+              "MakeBold": [Function],
+              "MakeHeader": [Function],
+              "MakeItalic": [Function],
+              "MakeLink": [Function],
+              "MakeQuote": [Function],
+              "UploadImage": [Function],
+            }
+          }
+          editorRef={[Function]}
+          options={
+            Object {
+              "domain": "localhost:3002",
+              "imagePlaceholder": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+            }
+          }
+          placeholder="Write here..."
+          slatePlugins={
+            Array [
+              Object {
+                "onKeyDown": [Function],
+              },
+            ]
+          }
+        />,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Draft Saved.",
+          "style": Object {
+            "background": "#eee",
+            "color": "#999",
+            "padding": ".5em",
+          },
+        },
+        "ref": null,
+        "rendered": "Draft Saved.",
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "callbackError": [Function],
+          "callbackStatus": [Function],
+          "components": Object {
+            "ImageButton": null,
+            "Picture": [Function],
+            "PictureDocket": null,
+          },
+          "controls": Object {
+            "CancelHeader": [Function],
+            "MakeBold": [Function],
+            "MakeHeader": [Function],
+            "MakeItalic": [Function],
+            "MakeLink": [Function],
+            "MakeQuote": [Function],
+            "UploadImage": [Function],
+          },
+          "editorRef": [Function],
+          "options": Object {
+            "domain": "localhost:3002",
+            "imagePlaceholder": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+          },
+          "placeholder": "Write here...",
+          "slatePlugins": Array [
+            Object {
+              "onKeyDown": [Function],
+            },
+          ],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            style={
+              Object {
+                "background": "#eee",
+                "color": "#999",
+                "padding": ".5em",
+              }
+            }
+          >
+            Draft Saved.
+          </div>,
+          <FrenchPress
+            callbackError={[Function]}
+            callbackStatus={[Function]}
+            components={
+              Object {
+                "ImageButton": null,
+                "Picture": [Function],
+                "PictureDocket": null,
+              }
+            }
+            controls={
+              Object {
+                "CancelHeader": [Function],
+                "MakeBold": [Function],
+                "MakeHeader": [Function],
+                "MakeItalic": [Function],
+                "MakeLink": [Function],
+                "MakeQuote": [Function],
+                "UploadImage": [Function],
+              }
+            }
+            editorRef={[Function]}
+            options={
+              Object {
+                "domain": "localhost:3002",
+                "imagePlaceholder": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+              }
+            }
+            placeholder="Write here..."
+            slatePlugins={
+              Array [
+                Object {
+                  "onKeyDown": [Function],
+                },
+              ]
+            }
+          />,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Draft Saved.",
+            "style": Object {
+              "background": "#eee",
+              "color": "#999",
+              "padding": ".5em",
+            },
+          },
+          "ref": null,
+          "rendered": "Draft Saved.",
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "callbackError": [Function],
+            "callbackStatus": [Function],
+            "components": Object {
+              "ImageButton": null,
+              "Picture": [Function],
+              "PictureDocket": null,
+            },
+            "controls": Object {
+              "CancelHeader": [Function],
+              "MakeBold": [Function],
+              "MakeHeader": [Function],
+              "MakeItalic": [Function],
+              "MakeLink": [Function],
+              "MakeQuote": [Function],
+              "UploadImage": [Function],
+            },
+            "editorRef": [Function],
+            "options": Object {
+              "domain": "localhost:3002",
+              "imagePlaceholder": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+            },
+            "placeholder": "Write here...",
+            "slatePlugins": Array [
+              Object {
+                "onKeyDown": [Function],
+              },
+            ],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;
