@@ -6,7 +6,7 @@ import {
   rulesSerializeWithProps,
 } from "../../constants/rules-serialize"
 
-const rules = props => [
+export const rules = props => [
   ...RULES_SERIALIZE,
   ...rulesSerializeWithProps(props),
   {
