@@ -17,7 +17,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <Unknown
+        <_default
           click={[Function]}
           style={
             Object {
@@ -28,7 +28,7 @@ ShallowWrapper {
           }
         >
           <Unknown />
-        </Unknown>,
+        </_default>,
         <Editor
           autoCorrect={true}
           autoFocus={false}
@@ -738,7 +738,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <Unknown
+          <_default
             click={[Function]}
             style={
               Object {
@@ -749,7 +749,7 @@ ShallowWrapper {
             }
           >
             <Unknown />
-          </Unknown>,
+          </_default>,
           <Editor
             autoCorrect={true}
             autoFocus={false}
