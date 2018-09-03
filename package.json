@@ -56,7 +56,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server --mode development",
-    "prepare": "npm test && npx babel src --out-dir dist",
+    "prepare": "rm -rf dist && npm test && npx babel src --out-dir dist && size-limit",
     "docs": "jsdoc2md src/*.js > docs/README.md; jsdoc2md src/components/**/*.js > docs/COMPONENTS.md; jsdoc2md src/plugins/*.js > docs/PLUGINS.md; jsdoc2md src/utils/*.js > docs/UTILS.md",
     "size": "size-limit",
     "test": "jest",
@@ -88,10 +88,7 @@
       "path": "dist",
       "limit": "40 KB",
       "webpack": false,
-      "ignore": [
-        "*.js.snap",
-        "*.test.js"
-      ]
+      "ignore": []
     }
   ],
   "jest": {
@@ -102,10 +99,10 @@
     },
     "setupTestFrameworkScriptFile": "<rootDir>/setupTests.js",
     "coveragePathIgnorePatterns": [
-      "/node_modules/",
-      "/dist/",
-      "/examples/",
-      "/graphics/"
+      "/node_modules/"
+    ],
+    "modulePathIgnorePatterns": [
+      "/dist/"
     ]
   }
 }
