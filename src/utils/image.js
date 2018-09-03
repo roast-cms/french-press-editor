@@ -1,8 +1,8 @@
+import isDataString from "valid-data-url"
 import localForage from "localforage"
 import uuidv1 from "uuid/v1"
-import isDataString from "valid-data-url"
 
-import {PICTURE_ACCEPTED_UPLOAD_MIME} from "../constants"
+import {PICTURE_ACCEPTED_UPLOAD_MIME} from "../constants/defaults"
 
 /**
  * Converts file to base64 string

@@ -2,7 +2,7 @@ import InsertImages from "slate-drop-or-paste-images"
 import localForage from "localforage"
 import uuidv1 from "uuid/v1"
 
-import {fileToBase64, forceImageRestrictions} from "../utils"
+import {fileToBase64, forceImageRestrictions} from "../utils/image"
 
 /**
  * A plugin that lets user drag and drop images into the document (which then stores them in the browser database as files).
