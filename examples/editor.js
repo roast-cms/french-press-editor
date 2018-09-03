@@ -4,6 +4,8 @@ import {
   //
   // editor compoent itself
   FrenchPress,
+  //
+  //
 } from "../src/index"
 import {TestPlugin} from "./plugin"
 import //
