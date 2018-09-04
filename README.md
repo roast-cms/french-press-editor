@@ -4,7 +4,7 @@
 
 > ☕ An offline-first rich text editor component.
 
-<p align="center"><img src="/graphics/demo-1.gif?raw=true)" width="600" alt="getting started with french-press-editor" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/roast-cms/french-press-editor/develop/graphics/demo-1.gif" width="600" alt="getting started with french-press-editor" /></p>
 
 - **Offline-ready:** store content and images (!) in-browser.
 - **Much better than ContentEditable:** don't make your users and developers suffer!
@@ -19,7 +19,7 @@
 
 ---
 
-<p align="center"><img src="/graphics/demo-2.gif?raw=true)" width="600" alt="adding images" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/roast-cms/french-press-editor/develop/graphics/demo-2.gif" width="600" alt="adding images" /></p>
 
 ## Installation:
 
@@ -111,7 +111,29 @@ import { Picture } from "@roast-cms/french-press-editor/dist/containers/Picture"
 // ...
 ```
 
-<p align="center"><img src="/graphics/demo-3.gif?raw=true)" width="600" alt="theming the controls" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/roast-cms/french-press-editor/develop/graphics/demo-3.gif" width="600" alt="theming the controls" /></p>
+
+## Reader
+
+`<Reader />` component can render value JSON into react components without having to download the editor, saving a lot of bandwidth and parsing resources for your users.
+
+```javascript
+<Reader
+  //
+  // optional: domain which will parse all your links
+  // using @roast-cms/react-link-filter
+  options={{domain: "mydomain.com"}}
+  //
+  // required: your JSON value, the same one that the
+  // FrenchPress compoenent saves in localStorage
+  value={EXAMPLE_VALUE}
+  //
+  // optional: here you can pass your custom Picture component
+  // (see API docs for more details)
+  components={{Picture}}
+  //
+/>
+```
 
 # Why?
 
@@ -133,7 +155,7 @@ To see if this tool is right for you, please have a look through the list of spe
 - Built to make it easy for you to create an experience that will mirror the final published article for your users, so that they don't have to click <btn>Preview</btn> button every time.
 - `french-press-editor` is a ready-made, opinionated package, yet there is plenty that you can customize, far beyond CSS.
 
-<p align="center"><img src="/graphics/demo-5.png?raw=true" width="400" alt="mobile hover menu" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/roast-cms/french-press-editor/develop/graphics/demo-5.png?raw=true" width="400" alt="mobile hover menu" /></p>
 
 #### Built-in content block types.
 
@@ -195,4 +217,4 @@ If you have a feature request, bug report or a question, please submit an issue.
 
 **Every folder** in this repo has a `README.md` file to help you along.
 
-<p align="center"><img src="/graphics/logo.gif?raw=true)" width="125" alt="animated logo" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/roast-cms/french-press-editor/develop/graphics/logo.gif" width="125" alt="animated logo" /></p>
