@@ -1,4 +1,4 @@
-import {fileToBase64, forceImageRestrictions} from "./image"
+import {fileToBase64, base64ToBlob, forceImageRestrictions} from "./image"
 
 test("File to data-uri converter return data-uri if a valid one is provided", () => {
   const validData = "data:image/png;base64,iVBORw0KGgoA"
@@ -11,6 +11,10 @@ test("File to data-uri converter return error if an invalid input type provided"
   return expect(fileToBase64(invalidData)).rejects.toEqual({
     error: "TypeError: parameter must be a File/blob or a data-uri string.",
   })
+})
+test("data-uri to file converter return Blob for data-uri strings", () => {
+  const data = "data:image/png;base64,iVBORw0KGgoA"
+  expect(base64ToBlob(data)).toHaveProperty("type", "image/png")
 })
 
 test("Reject images over 10mb via forceImageRestrictions()", () => {
