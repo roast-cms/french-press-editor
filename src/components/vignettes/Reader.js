@@ -1,3 +1,6 @@
+// This entiere file is based on the code written by https://github.com/wmertens
+// https://gist.github.com/wmertens/0b4fd66ca7055fd290ecc4b9d95271a9
+
 import React from "react"
 
 import {DEFAULT_EDITOR_STATE} from "../../constants/defaults"
@@ -6,7 +9,7 @@ import {
   rulesSerializeWithProps,
 } from "../../constants/rules-serialize"
 
-const rules = props => [
+export const rules = props => [
   ...RULES_SERIALIZE,
   ...rulesSerializeWithProps(props),
   {
@@ -84,20 +87,27 @@ export const addKey = element => {
           },
         }
       : null,
-    parent: {
-      getNextBlock: () => {
-        const node = nodes.filter(object => {
-          return object.serial === element.props.node.serial + 1
-        })[0]
-        const nodeFunction = {
-          get: object =>
-            object === "data" && {
-              get: object => (node.data ? node.data[object] : undefined),
-            },
+
+    // This is a helper link that lets you define custom rendering options
+    // for blocks with particular parents. For example, an image can be
+    // rendered differently if its parent is a paragraph vs a quote.
+    // If `node` prop isn't added it will be ignored.
+    parent: element.props.node
+      ? {
+          getNextBlock: () => {
+            const node = nodes.filter(object => {
+              return object.serial === element.props.node.serial + 1
+            })[0]
+            const nodeFunction = {
+              get: object =>
+                object === "data" && {
+                  get: object => (node.data ? node.data[object] : undefined),
+                },
+            }
+            return nodeFunction
+          },
         }
-        return nodeFunction
-      },
-    },
+      : undefined,
   })
 }
 
