@@ -1,6 +1,6 @@
 # french-press-editor
 
-[![npm version](https://badge.fury.io/js/%40roast-cms%2Ffrench-press-editor.svg)](https://badge.fury.io/js/%40roast-cms%2Ffrench-press-editor) [![Build Status](https://travis-ci.com/roast-cms/french-press-editor.svg?branch=develop)](https://travis-ci.com/roast-cms/french-press-editor) [![Max Bundle Size](https://img.shields.io/badge/size%20gzip-35%20KB-green.svg)]
+[![npm version](https://badge.fury.io/js/%40roast-cms%2Ffrench-press-editor.svg)](https://badge.fury.io/js/%40roast-cms%2Ffrench-press-editor) [![Build Status](https://travis-ci.com/roast-cms/french-press-editor.svg?branch=develop)](https://travis-ci.com/roast-cms/french-press-editor) ![Max Bundle Size](https://img.shields.io/badge/size%20gzip-35%20KB-green.svg)
 
 > ☕ An offline-first rich text editor component.
 
