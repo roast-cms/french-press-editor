@@ -6,7 +6,6 @@ import {shallow} from "enzyme"
 
 import {Editor} from "./editor"
 
-test("Render Editor without crashing, matches snapshot", () => {
-  const element = shallow(<Editor />)
-  expect(element).toMatchSnapshot()
+test("Snapshot", () => {
+  expect(shallow(<Editor />)).toMatchSnapshot()
 })
