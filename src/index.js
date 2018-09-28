@@ -68,14 +68,14 @@ export class FrenchPress extends React.PureComponent {
   componentDidMount = () => {
     if (
       this.slateEditor &&
-      this.slateEditor.state &&
-      !this.slateEditor.state.value.hasUndos
+      this.slateEditor.value &&
+      this.slateEditor.value.history.undos.size === 0
     ) {
       /**
        * Finds all used image keys in the document.
        * @const contentImageKeys
        */
-      const contentImageKeys = this.slateEditor.state.value
+      const contentImageKeys = this.slateEditor.value
         .toJSON()
         .document.nodes.filter(node => !!(node.data && node.data.key))
         .map(node => node.data.key)
