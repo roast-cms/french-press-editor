@@ -1,4 +1,5 @@
 import AutoReplace from "slate-auto-replace"
+import When from "slate-when"
 
 /**
  * An array of plugins that creates quotes out of markup (`> Text`) strings, cancels headings if user hits Backspace at the begginning of the line and exits quote block into a new default paragraph if user hits Enter at the end of the line.
@@ -12,21 +13,27 @@ export const quote = [
       return change.setBlocks({type: "quote"}) // quote
     },
   }),
-  AutoReplace({
-    trigger: "enter",
-    before: /^.|$/,
-    onlyIn: "quote",
-    change: change => {
-      return change.splitBlock().setBlocks({type: "paragraph"}) // exit quote
-    },
+
+  When({
+    when: value => value.blocks.some(b => b.type === "quote"),
+    plugin: AutoReplace({
+      trigger: "enter",
+      before: /^.|$/,
+      change: change => {
+        return change.splitBlock().setBlocks({type: "paragraph"}) // exit quote
+      },
+    }),
   }),
-  AutoReplace({
-    trigger: "backspace",
-    after: /./,
-    before: /^$/,
-    onlyIn: "quote",
-    change: change => {
-      return change.setBlocks({type: "paragraph"}) // change quote to paragraph
-    },
+
+  When({
+    when: value => value.blocks.some(b => b.type === "quote"),
+    plugin: AutoReplace({
+      trigger: "backspace",
+      after: /./,
+      before: /^$/,
+      change: change => {
+        return change.setBlocks({type: "paragraph"}) // change quote to paragraph
+      },
+    }),
   }),
 ]
