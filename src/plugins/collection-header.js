@@ -8,24 +8,24 @@ export const header = [
   AutoReplace({
     trigger: "space",
     before: /^(#)$/,
-    transform: transform => {
-      return transform.setBlocks({type: "heading"}) // heading
+    change: change => {
+      return change.setBlocks({type: "heading"}) // heading
     },
   }),
   AutoReplace({
     trigger: "enter",
     before: /.+/,
     onlyIn: "heading",
-    transform: (transform, event, matches) => {
+    change: (change, event, matches) => {
       let heading = matches.before[0]
       if (
         heading[heading.length - 1].search(/[^\w\s]|_/) === -1 // if no punctuation mark at the end of heading...
       )
-        return transform
+        return change
           .insertText(".")
           .splitBlock()
           .setBlocks({type: "paragraph"})
-      else return transform.splitBlock().setBlocks({type: "paragraph"})
+      else return change.splitBlock().setBlocks({type: "paragraph"})
     },
   }),
   AutoReplace({
@@ -33,8 +33,8 @@ export const header = [
     after: /./,
     before: /^$/,
     onlyIn: "heading",
-    transform: transform => {
-      return transform.setBlocks({type: "paragraph"}) // cancel heading
+    change: change => {
+      return change.setBlocks({type: "paragraph"}) // cancel heading
     },
   }),
 ]

@@ -8,16 +8,16 @@ export const quote = [
   AutoReplace({
     trigger: "space",
     before: /^(>)$/,
-    transform: transform => {
-      return transform.setBlocks({type: "quote"}) // quote
+    change: change => {
+      return change.setBlocks({type: "quote"}) // quote
     },
   }),
   AutoReplace({
     trigger: "enter",
     before: /^.|$/,
     onlyIn: "quote",
-    transform: transform => {
-      return transform.splitBlock().setBlocks({type: "paragraph"}) // exit quote
+    change: change => {
+      return change.splitBlock().setBlocks({type: "paragraph"}) // exit quote
     },
   }),
   AutoReplace({
@@ -25,8 +25,8 @@ export const quote = [
     after: /./,
     before: /^$/,
     onlyIn: "quote",
-    transform: transform => {
-      return transform.setBlocks({type: "paragraph"}) // transform quote to paragraph
+    change: change => {
+      return change.setBlocks({type: "paragraph"}) // change quote to paragraph
     },
   }),
 ]

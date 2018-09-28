@@ -3,8 +3,8 @@
 
 
 "@babel/cli@^7.1.0":
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/@babel/cli/-/cli-7.1.0.tgz#a9429fd63911711b0fa93ae50d73beee6c42aef8"
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/@babel/cli/-/cli-7.1.1.tgz#8bf9e1786ec9ecdfe72d5f48fc46d7e767fa3ecb"
   dependencies:
     commander "^2.8.1"
     convert-source-map "^1.1.0"
@@ -31,16 +31,16 @@
     "@babel/highlight" "7.0.0-rc.2"
 
 "@babel/core@^7.1.0":
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.1.0.tgz#08958f1371179f62df6966d8a614003d11faeb04"
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.1.1.tgz#fdd176dd00a79efab4ebd650edd6508638fdcf8b"
   dependencies:
     "@babel/code-frame" "^7.0.0"
-    "@babel/generator" "^7.0.0"
-    "@babel/helpers" "^7.1.0"
-    "@babel/parser" "^7.1.0"
-    "@babel/template" "^7.1.0"
+    "@babel/generator" "^7.1.1"
+    "@babel/helpers" "^7.1.1"
+    "@babel/parser" "^7.1.1"
+    "@babel/template" "^7.1.1"
     "@babel/traverse" "^7.1.0"
-    "@babel/types" "^7.0.0"
+    "@babel/types" "^7.1.1"
     convert-source-map "^1.1.0"
     debug "^3.1.0"
     json5 "^0.5.0"
@@ -49,11 +49,11 @@
     semver "^5.4.1"
     source-map "^0.5.0"
 
-"@babel/generator@^7.0.0":
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/@babel/generator/-/generator-7.0.0.tgz#1efd58bffa951dc846449e58ce3a1d7f02d393aa"
+"@babel/generator@^7.0.0", "@babel/generator@^7.1.1":
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/@babel/generator/-/generator-7.1.1.tgz#4a5d2b7ab9b7c75a5aa56bf0750224f41e4eae41"
   dependencies:
-    "@babel/types" "^7.0.0"
+    "@babel/types" "^7.1.1"
     jsesc "^2.5.1"
     lodash "^4.17.10"
     source-map "^0.5.0"
@@ -210,13 +210,13 @@
     "@babel/traverse" "^7.1.0"
     "@babel/types" "^7.0.0"
 
-"@babel/helpers@^7.1.0":
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/@babel/helpers/-/helpers-7.1.0.tgz#429bf0f0020be56a4242883432084e3d70a8a141"
+"@babel/helpers@^7.1.1":
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/@babel/helpers/-/helpers-7.1.1.tgz#e742d49ca190ac3b5e47c030a618d4f9c51c1b8f"
   dependencies:
-    "@babel/template" "^7.1.0"
+    "@babel/template" "^7.1.1"
     "@babel/traverse" "^7.1.0"
-    "@babel/types" "^7.0.0"
+    "@babel/types" "^7.1.1"
 
 "@babel/highlight@7.0.0-rc.2":
   version "7.0.0-rc.2"
@@ -238,9 +238,9 @@
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.0.0.tgz#697655183394facffb063437ddf52c0277698775"
 
-"@babel/parser@^7.1.0":
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.1.0.tgz#a7cd42cb3c12aec52e24375189a47b39759b783e"
+"@babel/parser@^7.1.0", "@babel/parser@^7.1.1":
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.1.1.tgz#c23e1f3539047b898e471ecfbe7752082384c572"
 
 "@babel/plugin-proposal-async-generator-functions@^7.1.0":
   version "7.1.0"
@@ -612,13 +612,13 @@
     "@babel/parser" "^7.0.0"
     "@babel/types" "^7.0.0"
 
-"@babel/template@^7.1.0":
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.1.0.tgz#58cc9572e1bfe24fe1537fdf99d839d53e517e22"
+"@babel/template@^7.1.0", "@babel/template@^7.1.1":
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.1.1.tgz#21430719f1c6cbbbcf274623b42bbe96fda896dc"
   dependencies:
     "@babel/code-frame" "^7.0.0"
-    "@babel/parser" "^7.1.0"
-    "@babel/types" "^7.0.0"
+    "@babel/parser" "^7.1.1"
+    "@babel/types" "^7.1.1"
 
 "@babel/traverse@^7.0.0":
   version "7.0.0"
@@ -648,9 +648,9 @@
     globals "^11.1.0"
     lodash "^4.17.10"
 
-"@babel/types@^7.0.0":
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.0.0.tgz#6e191793d3c854d19c6749989e3bc55f0e962118"
+"@babel/types@^7.0.0", "@babel/types@^7.1.1":
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.1.1.tgz#d4cd23395df3e2c24d398a55285a4432e8e97a46"
   dependencies:
     esutils "^2.0.2"
     lodash "^4.17.10"
@@ -1813,9 +1813,13 @@ command-line-usage@^4.1.0:
     table-layout "^0.4.2"
     typical "^2.6.1"
 
-commander@^2.13.0, commander@^2.8.1:
+commander@^2.13.0:
   version "2.17.1"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.17.1.tgz#bd77ab7de6de94205ceacc72f1716d29f20a77bf"
+
+commander@^2.8.1:
+  version "2.18.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-2.18.0.tgz#2bf063ddee7c7891176981a2cc798e5754bc6970"
 
 commander@~2.13.0:
   version "2.13.0"
@@ -1910,7 +1914,13 @@ content-type@~1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/content-type/-/content-type-1.0.4.tgz#e138cc75e040c727b1966fe5e5f8c9aee256fe3b"
 
-convert-source-map@^1.1.0, convert-source-map@^1.4.0, convert-source-map@^1.5.1:
+convert-source-map@^1.1.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/convert-source-map/-/convert-source-map-1.6.0.tgz#51b537a8c43e0f04dec1993bffcdd504e758ac20"
+  dependencies:
+    safe-buffer "~5.1.1"
+
+convert-source-map@^1.4.0, convert-source-map@^1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/convert-source-map/-/convert-source-map-1.5.1.tgz#b8278097b9bc229365de5c62cf5fcaed8b5599e5"
 
@@ -4730,11 +4740,11 @@ lodash.sortby@^4.7.0:
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
 
-lodash@^4.1.1, lodash@^4.13.1, lodash@^4.15.0, lodash@^4.17.10:
+lodash@^4.1.1, lodash@^4.13.1, lodash@^4.15.0:
   version "4.17.10"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
 
-lodash@^4.17.4, lodash@^4.17.5:
+lodash@^4.17.10, lodash@^4.17.4, lodash@^4.17.5:
   version "4.17.11"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
 
@@ -6508,9 +6518,9 @@ slash@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-2.0.0.tgz#de552851a1759df3a8f206535442f5ec4ddeab44"
 
-slate-auto-replace@^0.9.0:
-  version "0.9.1"
-  resolved "https://registry.yarnpkg.com/slate-auto-replace/-/slate-auto-replace-0.9.1.tgz#31080199df3eb02191952b9a28a2a09fe3798425"
+slate-auto-replace@^0.11.2:
+  version "0.11.2"
+  resolved "https://registry.yarnpkg.com/slate-auto-replace/-/slate-auto-replace-0.11.2.tgz#48dfb4daf7a9c90b02bd2f6d48ee0743a3ab7d8a"
   dependencies:
     is-hotkey "^0.0.3"
     type-of "^2.0.1"
@@ -6598,6 +6608,10 @@ slate-schema-violations@^0.1.32:
 slate-simulator@^0.4.61:
   version "0.4.61"
   resolved "https://registry.yarnpkg.com/slate-simulator/-/slate-simulator-0.4.61.tgz#dc9a998d22c06d1229ce0855fae6bcfb884b6d23"
+
+slate-when@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/slate-when/-/slate-when-0.1.1.tgz#6396c4f32da25c63de1abfd75aa4753b4b1825e9"
 
 slate@^0.37.0:
   version "0.37.7"
