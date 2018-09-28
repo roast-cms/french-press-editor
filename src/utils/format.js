@@ -97,7 +97,7 @@ export const menuPosition = function() {
   const selection = window.getSelection()
   const range = selection.getRangeAt(0)
   const rect = range.getBoundingClientRect()
-  if (value.isBlurred || value.isEmpty) {
+  if (value.selection.isBlurred || value.selection.isCollapsed) {
     menu.style.display = ""
     return
   }

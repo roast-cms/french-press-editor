@@ -105,8 +105,9 @@ export const imageButtonPosition = function(value, parentOffsets) {
     return
   }
   const cursorContext = {
-    firstEmptyLine: value.document.isEmpty && value.document.nodes.size === 1,
-    newLine: focusBlock.type === "image" ? false : value.focusBlock.isEmpty,
+    firstEmptyLine:
+      value.document.text === "" && value.document.nodes.size === 1,
+    newLine: focusBlock.type === "image" ? false : value.focusBlock.text === "",
     parentBlockOffsets: parentOffsets,
   }
   this.setState({cursorContext})
