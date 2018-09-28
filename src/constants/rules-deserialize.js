@@ -12,6 +12,7 @@ export const RULES_DESERIALIZE = [
     deserialize(el, next) {
       const block = BLOCK_TAGS[el.tagName.toLowerCase()]
       if (!block) return
+      console.log(block)
       switch (block) {
         case "paragraph": {
           return {
