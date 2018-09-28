@@ -2547,8 +2547,8 @@ es-to-primitive@^1.1.1:
     is-symbol "^1.0.2"
 
 es6-promise@^4.0.5:
-  version "4.2.4"
-  resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.2.4.tgz#dc4221c2b16518760bd8c39a52d8f356fc00ed29"
+  version "4.2.5"
+  resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.2.5.tgz#da6d0d5692efb461e082c14817fe2427d8f5d054"
 
 escape-html@~1.0.3:
   version "1.0.3"
@@ -6525,7 +6525,7 @@ slate-auto-replace@^0.11.2:
     is-hotkey "^0.0.3"
     type-of "^2.0.1"
 
-slate-base64-serializer@^0.2.53:
+slate-base64-serializer@^0.2.56:
   version "0.2.68"
   resolved "https://registry.yarnpkg.com/slate-base64-serializer/-/slate-base64-serializer-0.2.68.tgz#e340335ebefb9e4ef17ad911868e340c69ce16ec"
   dependencies:
@@ -6546,8 +6546,8 @@ slate-dev-logger@^0.1.41:
   resolved "https://registry.yarnpkg.com/slate-dev-logger/-/slate-dev-logger-0.1.41.tgz#5b865ee2ace6368fd2422b58f9a38bb84f7c74eb"
 
 slate-drop-or-paste-images@^0.8.1:
-  version "0.8.3"
-  resolved "https://registry.yarnpkg.com/slate-drop-or-paste-images/-/slate-drop-or-paste-images-0.8.3.tgz#09d2880e247541a8082e5914d457ebffb0665b24"
+  version "0.8.4"
+  resolved "https://registry.yarnpkg.com/slate-drop-or-paste-images/-/slate-drop-or-paste-images-0.8.4.tgz#bf5c767ae93d874512a69e80d5068d55cd30876c"
   dependencies:
     es6-promise "^4.0.5"
     image-to-data-uri "^1.0.0"
@@ -6570,19 +6570,19 @@ slate-html-serializer@^0.6.0:
     slate-dev-logger "^0.1.41"
     type-of "^2.0.1"
 
-slate-plain-serializer@^0.5.34:
+slate-plain-serializer@^0.5.37:
   version "0.5.41"
   resolved "https://registry.yarnpkg.com/slate-plain-serializer/-/slate-plain-serializer-0.5.41.tgz#dc2d219602c2cb8dc710ac660e108f3b3cc4dc80"
   dependencies:
     slate-dev-logger "^0.1.43"
 
-slate-prop-types@^0.4.51:
+slate-prop-types@^0.4.54:
   version "0.4.66"
   resolved "https://registry.yarnpkg.com/slate-prop-types/-/slate-prop-types-0.4.66.tgz#0509924ecf8a56c0d374aa8a92a22ef23a39deec"
 
-slate-react@^0.15.0:
-  version "0.15.9"
-  resolved "https://registry.yarnpkg.com/slate-react/-/slate-react-0.15.9.tgz#7a11746fbe5554e5cff020f1c430e266f0d995f5"
+slate-react@^0.16.0:
+  version "0.16.2"
+  resolved "https://registry.yarnpkg.com/slate-react/-/slate-react-0.16.2.tgz#c1bdcb86f903667038c10d687cd6bc18623f81bf"
   dependencies:
     debug "^3.1.0"
     get-window "^1.1.1"
@@ -6594,28 +6594,28 @@ slate-react@^0.15.0:
     react-immutable-proptypes "^2.1.0"
     react-portal "^3.1.0"
     selection-is-backward "^1.0.0"
-    slate-base64-serializer "^0.2.53"
+    slate-base64-serializer "^0.2.56"
     slate-dev-environment "^0.2.0"
     slate-dev-logger "^0.1.43"
     slate-hotkeys "^0.2.3"
-    slate-plain-serializer "^0.5.34"
-    slate-prop-types "^0.4.51"
+    slate-plain-serializer "^0.5.37"
+    slate-prop-types "^0.4.54"
 
-slate-schema-violations@^0.1.32:
+slate-schema-violations@^0.1.35:
   version "0.1.39"
   resolved "https://registry.yarnpkg.com/slate-schema-violations/-/slate-schema-violations-0.1.39.tgz#854ab5624136419cef4c803b1823acabe11f1c15"
 
-slate-simulator@^0.4.61:
-  version "0.4.61"
-  resolved "https://registry.yarnpkg.com/slate-simulator/-/slate-simulator-0.4.61.tgz#dc9a998d22c06d1229ce0855fae6bcfb884b6d23"
+slate-simulator@^0.4.66:
+  version "0.4.66"
+  resolved "https://registry.yarnpkg.com/slate-simulator/-/slate-simulator-0.4.66.tgz#1d50edd9fa0bad5ddf90d2e1bac5276a1fabe1b5"
 
 slate-when@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/slate-when/-/slate-when-0.1.1.tgz#6396c4f32da25c63de1abfd75aa4753b4b1825e9"
 
-slate@^0.37.0:
-  version "0.37.7"
-  resolved "https://registry.yarnpkg.com/slate/-/slate-0.37.7.tgz#9623125164ada94d4f49ca2579682472697f5dde"
+slate@^0.38.0:
+  version "0.38.2"
+  resolved "https://registry.yarnpkg.com/slate/-/slate-0.38.2.tgz#973c8e0b1f31f2fc5edfeaf4572ab5e04b58adcb"
   dependencies:
     debug "^3.1.0"
     direction "^0.1.5"
@@ -6624,7 +6624,7 @@ slate@^0.37.0:
     is-plain-object "^2.0.4"
     lodash "^4.17.4"
     slate-dev-logger "^0.1.43"
-    slate-schema-violations "^0.1.32"
+    slate-schema-violations "^0.1.35"
     type-of "^2.0.1"
 
 slice-ansi@1.0.0:

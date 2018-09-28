@@ -129,7 +129,7 @@ export class FrenchPress extends React.PureComponent {
       const nodeKey = value.focusBlock.key
       const block = window.document.querySelector(`[data-key="${nodeKey}"]`)
       this.setState({
-        editorFocus: value.isFocused,
+        editorFocus: value.selection.isFocused,
       })
       imageButtonPosition.call(
         this,
