@@ -118,6 +118,8 @@ import { Picture } from "@roast-cms/french-press-editor/dist/containers/Picture"
 `<Reader />` component can render value JSON into react components without having to download the editor, saving a lot of bandwidth and parsing resources for your users.
 
 ```javascript
+import Reader from "@roast-cms/french-press-editor/dist/components/vignettes/Reader";
+
 <Reader
   //
   // optional: domain which will parse all your links
