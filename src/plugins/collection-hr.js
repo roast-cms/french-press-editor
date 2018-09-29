@@ -11,8 +11,7 @@ export const hr = [
     change: change => {
       return change
         .setBlocks({type: "divider", isVoid: true})
-        .collapseToEndOfNextBlock()
-        .collapseToEndOfNextBlock() // page break
+        .moveToEndOfNextBlock() // page break
     },
   }),
 ]

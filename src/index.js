@@ -41,7 +41,7 @@ export class FrenchPress extends React.PureComponent {
     super(props)
     this.state = {
       value: Value.fromJSON(props.value || loadContent()),
-      SCHEMA,
+      schema: SCHEMA,
       cursorContext: {
         newLine: false,
         parentBlockOffsets: {top: 0, left: 0},
