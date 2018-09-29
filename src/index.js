@@ -120,7 +120,6 @@ export class FrenchPress extends React.PureComponent {
    */
   handleChange = ({value}) => {
     this.setState({value})
-
     /**
      * Tracks user's carriage position inside empty text blocks in order to display "Insert Image" button.
      * @function cursorContextDelay
@@ -138,7 +137,6 @@ export class FrenchPress extends React.PureComponent {
       )
       clearTimeout(cursorContextDelay)
     }, 300)
-
     this.props.callbackStatus &&
       this.props.callbackStatus(setDraftStatusHelper())
     saveContent(document, value, this.props.callbackStatus)

@@ -121,7 +121,6 @@ export const handleImageButton = function(event) {
   if (!event) return
   event.preventDefault()
   event.stopPropagation()
-
   /**
    * Timeout allows to paint the image button downstate before bringing up file upload dialogue or a docket component.
    * @function responseDelay
@@ -207,6 +206,7 @@ export const handleFileUpload = function(event) {
           .insertBlock(block)
           .value.change()
           .removeNodeByKey(docket)
+
       window.requestAnimationFrame(() => {
         this.handleChange(resolvedState)
         docket && this.setState({pictureDocketNode: undefined})
