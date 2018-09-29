@@ -41,7 +41,7 @@ export class FrenchPress extends React.PureComponent {
     super(props)
     this.state = {
       value: Value.fromJSON(props.value || loadContent()),
-      SCHEMA,
+      schema: SCHEMA,
       cursorContext: {
         newLine: false,
         parentBlockOffsets: {top: 0, left: 0},
@@ -68,14 +68,14 @@ export class FrenchPress extends React.PureComponent {
   componentDidMount = () => {
     if (
       this.slateEditor &&
-      this.slateEditor.state &&
-      !this.slateEditor.state.value.hasUndos
+      this.slateEditor.value &&
+      this.slateEditor.value.history.undos.size === 0
     ) {
       /**
        * Finds all used image keys in the document.
        * @const contentImageKeys
        */
-      const contentImageKeys = this.slateEditor.state.value
+      const contentImageKeys = this.slateEditor.value
         .toJSON()
         .document.nodes.filter(node => !!(node.data && node.data.key))
         .map(node => node.data.key)
@@ -112,6 +112,7 @@ export class FrenchPress extends React.PureComponent {
   }
 
   componentDidUpdate = () => menuPosition.call(this)
+  componentWillReceiveProps = () => menuPosition.call(this)
 
   /**
    * Tracks user interactions with editor in component state. Note that due to Slate Editor's design only the default React state management works out of the box.
@@ -120,7 +121,6 @@ export class FrenchPress extends React.PureComponent {
    */
   handleChange = ({value}) => {
     this.setState({value})
-
     /**
      * Tracks user's carriage position inside empty text blocks in order to display "Insert Image" button.
      * @function cursorContextDelay
@@ -129,7 +129,7 @@ export class FrenchPress extends React.PureComponent {
       const nodeKey = value.focusBlock.key
       const block = window.document.querySelector(`[data-key="${nodeKey}"]`)
       this.setState({
-        editorFocus: value.isFocused,
+        editorFocus: value.selection.isFocused,
       })
       imageButtonPosition.call(
         this,
@@ -138,7 +138,6 @@ export class FrenchPress extends React.PureComponent {
       )
       clearTimeout(cursorContextDelay)
     }, 300)
-
     this.props.callbackStatus &&
       this.props.callbackStatus(setDraftStatusHelper())
     saveContent(document, value, this.props.callbackStatus)
