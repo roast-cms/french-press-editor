@@ -1,28 +1,28 @@
-import "localforage-getitems";
+import "localforage-getitems"
 
-import { Editor } from "slate-react";
-import { Value } from "slate";
-import React from "react";
-import getOffsets from "positions";
-import localForage from "localforage";
+import {Editor} from "slate-react"
+import {Value} from "slate"
+import React from "react"
+import getOffsets from "positions"
+import localForage from "localforage"
 
-import { PLACEHOLDER_TEXT, PICTURE_ACCEPTED_UPLOAD_MIME } from "./constants";
 import {
-  loadContent,
-  saveContent,
-  setDraftStatusHelper,
-  focusEvents,
-  formatCommand,
-  menuPosition,
-  imageButtonPosition,
+  PICTURE_ACCEPTED_UPLOAD_MIME,
+  PLACEHOLDER_TEXT,
+} from "./constants/defaults"
+import {SCHEMA} from "./constants/schema"
+import {focusEvents} from "./utils/focus"
+import {formatCommand, menuPosition} from "./utils/format"
+import {
+  handleFileUpload,
   handleImageButton,
-  handleFileUpload
-} from "./utils";
-import { plugins } from "./plugins";
-import { renderNode, renderMark } from "./render";
-import { schema } from "./schema";
-import DefaultImageButton from "./components/controls/ImageButton";
-import FormatMenu from "./components/controls/FormatMenu";
+  imageButtonPosition,
+} from "./utils/image"
+import {loadContent, saveContent, setDraftStatusHelper} from "./utils/storage"
+import {plugins} from "./plugins"
+import {renderMark, renderNode} from "./utils/render"
+import DefaultImageButton from "./components/controls/ImageButton"
+import FormatMenu from "./components/controls/FormatMenu"
 
 /**
  * Editor component. Import this component and pass your props.
@@ -38,18 +38,18 @@ import FormatMenu from "./components/controls/FormatMenu";
  */
 export class FrenchPress extends React.PureComponent {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-      value: Value.fromJSON(loadContent()),
-      schema,
+      value: Value.fromJSON(props.value || loadContent()),
+      schema: SCHEMA,
       cursorContext: {
         newLine: false,
-        parentBlockOffsets: { top: 0, left: 0 }
+        parentBlockOffsets: {top: 0, left: 0},
       },
       dragOver: false,
       editorFocus: false,
-      pictureDocketNode: undefined
-    };
+      pictureDocketNode: undefined,
+    }
 
     /**
      * Chains all Slate plugins into a single array to be consumed by Editor.
@@ -58,7 +58,7 @@ export class FrenchPress extends React.PureComponent {
     this.slatePlugins =
       props.slatePlugins && props.slatePlugins.length > 0
         ? [].concat.apply([], [plugins, props.slatePlugins])
-        : plugins;
+        : plugins
   }
 
   /**
@@ -68,101 +68,100 @@ export class FrenchPress extends React.PureComponent {
   componentDidMount = () => {
     if (
       this.slateEditor &&
-      this.slateEditor.state &&
-      !this.slateEditor.state.value.hasUndos
+      this.slateEditor.value &&
+      this.slateEditor.value.history.undos.size === 0
     ) {
       /**
        * Finds all used image keys in the document.
        * @const contentImageKeys
        */
-      const contentImageKeys = this.slateEditor.state.value
+      const contentImageKeys = this.slateEditor.value
         .toJSON()
         .document.nodes.filter(node => !!(node.data && node.data.key))
-        .map(node => node.data.key);
+        .map(node => node.data.key)
 
       localForage.getItems().then(storedImageKeys => {
         /**
          * Creates a list of image keys in the database which aren't part of the content.
          * @var unusedImageKeys
          */
-        let unusedImageKeys = [];
-        Object.keys(storedImageKeys).forEach((storedKey, index) => {
-          let unused = true;
+        let unusedImageKeys = []
+        Object.keys(storedImageKeys).forEach(storedKey => {
+          let unused = true
           contentImageKeys.forEach(usedKey => {
             if (storedKey === usedKey) {
-              unused = false;
+              unused = false
             }
-          });
-          unused && unusedImageKeys.push(storedKey);
-        });
-        unusedImageKeys.forEach((imageKey, index) => {
-          localForage.removeItem(imageKey);
-        });
+          })
+          unused && unusedImageKeys.push(storedKey)
+        })
+        unusedImageKeys.forEach(imageKey => {
+          localForage.removeItem(imageKey)
+        })
         unusedImageKeys.length > 0 &&
+          // eslint-disable-next-line
           console.log(
             `Removed ${
               unusedImageKeys.length
             } unused image(s) from browser's database.`
-          );
-      });
+          )
+      })
     }
-    menuPosition(this);
-    this.props.editorRef && this.props.editorRef(this.slateEditor);
-  };
+    menuPosition.call(this)
+    this.props.editorRef && this.props.editorRef(this.slateEditor)
+  }
 
-  componentDidUpdate = () => menuPosition(this);
+  componentDidUpdate = () => menuPosition.call(this)
 
   /**
    * Tracks user interactions with editor in component state. Note that due to Slate Editor's design only the default React state management works out of the box.
    * @function handleChange
    * @param {value}
    */
-  handleChange = ({ value }) => {
-    this.setState({ value });
-
+  handleChange = ({value}) => {
+    this.setState({value})
     /**
      * Tracks user's carriage position inside empty text blocks in order to display "Insert Image" button.
      * @function cursorContextDelay
      */
     const cursorContextDelay = setTimeout(() => {
-      const nodeKey = value.focusBlock.key;
-      const block = window.document.querySelector(`[data-key="${nodeKey}"]`);
+      const nodeKey = value.focusBlock.key
+      const block = window.document.querySelector(`[data-key="${nodeKey}"]`)
       this.setState({
-        editorFocus: value.isFocused
-      });
-      imageButtonPosition(
+        editorFocus: value.selection.isFocused,
+      })
+      imageButtonPosition.call(
+        this,
         value,
-        block ? getOffsets(block, "top left", block, "top left") : {},
-        this
-      );
-      clearTimeout(cursorContextDelay);
-    }, 300);
-
+        block ? getOffsets(block, "top left", block, "top left") : {}
+      )
+      clearTimeout(cursorContextDelay)
+    }, 300)
     this.props.callbackStatus &&
-      this.props.callbackStatus(setDraftStatusHelper());
-    saveContent(document, value, this.props.callbackStatus);
-  };
+      this.props.callbackStatus(setDraftStatusHelper())
+    saveContent(document, value, this.props.callbackStatus)
+  }
 
   /**
    * Respond to user clicking/tapping "Insert Image" button that appears on the new empty line of every paragraph.
    * @function handleImageButton
    * @param event
    */
-  handleImageButton = event => handleImageButton(event, this);
+  handleImageButton = event => handleImageButton.call(this, event)
 
   /**
    * Use the <input /> file handler and inserts user's selected image from their device into the document.
    * @function handleFileUpload
    * @param event
    */
-  handleFileUpload = event => handleFileUpload(event, this);
+  handleFileUpload = event => handleFileUpload.call(this, event)
 
   /**
    * Prevents unexpected propagations on the components which are part of the editor.
    * @function handleClickPropagation
    * @param event
    */
-  handleClickPropagation = event => event.stopPropagation();
+  handleClickPropagation = event => event.stopPropagation()
 
   /**
    * Registers user's dragOver event in component state
@@ -170,9 +169,9 @@ export class FrenchPress extends React.PureComponent {
    */
   handleDragOver = () => {
     this.setState({
-      dragOver: true
-    });
-  };
+      dragOver: true,
+    })
+  }
 
   /**
    * Registers the end of user's dragOver event in component state.
@@ -180,9 +179,9 @@ export class FrenchPress extends React.PureComponent {
    */
   handleDragEnd = () => {
     this.setState({
-      dragOver: false
-    });
-  };
+      dragOver: false,
+    })
+  }
 
   /**
    * Stores the reference for the format menu DOM object for future use.
@@ -190,18 +189,18 @@ export class FrenchPress extends React.PureComponent {
    * @param menu
    */
   menuRef = menu => {
-    this.menu = menu;
-  };
+    this.menu = menu
+  }
 
   /**
    * Perform user commands from within the format menu
    * @function formatCommand
    * @param type
    */
-  formatCommand = type => formatCommand(type, this);
+  formatCommand = type => formatCommand.call(this, type)
 
   render = () => {
-    focusEvents(this);
+    focusEvents.call(this)
 
     /**
      * Image upload button (prop) can be defined or created by user.
@@ -209,7 +208,7 @@ export class FrenchPress extends React.PureComponent {
      */
     const ImageButton =
       (this.props.components && this.props.components.ImageButton) ||
-      DefaultImageButton;
+      DefaultImageButton
 
     /**
      * Defines component label for image button.
@@ -218,10 +217,10 @@ export class FrenchPress extends React.PureComponent {
     const ImageButtonLabel =
       this.props.controls && this.props.controls.UploadImage
         ? this.props.controls.UploadImage
-        : props => <span>Upload Image</span>;
+        : () => <span>Upload Image</span>
 
     return [
-      <div style={{ position: "relative" }} key="Editor">
+      <div style={{position: "relative"}} key="Editor">
         <ImageButton
           style={{
             top: this.state.cursorContext
@@ -232,7 +231,7 @@ export class FrenchPress extends React.PureComponent {
               (this.props.components && this.props.components.Picture)
                 ? "block"
                 : "none",
-            opacity: this.state.editorFocus ? "1" : "0"
+            opacity: this.state.editorFocus ? "1" : "0",
           }}
           click={this.handleImageButton}
         >
@@ -245,7 +244,7 @@ export class FrenchPress extends React.PureComponent {
             imagePlaceholder:
               (this.props.options && this.props.options.imagePlaceholder) ||
               "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-            domain: (this.props.options && this.props.options.domain) || ""
+            domain: (this.props.options && this.props.options.domain) || "",
           }}
           components={this.props.components}
           callbackError={this.props.callbackError}
@@ -261,7 +260,7 @@ export class FrenchPress extends React.PureComponent {
             boxShadow: this.state.editorFocus
               ? "1px 1px 0 0 rgba(44,44,44,.1)"
               : "",
-            background: this.state.dragOver ? "rgba(44,44,44,.075)" : ""
+            background: this.state.dragOver ? "rgba(44,44,44,.075)" : "",
           }}
           ref={input => (this.slateEditor = input)}
           fileInputRef={this.fileInput}
@@ -269,7 +268,7 @@ export class FrenchPress extends React.PureComponent {
         <input
           type="file"
           accept={PICTURE_ACCEPTED_UPLOAD_MIME.toString()}
-          style={{ display: "none" }}
+          style={{display: "none"}}
           onChange={this.handleFileUpload}
           ref={input => (this.fileInput = input)}
         />
@@ -280,9 +279,9 @@ export class FrenchPress extends React.PureComponent {
         onChange={this.handleChange}
         value={this.state.value}
         formatCommand={this.formatCommand}
-        style={{ display: this.state.editorFocus ? "block" : "none" }}
+        style={{display: this.state.editorFocus ? "block" : "none"}}
         controls={this.props.controls}
-      />
-    ];
-  };
+      />,
+    ]
+  }
 }

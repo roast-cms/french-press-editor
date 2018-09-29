@@ -1,6 +1,6 @@
 {
   "name": "@roast-cms/french-press-editor",
-  "version": "0.7.5",
+  "version": "0.9.0",
   "description": "An offline-first rich text editor component.",
   "main": "dist/index.js",
   "repository": "https://github.com/roast-cms/french-press-editor.git",
@@ -8,36 +8,44 @@
   "license": "MPL-2.0",
   "private": false,
   "devDependencies": {
-    "babel-cli": "^6.0.0",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-plugin-dynamic-import-webpack": "^1.0.2",
-    "babel-plugin-syntax-dynamic-import": "^6.18.0",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
+    "@babel/cli": "^7.1.0",
+    "@babel/core": "^7.1.0",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "babel-loader": "^8.0.0",
     "css-loader": "^1.0.0",
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
-    "file-loader": "^1.1.11",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
+    "eslint": "^5.6.1",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-prettier": "^2.7.0",
+    "eslint-plugin-react": "^7.11.1",
+    "file-loader": "^2.0.0",
     "identity-obj-proxy": "^3.0.0",
     "immutable": "^3.8.2",
-    "jest": "^23.2.0",
+    "jest": "^23.6.0",
     "jest-localstorage-mock": "^2.2.0",
-    "jest-styled-components": "^5.0.1",
+    "jest-styled-components": "^6.2.1",
     "jsdoc": "^3.5.5",
     "jsdoc-to-markdown": "^4.0.1",
-    "react": "^16.3.0",
-    "react-dom": "^16.3.0",
+    "prettier": "^1.14.2",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
     "react-router-dom": "^4.2.2",
-    "react-test-renderer": "^16.4.1",
-    "size-limit": "^0.19.0",
-    "style-loader": "^0.21.0",
+    "react-test-renderer": "^16.5.2",
+    "size-limit": "^0.20.0",
+    "slate-simulator": "^0.4.66",
+    "style-loader": "^0.23.0",
     "typeface-rajdhani": "^0.0.54",
     "typeface-yanone-kaffeesatz": "^0.0.54",
     "url-loader": "^1.0.1",
-    "webpack": "^4.8.3",
+    "webpack": "^4.20.2",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.3"
   },
@@ -49,10 +57,13 @@
   },
   "scripts": {
     "start": "webpack-dev-server --mode development",
-    "prepare": "npm test && babel src --out-dir dist",
+    "prepare": "npm test && npx babel src --delete-dir-on-start --out-dir dist --ignore \"**/*.test.js\" && size-limit",
     "docs": "jsdoc2md src/*.js > docs/README.md; jsdoc2md src/components/**/*.js > docs/COMPONENTS.md; jsdoc2md src/plugins/*.js > docs/PLUGINS.md; jsdoc2md src/utils/*.js > docs/UTILS.md",
     "size": "size-limit",
-    "test": "jest"
+    "test": "jest",
+    "prettier": "prettier --write \"src/**/*.js\"",
+    "lint": "eslint \"src/**/*.js\"",
+    "lint:fix": "eslint --fix \"src/**/*.js\""
   },
   "dependencies": {
     "@roast-cms/react-button-beans": "^1.1.3",
@@ -64,38 +75,36 @@
     "localforage-getitems": "^1.4.1",
     "lodash": "^4.17.4",
     "positions": "^1.6.1",
-    "slate": "^0.34.2",
-    "slate-auto-replace": "^0.9.0",
+    "slate": "^0.41.2",
+    "slate-auto-replace": "^0.11.2",
     "slate-drop-or-paste-images": "^0.8.1",
-    "slate-html-serializer": "^0.6.0",
-    "slate-react": "^0.13.0",
-    "styled-components": "^3.2.3",
+    "slate-html-serializer": "^0.7.7",
+    "slate-react": "^0.18.0",
+    "slate-when": "^0.1.1",
+    "styled-components": "^3.4.5",
     "uuid": "^3.1.0",
-    "valid-data-url": "^0.1.6"
+    "valid-data-url": "1"
   },
   "size-limit": [
     {
       "path": "dist",
-      "limit": "40 KB",
+      "limit": "35 KB",
       "webpack": false,
-      "ignore": [
-        "*.js.snap",
-        "*.test.js"
-      ]
+      "ignore": []
     }
   ],
   "jest": {
     "testURL": "http://localhost/",
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
-      "\\.(css|less)$": "identity-obj-proxy"
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
     },
     "setupTestFrameworkScriptFile": "<rootDir>/setupTests.js",
     "coveragePathIgnorePatterns": [
-      "/node_modules/",
-      "/dist/",
-      "/examples/",
-      "/graphics/"
+      "/node_modules/"
+    ],
+    "modulePathIgnorePatterns": [
+      "/dist/"
     ]
   }
 }

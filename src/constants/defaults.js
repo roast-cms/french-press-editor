@@ -13,14 +13,14 @@ export const DEFAULT_EDITOR_STATE = {
             object: "text",
             leaves: [
               {
-                text: ""
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
+                text: "",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
 }
 
 /**
@@ -36,7 +36,7 @@ export const BLOCK_TAGS = {
   h3: "heading",
   h4: "heading",
   a: "link",
-  img: "image"
+  img: "image",
 }
 /**
  * Dictionary list that transpiles HTML/DOM elements into Slate mark types.
@@ -46,7 +46,7 @@ export const MARK_TAGS = {
   em: "italic",
   i: "italic",
   strong: "bold",
-  b: "bold"
+  b: "bold",
 }
 
 /**
@@ -65,4 +65,4 @@ export const PICTURE_ACCEPTED_UPLOAD_MIME = ["image/png", "image/jpeg"]
  * Default accepted upload file types, written in human language.
  * @constant PICTURE_ACCEPTED_UPLOAD_MIME_HUMAN
  */
- export const PICTURE_ACCEPTED_UPLOAD_MIME_HUMAN = "PNG or JPEG"
+export const PICTURE_ACCEPTED_UPLOAD_MIME_HUMAN = "PNG or JPEG"

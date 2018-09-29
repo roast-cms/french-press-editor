@@ -6,3 +6,6 @@ cache:
     - node_modules
 script:
   - npm test -- -u
+branches:
+  only:
+    - /.*/

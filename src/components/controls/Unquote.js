@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
-import Button from "./Button";
+import Button from "./Button"
 
 /**
  * CSS for the Unquote button which appears inside the quote for an easy way to revert formatting to plain text.
@@ -15,4 +15,4 @@ export default styled(Button)`
   ${props => props.theme.size.breakpoint.max.m`
     right: ${props => props.theme.size.block.spacing / 2}em;
   `};
-`;
+`

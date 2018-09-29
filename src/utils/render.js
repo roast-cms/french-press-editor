@@ -1,8 +1,8 @@
-import { makeRelative } from "@roast-cms/react-link-filter/dist/utils"
+import {makeRelative} from "@roast-cms/react-link-filter/dist/utils"
 import React from "react"
 
-import Unquote from "./components/controls/Unquote"
-import Link from "./components/controls/Link"
+import Link from "../components/controls/Link"
+import Unquote from "../components/controls/Unquote"
 
 /**
  * Defines how all block-level nodes within the document are going to be rendered.
@@ -11,53 +11,44 @@ import Link from "./components/controls/Link"
  * @return {Object}
  */
 export const renderNode = props => {
-  const { node, attributes, children, isSelected, editor } = props
-  const focus = editor.value.isFocused && isSelected
-  const focusClassName = focus ? "focus" : "nofocus"
+  const {node, attributes, children, isSelected, editor} = props
+  const focus =
+    editor.value.selection && editor.value.selection.isFocused && isSelected
+  const className = focus ? "focus" : "nofocus"
   switch (node.type) {
     case "paragraph":
-      return (
-        <p {...attributes}>
-          {children}
-        </p>
-      )
+      return <p {...attributes}>{children}</p>
     case "heading":
-      return (
-        <h3>
-          {children}
-        </h3>
-      )
+      return <h3>{children}</h3>
     case "divider":
-      return <hr className={focusClassName} />
+      return <hr className={className} />
     case "quote":
       return (
-        <div style={{ clear: "both" }}>
+        <div style={{clear: "both"}}>
           {!props.readOnly &&
-            focus &&
-            <Unquote
-              className="french-press_unquote"
-
-              contentEditable="false"
-              spellCheck="false"
-              suppressContentEditableWarning
-
-              onClick={event => {
-                event.preventDefault()
-                editor.onChange(
-                  editor.value
-                    .change()
-                    .setNodeByKey(attributes["data-key"], {
-                      type: "paragraph"
-                    })
-                    .focus()
-                )
-              }}
-
-              branded
-            >
-              Unquote
-            </Unquote>}
-          <blockquote {...attributes} className={focusClassName}>
+            focus && (
+              <Unquote
+                className="french-press_unquote"
+                contentEditable="false"
+                spellCheck="false"
+                suppressContentEditableWarning
+                onClick={event => {
+                  event.preventDefault()
+                  editor.onChange(
+                    editor.value
+                      .change()
+                      .setNodeByKey(attributes["data-key"], {
+                        type: "paragraph",
+                      })
+                      .focus()
+                  )
+                }}
+                branded
+              >
+                Unquote
+              </Unquote>
+            )}
+          <blockquote {...attributes} className={className}>
             {children}
           </blockquote>
         </div>
@@ -70,6 +61,7 @@ export const renderNode = props => {
         const Picture = props.editor.props.components.Picture
         return <Picture {...props} />
       } else {
+        // eslint-disable-next-line
         console.warn("<Picture /> component required to render images")
         return null
       }
@@ -92,7 +84,7 @@ export const renderNode = props => {
       }
     }
     case "link": {
-      const { data } = node
+      const {data} = node
       const href = data.get("href")
       return (
         <Link
@@ -104,11 +96,7 @@ export const renderNode = props => {
       )
     }
     default:
-      return (
-        <p {...attributes}>
-          {children}
-        </p>
-      )
+      return <p {...attributes}>{children}</p>
   }
 }
 
@@ -118,21 +106,13 @@ export const renderNode = props => {
  * @return {Object}
  */
 export const renderMark = props => {
-  const { children, mark } = props
+  const {children, mark} = props
   switch (mark.type) {
     case "bold":
-      return (
-        <strong>
-          {children}
-        </strong>
-      )
+      return <strong>{children}</strong>
     case "italic":
-      return (
-        <em>
-          {children}
-        </em>
-      )
+      return <em>{children}</em>
     default:
-      return { children }
+      return {children}
   }
 }

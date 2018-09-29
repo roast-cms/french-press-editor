@@ -12,30 +12,30 @@ export const chars = [
   AutoReplace({
     trigger: /(")/,
     before: /[^ ”]$/,
-    transform: (transform, event, matches) => {
-      return transform.insertText("”") // smart double quote (right)
-    }
+    change: change => {
+      return change.insertText("”") // smart double quote (right)
+    },
   }),
   AutoReplace({
     trigger: /(")/,
-    before: /(^)|[ ]$/,
-    transform: (transform, event, matches) => {
-      return transform.insertText("“") // smart double quote (left)
-    }
+    before: /^|[ ]$/,
+    change: change => {
+      return change.insertText("“") // smart double quote (left)
+    },
   }),
   AutoReplace({
     trigger: /(')/,
     before: /[^ ”]$/,
-    transform: (transform, event, matches) => {
-      return transform.insertText("’") // smart single quote (right)
-    }
+    change: change => {
+      return change.insertText("’") // smart single quote (right)
+    },
   }),
   AutoReplace({
     trigger: /(')/,
-    before: /(^)|[ ]$/,
-    transform: (transform, event, matches) => {
-      return transform.insertText("‘") // smart single quote (left)
-    }
+    before: /^|[ ]$/,
+    change: change => {
+      return change.insertText("‘") // smart single quote (left)
+    },
   }),
 
   /**
@@ -45,15 +45,15 @@ export const chars = [
   AutoReplace({
     trigger: "space",
     before: /( -)$/,
-    transform: (transform, event, matches) => {
-      return transform.insertText(" — ") // mdash
-    }
+    change: change => {
+      return change.insertText(" — ") // mdash
+    },
   }),
   AutoReplace({
     trigger: "space",
     before: /(\.\.\.)$/,
-    transform: (transform, event, matches) => {
-      return transform.insertText("… ") // elipsis
-    }
-  })
+    change: change => {
+      return change.insertText("… ") // elipsis
+    },
+  }),
 ]

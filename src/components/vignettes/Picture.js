@@ -1,19 +1,19 @@
-import React from "react";
-import localForage from "localforage";
-import styled from "styled-components";
+import React from "react"
+import localForage from "localforage"
+import styled from "styled-components"
 
-import { fileToBase64 } from '../../utils/actions-image';
+import {base64ToBlob} from "../../utils/image"
 
-const Figure = styled.figure`
+export const Figure = styled.figure`
   margin: ${props => props.theme.size.block.spacing}em 0;
   &.focus {
-    box-shadow: 0 0 0 4px ${props => props.theme.color.brand};
+    box-shadow: 0 0 0 4px ${props => props.theme.color.brand()};
   }
   img {
     display: block;
     max-width: 100%;
   }
-`;
+`
 
 /**
  * This component will render an image if it's an URL or request `data-uri` from browser's database using `localForage`.
@@ -25,19 +25,22 @@ const Figure = styled.figure`
  */
 export default class extends React.PureComponent {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       src: props.node.data.get("src") || "",
-      key: ""
-    };
+      key: "",
+    }
   }
   componentDidMount = () => {
-    const { node } = this.props;
-    const { data } = node;
-    const key = data.get("key");
-    this.loadImage(data.get("file"), key, data.get("src"));
-    this.setState({ key });
-  };
+    const {node} = this.props
+    const {data} = node
+    const key = data.get("key")
+    this.loadImage(data.get("file"), key, data.get("src"))
+    this.setState({key})
+  }
+  componentWillUnmount = () => {
+    this.state.src.includes("blob:") && URL.revokeObjectURL(this.state.src)
+  }
 
   /**
    * Load image from URL or browser database via localForage
@@ -48,29 +51,31 @@ export default class extends React.PureComponent {
    */
   loadImage = (file, key, src) => {
     if (!key) {
-      this.setState({ src });
+      this.setState({src})
     } else {
       localForage.getItem(key).then(data => {
         if (data) {
-          fileToBase64(data).then(string => this.setState({ src: string }));
+          const src = URL.createObjectURL(base64ToBlob(data))
+          this.setState({src})
         } else if (file && file.constructor !== Object) {
-          fileToBase64(file).then(string => this.setState({ src: string }));
+          const src = URL.createObjectURL(file)
+          this.setState({src})
         }
-      });
-      this.setState({ key });
+      })
+      this.setState({key})
     }
-  };
+  }
   render = () => {
-    const { attributes, node, isSelected, editor } = this.props;
-    const { src } = this.state;
-
-    const focus = editor.value.isFocused && isSelected;
-    const className = focus ? "focus" : "nofocus";
+    const {isSelected, editor} = this.props
+    const {src} = this.state
+    const focus =
+      editor.value.selection && editor.value.selection.isFocused && isSelected
+    const className = focus ? "focus" : "nofocus"
 
     return (
       <Figure className={className}>
         <img src={src} />
       </Figure>
-    );
-  };
+    )
+  }
 }
