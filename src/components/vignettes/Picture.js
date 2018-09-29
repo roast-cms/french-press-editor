@@ -68,7 +68,9 @@ export default class extends React.PureComponent {
   render = () => {
     const {isSelected, editor, children} = this.props
     const {src} = this.state
-    const className = isSelected ? "focus" : "nofocus"
+    const focus =
+      editor.value.selection && editor.value.selection.isFocused && isSelected
+    const className = focus ? "focus" : "nofocus"
 
     return (
       <Figure className={className}>
