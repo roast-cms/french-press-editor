@@ -1,39 +1,39 @@
-import {BeforePlugin, AfterPlugin} from "slate-react"
-import {Value} from "slate"
-
-import Simulator from "slate-simulator"
-
-import {header} from "./collection-header"
-
-const valueGenerator = text => {
-  return {
-    object: "value",
-    document: {
-      object: "document",
-      data: {},
-      nodes: [
-        {
-          object: "block",
-          type: "paragraph",
-          isVoid: false,
-          data: {},
-          nodes: [
-            {
-              object: "text",
-              leaves: [
-                {
-                  object: "leaf",
-                  text: text || "",
-                  marks: [],
-                },
-              ],
-            },
-          ],
-        },
-      ],
-    },
-  }
-}
+// import {BeforePlugin, AfterPlugin} from "slate-react"
+// import {Value} from "slate"
+//
+// import Simulator from "slate-simulator"
+//
+// import {header} from "./collection-header"
+//
+// const valueGenerator = text => {
+//   return {
+//     object: "value",
+//     document: {
+//       object: "document",
+//       data: {},
+//       nodes: [
+//         {
+//           object: "block",
+//           type: "paragraph",
+//           isVoid: false,
+//           data: {},
+//           nodes: [
+//             {
+//               object: "text",
+//               leaves: [
+//                 {
+//                   object: "leaf",
+//                   text: text || "",
+//                   marks: [],
+//                 },
+//               ],
+//             },
+//           ],
+//         },
+//       ],
+//     },
+//   }
+// }
 
 test("header plugins transform # text into header", () => {
   // const simulator = new Simulator({

@@ -1,9 +1,5 @@
 import "jest-styled-components"
 
-import React from "react"
-
-import {shallow} from "enzyme"
-
 import {rulesSerializeWithProps} from "./rules-serialize"
 import Picture from "../components/vignettes/Picture"
 
