@@ -18,7 +18,7 @@ export const chars = [
   }),
   AutoReplace({
     trigger: /(")/,
-    before: /(^)|[ ]$/,
+    before: /^|[ ]$/,
     change: change => {
       return change.insertText("“") // smart double quote (left)
     },
@@ -32,7 +32,7 @@ export const chars = [
   }),
   AutoReplace({
     trigger: /(')/,
-    before: /(^)|[ ]$/,
+    before: /^|[ ]$/,
     change: change => {
       return change.insertText("‘") // smart single quote (left)
     },
