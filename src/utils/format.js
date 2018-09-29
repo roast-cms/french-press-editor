@@ -93,7 +93,10 @@ export const menuPosition = function() {
   const {value} = this.state
   const menu = this.menu
   if (!menu) return
-  if (window.getSelection().rangeCount <= 0) return
+  if (window.getSelection().rangeCount <= 0) {
+    menu.style.display = ""
+    return
+  }
   const selection = window.getSelection()
   const range = selection.getRangeAt(0)
   const rect = range.getBoundingClientRect()

@@ -112,6 +112,7 @@ export class FrenchPress extends React.PureComponent {
   }
 
   componentDidUpdate = () => menuPosition.call(this)
+  componentWillReceiveProps = () => menuPosition.call(this)
 
   /**
    * Tracks user interactions with editor in component state. Note that due to Slate Editor's design only the default React state management works out of the box.
