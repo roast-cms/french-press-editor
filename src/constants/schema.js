@@ -42,6 +42,12 @@ export const SCHEMA = {
       data: {
         src: value => value,
       },
+      parent: [{object: "document"}],
+      normalize: (change, {code, node}) => {
+        if (code === "parent_object_invalid") {
+          return change.unwrapBlockByKey(node.key)
+        } else return null
+      },
     },
     docket: {
       isVoid: true,
