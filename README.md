@@ -209,7 +209,7 @@ To see if this tool is right for you, please have a look through the list of spe
 
 - `editorRef()` returns Slate Editor reference once it mounts.
 
-To learn more about what you can customize and build for `french-press-editor` to make it yours, check out the [complete API guide](/examples/README.md).
+To learn more about what you can customize and build for `french-press-editor` to make it yours, check out the [complete API guide](/docs).
 
 ## Contributions welcome!
 
