@@ -101,7 +101,8 @@ export const addKey = element => {
             const nodeFunction = {
               get: object =>
                 object === "data" && {
-                  get: object => (node.data ? node.data[object] : undefined),
+                  get: object =>
+                    node && node.data ? node.data[object] : undefined,
                 },
             }
             return nodeFunction
