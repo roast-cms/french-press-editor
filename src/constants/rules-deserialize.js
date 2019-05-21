@@ -34,13 +34,13 @@ export const RULES_DESERIALIZE = [
           }
         }
         case "image": {
-          const imageSrc = el.getAttribute("src") || el.getAttribute("srcset")
-          if (!isUrl(imageSrc)) return
+          const src = el.getAttribute("src") || el.getAttribute("srcset")
+          if (!isUrl(src)) return
           return {
             object: "block",
             type: "image",
             isVoid: true,
-            data: {src: imageSrc},
+            data: {src},
           }
         }
         case "link": {

@@ -11,28 +11,32 @@ export const SCHEMA = {
   document: {
     nodes: [
       {
-        match: [
-          {type: "paragraph"},
-          {type: "heading"},
-          {type: "divider"},
-          {type: "quote"},
-          {type: "image"},
-          {type: "docket"},
-          {type: "link"},
+        types: [
+          "paragraph",
+          "heading",
+          "divider",
+          "quote",
+          "image",
+          "docket",
+          "link",
         ],
       },
     ],
-    last: [{type: "quote"}, {type: "paragraph"}],
-    normalize: (change, {code, node}) => {
-      if (code === "last_child_type_invalid") {
-        const paragraph = Block.create("paragraph")
-        return change.insertNodeByKey(node.key, node.nodes.size, paragraph)
-      } else return null
+    last: {types: ["paragraph", "quote"]},
+    normalize: (change, reason, {node, child}) => {
+      switch (reason) {
+        case "last_child_type_invalid": {
+          const paragraph = Block.create("paragraph")
+          return change.insertNodeByKey(node.key, node.nodes.size, paragraph)
+        }
+        default:
+          return null
+      }
     },
   },
   blocks: {
     link: {
-      match: {object: "text"},
+      nodes: [{objects: ["text"]}],
     },
     divider: {
       isVoid: true,
@@ -40,26 +44,22 @@ export const SCHEMA = {
     image: {
       isVoid: true,
       data: {
-        src: value => value,
-      },
-      parent: [{object: "document"}],
-      normalize: (change, {code, node}) => {
-        if (code === "parent_object_invalid") {
-          return change.unwrapBlockByKey(node.key)
-        } else return null
+        src: v => v,
       },
     },
     docket: {
       isVoid: true,
     },
+  },
+  inlines: {
     quote: {
-      match: {object: "text"},
+      nodes: [{types: ["text"]}],
     },
     paragraph: {
-      match: [{object: "text"}, {object: "link"}],
+      nodes: [{types: ["text", "link"]}],
     },
     heading: {
-      match: {object: "text"},
+      nodes: [{types: ["text"]}],
     },
   },
 }

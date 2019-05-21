@@ -12,9 +12,9 @@ import Unquote from "../components/controls/Unquote"
  */
 export const renderNode = props => {
   const {node, attributes, children, isSelected, editor} = props
-  const focus =
-    editor.value.selection && editor.value.selection.isFocused && isSelected
+  const focus = editor.value.isFocused && isSelected
   const className = focus ? "focus" : "nofocus"
+
   switch (node.type) {
     case "paragraph":
       return <p {...attributes}>{children}</p>
