@@ -7785,6 +7785,11 @@ slate-schema-violations@^0.1.15:
   resolved "https://registry.yarnpkg.com/slate-schema-violations/-/slate-schema-violations-0.1.39.tgz#854ab5624136419cef4c803b1823acabe11f1c15"
   integrity sha512-SNRoV9Ii5UqjNqAKcIw7aAOMwgI45zsn86ue2n8NVLNOCe3fUI35cjq6l3fdvmRYw4X/GcZqzhpQsizHD3ts6A==
 
+slate-simulator@^0.4.61:
+  version "0.4.67"
+  resolved "https://registry.yarnpkg.com/slate-simulator/-/slate-simulator-0.4.67.tgz#9313c84736db1e23d6aebacd536f582b6d54723c"
+  integrity sha512-k1HM0Olv7mUjpwrLgOcnjMorlh9Y6vve/ngsHix1j7lXVfsHFdEkolXPeCy3+HsqW2s1dANc0a7hiOZuw4hc0A==
+
 slate@0.34.2:
   version "0.34.2"
   resolved "https://registry.yarnpkg.com/slate/-/slate-0.34.2.tgz#faf75d295e44d8b43cf2e14168f7a43457a29c67"
