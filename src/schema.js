@@ -6,6 +6,7 @@ import {Block} from "slate"
  * @property {Array} nodes Acceptable nodes within editor document.
  * @property {Object} last Defines at least one empty paragraph block that follows a void block (such as picture); this is required to ensure that the user can continue adding content without additional effort below uploaded images (otherwise they will be forced to move the image up to free up a trailing paragraph space).
  */
+
 export const schema = {
   document: {
     nodes: [
@@ -21,7 +22,7 @@ export const schema = {
         ],
       },
     ],
-    last: {types: ["paragraph"]},
+    last: {types: ["paragraph", "quote"]},
     normalize: (change, reason, {node}) => {
       switch (reason) {
       case "last_child_type_invalid": {
@@ -43,7 +44,7 @@ export const schema = {
     image: {
       isVoid: true,
       data: {
-        src: v => v,
+        src: value => value,
       },
     },
     docket: {
