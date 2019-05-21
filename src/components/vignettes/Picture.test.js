@@ -4,7 +4,8 @@ import React from "react"
 
 import {shallow} from "enzyme"
 
-import Picture from "./Picture"
+import {EXAMPLE_THEME} from "../../../examples/constants"
+import Picture, {Figure} from "./Picture"
 
 test("Render Picture without crashing, matches snapshot", () => {
   const element = shallow(
@@ -19,5 +20,10 @@ test("Render Picture without crashing, matches snapshot", () => {
       }}
     />
   )
+  expect(element).toMatchSnapshot()
+})
+
+test("Render Figure without crashing, matches snapshot", () => {
+  const element = shallow(<Figure theme={EXAMPLE_THEME} />)
   expect(element).toMatchSnapshot()
 })
