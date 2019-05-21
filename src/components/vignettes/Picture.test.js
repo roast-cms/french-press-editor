@@ -7,20 +7,25 @@ import {shallow} from "enzyme"
 import {EXAMPLE_THEME} from "../../../examples/constants"
 import Picture, {Figure} from "./Picture"
 
-test("Render Picture without crashing, matches snapshot", () => {
-  const element = shallow(
-    <Picture
-      node={{
-        data: {
-          get: () => {},
-        },
-      }}
-      editor={{
-        value: {},
-      }}
-    />
-  )
-  expect(element).toMatchSnapshot()
+test("Snapshot", () => {
+  expect(
+    shallow(
+      <Picture
+        node={{
+          data: {
+            get: () => {},
+          },
+        }}
+        editor={{
+          value: {},
+        }}
+      />
+    )
+  ).toMatchSnapshot()
+})
+
+test("Snapshot", () => {
+  expect(shallow(<Figure theme={EXAMPLE_THEME} />)).toMatchSnapshot()
 })
 
 test("Render Figure without crashing, matches snapshot", () => {

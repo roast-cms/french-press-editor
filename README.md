@@ -1,6 +1,7 @@
 # french-press-editor
 
-[![npm version](https://badge.fury.io/js/%40roast-cms%2Ffrench-press-editor.svg)](https://badge.fury.io/js/%40roast-cms%2Ffrench-press-editor) [![Build Status](https://travis-ci.com/roast-cms/french-press-editor.svg?branch=develop)](https://travis-ci.com/roast-cms/french-press-editor) [![Max Bundle Size](https://img.shields.io/badge/size%20gzip-35%20KB-green.svg)]
+[![npm version](https://badge.fury.io/js/%40roast-cms%2Ffrench-press-editor.svg)](https://badge.fury.io/js/%40roast-cms%2Ffrench-press-editor) [![Build Status](https://travis-ci.com/roast-cms/french-press-editor.svg?branch=develop)](https://travis-ci.com/roast-cms/french-press-editor) ![Max Bundle Size](https://img.shields.io/badge/size%20gzip-35%20KB-green.svg)
+
 
 > ☕ An offline-first rich text editor component.
 
@@ -14,8 +15,7 @@
 
 ### Examples in production:
 
-- **[Analog.Cafe](https://github.com/dmitrizzle/Analog.Cafe):** a film photography publication.
-- **[Archie.AI Blog](https://www.archie.ai/blog/new):** articles from the team behind Archie.AI, an artificially intelligent data scientist.
+- **[Analog.Cafe](https://github.com/dmitrizzle/Analog.Cafe):** a film photography magazine.
 
 ---
 
@@ -33,7 +33,7 @@ For complete API reference refer to **[docummentation](./docs)**.
 
 # Usage Example
 
-`french-press-editor` was built for fast installation and with a pre-defined set of tools. It's meant to make a good editorial experience that has most of the required features of a typical blog or publication entry for your users with the absolute minimum required from you, the developer. This tool is extendable, via Slate's [plugins](https://github.com/ianstormtaylor/slate/blob/master/docs/general/plugins.md) infrastructure, however, it has some prerequisites and opinionated limitations.
+`french-press-editor` was built for fast installation and with a pre-defined set of tools. It's meant to make a good editorial experience that has most of the required features of a typical blog or magazine entry for your users with the absolute minimum required from you, the developer. This tool is extendable, via Slate's [plugins](https://github.com/ianstormtaylor/slate/blob/master/docs/general/plugins.md) infrastructure, however, it has some prerequisites and opinionated limitations.
 
 ## Quick start
 

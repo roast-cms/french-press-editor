@@ -6,7 +6,6 @@ import {shallow} from "enzyme"
 
 import {Item} from "./ButtonStrip"
 
-test("Render Item without crashing, matches snapshot", () => {
-  const element = shallow(<Item />)
-  expect(element).toMatchSnapshot()
+test("Snapshot", () => {
+  expect(shallow(<Item />)).toMatchSnapshot()
 })

@@ -6,7 +6,6 @@ import {shallow} from "enzyme"
 
 import {FrenchPress} from "./"
 
-test("Render FrenchPress without crashing, matches snapshot", () => {
-  const element = shallow(<FrenchPress />)
-  expect(element).toMatchSnapshot()
+test("Snapshot", () => {
+  expect(shallow(<FrenchPress />)).toMatchSnapshot()
 })
