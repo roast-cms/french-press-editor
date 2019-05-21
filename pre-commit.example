@@ -1,0 +1,47 @@
+#!/bin/sh
+#
+# The hook should exit with non-zero status after issuing an appropriate message if it wants to stop the commit.
+
+# Installation:
+# - copy this file to ./.git/hooks
+# - rename it by removing the extension
+# - make executable by $chmod +x pre-commit
+
+# Steps:
+#
+#   * Use prettier
+#   * Lint (with fix)
+#
+
+# Set working directory to project root
+WORKDIR=$PWD
+PROJECTDIR=src
+
+# Determine if any JS files changed
+cd $WORKDIR
+JSCHANGES=$(git diff --cached --name-only --diff-filter=ACM -- "$PROJECTDIR/**/*.js" "$PROJECTDIR/**/*.js" "!($PROJECTROOT/node_modules)" | tr '\n' ' ')
+if [ ! -z "$JSCHANGES" ]
+then
+
+    # Prettify all staged .js files
+    cd $WORKDIR/$PROJECTDIR
+    npm run prettier
+
+    # Add back the modified/prettified files to staging
+    cd $WORKDIR
+    git add -A $PROJECTDIR
+fi
+
+# Enter app core directory
+cd $WORKDIR/$PROJECTDIR
+
+# Lint and abort if fails
+npm run lint:fix
+RESULT=$?
+if [ "$RESULT" -ne 0 ]
+then
+    echo Linting failed. Please resolve. Not committing.
+    exit 1
+fi
+
+exit 0
