@@ -3,7 +3,7 @@
 exports[`Render Picture without crashing, matches snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <_class
+  Symbol(enzyme.__unrendered__): <_default
     editor={
       Object {
         "value": Object {},

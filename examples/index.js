@@ -170,19 +170,9 @@ render(
     <ThemeProvider theme={EXAMPLE_THEME}>
       <BrowserRouter>
         <Wrapper>
-          <h1>Editor:</h1>
+          <h1>Editor</h1>
           <Editor />
-          <div
-            style={{
-              background: "#eee",
-              color: "#999",
-              padding: ".5em",
-              position: "absolute",
-              left: 0,
-              right: 0,
-            }}
-          />
-          <h1 style={{paddingTop: "1em"}}>Reader:</h1>
+          <h1>Reader</h1>
           <Reader
             options={{domain: "localhost:3002"}}
             value={EXAMPLE_VALUE}
