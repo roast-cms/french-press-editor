@@ -6,8 +6,10 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <Unknown />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
