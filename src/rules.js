@@ -3,7 +3,6 @@ import isUrl from "is-url"
 
 import {BLOCK_TAGS, MARK_TAGS} from "./constants"
 
-
 //
 // this function flattens all HTML into plain text
 
@@ -16,7 +15,6 @@ const squish = el => {
   el.innerHTML = el.innerText || el.textContent
   return el
 }
-
 
 /**
  * A set of rules that defines how to transpile HTML itno slate document nodes and marks (and back).
@@ -75,7 +73,6 @@ const rules = [
             type: "paragraph",
             nodes: next(el.childNodes),
           }
-
       }
     },
   },

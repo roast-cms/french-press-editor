@@ -24,29 +24,28 @@ export const renderNode = props => {
     case "quote":
       return (
         <div style={{clear: "both"}}>
-          {!props.readOnly &&
-            focus && (
-              <Unquote
-                className="french-press_unquote"
-                contentEditable="false"
-                spellCheck="false"
-                suppressContentEditableWarning
-                onClick={event => {
-                  event.preventDefault()
-                  editor.onChange(
-                    editor.value
-                      .change()
-                      .setNodeByKey(attributes["data-key"], {
-                        type: "paragraph",
-                      })
-                      .focus()
-                  )
-                }}
-                branded
-              >
-                Unquote
-              </Unquote>
-            )}
+          {!props.readOnly && focus && (
+            <Unquote
+              className="french-press_unquote"
+              contentEditable="false"
+              spellCheck="false"
+              suppressContentEditableWarning
+              onClick={event => {
+                event.preventDefault()
+                editor.onChange(
+                  editor.value
+                    .change()
+                    .setNodeByKey(attributes["data-key"], {
+                      type: "paragraph",
+                    })
+                    .focus()
+                )
+              }}
+              branded
+            >
+              Unquote
+            </Unquote>
+          )}
           <blockquote {...attributes} className={focusClassName}>
             {children}
           </blockquote>
