@@ -7,13 +7,14 @@ ShallowWrapper {
     value={
       Immutable.Record {
         "data": Immutable.Map {},
-        "decorations": Immutable.List [],
+        "decorations": null,
         "document": Immutable.Record {
           "data": Immutable.Map {},
           "key": "1",
           "nodes": Immutable.List [
             Immutable.Record {
               "data": Immutable.Map {},
+              "isVoid": false,
               "key": "2",
               "nodes": Immutable.List [
                 Immutable.Record {
@@ -51,7 +52,12 @@ ShallowWrapper {
               },
               Object {
                 "validateNode": [Function],
-              
+              },
+              Object {
+                "validateNode": [Function],
+              },
+              Object {
+                "validateNode": [Function],
               },
               Object {
                 "validateNode": [Function],
@@ -69,6 +75,11 @@ ShallowWrapper {
           "inlines": Object {},
         },
         "selection": Immutable.Record {
+          "anchorKey": "3",
+          "anchorOffset": 0,
+          "focusKey": "3",
+          "focusOffset": 0,
+          "isBackward": false,
           "isFocused": false,
           "marks": null,
           "isAtomic": false,
