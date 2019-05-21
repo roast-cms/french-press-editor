@@ -105,8 +105,9 @@ export const imageButtonPosition = function(value, parentOffsets) {
     return
   }
   const cursorContext = {
-    firstEmptyLine: value.document.isEmpty && value.document.nodes.size === 1,
-    newLine: focusBlock.type === "image" ? false : value.focusBlock.isEmpty,
+    firstEmptyLine:
+      value.document.text === "" && value.document.nodes.size === 1,
+    newLine: focusBlock.type === "image" ? false : value.focusBlock.text === "",
     parentBlockOffsets: parentOffsets,
   }
   this.setState({cursorContext})
@@ -120,7 +121,6 @@ export const handleImageButton = function(event) {
   if (!event) return
   event.preventDefault()
   event.stopPropagation()
-
   /**
    * Timeout allows to paint the image button downstate before bringing up file upload dialogue or a docket component.
    * @function responseDelay
@@ -206,6 +206,7 @@ export const handleFileUpload = function(event) {
           .insertBlock(block)
           .value.change()
           .removeNodeByKey(docket)
+
       window.requestAnimationFrame(() => {
         this.handleChange(resolvedState)
         docket && this.setState({pictureDocketNode: undefined})

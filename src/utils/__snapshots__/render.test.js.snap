@@ -208,7 +208,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        false,
+
         <blockquote
           className="nofocus"
         >
@@ -221,7 +221,7 @@ ShallowWrapper {
     },
     "ref": null,
     "rendered": Array [
-      false,
+
       Object {
         "instance": null,
         "key": undefined,
@@ -244,7 +244,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          false,
+
           <blockquote
             className="nofocus"
           >
@@ -257,7 +257,7 @@ ShallowWrapper {
       },
       "ref": null,
       "rendered": Array [
-        false,
+
         Object {
           "instance": null,
           "key": undefined,
@@ -290,7 +290,6 @@ ShallowWrapper {
           },
         },
       },
-    },
 
   },
 }

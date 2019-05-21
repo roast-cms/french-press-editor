@@ -1115,6 +1115,7 @@ ShallowWrapper {
           "componentDidUpdate": Object {
             "onSetState": true,
           },
+
           "getSnapshotBeforeUpdate": true,
           "setState": Object {
             "skipsComponentDidUpdateOnNullish": true,

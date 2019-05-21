@@ -23,14 +23,10 @@ export const SCHEMA = {
       },
     ],
     last: [{type: "quote"}, {type: "paragraph"}],
-    normalize: (change, error) => {
-      if (error.code === "last_child_type_invalid") {
+    normalize: (change, {code, node}) => {
+      if (code === "last_child_type_invalid") {
         const paragraph = Block.create("paragraph")
-        return change.insertNodeByKey(
-          error.node.key,
-          error.node.nodes.size,
-          paragraph
-        )
+        return change.insertNodeByKey(node.key, node.nodes.size, paragraph)
       } else return null
     },
   },
@@ -45,6 +41,12 @@ export const SCHEMA = {
       isVoid: true,
       data: {
         src: value => value,
+      },
+      parent: [{object: "document"}],
+      normalize: (change, {code, node}) => {
+        if (code === "parent_object_invalid") {
+          return change.unwrapBlockByKey(node.key)
+        } else return null
       },
     },
     docket: {
