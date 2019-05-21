@@ -20,15 +20,14 @@ export const addLink = (value, returnType = "value") => {
  * Format commands switch for inline transformations.
  * @module formatCommand
  * @param {String} type
- * @param {Object} _this
  */
-export const formatCommand = (type, _this) => {
-  const { value } = _this.state;
+export const formatCommand = function(type) {
+  const { value } = this.state;
   let resolvedState;
   switch (type) {
     case "undo_heading":
       resolvedState = value.change().setBlocks({ type: "paragraph" });
-      _this.setState({
+      this.setState({
         value: resolvedState.value
       });
       break;
@@ -42,7 +41,7 @@ export const formatCommand = (type, _this) => {
         .removeMark("italic")
         .value.change()
         .setBlocks({ type: "heading" });
-      _this.setState({
+      this.setState({
         value: resolvedState.value
       });
       break;
@@ -56,19 +55,19 @@ export const formatCommand = (type, _this) => {
         .removeMark("italic")
         .value.change()
         .setBlocks({ type: "quote" });
-      _this.setState({
+      this.setState({
         value: resolvedState.value
       });
       break;
     case "toggle_bold":
       resolvedState = value.change().toggleMark({ type: "bold" });
-      _this.setState({
+      this.setState({
         value: resolvedState.value
       });
       break;
     case "toggle_italic":
       resolvedState = value.change().toggleMark({ type: "italic" });
-      _this.setState({
+      this.setState({
         value: resolvedState.value
       });
       break;
@@ -76,7 +75,7 @@ export const formatCommand = (type, _this) => {
       const hasLinks = value.inlines.some(inline => inline.type === "link");
       if (hasLinks) resolvedState = value.change().unwrapInline("link");
       else resolvedState = addLink(value);
-      _this.setState({
+      this.setState({
         value: resolvedState.value
       });
       break;
@@ -88,11 +87,10 @@ export const formatCommand = (type, _this) => {
 /**
  *  Figures out where the format menu should appear, according to user's selection location within editor.
  * @module menuPosition
- * @param {Object} _this
  */
-export const menuPosition = _this => {
-  const { value } = _this.state;
-  const menu = _this.menu;
+export const menuPosition = function() {
+  const { value } = this.state;
+  const menu = this.menu;
   if (!menu) return;
   if (window.getSelection().rangeCount <= 0) return;
   const selection = window.getSelection();

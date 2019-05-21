@@ -57,13 +57,12 @@ export const forceImageRestrictions = (size, type, max = 10) => {
  * @module imageButtonPosition
  * @param {Object} value Slate Editor Value.
  * @param {Object} parentOffsets Offset pixel values.
- * @param {Object} _this
  */
-export const imageButtonPosition = (value, parentOffsets, _this) => {
+export const imageButtonPosition = function(value, parentOffsets) {
   const { focusBlock } = value;
   const hideImageButton = () =>
-    _this.setState({
-      cursorContext: { ..._this.state.cursorContext, newLine: false }
+    this.setState({
+      cursorContext: { ...this.state.cursorContext, newLine: false }
     });
   if (!focusBlock) return;
   if (
@@ -86,14 +85,14 @@ export const imageButtonPosition = (value, parentOffsets, _this) => {
     newLine: focusBlock.type === "image" ? false : value.focusBlock.isEmpty,
     parentBlockOffsets: parentOffsets
   };
-  _this.setState({ cursorContext });
+  this.setState({ cursorContext });
 };
 
 /**
  * Image button click action.
  * @module handleImageButton
  */
-export const handleImageButton = (event, _this) => {
+export const handleImageButton = function(event) {
   if (!event) return;
   event.preventDefault();
   event.stopPropagation();
@@ -104,12 +103,12 @@ export const handleImageButton = (event, _this) => {
    */
   const responseDelay = setTimeout(() => {
     clearTimeout(responseDelay);
-    if (!_this.props.components.PictureDocket) {
+    if (!this.props.components.PictureDocket) {
       /**
        * If PictureDocket component isn't defined, brings up the dialogue to upload image file.
        * @function click
        */
-      _this.fileInput.click();
+      this.fileInput.click();
       return;
     }
     //
@@ -120,8 +119,8 @@ export const handleImageButton = (event, _this) => {
      * Inserts docket block into editor if the PictureDocket component is defiend.
      * @function insertBlock
      */
-    const activeBlockKey = _this.state.value.focusBlock.key;
-    const resolvedState = _this.state.value
+    const activeBlockKey = this.state.value.focusBlock.key;
+    const resolvedState = this.state.value
       .change({ save: false })
       .insertBlock({
         type: "docket",
@@ -134,7 +133,7 @@ export const handleImageButton = (event, _this) => {
      * Hides "Insert Image" button when docket is shown.
      * @function setState
      */
-    _this.setState(prevState => ({
+    this.setState(prevState => ({
       value: resolvedState.value,
       cursorContext: { ...prevState.cursorContext, newLine: false }
     }));
@@ -145,26 +144,25 @@ export const handleImageButton = (event, _this) => {
  * Handles insertion of image file into the document and storing it in the browser's database.
  * @module handleFileUpload
  * @param {Event} event
- * @param {Object} _this
  */
-export const handleFileUpload = (event, _this) => {
+export const handleFileUpload = function(event) {
   const file = event.target.files[0];
   forceImageRestrictions(
     file.size,
     file.type,
-    _this.props.options &&
-      _this.props.options.imageMaxSize &&
-      _this.props.options.imageMaxSize
+    this.props.options &&
+      this.props.options.imageMaxSize &&
+      this.props.options.imageMaxSize
   )
     .then(() => {
       const key = uuidv1();
-      const editorProps = _this.slateEditor.props;
+      const editorProps = this.slateEditor.props;
       const block = {
         type: "image",
         isVoid: true,
         data: { file, key, src: editorProps.options.imagePlaceholder }
       };
-      const docket = _this.state.pictureDocketNode;
+      const docket = this.state.pictureDocketNode;
       let resolvedState;
       fileToBase64(file).then(string => localForage.setItem(key, string));
 
@@ -186,11 +184,11 @@ export const handleFileUpload = (event, _this) => {
           .value.change()
           .removeNodeByKey(docket);
       window.requestAnimationFrame(() => {
-        _this.handleChange(resolvedState);
-        docket && _this.setState({ pictureDocketNode: undefined });
+        this.handleChange(resolvedState);
+        docket && this.setState({ pictureDocketNode: undefined });
       });
     })
     .catch(reason => {
-      _this.props.callbackError("insert_image", reason);
+      this.props.callbackError("insert_image", reason);
     });
 };
