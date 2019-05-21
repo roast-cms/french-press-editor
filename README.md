@@ -2,6 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/%40roast-cms%2Ffrench-press-editor.svg)](https://badge.fury.io/js/%40roast-cms%2Ffrench-press-editor) [![Build Status](https://travis-ci.com/roast-cms/french-press-editor.svg?branch=develop)](https://travis-ci.com/roast-cms/french-press-editor) ![Max Bundle Size](https://img.shields.io/badge/size%20gzip-35%20KB-green.svg)
 
+
 > ☕ An offline-first rich text editor component.
 
 <p align="center"><img src="https://raw.githubusercontent.com/roast-cms/french-press-editor/develop/graphics/demo-1.gif" width="600" alt="getting started with french-press-editor" /></p>
@@ -15,7 +16,6 @@
 ### Examples in production:
 
 - **[Analog.Cafe](https://github.com/dmitrizzle/Analog.Cafe):** a film photography magazine.
-- **[Archie.AI Blog](https://www.archie.ai/blog/new):** articles from the team behind Archie.AI, an artificially intelligent data scientist.
 
 ---
 
