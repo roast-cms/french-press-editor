@@ -1,8 +1,8 @@
 import {makeRelative} from "@roast-cms/react-link-filter/dist/utils"
 import React from "react"
 
-import Link from "./components/controls/Link"
-import Unquote from "./components/controls/Unquote"
+import Link from "../components/controls/Link"
+import Unquote from "../components/controls/Unquote"
 
 /**
  * Defines how all block-level nodes within the document are going to be rendered.

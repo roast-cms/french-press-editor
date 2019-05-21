@@ -5,7 +5,7 @@ import React from "react"
 
 import {shallow} from "enzyme"
 
-import {DEFAULT_EDITOR_STATE} from "../../constants"
+import {DEFAULT_EDITOR_STATE} from "../../constants/defaults"
 import FormatMenu from "./FormatMenu"
 
 test("Render FormatMenu without crashing, matches snapshot", () => {

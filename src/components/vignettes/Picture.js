@@ -2,9 +2,9 @@ import React from "react"
 import localForage from "localforage"
 import styled from "styled-components"
 
-import {fileToBase64} from "../../utils/actions-image"
+import {base64ToBlob} from "../../utils/image"
 
-const Figure = styled.figure`
+export const Figure = styled.figure`
   margin: ${props => props.theme.size.block.spacing}em 0;
   &.focus {
     box-shadow: 0 0 0 4px ${props => props.theme.color.brand()};
@@ -38,6 +38,9 @@ export default class extends React.PureComponent {
     this.loadImage(data.get("file"), key, data.get("src"))
     this.setState({key})
   }
+  componentWillUnmount = () => {
+    this.state.src.includes("blob:") && URL.revokeObjectURL(this.state.src)
+  }
 
   /**
    * Load image from URL or browser database via localForage
@@ -52,9 +55,11 @@ export default class extends React.PureComponent {
     } else {
       localForage.getItem(key).then(data => {
         if (data) {
-          fileToBase64(data).then(string => this.setState({src: string}))
+          const src = URL.createObjectURL(base64ToBlob(data))
+          this.setState({src})
         } else if (file && file.constructor !== Object) {
-          fileToBase64(file).then(string => this.setState({src: string}))
+          const src = URL.createObjectURL(file)
+          this.setState({src})
         }
       })
       this.setState({key})

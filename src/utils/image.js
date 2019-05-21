@@ -1,8 +1,8 @@
+import isDataString from "valid-data-url"
 import localForage from "localforage"
 import uuidv1 from "uuid/v1"
-import isDataString from "valid-data-url"
 
-import {PICTURE_ACCEPTED_UPLOAD_MIME} from "../constants"
+import {PICTURE_ACCEPTED_UPLOAD_MIME} from "../constants/defaults"
 
 /**
  * Converts file to base64 string
@@ -28,6 +28,30 @@ export const fileToBase64 = file => {
         error: "TypeError: parameter must be a File/blob or a data-uri string.",
       })
   })
+}
+
+/**
+ * Converts data-uri image to file/Blob
+ * Source: https://stackoverflow.com/questions/4998908/convert-data-uri-to-file-then-append-to-formdata
+ * @function base64ToBlob
+ * @param {String}
+ * @return {File}
+ */
+export const base64ToBlob = string => {
+  if (string instanceof Blob) return string
+  let byteString
+  if (string.split(",")[0].indexOf("base64") >= 0)
+    byteString = atob(string.split(",")[1])
+  else byteString = unescape(string.split(",")[1])
+  const mimeString = string
+    .split(",")[0]
+    .split(":")[1]
+    .split(";")[0]
+  let ia = new Uint8Array(byteString.length)
+  for (let i = 0; i < byteString.length; i++) {
+    ia[i] = byteString.charCodeAt(i)
+  }
+  return new Blob([ia], {type: mimeString})
 }
 
 /**

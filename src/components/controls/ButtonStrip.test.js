@@ -1,5 +1,7 @@
 import "jest-styled-components"
+
 import React from "react"
+
 import {shallow} from "enzyme"
 
 import {Item} from "./ButtonStrip"
