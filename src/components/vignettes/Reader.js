@@ -5,6 +5,7 @@ import React from "react"
 import {renderNode, renderMark} from "../../render"
 import {schema} from "../../schema"
 
+
 /**
  * A read-only version of Slate Editor to easily render the JSON document state.
  * @module Reader

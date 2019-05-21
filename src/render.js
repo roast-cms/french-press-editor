@@ -62,25 +62,24 @@ export const renderNode = props => {
       } else {
         // eslint-disable-next-line
         console.warn("<Picture /> component required to render images")
-        return null
-      }
+      return null
     }
-    //
-    // user can define a <pictureDocketNode /> which is a component that may
-    // show up after they click "Insert Image" button; by default it's skipped,
-    // however, in some cases it may be useful to display some image suggestions
-    // that user can insert without having to upload new ones; this
-    // action is skipped if the user is inserting an image via drag & drop
-    case "docket": {
-      if (
-        props.editor.props.components &&
+  }
+  //
+  // user can define a <pictureDocketNode /> which is a component that may
+  // show up after they click "Insert Image" button; by default it's skipped,
+  // however, in some cases it may be useful to display some image suggestions
+  // that user can insert without having to upload new ones; this
+  // action is skipped if the user is inserting an image via drag & drop
+  case "docket": {
+    if (
+      props.editor.props.components &&
         props.editor.props.components.PictureDocket
-      ) {
-        const PictureDocket = props.editor.props.components.PictureDocket
-        return <PictureDocket {...props} />
-      } else {
-        return null
-      }
+    ) {
+      const PictureDocket = props.editor.props.components.PictureDocket
+      return <PictureDocket {...props} />
+    } else {
+      return null
     }
     case "link": {
       const {data} = node

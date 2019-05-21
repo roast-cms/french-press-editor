@@ -11,32 +11,32 @@ export const schema = {
   document: {
     nodes: [
       {
-        match: [
-          {type: "paragraph"},
-          {type: "heading"},
-          {type: "divider"},
-          {type: "quote"},
-          {type: "image"},
-          {type: "docket"},
-          {type: "link"},
+        types: [
+          "paragraph",
+          "heading",
+          "divider",
+          "quote",
+          "image",
+          "docket",
+          "link",
         ],
       },
     ],
-    last: [{type: "quote"}, {type: "paragraph"}],
-    normalize: (change, error) => {
-      if (error.code === "last_child_type_invalid") {
+    last: {types: ["paragraph", "quote"]},
+    normalize: (change, reason, {node}) => {
+      switch (reason) {
+      case "last_child_type_invalid": {
         const paragraph = Block.create("paragraph")
-        return change.insertNodeByKey(
-          error.node.key,
-          error.node.nodes.size,
-          paragraph
-        )
-      } else return null
+        return change.insertNodeByKey(node.key, node.nodes.size, paragraph)
+      }
+      default:
+        return null
+      }
     },
   },
   blocks: {
     link: {
-      match: {object: "text"},
+      nodes: [{objects: ["text"]}],
     },
     divider: {
       isVoid: true,
@@ -50,14 +50,16 @@ export const schema = {
     docket: {
       isVoid: true,
     },
+  },
+  inlines: {
     quote: {
-      match: {object: "text"},
+      nodes: [{types: ["text"]}],
     },
     paragraph: {
-      match: [{object: "text"}, {object: "link"}],
+      nodes: [{types: ["text", "link"]}],
     },
     heading: {
-      match: {object: "text"},
+      nodes: [{types: ["text"]}],
     },
   },
 }

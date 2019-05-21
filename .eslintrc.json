@@ -27,6 +27,7 @@
   "plugins": ["react", "prettier"],
   "rules": {
     "prettier/prettier": "error",
+
     "react/prop-types": 0,
     "react/display-name": 0
   }
