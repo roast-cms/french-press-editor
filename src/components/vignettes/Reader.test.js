@@ -46,7 +46,6 @@ test("addRootSerialNumbers adds serial numbers to (shallow) node objects", () =>
 })
 
 test("nodeFactory maps Value nodes onto serializeNode function instances, produces six blocks", () => {
-  const serializeNode = jest.fn()
   expect(nodeFactory({value: EXAMPLE_VALUE})).toHaveLength(6)
 })
 

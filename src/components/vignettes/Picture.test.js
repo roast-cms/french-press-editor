@@ -27,8 +27,3 @@ test("Snapshot", () => {
 test("Snapshot", () => {
   expect(shallow(<Figure theme={EXAMPLE_THEME} />)).toMatchSnapshot()
 })
-
-test("Render Figure without crashing, matches snapshot", () => {
-  const element = shallow(<Figure theme={EXAMPLE_THEME} />)
-  expect(element).toMatchSnapshot()
-})
