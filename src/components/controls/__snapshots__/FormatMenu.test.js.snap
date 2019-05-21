@@ -39,203 +39,50 @@ ShallowWrapper {
           "stack": Immutable.Record {
             "plugins": Array [
               Object {
+                "validateNode": [Function],
+              },
+              Object {
+                "validateNode": [Function],
+              },
+              Object {
+                "validateNode": [Function],
+              },
+              Object {
+                "validateNode": [Function],
+              },
+              Object {
+                "validateNode": [Function],
+              },
+              Object {
+                "validateNode": [Function],
+              },
+              Object {
+                "validateNode": [Function],
+              },
+              Object {
+                "validateNode": [Function],
+              },
+              Object {
                 "schema": Object {},
               },
             ],
           },
-          "rules": Array [
-            Object {
-              "match": Object {
-                "object": "document",
-              },
-              "nodes": Array [
-                Object {
-                  "match": Object {
-                    "object": "block",
-                  },
-                },
-              ],
-            },
-            Object {
-              "match": Object {
-                "first": Object {
-                  "object": "block",
-                },
-                "object": "block",
-              },
-              "nodes": Array [
-                Object {
-                  "match": Object {
-                    "object": "block",
-                  },
-                },
-              ],
-            },
-            Object {
-              "match": Object {
-                "first": Array [
-                  Object {
-                    "object": "inline",
-                  },
-                  Object {
-                    "object": "text",
-                  },
-                ],
-                "object": "block",
-              },
-              "nodes": Array [
-                Object {
-                  "match": Array [
-                    Object {
-                      "object": "inline",
-                    },
-                    Object {
-                      "object": "text",
-                    },
-                  ],
-                },
-              ],
-            },
-            Object {
-              "match": Object {
-                "object": "inline",
-              },
-              "nodes": Array [
-                Object {
-                  "match": Array [
-                    Object {
-                      "object": "inline",
-                    },
-                    Object {
-                      "object": "text",
-                    },
-                  ],
-                },
-              ],
-            },
-            Object {
-              "match": Array [
-                Object {
-                  "object": "block",
-                },
-                Object {
-                  "object": "inline",
-                },
-              ],
-              "nodes": Array [
-                Object {
-                  "min": 1,
-                },
-              ],
-              "normalize": [Function],
-            },
-            Object {
-              "match": Object {
-                "isVoid": false,
-                "nodes": Array [
-                  Object {
-                    "match": Object {
-                      "object": "text",
-                    },
-                  },
-                ],
-                "object": "inline",
-              },
-              "text": /\\[\\\\w\\\\W\\]\\+/,
-            },
-            Object {
-              "first": Array [
-                Object {
-                  "object": "block",
-                },
-                Object {
-                  "object": "text",
-                },
-              ],
-              "last": Array [
-                Object {
-                  "object": "block",
-                },
-                Object {
-                  "object": "text",
-                },
-              ],
-              "match": Object {
-                "object": "block",
-              },
-              "normalize": [Function],
-            },
-            Object {
-              "first": Array [
-                Object {
-                  "object": "block",
-                },
-                Object {
-                  "object": "text",
-                },
-              ],
-              "last": Array [
-                Object {
-                  "object": "block",
-                },
-                Object {
-                  "object": "text",
-                },
-              ],
-              "match": Object {
-                "object": "inline",
-              },
-              "next": Array [
-                Object {
-                  "object": "block",
-                },
-                Object {
-                  "object": "text",
-                },
-              ],
-              "normalize": [Function],
-              "previous": Array [
-                Object {
-                  "object": "block",
-                },
-                Object {
-                  "object": "text",
-                },
-              ],
-            },
-            Object {
-              "match": Object {
-                "object": "text",
-              },
-              "next": Array [
-                Object {
-                  "object": "block",
-                },
-                Object {
-                  "object": "inline",
-                },
-              ],
-              "normalize": [Function],
-            },
-          ],
+          "document": Object {
+            "data": Object {},
+            "nodes": null,
+          },
+          "blocks": Object {},
+          "inlines": Object {},
         },
         "selection": Immutable.Record {
           "anchorKey": "3",
           "anchorOffset": 0,
-          "anchorPath": Immutable.List [
-            0,
-            0,
-          ],
           "focusKey": "3",
           "focusOffset": 0,
-          "focusPath": Immutable.List [
-            0,
-            0,
-          ],
-          "isAtomic": false,
           "isBackward": false,
           "isFocused": false,
           "marks": null,
+          "isAtomic": false,
         },
       }
     }
@@ -812,7 +659,13 @@ ShallowWrapper {
           "componentDidUpdate": Object {
             "onSetState": true,
           },
-          "getDerivedStateFromProps": true,
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
           "getSnapshotBeforeUpdate": true,
           "setState": Object {
             "skipsComponentDidUpdateOnNullish": true,
@@ -820,8 +673,6 @@ ShallowWrapper {
         },
       },
     },
-    "attachTo": undefined,
-    "hydrateIn": undefined,
   },
 }
 `;
