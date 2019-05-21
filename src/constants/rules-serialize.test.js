@@ -1,5 +1,6 @@
 import "jest-styled-components"
 
+
 import {rulesSerializeWithProps} from "./rules-serialize"
 import Picture from "../components/vignettes/Picture"
 
