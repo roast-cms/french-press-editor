@@ -69,13 +69,13 @@ export class FrenchPress extends React.PureComponent {
     if (
       this.slateEditor &&
       this.slateEditor.value &&
-      this.slateEditor.value.history.undos.size === 0
+      !this.slateEditor.state.value.hasUndos
     ) {
       /**
        * Finds all used image keys in the document.
        * @const contentImageKeys
        */
-      const contentImageKeys = this.slateEditor.value
+      const contentImageKeys = this.slateEditor.state.value
         .toJSON()
         .document.nodes.filter(node => !!(node.data && node.data.key))
         .map(node => node.data.key)
@@ -128,7 +128,7 @@ export class FrenchPress extends React.PureComponent {
       const nodeKey = value.focusBlock.key
       const block = window.document.querySelector(`[data-key="${nodeKey}"]`)
       this.setState({
-        editorFocus: value.selection.isFocused,
+        editorFocus: value.isFocused,
       })
       imageButtonPosition.call(
         this,
