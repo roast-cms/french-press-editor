@@ -15,7 +15,6 @@
 ### Examples in production:
 
 - **[Analog.Cafe](https://github.com/dmitrizzle/Analog.Cafe):** a film photography magazine.
-- **[Archie.AI Blog](https://www.archie.ai/blog/new):** articles from the team behind Archie.AI, an artificially intelligent data scientist.
 
 ---
 

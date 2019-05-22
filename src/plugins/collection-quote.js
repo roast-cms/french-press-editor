@@ -9,8 +9,8 @@ export const quote = [
   AutoReplace({
     trigger: "space",
     before: /^(>)$/,
-    change: change => {
-      return change.setBlocks({type: "quote"}) // quote
+    transform: transform => {
+      return transform.setBlocks({type: "quote"}) // quote
     },
   }),
 
@@ -19,8 +19,8 @@ export const quote = [
     plugin: AutoReplace({
       trigger: "enter",
       before: /^.|$/,
-      change: change => {
-        return change.splitBlock().setBlocks({type: "paragraph"}) // exit quote
+      transform: transform => {
+        return transform.splitBlock().setBlocks({type: "paragraph"}) // exit quote
       },
     }),
   }),
@@ -31,8 +31,8 @@ export const quote = [
       trigger: "backspace",
       after: /./,
       before: /^$/,
-      change: change => {
-        return change.setBlocks({type: "paragraph"}) // change quote to paragraph
+      transform: transform => {
+        return transform.setBlocks({type: "paragraph"}) // transform quote to paragraph
       },
     }),
   }),
