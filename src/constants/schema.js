@@ -44,7 +44,7 @@ export const SCHEMA = {
     image: {
       isVoid: true,
       data: {
-        src: v => v,
+        src: value => value,
       },
     },
     docket: {

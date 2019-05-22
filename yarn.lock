@@ -7653,7 +7653,7 @@ slate-dev-environment@^0.1.2, slate-dev-environment@^0.1.4:
   dependencies:
     is-in-browser "^1.1.3"
 
-slate-dev-logger@^0.1.0, slate-dev-logger@^0.1.39, slate-dev-logger@^0.1.43:
+slate-dev-logger@^0.1.0, slate-dev-logger@^0.1.39, slate-dev-logger@^0.1.40, slate-dev-logger@^0.1.43:
   version "0.1.43"
   resolved "https://registry.yarnpkg.com/slate-dev-logger/-/slate-dev-logger-0.1.43.tgz#77f6ca7207fcbf453a5516f3aa8b19794d1d26dc"
   integrity sha512-GkcPMGzmPVm85AL+jaKnzhIA0UH9ktQDEIDM+FuQtz+TAPcpPCQiRAaZ6I2p2uD0Hq9bImhKSCtHIa0qRxiVGw==
@@ -7720,7 +7720,7 @@ slate-react@0.13.0:
     slate-plain-serializer "^0.5.18"
     slate-prop-types "^0.4.35"
 
-slate-schema-violations@^0.1.15:
+slate-schema-violations@^0.1.21:
   version "0.1.39"
   resolved "https://registry.yarnpkg.com/slate-schema-violations/-/slate-schema-violations-0.1.39.tgz#854ab5624136419cef4c803b1823acabe11f1c15"
   integrity sha512-SNRoV9Ii5UqjNqAKcIw7aAOMwgI45zsn86ue2n8NVLNOCe3fUI35cjq6l3fdvmRYw4X/GcZqzhpQsizHD3ts6A==
@@ -7735,10 +7735,10 @@ slate-when@^0.1.1:
   resolved "https://registry.yarnpkg.com/slate-when/-/slate-when-0.1.1.tgz#6396c4f32da25c63de1abfd75aa4753b4b1825e9"
   integrity sha512-up6+ZHPn0clmE6lsv6Ds9fKFWTvZBUFdKYNHzUyE2xiw1TBH+84/B7PXle6wpTrmcrIiS3qrqbztwibpD4v0Gg==
 
-slate@0.34.2:
-  version "0.34.2"
-  resolved "https://registry.yarnpkg.com/slate/-/slate-0.34.2.tgz#faf75d295e44d8b43cf2e14168f7a43457a29c67"
-  integrity sha1-+vddKV5E2LQ88uFBaPekNFeinGc=
+slate@^0.35.0:
+  version "0.35.0"
+  resolved "https://registry.yarnpkg.com/slate/-/slate-0.35.0.tgz#6d13146b21db9aa9fdbe9323198dc25a5d334ec0"
+  integrity sha1-bRMUayHbmqn9vpMjGY3CWl0zTsA=
   dependencies:
     debug "^3.1.0"
     direction "^0.1.5"
@@ -7746,8 +7746,8 @@ slate@0.34.2:
     is-empty "^1.0.0"
     is-plain-object "^2.0.4"
     lodash "^4.17.4"
-    slate-dev-logger "^0.1.39"
-    slate-schema-violations "^0.1.15"
+    slate-dev-logger "^0.1.40"
+    slate-schema-violations "^0.1.21"
     type-of "^2.0.1"
 
 slice-ansi@^2.1.0:

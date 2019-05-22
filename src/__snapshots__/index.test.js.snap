@@ -265,12 +265,20 @@ ShallowWrapper {
               "selection": Immutable.Record {
                 "anchorKey": "3",
                 "anchorOffset": 0,
+                "anchorPath": Immutable.List [
+                  0,
+                  0,
+                ],
                 "focusKey": "3",
                 "focusOffset": 0,
+                "focusPath": Immutable.List [
+                  0,
+                  0,
+                ],
+                "isAtomic": false,
                 "isBackward": false,
                 "isFocused": false,
                 "marks": null,
-                "isAtomic": false,
               },
             }
           }
@@ -549,12 +557,20 @@ ShallowWrapper {
             "selection": Immutable.Record {
               "anchorKey": "3",
               "anchorOffset": 0,
+              "anchorPath": Immutable.List [
+                0,
+                0,
+              ],
               "focusKey": "3",
               "focusOffset": 0,
+              "focusPath": Immutable.List [
+                0,
+                0,
+              ],
+              "isAtomic": false,
               "isBackward": false,
               "isFocused": false,
               "marks": null,
-              "isAtomic": false,
             },
           },
         },
@@ -834,12 +850,20 @@ ShallowWrapper {
                 "selection": Immutable.Record {
                   "anchorKey": "3",
                   "anchorOffset": 0,
+                  "anchorPath": Immutable.List [
+                    0,
+                    0,
+                  ],
                   "focusKey": "3",
                   "focusOffset": 0,
+                  "focusPath": Immutable.List [
+                    0,
+                    0,
+                  ],
+                  "isAtomic": false,
                   "isBackward": false,
                   "isFocused": false,
                   "marks": null,
-                  "isAtomic": false,
                 },
               }
             }
@@ -1118,12 +1142,20 @@ ShallowWrapper {
               "selection": Immutable.Record {
                 "anchorKey": "3",
                 "anchorOffset": 0,
+                "anchorPath": Immutable.List [
+                  0,
+                  0,
+                ],
                 "focusKey": "3",
                 "focusOffset": 0,
+                "focusPath": Immutable.List [
+                  0,
+                  0,
+                ],
+                "isAtomic": false,
                 "isBackward": false,
                 "isFocused": false,
                 "marks": null,
-                "isAtomic": false,
               },
             },
           },
@@ -1234,12 +1266,20 @@ ShallowWrapper {
           "selection": Immutable.Record {
             "anchorKey": "3",
             "anchorOffset": 0,
+            "anchorPath": Immutable.List [
+              0,
+              0,
+            ],
             "focusKey": "3",
             "focusOffset": 0,
+            "focusPath": Immutable.List [
+              0,
+              0,
+            ],
+            "isAtomic": false,
             "isBackward": false,
             "isFocused": false,
             "marks": null,
-            "isAtomic": false,
           },
         },
       },
