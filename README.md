@@ -2,7 +2,6 @@
 
 [![npm version](https://badge.fury.io/js/%40roast-cms%2Ffrench-press-editor.svg)](https://badge.fury.io/js/%40roast-cms%2Ffrench-press-editor) [![Build Status](https://travis-ci.com/roast-cms/french-press-editor.svg?branch=develop)](https://travis-ci.com/roast-cms/french-press-editor) ![Max Bundle Size](https://img.shields.io/badge/size%20gzip-35%20KB-green.svg)
 
-
 > ☕ An offline-first rich text editor component.
 
 <p align="center"><img src="https://raw.githubusercontent.com/roast-cms/french-press-editor/develop/graphics/demo-1.gif" width="600" alt="getting started with french-press-editor" /></p>
@@ -118,6 +117,8 @@ import { Picture } from "@roast-cms/french-press-editor/dist/containers/Picture"
 `<Reader />` component can render value JSON into react components without having to download the editor, saving a lot of bandwidth and parsing resources for your users.
 
 ```javascript
+import Reader from "@roast-cms/french-press-editor/dist/components/vignettes/Reader";
+
 <Reader
   //
   // optional: domain which will parse all your links
@@ -207,7 +208,7 @@ To see if this tool is right for you, please have a look through the list of spe
 
 - `editorRef()` returns Slate Editor reference once it mounts.
 
-To learn more about what you can customize and build for `french-press-editor` to make it yours, check out the [complete API guide](/examples/README.md).
+To learn more about what you can customize and build for `french-press-editor` to make it yours, check out the [complete API guide](/docs).
 
 ## Contributions welcome!
 

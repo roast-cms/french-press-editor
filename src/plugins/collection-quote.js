@@ -9,8 +9,8 @@ export const quote = [
   AutoReplace({
     trigger: "space",
     before: /^(>)$/,
-    transform: transform => {
-      return transform.setBlocks({type: "quote"}) // quote
+    change: change => {
+      return change.setBlocks({type: "quote"}) // quote
     },
   }),
 

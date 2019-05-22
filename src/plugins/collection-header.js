@@ -9,8 +9,8 @@ export const header = [
   AutoReplace({
     trigger: "space",
     before: /^(#)$/,
-    transform: transform => {
-      return transform.setBlocks({type: "heading"}) // heading
+    change: change => {
+      return change.setBlocks({type: "heading"}) // heading
     },
   }),
   When({

@@ -16,6 +16,7 @@ const squish = el => {
   return el
 }
 
+
 export const RULES_DESERIALIZE = [
   {
     deserialize(el, next) {
@@ -33,14 +34,14 @@ export const RULES_DESERIALIZE = [
           return {
             object: "block",
             type: "quote",
-            nodes: next(squish(el).childNodes),
+            nodes: next(el.childNodes),
           }
         }
         case "heading": {
           return {
             object: "block",
             type: "heading",
-            nodes: next(squish(el).childNodes),
+            nodes: next(el.childNodes),
           }
         }
         case "image": {
@@ -60,7 +61,7 @@ export const RULES_DESERIALIZE = [
             data: {
               href: el.getAttribute("href"),
             },
-            nodes: next(squish(el).childNodes),
+            nodes: next(el.childNodes),
           }
         }
         default:
