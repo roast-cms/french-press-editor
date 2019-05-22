@@ -6,6 +6,16 @@ import isUrl from "is-url"
 
 import {BLOCK_TAGS, MARK_TAGS} from "./defaults"
 
+/**
+ * Flattens HTML into plain text.
+ * @function squish
+ * @return {String}
+ */
+const squish = el => {
+  el.innerHTML = el.innerText || el.textContent
+  return el
+}
+
 export const RULES_DESERIALIZE = [
   {
     deserialize(el, next) {
@@ -23,14 +33,14 @@ export const RULES_DESERIALIZE = [
           return {
             object: "block",
             type: "quote",
-            nodes: next(el.childNodes),
+            nodes: next(squish(el).childNodes),
           }
         }
         case "heading": {
           return {
             object: "block",
             type: "heading",
-            nodes: next(el.childNodes),
+            nodes: next(squish(el).childNodes),
           }
         }
         case "image": {
@@ -50,7 +60,7 @@ export const RULES_DESERIALIZE = [
             data: {
               href: el.getAttribute("href"),
             },
-            nodes: next(el.childNodes),
+            nodes: next(squish(el).childNodes),
           }
         }
         default:
