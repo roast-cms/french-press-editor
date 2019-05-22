@@ -32,7 +32,6 @@ export const SCHEMA = {
         default:
           return null
       }
-
     },
   },
   blocks: {

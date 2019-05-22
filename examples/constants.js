@@ -132,7 +132,7 @@ export const EXAMPLE_VALUE = {
         isVoid: true,
         data: {
           src:
-            "https://instagram.fyvr3-1.fna.fbcdn.net/vp/08c7b82dfdb7bdbac00bfac0afd49dd7/5C233865/t51.2885-15/e35/29740602_208947276504723_8552082654378328064_n.jpg",
+            "https://raw.githubusercontent.com/roast-cms/french-press-editor/develop/graphics/logo.gif",
         },
         nodes: [
           {object: "text", leaves: [{object: "leaf", text: "", marks: []}]},
