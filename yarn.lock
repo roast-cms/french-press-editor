@@ -7730,12 +7730,12 @@ slate-simulator@^0.4.61:
   resolved "https://registry.yarnpkg.com/slate-simulator/-/slate-simulator-0.4.67.tgz#9313c84736db1e23d6aebacd536f582b6d54723c"
   integrity sha512-k1HM0Olv7mUjpwrLgOcnjMorlh9Y6vve/ngsHix1j7lXVfsHFdEkolXPeCy3+HsqW2s1dANc0a7hiOZuw4hc0A==
 
-slate-when@^0.1.0:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/slate-when/-/slate-when-0.1.1.tgz#6396c4f32da25c63de1abfd75aa4753b4b1825e9"
-  integrity sha512-up6+ZHPn0clmE6lsv6Ds9fKFWTvZBUFdKYNHzUyE2xiw1TBH+84/B7PXle6wpTrmcrIiS3qrqbztwibpD4v0Gg==
+slate-when@0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/slate-when/-/slate-when-0.1.0.tgz#4ff3914e78356170628cc6e96f7b466241fcceb5"
+  integrity sha512-hxmwW+ybm4QOClHBEqNgKTxHP36XDvHfb5kRj7eGlvkR8SKxFaOLc8KhkohvqJFKgvVk1nDxcSa3y5+9tbXHXw==
 
-slate@^0.35.0:
+slate@0.35.0:
   version "0.35.0"
   resolved "https://registry.yarnpkg.com/slate/-/slate-0.35.0.tgz#6d13146b21db9aa9fdbe9323198dc25a5d334ec0"
   integrity sha1-bRMUayHbmqn9vpMjGY3CWl0zTsA=
