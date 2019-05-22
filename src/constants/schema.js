@@ -23,7 +23,7 @@ export const SCHEMA = {
       },
     ],
     last: {types: ["paragraph", "quote"]},
-    normalize: (change, reason, {node, child}) => {
+    normalize: (change, reason, {node}) => {
       switch (reason) {
         case "last_child_type_invalid": {
           const paragraph = Block.create("paragraph")
