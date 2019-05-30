@@ -8,8 +8,8 @@ export const hr = [
   AutoReplace({
     trigger: "enter",
     before: /^\*\*\*$/,
-    change: change => {
-      return change
+    transform: transform => {
+      return transform
         .setBlocks({type: "divider", isVoid: true})
         .moveToStartOfNextBlock() // page break
     },

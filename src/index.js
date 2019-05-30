@@ -40,7 +40,7 @@ export class FrenchPress extends React.PureComponent {
   constructor(props) {
     super(props)
     this.state = {
-      value: Value.fromJSON(props.value || loadContent()),
+      value: Value.fromJSON(this.props.value || loadContent()),
       schema: SCHEMA,
       cursorContext: {
         newLine: false,
@@ -69,7 +69,7 @@ export class FrenchPress extends React.PureComponent {
     if (
       this.slateEditor &&
       this.slateEditor.value &&
-      this.slateEditor.value.history.undos.size === 0
+      !this.slateEditor.state.value.hasUndos
     ) {
       /**
        * Finds all used image keys in the document.

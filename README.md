@@ -15,7 +15,6 @@
 ### Examples in production:
 
 - **[Analog.Cafe](https://github.com/dmitrizzle/Analog.Cafe):** a film photography magazine.
-- **[Archie.AI Blog](https://www.archie.ai/blog/new):** articles from the team behind Archie.AI, an artificially intelligent data scientist.
 
 ---
 
@@ -118,6 +117,8 @@ import { Picture } from "@roast-cms/french-press-editor/dist/containers/Picture"
 `<Reader />` component can render value JSON into react components without having to download the editor, saving a lot of bandwidth and parsing resources for your users.
 
 ```javascript
+import Reader from "@roast-cms/french-press-editor/dist/components/vignettes/Reader";
+
 <Reader
   //
   // optional: domain which will parse all your links
@@ -207,7 +208,7 @@ To see if this tool is right for you, please have a look through the list of spe
 
 - `editorRef()` returns Slate Editor reference once it mounts.
 
-To learn more about what you can customize and build for `french-press-editor` to make it yours, check out the [complete API guide](/examples/README.md).
+To learn more about what you can customize and build for `french-press-editor` to make it yours, check out the [complete API guide](/docs).
 
 ## Contributions welcome!
 
