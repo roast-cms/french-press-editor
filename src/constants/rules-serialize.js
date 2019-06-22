@@ -1,7 +1,6 @@
 import React from "react"
 
 import {addKey} from "../components/vignettes/Reader"
-import Link from "../components/controls/Link"
 
 export const rulesSerializeWithProps = props => [
   {
@@ -10,14 +9,20 @@ export const rulesSerializeWithProps = props => [
       switch (element) {
         case "link": {
           const href = node.data.href
-          return addKey(
-            <Link
-              to={href}
-              domain={props.options ? props.options.domain : null}
-            >
-              {children}
-            </Link>
-          )
+
+          if (props.components && props.components.Link) {
+            const Link = props.components.Link
+            return (
+              <Link
+                domain={props.options ? props.options.domain : null}
+                to={href}
+              >
+                {children}
+              </Link>
+            )
+          } else {
+            return <a href={href}>{children}</a>
+          }
         }
         case "image": {
           if (props.components && props.components.Picture) {

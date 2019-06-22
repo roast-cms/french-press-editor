@@ -1,7 +1,5 @@
-import {makeRelative} from "@roast-cms/react-link-filter/dist/utils"
 import React from "react"
 
-import Link from "../components/controls/Link"
 import Unquote from "../components/controls/Unquote"
 
 /**
@@ -14,6 +12,9 @@ export const renderNode = props => {
   const {node, attributes, children, isSelected, editor} = props
   const focus = editor.value.isFocused && isSelected
   const className = focus ? "focus" : "nofocus"
+
+  const {components} = (editor && editor.props) || {}
+  const {data} = node
 
   switch (node.type) {
     case "paragraph":
@@ -53,11 +54,8 @@ export const renderNode = props => {
         </div>
       )
     case "image": {
-      if (
-        props.editor.props.components &&
-        props.editor.props.components.Picture
-      ) {
-        const Picture = props.editor.props.components.Picture
+      if (components && components.Picture) {
+        const Picture = components.Picture
         return <Picture {...props} />
       } else {
         // eslint-disable-next-line
@@ -83,16 +81,22 @@ export const renderNode = props => {
       }
     }
     case "link": {
-      const {data} = node
       const href = data.get("href")
-      return (
-        <Link
-          {...attributes}
-          to={makeRelative(href, props.editor.props.options.domain)}
-        >
-          {children}
-        </Link>
-      )
+
+      if (components && components.Link) {
+        const Link = components.Link
+        return (
+          <Link {...attributes} to={href}>
+            {children}
+          </Link>
+        )
+      } else {
+        return (
+          <a {...attributes} href={href}>
+            {children}
+          </a>
+        )
+      }
     }
     default:
       return <p {...attributes}>{children}</p>

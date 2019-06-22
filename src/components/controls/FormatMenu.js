@@ -1,10 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-import {ButtonStrip, Item} from "./ButtonStrip"
-import Button from "./Button"
-
-const Menu = styled(ButtonStrip)`
+const Menu = styled.div`
   display: none;
   position: absolute;
   bottom: initial !important;
@@ -37,7 +34,7 @@ const Menu = styled(ButtonStrip)`
     }
   `};
 `
-const MenuItem = styled(Item)`
+const MenuItem = styled.div`
   width: auto;
   flex-grow: 1;
   ${props => props.theme.size.breakpoint.max.s`
@@ -91,7 +88,7 @@ export default props => {
           style={{marginBottom: "-1em", display: "block"}}
           className="french-press_undo-heading-container"
         >
-          <Button
+          <button
             onMouseDown={event => event.preventDefault()}
             onMouseUp={event => {
               event.preventDefault()
@@ -105,7 +102,7 @@ export default props => {
             className="french-press_undo-heading"
           >
             <CancelHeader />
-          </Button>
+          </button>
         </div>
       ) : (
         <div>

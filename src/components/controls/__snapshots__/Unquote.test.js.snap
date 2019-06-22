@@ -181,7 +181,7 @@ ShallowWrapper {
       }
     }
   >
-    <Styled(_default) />
+    <styled.button />
   </ThemeProvider>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],

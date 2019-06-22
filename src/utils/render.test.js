@@ -3,7 +3,6 @@ import React from "react"
 import {shallow} from "enzyme"
 
 import {renderNode} from "./render"
-import Link from "../components/controls/Link"
 import Picture from "../components/vignettes/Picture"
 
 test("renderNode produces paragraph element.", () => {
@@ -76,7 +75,7 @@ test("renderNode produces picture element that matches a snapshot.", () => {
 
 test("renderNode produces link element with correct href prop.", () => {
   const element = (
-    <Link to="https://github.com/roast-cms/french-press-editor">a</Link>
+    <a href="https://github.com/roast-cms/french-press-editor">a</a>
   )
   expect(
     renderNode({

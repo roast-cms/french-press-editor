@@ -1,9 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-import Button from "./Button"
-
-const ImageButton = styled(Button)`
+const ImageButton = styled.button`
   ${props => props.theme.size.breakpoint.max.m`
     right: -${props => props.theme.size.block.spacing}em;
   `};

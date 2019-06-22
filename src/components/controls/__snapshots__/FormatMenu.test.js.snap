@@ -110,7 +110,7 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "children": <div>
-        <Styled(Item)
+        <styled.div
           branded={true}
           left={true}
           onMouseDown={[Function]}
@@ -118,16 +118,16 @@ ShallowWrapper {
           title="Make a heading"
         >
           <Unknown />
-        </Styled(Item)>
-        <Styled(Item)
+        </styled.div>
+        <styled.div
           branded={true}
           onMouseDown={[Function]}
           onMouseUp={[Function]}
           title="Make a quote"
         >
           <Unknown />
-        </Styled(Item)>
-        <Styled(Item)
+        </styled.div>
+        <styled.div
           branded={true}
           inverse={false}
           onMouseDown={[Function]}
@@ -140,8 +140,8 @@ ShallowWrapper {
           }
         >
           <Unknown />
-        </Styled(Item)>
-        <Styled(Item)
+        </styled.div>
+        <styled.div
           branded={true}
           inverse={false}
           onClick={[Function]}
@@ -156,8 +156,8 @@ ShallowWrapper {
               }
             }
           />
-        </Styled(Item)>
-        <Styled(Item)
+        </styled.div>
+        <styled.div
           branded={true}
           inverse={false}
           onClick={[Function]}
@@ -167,7 +167,7 @@ ShallowWrapper {
           script={true}
         >
           <Unknown />
-        </Styled(Item)>
+        </styled.div>
       </div>,
       "innerRef": undefined,
     },
@@ -178,7 +178,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <Styled(Item)
+          <styled.div
             branded={true}
             left={true}
             onMouseDown={[Function]}
@@ -186,16 +186,16 @@ ShallowWrapper {
             title="Make a heading"
           >
             <Unknown />
-          </Styled(Item)>,
-          <Styled(Item)
+          </styled.div>,
+          <styled.div
             branded={true}
             onMouseDown={[Function]}
             onMouseUp={[Function]}
             title="Make a quote"
           >
             <Unknown />
-          </Styled(Item)>,
-          <Styled(Item)
+          </styled.div>,
+          <styled.div
             branded={true}
             inverse={false}
             onMouseDown={[Function]}
@@ -208,8 +208,8 @@ ShallowWrapper {
             }
           >
             <Unknown />
-          </Styled(Item)>,
-          <Styled(Item)
+          </styled.div>,
+          <styled.div
             branded={true}
             inverse={false}
             onClick={[Function]}
@@ -224,8 +224,8 @@ ShallowWrapper {
                 }
               }
             />
-          </Styled(Item)>,
-          <Styled(Item)
+          </styled.div>,
+          <styled.div
             branded={true}
             inverse={false}
             onClick={[Function]}
@@ -235,7 +235,7 @@ ShallowWrapper {
             script={true}
           >
             <Unknown />
-          </Styled(Item)>,
+          </styled.div>,
         ],
       },
       "ref": null,
@@ -387,7 +387,7 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": <div>
-          <Styled(Item)
+          <styled.div
             branded={true}
             left={true}
             onMouseDown={[Function]}
@@ -395,16 +395,16 @@ ShallowWrapper {
             title="Make a heading"
           >
             <Unknown />
-          </Styled(Item)>
-          <Styled(Item)
+          </styled.div>
+          <styled.div
             branded={true}
             onMouseDown={[Function]}
             onMouseUp={[Function]}
             title="Make a quote"
           >
             <Unknown />
-          </Styled(Item)>
-          <Styled(Item)
+          </styled.div>
+          <styled.div
             branded={true}
             inverse={false}
             onMouseDown={[Function]}
@@ -417,8 +417,8 @@ ShallowWrapper {
             }
           >
             <Unknown />
-          </Styled(Item)>
-          <Styled(Item)
+          </styled.div>
+          <styled.div
             branded={true}
             inverse={false}
             onClick={[Function]}
@@ -433,8 +433,8 @@ ShallowWrapper {
                 }
               }
             />
-          </Styled(Item)>
-          <Styled(Item)
+          </styled.div>
+          <styled.div
             branded={true}
             inverse={false}
             onClick={[Function]}
@@ -444,7 +444,7 @@ ShallowWrapper {
             script={true}
           >
             <Unknown />
-          </Styled(Item)>
+          </styled.div>
         </div>,
         "innerRef": undefined,
       },
@@ -455,7 +455,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            <Styled(Item)
+            <styled.div
               branded={true}
               left={true}
               onMouseDown={[Function]}
@@ -463,16 +463,16 @@ ShallowWrapper {
               title="Make a heading"
             >
               <Unknown />
-            </Styled(Item)>,
-            <Styled(Item)
+            </styled.div>,
+            <styled.div
               branded={true}
               onMouseDown={[Function]}
               onMouseUp={[Function]}
               title="Make a quote"
             >
               <Unknown />
-            </Styled(Item)>,
-            <Styled(Item)
+            </styled.div>,
+            <styled.div
               branded={true}
               inverse={false}
               onMouseDown={[Function]}
@@ -485,8 +485,8 @@ ShallowWrapper {
               }
             >
               <Unknown />
-            </Styled(Item)>,
-            <Styled(Item)
+            </styled.div>,
+            <styled.div
               branded={true}
               inverse={false}
               onClick={[Function]}
@@ -501,8 +501,8 @@ ShallowWrapper {
                   }
                 }
               />
-            </Styled(Item)>,
-            <Styled(Item)
+            </styled.div>,
+            <styled.div
               branded={true}
               inverse={false}
               onClick={[Function]}
@@ -512,7 +512,7 @@ ShallowWrapper {
               script={true}
             >
               <Unknown />
-            </Styled(Item)>,
+            </styled.div>,
           ],
         },
         "ref": null,
