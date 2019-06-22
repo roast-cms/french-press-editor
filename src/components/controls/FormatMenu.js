@@ -1,12 +1,23 @@
 import React from "react"
 import styled from "styled-components"
 
+import button from "./css/button"
+
 const Menu = styled.div`
   display: none;
   position: absolute;
   bottom: initial !important;
   z-index: ${props => props.theme.layer.up + 1};
   width: auto;
+
+  background: #7b294a;
+  color: #fff;
+  border-radius: 0.25em;
+  overflow: hidden;
+
+  button {
+    ${button}
+  }
 
   &.touch {
     margin-top: -65px;
@@ -34,13 +45,9 @@ const Menu = styled.div`
     }
   `};
 `
-const MenuItem = styled.div`
+const MenuItem = styled.button`
   width: auto;
   flex-grow: 1;
-  ${props => props.theme.size.breakpoint.max.s`
-  border-radius: 0;
-  padding: 1em;
-`};
 `
 
 /**
@@ -85,7 +92,7 @@ export default props => {
     <Menu innerRef={props.menuRef}>
       {props.value.blocks.some(node => node.type === "heading") ? (
         <div
-          style={{marginBottom: "-1em", display: "block"}}
+          style={{display: "block"}}
           className="french-press_undo-heading-container"
         >
           <button
@@ -105,7 +112,7 @@ export default props => {
           </button>
         </div>
       ) : (
-        <div>
+        <div style={{display: "flex"}}>
           <MenuItem
             branded
             left

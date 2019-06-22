@@ -40,7 +40,5 @@ export const Wrapper = styled.div`
         left: ${props => props.theme.size.block.padding}em;
     `};
   }
-  .french-press_undo-heading, .french-press_undo-heading-container {
-    padding: .5em;
-  }
+
 `

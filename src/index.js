@@ -279,7 +279,7 @@ export class FrenchPress extends React.PureComponent {
         onChange={this.handleChange}
         value={this.state.value}
         formatCommand={this.formatCommand}
-        style={{display: this.state.editorFocus ? "block" : "none"}}
+        style={{display: this.state.editorFocus ? "flex" : "none"}}
         controls={this.props.controls}
       />,
     ]
