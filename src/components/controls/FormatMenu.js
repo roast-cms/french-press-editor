@@ -78,7 +78,7 @@ export default props => {
       : () => <i>i</i>
   //
   return (
-    <Menu innerRef={props.menuRef}>
+    <Menu innerRef={props.menuRef} className="fpe-menu">
       {props.value.blocks.some(node => node.type === "heading") ? (
         <Borders>
           <button
