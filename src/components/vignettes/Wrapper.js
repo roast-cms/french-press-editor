@@ -29,7 +29,7 @@ export const Wrapper = styled.div`
     margin: 0;
     font-style: italic;
   }
-  .french-press_unquote {
+  .fpe-unquote {
     float: left;
     margin-top: -1.25em;
     margin-left: -1.5em;

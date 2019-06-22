@@ -8,12 +8,9 @@ const Menu = styled.div`
   position: absolute;
   bottom: initial !important;
   z-index: ${props => props.theme.layer.up + 1};
-  width: auto;
+  line-height: 1em;
 
-  background: #7b294a;
   color: #fff;
-  border-radius: 0.25em;
-  overflow: hidden;
 
   button {
     ${button}
@@ -21,29 +18,21 @@ const Menu = styled.div`
 
   &.touch {
     margin-top: -65px;
-    ${props => props.theme.size.breakpoint.min.m`
     &::after {
       content: "";
       position: absolute;
       display: block;
       height: 57px;
-      margin-left: calc(5em - 1px);
+      margin-left: calc(3.7em - 1px);
       margin-top: 2px;
-      border: 1px dashed ${props => props.theme.color.brand};
+      border: 1px dashed ${props => props.theme.color.brand()};
       z-index: -1;
-    }`};
+    }
   }
-  ${props => props.theme.size.breakpoint.max.s`
-    width: 100vw;
-    left: 0 !important;
-    &.touch {
-      margin-top: -55px;
-    }
-    & > div {
-      background: ${props =>
-        props.theme.color.foreground(props.theme.opacity.most)};
-    }
-  `};
+`
+const Borders = styled.div`
+  border-radius: 0.25em;
+  overflow: hidden;
 `
 const MenuItem = styled.button`
   width: auto;
@@ -70,7 +59,7 @@ export default props => {
   const CancelHeader =
     props.controls && props.controls.CancelHeader
       ? props.controls.CancelHeader
-      : () => <small>⇲</small>
+      : () => <small>p</small>
   const MakeQuote =
     props.controls && props.controls.MakeQuote
       ? props.controls.MakeQuote
@@ -91,10 +80,7 @@ export default props => {
   return (
     <Menu innerRef={props.menuRef}>
       {props.value.blocks.some(node => node.type === "heading") ? (
-        <div
-          style={{display: "block"}}
-          className="french-press_undo-heading-container"
-        >
+        <Borders>
           <button
             onMouseDown={event => event.preventDefault()}
             onMouseUp={event => {
@@ -102,97 +88,96 @@ export default props => {
               props.formatCommand("undo_heading")
             }}
             branded
-            style={{
-              width: "1.55em",
-            }}
             title="Undo heading"
-            className="french-press_undo-heading"
+            className="fpe-undo-heading"
           >
             <CancelHeader />
-          </button>
-        </div>
+          </button>{" "}
+        </Borders>
       ) : (
-        <div style={{display: "flex"}}>
-          <MenuItem
-            branded
-            left
-            title="Make a heading"
-            onMouseDown={event => event.preventDefault()}
-            onMouseUp={event => {
-              event.preventDefault()
-              props.formatCommand("make_heading")
-            }}
-          >
-            <MakeHeader />
-          </MenuItem>
-          <MenuItem
-            branded
-            title="Make a quote"
-            onMouseDown={event => event.preventDefault()}
-            onMouseUp={event => {
-              event.preventDefault()
-              props.formatCommand("make_quote")
-            }}
-          >
-            <MakeQuote />
-          </MenuItem>
-          <MenuItem
-            script
-            branded={!props.value.inlines.some(node => node.type === "link")}
-            inverse={props.value.inlines.some(node => node.type === "link")}
-            onMouseDown={event => event.preventDefault()}
-            onMouseUp={event => {
-              event.preventDefault()
-              props.formatCommand("toggle_link")
-            }}
-            style={{borderLeft: "4px solid #2c2c2c"}}
-          >
-            <MakeLink />
-          </MenuItem>
-          <MenuItem
-            script
-            branded={
-              props.value &&
-              props.value.activeMarks &&
-              !props.value.activeMarks.some(mark => mark.type === "bold")
-            }
-            inverse={
-              props.value &&
-              props.value.activeMarks &&
-              props.value.activeMarks.some(mark => mark.type === "bold")
-            }
-            onClick={event => event.preventDefault()}
-            onMouseDown={event => event.preventDefault()}
-            onMouseUp={event => {
-              event.preventDefault()
-              props.formatCommand("toggle_bold")
-            }}
-          >
-            <MakeBold style={{fontWeight: "700 !important"}} />
-          </MenuItem>
-          <MenuItem
-            script
-            branded={
-              props.value &&
-              props.value.activeMarks &&
-              !props.value.activeMarks.some(mark => mark.type === "italic")
-            }
-            inverse={
-              props.value &&
-              props.value.activeMarks &&
-              props.value.activeMarks.some(mark => mark.type === "italic")
-            }
-            right
-            onClick={event => event.preventDefault()}
-            onMouseDown={event => event.preventDefault()}
-            onMouseUp={event => {
-              event.preventDefault()
-              props.formatCommand("toggle_italic")
-            }}
-          >
-            <MakeItalic />
-          </MenuItem>
-        </div>
+        <Borders>
+          <div style={{display: "flex"}}>
+            <MenuItem
+              branded
+              left
+              title="Make a heading"
+              onMouseDown={event => event.preventDefault()}
+              onMouseUp={event => {
+                event.preventDefault()
+                props.formatCommand("make_heading")
+              }}
+            >
+              <MakeHeader />
+            </MenuItem>
+            <MenuItem
+              branded
+              title="Make a quote"
+              onMouseDown={event => event.preventDefault()}
+              onMouseUp={event => {
+                event.preventDefault()
+                props.formatCommand("make_quote")
+              }}
+            >
+              <MakeQuote />
+            </MenuItem>
+            <MenuItem
+              script
+              branded={!props.value.inlines.some(node => node.type === "link")}
+              inverse={props.value.inlines.some(node => node.type === "link")}
+              onMouseDown={event => event.preventDefault()}
+              onMouseUp={event => {
+                event.preventDefault()
+                props.formatCommand("toggle_link")
+              }}
+              style={{borderLeft: "4px solid #2c2c2c"}}
+            >
+              <MakeLink />
+            </MenuItem>
+            <MenuItem
+              script
+              branded={
+                props.value &&
+                props.value.activeMarks &&
+                !props.value.activeMarks.some(mark => mark.type === "bold")
+              }
+              inverse={
+                props.value &&
+                props.value.activeMarks &&
+                props.value.activeMarks.some(mark => mark.type === "bold")
+              }
+              onClick={event => event.preventDefault()}
+              onMouseDown={event => event.preventDefault()}
+              onMouseUp={event => {
+                event.preventDefault()
+                props.formatCommand("toggle_bold")
+              }}
+            >
+              <MakeBold style={{fontWeight: "700 !important"}} />
+            </MenuItem>
+            <MenuItem
+              script
+              branded={
+                props.value &&
+                props.value.activeMarks &&
+                !props.value.activeMarks.some(mark => mark.type === "italic")
+              }
+              inverse={
+                props.value &&
+                props.value.activeMarks &&
+                props.value.activeMarks.some(mark => mark.type === "italic")
+              }
+              right
+              onClick={event => event.preventDefault()}
+              onMouseDown={event => event.preventDefault()}
+              onMouseUp={event => {
+                event.preventDefault()
+                props.formatCommand("toggle_italic")
+              }}
+            >
+              <MakeItalic />
+            </MenuItem>
+          </div>
+        </Borders>
       )}
     </Menu>
   )
