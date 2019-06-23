@@ -34,6 +34,7 @@ ShallowWrapper {
         <Editor
           autoCorrect={true}
           autoFocus={false}
+          formatCommand={[Function]}
           onChange={[Function]}
           onClick={[Function]}
           options={
@@ -341,6 +342,7 @@ ShallowWrapper {
           "callbackError": undefined,
           "components": undefined,
           "fileInputRef": undefined,
+          "formatCommand": [Function],
           "onChange": [Function],
           "onClick": [Function],
           "options": Object {
@@ -631,6 +633,7 @@ ShallowWrapper {
           <Editor
             autoCorrect={true}
             autoFocus={false}
+            formatCommand={[Function]}
             onChange={[Function]}
             onClick={[Function]}
             options={
@@ -938,6 +941,7 @@ ShallowWrapper {
             "callbackError": undefined,
             "components": undefined,
             "fileInputRef": undefined,
+            "formatCommand": [Function],
             "onChange": [Function],
             "onClick": [Function],
             "options": Object {

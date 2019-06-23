@@ -21,14 +21,16 @@ test("renderNode produces paragraph element.", () => {
 })
 
 test("renderNode produces heading element.", () => {
-  const element = <h3>a</h3>
-  expect(
+  const element = shallow(
     renderNode({
-      children: "a",
-      node: {type: "heading"},
+      children: "h2",
+      node: {type: "paragraph"},
       editor: {value: {isFocused: false}},
+      readOnly: true,
     })
-  ).toEqual(element)
+  )
+
+  expect(element).toMatchSnapshot()
 })
 
 test("renderNode produces divider element with correct class name.", () => {
