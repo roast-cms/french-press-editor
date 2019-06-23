@@ -75,7 +75,9 @@ test("renderNode produces picture element that matches a snapshot.", () => {
 
 test("renderNode produces link element with correct href prop.", () => {
   const element = (
-    <a href="https://github.com/roast-cms/french-press-editor">a</a>
+    <React.Fragment>
+      <a href="https://github.com/roast-cms/french-press-editor">a</a> 
+    </React.Fragment>
   )
   expect(
     renderNode({

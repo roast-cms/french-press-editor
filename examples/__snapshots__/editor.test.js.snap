@@ -35,7 +35,6 @@ ShallowWrapper {
           callbackStatus={[Function]}
           components={
             Object {
-              "Link": null,
               "Picture": [Function],
             }
           }
@@ -311,7 +310,6 @@ ShallowWrapper {
           "callbackError": [Function],
           "callbackStatus": [Function],
           "components": Object {
-            "Link": null,
             "Picture": [Function],
           },
           "controls": Object {
@@ -580,7 +578,6 @@ ShallowWrapper {
             callbackStatus={[Function]}
             components={
               Object {
-                "Link": null,
                 "Picture": [Function],
               }
             }
@@ -856,7 +853,6 @@ ShallowWrapper {
             "callbackError": [Function],
             "callbackStatus": [Function],
             "components": Object {
-              "Link": null,
               "Picture": [Function],
             },
             "controls": Object {

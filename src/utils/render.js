@@ -69,15 +69,21 @@ export const renderNode = props => {
       if (components && components.Link) {
         const Link = components.Link
         return (
-          <Link {...attributes} to={href}>
-            {children}
-          </Link>
+          <>
+            <Link {...attributes} to={href}>
+              {children}
+            </Link>
+            {" "}
+          </>
         )
       } else {
         return (
-          <a {...attributes} href={href}>
-            {children}
-          </a>
+          <>
+            <a {...attributes} href={href}>
+              {children}
+            </a>
+            {" "}
+          </>
         )
       }
     }

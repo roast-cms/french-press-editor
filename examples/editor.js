@@ -84,7 +84,7 @@ export class Editor extends React.PureComponent {
             // with the default component
             Picture,
             //
-            Link: null,
+            //Link,
           }}
           //
           options={{

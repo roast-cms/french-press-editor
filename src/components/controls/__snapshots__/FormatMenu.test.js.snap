@@ -173,7 +173,6 @@ ShallowWrapper {
         </div>
       </ForwardRef(styled.div)>,
       "className": "fpe-menu",
-      "innerRef": undefined,
     },
     "ref": null,
     "rendered": Object {
@@ -712,7 +711,6 @@ ShallowWrapper {
           </div>
         </ForwardRef(styled.div)>,
         "className": "fpe-menu",
-        "innerRef": undefined,
       },
       "ref": null,
       "rendered": Object {
