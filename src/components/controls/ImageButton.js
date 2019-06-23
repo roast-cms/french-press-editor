@@ -7,9 +7,7 @@ const ImageButton = styled.button`
   ${button}
   position: absolute;
   border-radius: 0.25em;
-  ${props => props.theme.size.breakpoint.max.m`
-    right: .5em;
-  `};
+  right: 0.5em;
 `
 
 /**

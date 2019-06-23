@@ -4,7 +4,7 @@ import React from "react"
 
 import {shallow} from "enzyme"
 
-import {Editor} from "./editor"
+import {Editor} from "./Editor"
 
 test("Snapshot", () => {
   expect(shallow(<Editor />)).toMatchSnapshot()

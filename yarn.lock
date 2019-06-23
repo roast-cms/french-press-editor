@@ -740,11 +740,6 @@
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
 
-"@roast-cms/react-sugar-styled@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@roast-cms/react-sugar-styled/-/react-sugar-styled-1.0.4.tgz#cd51b29ee126212e7c6bce66605d119bcac01d07"
-  integrity sha1-zVGynuEmIS58a85mYF0Rm8rAHQc=
-
 "@types/events@*":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@types/events/-/events-3.0.0.tgz#2862f3f58a9a7f7c3e78d79f130dd4d71c25c2a7"

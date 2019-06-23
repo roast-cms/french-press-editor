@@ -109,304 +109,102 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "class",
     "props": Object {
-      "children": <div>
-        <styled.div
-          branded={true}
-          left={true}
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
-          title="Make a heading"
-        >
-          <Unknown />
-        </styled.div>
-        <styled.div
-          branded={true}
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
-          title="Make a quote"
-        >
-          <Unknown />
-        </styled.div>
-        <styled.div
-          branded={true}
-          inverse={false}
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
-          script={true}
+      "children": <styled.div>
+        <div
           style={
             Object {
-              "borderLeft": "4px solid #2c2c2c",
+              "display": "flex",
             }
           }
         >
-          <Unknown />
-        </styled.div>
-        <styled.div
-          branded={true}
-          inverse={false}
-          onClick={[Function]}
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
-          script={true}
-        >
-          <Unknown
+          <styled.button
+            left={true}
+            onMouseDown={[Function]}
+            onMouseUp={[Function]}
+            title="Make a heading"
+          >
+            <Unknown />
+          </styled.button>
+          <styled.button
+            onMouseDown={[Function]}
+            onMouseUp={[Function]}
+            title="Make a quote"
+          >
+            <Unknown />
+          </styled.button>
+          <styled.button
+            className={null}
+            onMouseDown={[Function]}
+            onMouseUp={[Function]}
+            script={true}
             style={
               Object {
-                "fontWeight": "700 !important",
+                "borderLeft": "4px solid #2c2c2c",
               }
             }
-          />
-        </styled.div>
-        <styled.div
-          branded={true}
-          inverse={false}
-          onClick={[Function]}
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
-          right={true}
-          script={true}
-        >
-          <Unknown />
-        </styled.div>
-      </div>,
+          >
+            <Unknown />
+          </styled.button>
+          <styled.button
+            className={null}
+            onClick={[Function]}
+            onMouseDown={[Function]}
+            onMouseUp={[Function]}
+            script={true}
+          >
+            <Unknown
+              style={
+                Object {
+                  "fontWeight": "700 !important",
+                }
+              }
+            />
+          </styled.button>
+          <styled.button
+            className={null}
+            onClick={[Function]}
+            onMouseDown={[Function]}
+            onMouseUp={[Function]}
+            right={true}
+            script={true}
+          >
+            <Unknown />
+          </styled.button>
+        </div>
+      </styled.div>,
+      "className": "fpe-menu",
       "innerRef": undefined,
     },
     "ref": null,
     "rendered": Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
-          <styled.div
-            branded={true}
-            left={true}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            title="Make a heading"
-          >
-            <Unknown />
-          </styled.div>,
-          <styled.div
-            branded={true}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            title="Make a quote"
-          >
-            <Unknown />
-          </styled.div>,
-          <styled.div
-            branded={true}
-            inverse={false}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            script={true}
-            style={
-              Object {
-                "borderLeft": "4px solid #2c2c2c",
-              }
-            }
-          >
-            <Unknown />
-          </styled.div>,
-          <styled.div
-            branded={true}
-            inverse={false}
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            script={true}
-          >
-            <Unknown
-              style={
-                Object {
-                  "fontWeight": "700 !important",
-                }
-              }
-            />
-          </styled.div>,
-          <styled.div
-            branded={true}
-            inverse={false}
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            right={true}
-            script={true}
-          >
-            <Unknown />
-          </styled.div>,
-        ],
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "branded": true,
-            "children": <Unknown />,
-            "left": true,
-            "onMouseDown": [Function],
-            "onMouseUp": [Function],
-            "title": "Make a heading",
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {},
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "branded": true,
-            "children": <Unknown />,
-            "onMouseDown": [Function],
-            "onMouseUp": [Function],
-            "title": "Make a quote",
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {},
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "branded": true,
-            "children": <Unknown />,
-            "inverse": false,
-            "onMouseDown": [Function],
-            "onMouseUp": [Function],
-            "script": true,
-            "style": Object {
-              "borderLeft": "4px solid #2c2c2c",
-            },
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {},
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "branded": true,
-            "children": <Unknown
-              style={
-                Object {
-                  "fontWeight": "700 !important",
-                }
-              }
-            />,
-            "inverse": false,
-            "onClick": [Function],
-            "onMouseDown": [Function],
-            "onMouseUp": [Function],
-            "script": true,
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "style": Object {
-                "fontWeight": "700 !important",
-              },
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "branded": true,
-            "children": <Unknown />,
-            "inverse": false,
-            "onClick": [Function],
-            "onMouseDown": [Function],
-            "onMouseUp": [Function],
-            "right": true,
-            "script": true,
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {},
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          "type": [Function],
-        },
-      ],
-      "type": "div",
-    },
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
       "nodeType": "class",
       "props": Object {
-        "children": <div>
-          <styled.div
-            branded={true}
+        "children": <div
+          style={
+            Object {
+              "display": "flex",
+            }
+          }
+        >
+          <styled.button
             left={true}
             onMouseDown={[Function]}
             onMouseUp={[Function]}
             title="Make a heading"
           >
             <Unknown />
-          </styled.div>
-          <styled.div
-            branded={true}
+          </styled.button>
+          <styled.button
             onMouseDown={[Function]}
             onMouseUp={[Function]}
             title="Make a quote"
           >
             <Unknown />
-          </styled.div>
-          <styled.div
-            branded={true}
-            inverse={false}
+          </styled.button>
+          <styled.button
+            className={null}
             onMouseDown={[Function]}
             onMouseUp={[Function]}
             script={true}
@@ -417,10 +215,9 @@ ShallowWrapper {
             }
           >
             <Unknown />
-          </styled.div>
-          <styled.div
-            branded={true}
-            inverse={false}
+          </styled.button>
+          <styled.button
+            className={null}
             onClick={[Function]}
             onMouseDown={[Function]}
             onMouseUp={[Function]}
@@ -433,10 +230,9 @@ ShallowWrapper {
                 }
               }
             />
-          </styled.div>
-          <styled.div
-            branded={true}
-            inverse={false}
+          </styled.button>
+          <styled.button
+            className={null}
             onClick={[Function]}
             onMouseDown={[Function]}
             onMouseUp={[Function]}
@@ -444,9 +240,8 @@ ShallowWrapper {
             script={true}
           >
             <Unknown />
-          </styled.div>
+          </styled.button>
         </div>,
-        "innerRef": undefined,
       },
       "ref": null,
       "rendered": Object {
@@ -455,26 +250,23 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            <styled.div
-              branded={true}
+            <styled.button
               left={true}
               onMouseDown={[Function]}
               onMouseUp={[Function]}
               title="Make a heading"
             >
               <Unknown />
-            </styled.div>,
-            <styled.div
-              branded={true}
+            </styled.button>,
+            <styled.button
               onMouseDown={[Function]}
               onMouseUp={[Function]}
               title="Make a quote"
             >
               <Unknown />
-            </styled.div>,
-            <styled.div
-              branded={true}
-              inverse={false}
+            </styled.button>,
+            <styled.button
+              className={null}
               onMouseDown={[Function]}
               onMouseUp={[Function]}
               script={true}
@@ -485,10 +277,9 @@ ShallowWrapper {
               }
             >
               <Unknown />
-            </styled.div>,
-            <styled.div
-              branded={true}
-              inverse={false}
+            </styled.button>,
+            <styled.button
+              className={null}
               onClick={[Function]}
               onMouseDown={[Function]}
               onMouseUp={[Function]}
@@ -501,10 +292,9 @@ ShallowWrapper {
                   }
                 }
               />
-            </styled.div>,
-            <styled.div
-              branded={true}
-              inverse={false}
+            </styled.button>,
+            <styled.button
+              className={null}
               onClick={[Function]}
               onMouseDown={[Function]}
               onMouseUp={[Function]}
@@ -512,8 +302,11 @@ ShallowWrapper {
               script={true}
             >
               <Unknown />
-            </styled.div>,
+            </styled.button>,
           ],
+          "style": Object {
+            "display": "flex",
+          },
         },
         "ref": null,
         "rendered": Array [
@@ -522,7 +315,6 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "branded": true,
               "children": <Unknown />,
               "left": true,
               "onMouseDown": [Function],
@@ -546,7 +338,6 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "branded": true,
               "children": <Unknown />,
               "onMouseDown": [Function],
               "onMouseUp": [Function],
@@ -569,9 +360,8 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "branded": true,
               "children": <Unknown />,
-              "inverse": false,
+              "className": null,
               "onMouseDown": [Function],
               "onMouseUp": [Function],
               "script": true,
@@ -596,7 +386,6 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "branded": true,
               "children": <Unknown
                 style={
                   Object {
@@ -604,7 +393,7 @@ ShallowWrapper {
                   }
                 }
               />,
-              "inverse": false,
+              "className": null,
               "onClick": [Function],
               "onMouseDown": [Function],
               "onMouseUp": [Function],
@@ -631,9 +420,8 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "branded": true,
               "children": <Unknown />,
-              "inverse": false,
+              "className": null,
               "onClick": [Function],
               "onMouseDown": [Function],
               "onMouseUp": [Function],
@@ -654,6 +442,352 @@ ShallowWrapper {
           },
         ],
         "type": "div",
+      },
+      "type": [Function],
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": <styled.div>
+          <div
+            style={
+              Object {
+                "display": "flex",
+              }
+            }
+          >
+            <styled.button
+              left={true}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              title="Make a heading"
+            >
+              <Unknown />
+            </styled.button>
+            <styled.button
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              title="Make a quote"
+            >
+              <Unknown />
+            </styled.button>
+            <styled.button
+              className={null}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              script={true}
+              style={
+                Object {
+                  "borderLeft": "4px solid #2c2c2c",
+                }
+              }
+            >
+              <Unknown />
+            </styled.button>
+            <styled.button
+              className={null}
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              script={true}
+            >
+              <Unknown
+                style={
+                  Object {
+                    "fontWeight": "700 !important",
+                  }
+                }
+              />
+            </styled.button>
+            <styled.button
+              className={null}
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              right={true}
+              script={true}
+            >
+              <Unknown />
+            </styled.button>
+          </div>
+        </styled.div>,
+        "className": "fpe-menu",
+        "innerRef": undefined,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <div
+            style={
+              Object {
+                "display": "flex",
+              }
+            }
+          >
+            <styled.button
+              left={true}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              title="Make a heading"
+            >
+              <Unknown />
+            </styled.button>
+            <styled.button
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              title="Make a quote"
+            >
+              <Unknown />
+            </styled.button>
+            <styled.button
+              className={null}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              script={true}
+              style={
+                Object {
+                  "borderLeft": "4px solid #2c2c2c",
+                }
+              }
+            >
+              <Unknown />
+            </styled.button>
+            <styled.button
+              className={null}
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              script={true}
+            >
+              <Unknown
+                style={
+                  Object {
+                    "fontWeight": "700 !important",
+                  }
+                }
+              />
+            </styled.button>
+            <styled.button
+              className={null}
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              right={true}
+              script={true}
+            >
+              <Unknown />
+            </styled.button>
+          </div>,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <styled.button
+                left={true}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                title="Make a heading"
+              >
+                <Unknown />
+              </styled.button>,
+              <styled.button
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                title="Make a quote"
+              >
+                <Unknown />
+              </styled.button>,
+              <styled.button
+                className={null}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                script={true}
+                style={
+                  Object {
+                    "borderLeft": "4px solid #2c2c2c",
+                  }
+                }
+              >
+                <Unknown />
+              </styled.button>,
+              <styled.button
+                className={null}
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                script={true}
+              >
+                <Unknown
+                  style={
+                    Object {
+                      "fontWeight": "700 !important",
+                    }
+                  }
+                />
+              </styled.button>,
+              <styled.button
+                className={null}
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                right={true}
+                script={true}
+              >
+                <Unknown />
+              </styled.button>,
+            ],
+            "style": Object {
+              "display": "flex",
+            },
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <Unknown />,
+                "left": true,
+                "onMouseDown": [Function],
+                "onMouseUp": [Function],
+                "title": "Make a heading",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <Unknown />,
+                "onMouseDown": [Function],
+                "onMouseUp": [Function],
+                "title": "Make a quote",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <Unknown />,
+                "className": null,
+                "onMouseDown": [Function],
+                "onMouseUp": [Function],
+                "script": true,
+                "style": Object {
+                  "borderLeft": "4px solid #2c2c2c",
+                },
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <Unknown
+                  style={
+                    Object {
+                      "fontWeight": "700 !important",
+                    }
+                  }
+                />,
+                "className": null,
+                "onClick": [Function],
+                "onMouseDown": [Function],
+                "onMouseUp": [Function],
+                "script": true,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "style": Object {
+                    "fontWeight": "700 !important",
+                  },
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <Unknown />,
+                "className": null,
+                "onClick": [Function],
+                "onMouseDown": [Function],
+                "onMouseUp": [Function],
+                "right": true,
+                "script": true,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+        "type": [Function],
       },
       "type": [Function],
     },

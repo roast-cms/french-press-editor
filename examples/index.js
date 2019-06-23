@@ -6,8 +6,8 @@ import {ThemeProvider} from "styled-components"
 import {render} from "react-dom"
 import React from "react"
 
-import {EXAMPLE_THEME, EXAMPLE_VALUE} from "./constants"
-import {Editor} from "./editor"
+import { EXAMPLE_THEME, EXAMPLE_VALUE } from './constants';
+import {Editor} from "./Editor"
 import {
   //
   // wrapper component contains some default styles that make your editor
@@ -16,9 +16,9 @@ import {
   // css in another way
   Wrapper,
   //
-} from "../src/components/vignettes/Wrapper"
-import Picture from "../src/components/vignettes/Picture"
-import Reader from "../src/components/vignettes/Reader"
+} from "./Wrapper"
+import Picture from '../src/components/vignettes/Picture';
+import Reader from '../src/components/vignettes/Reader';
 
 render(
   <div>

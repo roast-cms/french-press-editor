@@ -21,7 +21,7 @@ import {
 import {loadContent, saveContent, setDraftStatusHelper} from "./utils/storage"
 import {plugins} from "./plugins"
 import {renderMark, renderNode} from "./utils/render"
-import DefaultImageButton from "./components/controls/ImageButton"
+import ImageButton from "./components/controls/ImageButton"
 import FormatMenu from "./components/controls/FormatMenu"
 
 /**
@@ -201,14 +201,6 @@ export class FrenchPress extends React.PureComponent {
 
   render = () => {
     focusEvents.call(this)
-
-    /**
-     * Image upload button (prop) can be defined or created by user.
-     * @constant ImageButton
-     */
-    const ImageButton =
-      (this.props.components && this.props.components.ImageButton) ||
-      DefaultImageButton
 
     /**
      * Defines component label for image button.

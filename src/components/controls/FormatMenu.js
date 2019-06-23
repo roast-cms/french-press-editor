@@ -7,10 +7,10 @@ const Menu = styled.div`
   display: none;
   position: absolute;
   bottom: initial !important;
-  z-index: ${props => props.theme.layer.up + 1};
+  z-index: 11;
   line-height: 1em;
 
-  color: #fff;
+  color: ${props => props.theme.background};
 
   button {
     ${button}
@@ -25,7 +25,7 @@ const Menu = styled.div`
       height: 57px;
       margin-left: calc(3.7em - 1px);
       margin-top: 2px;
-      border: 1px dashed ${props => props.theme.color.brand()};
+      border: 1px dashed ${props => props.theme.accent};
       z-index: -1;
     }
   }
@@ -87,7 +87,6 @@ export default props => {
               event.preventDefault()
               props.formatCommand("undo_heading")
             }}
-            branded
             title="Undo heading"
             className="fpe-undo-heading"
           >
@@ -98,7 +97,6 @@ export default props => {
         <Borders>
           <div style={{display: "flex"}}>
             <MenuItem
-              branded
               left
               title="Make a heading"
               onMouseDown={event => event.preventDefault()}
@@ -110,7 +108,6 @@ export default props => {
               <MakeHeader />
             </MenuItem>
             <MenuItem
-              branded
               title="Make a quote"
               onMouseDown={event => event.preventDefault()}
               onMouseUp={event => {
@@ -122,28 +119,28 @@ export default props => {
             </MenuItem>
             <MenuItem
               script
-              branded={!props.value.inlines.some(node => node.type === "link")}
-              inverse={props.value.inlines.some(node => node.type === "link")}
               onMouseDown={event => event.preventDefault()}
               onMouseUp={event => {
                 event.preventDefault()
                 props.formatCommand("toggle_link")
               }}
               style={{borderLeft: "4px solid #2c2c2c"}}
+              className={
+                props.value.inlines.some(node => node.type === "link")
+                  ? "active"
+                  : null
+              }
             >
               <MakeLink />
             </MenuItem>
             <MenuItem
               script
-              branded={
-                props.value &&
-                props.value.activeMarks &&
-                !props.value.activeMarks.some(mark => mark.type === "bold")
-              }
-              inverse={
+              className={
                 props.value &&
                 props.value.activeMarks &&
                 props.value.activeMarks.some(mark => mark.type === "bold")
+                  ? "active"
+                  : null
               }
               onClick={event => event.preventDefault()}
               onMouseDown={event => event.preventDefault()}
@@ -156,15 +153,12 @@ export default props => {
             </MenuItem>
             <MenuItem
               script
-              branded={
-                props.value &&
-                props.value.activeMarks &&
-                !props.value.activeMarks.some(mark => mark.type === "italic")
-              }
-              inverse={
+              className={
                 props.value &&
                 props.value.activeMarks &&
                 props.value.activeMarks.some(mark => mark.type === "italic")
+                  ? "active"
+                  : null
               }
               right
               onClick={event => event.preventDefault()}

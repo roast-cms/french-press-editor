@@ -35,9 +35,8 @@ ShallowWrapper {
           callbackStatus={[Function]}
           components={
             Object {
-              "ImageButton": null,
+              "Link": null,
               "Picture": [Function],
-              "PictureDocket": null,
             }
           }
           controls={
@@ -312,9 +311,8 @@ ShallowWrapper {
           "callbackError": [Function],
           "callbackStatus": [Function],
           "components": Object {
-            "ImageButton": null,
+            "Link": null,
             "Picture": [Function],
-            "PictureDocket": null,
           },
           "controls": Object {
             "CancelHeader": [Function],
@@ -582,9 +580,8 @@ ShallowWrapper {
             callbackStatus={[Function]}
             components={
               Object {
-                "ImageButton": null,
+                "Link": null,
                 "Picture": [Function],
-                "PictureDocket": null,
               }
             }
             controls={
@@ -859,9 +856,8 @@ ShallowWrapper {
             "callbackError": [Function],
             "callbackStatus": [Function],
             "components": Object {
-              "ImageButton": null,
+              "Link": null,
               "Picture": [Function],
-              "PictureDocket": null,
             },
             "controls": Object {
               "CancelHeader": [Function],

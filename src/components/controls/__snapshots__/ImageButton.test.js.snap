@@ -19,6 +19,7 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "children": undefined,
+      "className": "fpe-image-button",
       "followComposerCursor": true,
       "onMouseDown": [Function],
       "style": undefined,
@@ -34,6 +35,7 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": undefined,
+        "className": "fpe-image-button",
         "followComposerCursor": true,
         "onMouseDown": [Function],
         "style": undefined,
