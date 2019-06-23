@@ -56,10 +56,7 @@ export default props => {
     props.controls && props.controls.MakeHeader
       ? props.controls.MakeHeader
       : () => <span>H</span>
-  const CancelHeader =
-    props.controls && props.controls.CancelHeader
-      ? props.controls.CancelHeader
-      : () => <small>p</small>
+
   const MakeQuote =
     props.controls && props.controls.MakeQuote
       ? props.controls.MakeQuote
@@ -79,21 +76,7 @@ export default props => {
   //
   return (
     <Menu ref={props.menuRef} className="fpe-menu">
-      {props.value.blocks.some(node => node.type === "heading") ? (
-        <Borders>
-          <button
-            onMouseDown={event => event.preventDefault()}
-            onMouseUp={event => {
-              event.preventDefault()
-              props.formatCommand("undo_heading")
-            }}
-            title="Undo heading"
-            className="fpe-undo-heading"
-          >
-            <CancelHeader />
-          </button>{" "}
-        </Borders>
-      ) : (
+      {props.value.blocks.some(node => node.type === "heading") ? null : (
         <Borders>
           <div style={{display: "flex"}}>
             <MenuItem

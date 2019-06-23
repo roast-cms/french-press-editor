@@ -256,6 +256,7 @@ export class FrenchPress extends React.PureComponent {
           }}
           ref={input => (this.slateEditor = input)}
           fileInputRef={this.fileInput}
+          formatCommand={this.formatCommand}
         />
         <input
           type="file"

@@ -1,6 +1,14 @@
 import React from "react"
-
+import styled from "styled-components"
 import Unquote from "../components/controls/Unquote"
+import button from "../components/controls/css/button"
+
+const HeaderControl = styled.button`
+  ${button}
+  position: absolute;
+  top: 4em;
+  border-radius: 0.25em;
+`
 
 /**
  * Defines how all block-level nodes within the document are going to be rendered.
@@ -13,14 +21,36 @@ export const renderNode = props => {
   const focus = editor.value.isFocused && isSelected
   const className = focus ? "focus" : "nofocus"
 
-  const {components} = (editor && editor.props) || {}
+  const {components, controls} = (editor && editor.props) || {}
   const {data} = node
+
+  const CancelHeader =
+    controls && controls.CancelHeader
+      ? controls.CancelHeader
+      : () => <small>p</small>
 
   switch (node.type) {
     case "paragraph":
       return <p {...attributes}>{children}</p>
     case "heading":
-      return <h3>{children}</h3>
+      return (
+        <div style={{clear: "both"}}>
+          {!props.readOnly && focus && (
+            <HeaderControl
+              onMouseDown={event => event.preventDefault()}
+              onMouseUp={event => {
+                event.preventDefault()
+                editor.props.formatCommand("undo_heading")
+              }}
+              title="Undo heading"
+              className="fpe-undo-heading"
+            >
+              <CancelHeader />
+            </HeaderControl>
+          )}
+          <h3>{children}</h3>
+        </div>
+      )
     case "divider":
       return <hr className={className} />
     case "quote":
