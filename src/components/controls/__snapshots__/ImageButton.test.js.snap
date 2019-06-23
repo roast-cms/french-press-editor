@@ -16,7 +16,7 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "function",
     "props": Object {
       "children": undefined,
       "className": "fpe-image-button",
@@ -26,13 +26,57 @@ ShallowWrapper {
     },
     "ref": null,
     "rendered": null,
-    "type": [Function],
+    "type": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "sc-bdVaJa",
+        "isStatic": false,
+        "rules": Array [
+          "
+  ",
+          "
+  outline: 0;
+  background: ",
+          [Function],
+          ";
+  border: none;
+  color: ",
+          [Function],
+          ";
+  font-size: 1em;
+  padding: 0.05em 0.5em;
+  font-family: inherit;
+  cursor: pointer;
+  &.active,
+  &:active {
+    background: ",
+          [Function],
+          ";
+  }
+",
+          "
+  position: absolute;
+  border-radius: 0.25em;
+  right: 0.5em;
+",
+        ],
+      },
+      "displayName": "styled.button",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "sc-bdVaJa",
+      "target": "button",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    },
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "function",
       "props": Object {
         "children": undefined,
         "className": "fpe-image-button",
@@ -42,7 +86,51 @@ ShallowWrapper {
       },
       "ref": null,
       "rendered": null,
-      "type": [Function],
+      "type": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "attrs": Array [],
+        "componentStyle": ComponentStyle {
+          "componentId": "sc-bdVaJa",
+          "isStatic": false,
+          "rules": Array [
+            "
+  ",
+            "
+  outline: 0;
+  background: ",
+            [Function],
+            ";
+  border: none;
+  color: ",
+            [Function],
+            ";
+  font-size: 1em;
+  padding: 0.05em 0.5em;
+  font-family: inherit;
+  cursor: pointer;
+  &.active,
+  &:active {
+    background: ",
+            [Function],
+            ";
+  }
+",
+            "
+  position: absolute;
+  border-radius: 0.25em;
+  right: 0.5em;
+",
+          ],
+        },
+        "displayName": "styled.button",
+        "foldedComponentIds": Array [],
+        "render": [Function],
+        "styledComponentId": "sc-bdVaJa",
+        "target": "button",
+        "toString": [Function],
+        "warnTooManyClasses": [Function],
+        "withComponent": [Function],
+      },
     },
   ],
   Symbol(enzyme.__options__): Object {

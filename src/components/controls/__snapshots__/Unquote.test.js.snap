@@ -6,7 +6,7 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <ThemeProvider
     theme={Object {}}
   >
-    <styled.button />
+    <ForwardRef(styled.button) />
   </ThemeProvider>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -20,21 +20,59 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
-    "props": Object {},
+    "nodeType": "function",
+    "props": Object {
+      "children": [Function],
+    },
     "ref": null,
-    "rendered": null,
-    "type": [Function],
+    "rendered": [Function],
+    "type": Object {
+      "$$typeof": Symbol(react.context),
+      "_calculateChangedBits": null,
+      "_context": Object {
+        "$$typeof": Symbol(react.context),
+        "Consumer": [Circular],
+        "Provider": Object {
+          "$$typeof": Symbol(react.provider),
+          "_context": [Circular],
+        },
+        "_calculateChangedBits": null,
+        "_currentRenderer": null,
+        "_currentRenderer2": null,
+        "_currentValue": undefined,
+        "_currentValue2": undefined,
+        "_threadCount": 0,
+      },
+    },
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
-      "props": Object {},
+      "nodeType": "function",
+      "props": Object {
+        "children": [Function],
+      },
       "ref": null,
-      "rendered": null,
-      "type": [Function],
+      "rendered": [Function],
+      "type": Object {
+        "$$typeof": Symbol(react.context),
+        "_calculateChangedBits": null,
+        "_context": Object {
+          "$$typeof": Symbol(react.context),
+          "Consumer": [Circular],
+          "Provider": Object {
+            "$$typeof": Symbol(react.provider),
+            "_context": [Circular],
+          },
+          "_calculateChangedBits": null,
+          "_currentRenderer": null,
+          "_currentRenderer2": null,
+          "_currentValue": undefined,
+          "_currentValue2": undefined,
+          "_threadCount": 0,
+        },
+      },
     },
   ],
   Symbol(enzyme.__options__): Object {
@@ -61,13 +99,6 @@ ShallowWrapper {
       },
     },
   },
-  Symbol(enzyme.__childContext__): Object {
-    "__styled-components__": [Function],
-    "__styled-components__next__": Object {
-      "getTheme": [Function],
-      "subscribe": [Function],
-      "unsubscribe": [Function],
-    },
-  },
+  Symbol(enzyme.__childContext__): null,
 }
 `;

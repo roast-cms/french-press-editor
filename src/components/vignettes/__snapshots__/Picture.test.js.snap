@@ -29,7 +29,7 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "function",
     "props": Object {
       "children": <img />,
       "className": "nofocus",
@@ -46,13 +46,42 @@ ShallowWrapper {
       "rendered": null,
       "type": "img",
     },
-    "type": [Function],
+    "type": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "sc-bdVaJa",
+        "isStatic": false,
+        "rules": Array [
+          "
+  margin: 1em 0;
+  &.focus {
+    box-shadow: 0 0 0 4px ",
+          [Function],
+          ";
+  }
+  img {
+    display: block;
+    max-width: 100%;
+  }
+",
+        ],
+      },
+      "displayName": "styled.figure",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "sc-bdVaJa",
+      "target": "figure",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    },
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "function",
       "props": Object {
         "children": <img />,
         "className": "nofocus",
@@ -69,7 +98,36 @@ ShallowWrapper {
         "rendered": null,
         "type": "img",
       },
-      "type": [Function],
+      "type": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "attrs": Array [],
+        "componentStyle": ComponentStyle {
+          "componentId": "sc-bdVaJa",
+          "isStatic": false,
+          "rules": Array [
+            "
+  margin: 1em 0;
+  &.focus {
+    box-shadow: 0 0 0 4px ",
+            [Function],
+            ";
+  }
+  img {
+    display: block;
+    max-width: 100%;
+  }
+",
+          ],
+        },
+        "displayName": "styled.figure",
+        "foldedComponentIds": Array [],
+        "render": [Function],
+        "styledComponentId": "sc-bdVaJa",
+        "target": "figure",
+        "toString": [Function],
+        "warnTooManyClasses": [Function],
+        "withComponent": [Function],
+      },
     },
   ],
   Symbol(enzyme.__options__): Object {
@@ -103,7 +161,7 @@ ShallowWrapper {
 exports[`Snapshot 2`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <styled.figure
+  Symbol(enzyme.__unrendered__): <ForwardRef(styled.figure)
     theme={Object {}}
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -118,25 +176,87 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "class",
     "props": Object {
-      "className": "sc-bdVaJa icoNLW",
+      "forwardedComponent": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "attrs": Array [],
+        "componentStyle": ComponentStyle {
+          "componentId": "sc-bdVaJa",
+          "isStatic": false,
+          "rules": Array [
+            "
+  margin: 1em 0;
+  &.focus {
+    box-shadow: 0 0 0 4px ",
+            [Function],
+            ";
+  }
+  img {
+    display: block;
+    max-width: 100%;
+  }
+",
+          ],
+        },
+        "displayName": "styled.figure",
+        "foldedComponentIds": Array [],
+        "render": [Function],
+        "styledComponentId": "sc-bdVaJa",
+        "target": "figure",
+        "toString": [Function],
+        "warnTooManyClasses": [Function],
+        "withComponent": [Function],
+      },
+      "forwardedRef": null,
+      "theme": Object {},
     },
     "ref": null,
     "rendered": null,
-    "type": "figure",
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "class",
       "props": Object {
-        "className": "sc-bdVaJa icoNLW",
+        "forwardedComponent": Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-bdVaJa",
+            "isStatic": false,
+            "rules": Array [
+              "
+  margin: 1em 0;
+  &.focus {
+    box-shadow: 0 0 0 4px ",
+              [Function],
+              ";
+  }
+  img {
+    display: block;
+    max-width: 100%;
+  }
+",
+            ],
+          },
+          "displayName": "styled.figure",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-bdVaJa",
+          "target": "figure",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        },
+        "forwardedRef": null,
+        "theme": Object {},
       },
       "ref": null,
       "rendered": null,
-      "type": "figure",
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {
@@ -163,6 +283,5 @@ ShallowWrapper {
       },
     },
   },
-  Symbol(enzyme.__childContext__): null,
 }
 `;
