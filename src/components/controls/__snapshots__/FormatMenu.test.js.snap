@@ -620,7 +620,7 @@ ShallowWrapper {
       position: absolute;
       display: block;
       height: 57px;
-      margin-left: calc(3.7em - 1px);
+      margin-left: 50%;
       margin-top: 2px;
       border: 1px dashed ",
           [Function],
@@ -1158,7 +1158,7 @@ ShallowWrapper {
       position: absolute;
       display: block;
       height: 57px;
-      margin-left: calc(3.7em - 1px);
+      margin-left: 50%;
       margin-top: 2px;
       border: 1px dashed ",
             [Function],

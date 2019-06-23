@@ -1,7 +1,6 @@
 import "typeface-rajdhani"
 import "typeface-yanone-kaffeesatz"
 
-import {BrowserRouter} from "react-router-dom"
 import {ThemeProvider} from "styled-components"
 import {render} from "react-dom"
 import React from "react"
@@ -23,7 +22,6 @@ import Reader from '../src/components/vignettes/Reader';
 render(
   <div>
     <ThemeProvider theme={EXAMPLE_THEME}>
-      <BrowserRouter>
         <Wrapper>
           <h1>Editor</h1>
           <Editor />
@@ -34,7 +32,6 @@ render(
             components={{Picture}}
           />
         </Wrapper>
-      </BrowserRouter>
     </ThemeProvider>
   </div>,
   window.document.getElementById("app")

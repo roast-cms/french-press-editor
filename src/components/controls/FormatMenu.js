@@ -23,7 +23,7 @@ const Menu = styled.div`
       position: absolute;
       display: block;
       height: 57px;
-      margin-left: calc(3.7em - 1px);
+      margin-left: 50%;
       margin-top: 2px;
       border: 1px dashed ${props => props.theme.accent || "#7a2a49"};
       z-index: -1;
