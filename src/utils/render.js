@@ -6,7 +6,7 @@ import button from "../components/controls/css/button"
 const HeaderControl = styled.button`
   ${button}
   position: absolute;
-  top: 4em;
+  top: -1.65em;
   border-radius: 0.25em;
 `
 
@@ -34,9 +34,12 @@ export const renderNode = props => {
       return <p {...attributes}>{children}</p>
     case "heading":
       return (
-        <div style={{clear: "both"}}>
+        <div style={{clear: "both", position: "relative"}}>
           {!props.readOnly && focus && (
             <HeaderControl
+              contentEditable="false"
+              spellCheck="false"
+              suppressContentEditableWarning
               onMouseDown={event => event.preventDefault()}
               onMouseUp={event => {
                 event.preventDefault()
