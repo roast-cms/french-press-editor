@@ -1,6 +1,6 @@
 {
   "name": "@roast-cms/french-press-editor",
-  "version": "11.0.0",
+  "version": "12.0.0",
   "description": "An offline-first rich text editor component.",
   "main": "dist/index.js",
   "repository": "https://github.com/roast-cms/french-press-editor.git",
@@ -79,9 +79,9 @@
     "slate-html-serializer": "0.6.0",
     "slate-react": "0.13.0",
     "slate-when": "0.1.0",
+    "styled-components": "^4.3.1",
     "uuid": "^3.1.0",
-    "valid-data-url": "1",
-    "styled-components": "^4.3.1"
+    "valid-data-url": "1"
   },
   "size-limit": [
     {
