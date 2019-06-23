@@ -10,7 +10,7 @@ const Menu = styled.div`
   z-index: 11;
   line-height: 1em;
 
-  color: ${props => props.theme.background};
+  color: ${props => props.theme.background || "#ffffff"};
 
   button {
     ${button}
@@ -25,7 +25,7 @@ const Menu = styled.div`
       height: 57px;
       margin-left: calc(3.7em - 1px);
       margin-top: 2px;
-      border: 1px dashed ${props => props.theme.accent};
+      border: 1px dashed ${props => props.theme.accent || "#7a2a49"};
       z-index: -1;
     }
   }

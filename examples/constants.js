@@ -1,9 +1,6 @@
 
 export const EXAMPLE_THEME = {
-  highlight: "yellow",
-  accent: "red",
-  foreground: "#2c2c2c",
-  background: "#ffffff"
+
 }
 
 export const EXAMPLE_VALUE = {

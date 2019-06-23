@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   max-width: 600px;
   margin: 2em auto;
 
-  color: ${props => props.theme.foreground};
+  color: ${props => props.theme.foreground || "#2c2c2c"};
   font-family: "Rajdhani", sans-serif;
   letter-spacing: 0.025em;
   line-height: 1.75em;
