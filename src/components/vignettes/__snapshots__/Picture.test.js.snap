@@ -104,14 +104,7 @@ exports[`Snapshot 2`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <styled.figure
-    theme={
-      Object {
-        "accent": "red",
-        "background": "#ffffff",
-        "foreground": "#2c2c2c",
-        "highlight": "yellow",
-      }
-    }
+    theme={Object {}}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -127,7 +120,7 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "className": "sc-bdVaJa fOsgPI",
+      "className": "sc-bdVaJa icoNLW",
     },
     "ref": null,
     "rendered": null,
@@ -139,7 +132,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "className": "sc-bdVaJa fOsgPI",
+        "className": "sc-bdVaJa icoNLW",
       },
       "ref": null,
       "rendered": null,

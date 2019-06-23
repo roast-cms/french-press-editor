@@ -4,14 +4,7 @@ exports[`Snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ThemeProvider
-    theme={
-      Object {
-        "accent": "red",
-        "background": "#ffffff",
-        "foreground": "#2c2c2c",
-        "highlight": "yellow",
-      }
-    }
+    theme={Object {}}
   >
     <styled.div />
   </ThemeProvider>,
