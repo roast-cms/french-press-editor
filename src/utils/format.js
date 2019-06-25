@@ -110,7 +110,7 @@ export const menuPosition = function() {
       rect.left + window.scrollX - menu.offsetWidth / 2 + rect.width / 2
     const topOffset = rect.top + window.scrollY - menu.offsetHeight + 3
     menu.style.top = `${topOffset}px`
-    menu.style.left = `${leftOffset >= 0 ? leftOffset : 5}px`
+    menu.style.left = `${leftOffset}px`
     //
     // devices with touch screens will have edit menu considerably above the
     // selected text to give way to the native hover menu

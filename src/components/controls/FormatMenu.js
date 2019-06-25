@@ -16,16 +16,31 @@ const Menu = styled.div`
     ${button}
   }
 
+  margin-top: -0.5em;
+  margin-left: 2.5em;
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 0;
+    margin-left: calc(50% - 2.5em);
+    border: 4px solid ${props => props.theme.accent || "#7a2a49"};
+    transform: rotate(45deg) translate(-6px, -1px);
+    z-index: -1;
+  }
+
   &.touch {
     margin-top: -65px;
+    margin-left: 2.5em;
     &::after {
       content: "";
       position: absolute;
       display: block;
       height: 57px;
-      margin-left: 50%;
+      margin-left: calc(50% - 2.5em);
       margin-top: 2px;
       border: 1px dashed ${props => props.theme.accent || "#7a2a49"};
+      transform: none;
       z-index: -1;
     }
   }
