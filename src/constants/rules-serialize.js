@@ -11,17 +11,12 @@ export const rulesSerializeWithProps = props => [
           const href = node.data.href
 
           if (props.components && props.components.Link) {
-            const Link = props.components.Link
-            return (
-              <Link
-                domain={props.options ? props.options.domain : null}
-                to={href}
-              >
-                {children}
-              </Link>
-            )
+            const Link = props.editor
+              ? props.editor.props.components.Link
+              : props.components.Link
+            return addKey(<Link to={href}>{children}</Link>)
           } else {
-            return <a href={href}>{children}</a>
+            return addKey(<a href={href}>{children}</a>)
           }
         }
         case "image": {

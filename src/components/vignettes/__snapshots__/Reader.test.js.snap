@@ -15,7 +15,7 @@ ShallowWrapper {
   },
   Symbol(enzyme.__node__): Object {
     "instance": null,
-    "key": "42",
+    "key": "43",
     "nodeType": "host",
     "props": Object {
       "children": Array [
@@ -35,7 +35,7 @@ ShallowWrapper {
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
-      "key": "42",
+      "key": "43",
       "nodeType": "host",
       "props": Object {
         "children": Array [
