@@ -19,6 +19,7 @@ import {
 import Picture from '../src/components/vignettes/Picture';
 import Reader from '../src/components/vignettes/Reader';
 
+const Link = props => <strong><a href={props.to} target="_blank">{props.children}</a></strong>
 render(
   <div>
     <ThemeProvider theme={EXAMPLE_THEME}>
@@ -29,7 +30,7 @@ render(
           <Reader
             options={{domain: "localhost:3002"}}
             value={EXAMPLE_VALUE}
-            components={{Picture}}
+            components={{Picture, Link}}
           />
         </Wrapper>
     </ThemeProvider>

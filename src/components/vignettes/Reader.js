@@ -43,7 +43,7 @@ export const serializeNode = (node, props) => {
     const {leaves} = node
     return leaves.map(leaf => serializeLeaf(leaf, props))
   }
-  const children = node.nodes.map(serializeNode)
+  const children = node.nodes.map(node => serializeNode(node, props))
   for (const rule of rules(props)) {
     if (!rule.serialize) continue
     const ret = rule.serialize(node, children)
