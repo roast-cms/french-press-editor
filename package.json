@@ -1,6 +1,6 @@
 {
   "name": "@roast-cms/french-press-editor",
-  "version": "0.10.0",
+  "version": "12.4.2",
   "description": "An offline-first rich text editor component.",
   "main": "dist/index.js",
   "repository": "https://github.com/roast-cms/french-press-editor.git",
@@ -37,7 +37,6 @@
     "prettier": "^1.14.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-router-dom": "^4.2.2",
     "react-test-renderer": "^16.5.2",
     "size-limit": "^0.20.0",
     "slate-simulator": "^0.4.61",
@@ -50,10 +49,9 @@
     "webpack-dev-server": "^3.1.3"
   },
   "peerDependencies": {
-    "immutable": "^3.8.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "react-router-dom": "^4.2.2"
+    "styled-components": "^4.3.1"
   },
   "scripts": {
     "start": "webpack-dev-server --mode development",
@@ -66,22 +64,20 @@
     "lint:fix": "eslint --fix \"src/**/*.js\""
   },
   "dependencies": {
-    "@roast-cms/react-button-beans": "^1.1.3",
-    "@roast-cms/react-link-filter": "*",
-    "@roast-cms/react-sugar-styled": "^1.0.4",
+    "immutable": "^3.8.2",
     "is-url": "^1.2.2",
     "keycode": "^2.2.0",
     "localforage": "^1.7.1",
     "localforage-getitems": "^1.4.1",
     "lodash": "^4.17.4",
     "positions": "^1.6.1",
-    "slate": "0.35.0",
+    "slate": "0.36.2",
     "slate-auto-replace": "0.9.0",
     "slate-drop-or-paste-images": "0.8.1",
     "slate-html-serializer": "0.6.0",
     "slate-react": "0.13.0",
     "slate-when": "0.1.0",
-    "styled-components": "^3.4.5",
+    "styled-components": "^4.3.1",
     "uuid": "^3.1.0",
     "valid-data-url": "1"
   },

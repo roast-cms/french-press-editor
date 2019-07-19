@@ -4,184 +4,9 @@ exports[`Snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ThemeProvider
-    theme={
-      Object {
-        "color": Object {
-          "background": [Function],
-          "brand": [Function],
-          "foreground": [Function],
-          "highlight": [Function],
-        },
-        "effects": Object {
-          "borderRadius": Object {
-            "med": 0.75,
-            "small": [Function],
-          },
-        },
-        "layer": Object {
-          "card": 30,
-          "nav": 20,
-          "overlay": 40,
-          "tuck": -1,
-          "up": 10,
-        },
-        "opacity": Object {
-          "half": 0.5,
-          "least": 0.125,
-          "most": 0.85,
-        },
-        "size": Object {
-          "block": Object {
-            "border": 4,
-            "column": Object {
-              "l": 900,
-              "m": 700,
-            },
-            "padding": 1.5,
-            "spacing": 0.75,
-          },
-          "breakpoint": Object {
-            "exact": Object {
-              "l": [Function],
-              "m": [Function],
-              "s": [Function],
-              "xl": [Function],
-              "xs": [Function],
-              "xxl": [Function],
-            },
-            "max": Object {
-              "l": [Function],
-              "m": [Function],
-              "s": [Function],
-              "xl": [Function],
-              "xs": [Function],
-              "xxl": [Function],
-            },
-            "min": Object {
-              "l": [Function],
-              "m": [Function],
-              "s": [Function],
-              "xl": [Function],
-              "xs": [Function],
-              "xxl": [Function],
-            },
-            "stops": Object {
-              "max": 1600,
-              "min": 320,
-            },
-          },
-          "font": Object {
-            "auto": Array [
-              "
-        ",
-              "
-		@media (min-width: ",
-              "32.5625",
-              "em) {
-			",
-              "font-size: 	",
-              [Function],
-              "px;",
-              "
-		}
-	",
-              " ",
-              "
-		@media (max-width: ",
-              "32.5",
-              "em) {
-			",
-              "font-size: 	",
-              [Function],
-              "px;",
-              "
-		}
-	",
-              " ",
-              "
-		@media (max-width: ",
-              "20",
-              "em) {
-			",
-              "font-size: 	",
-              [Function],
-              "px;",
-              "
-		}
-	",
-              " ",
-              "
-		@media (min-width: ",
-              "100.0625",
-              "em) {
-			",
-              "font-size:	",
-              [Function],
-              "px;",
-              "
-		}
-	",
-              ";
-      ",
-            ],
-            "l": 23,
-            "m": 20,
-            "make": Object {
-              "larger": 2,
-              "normal": 1,
-              "smaller": 0.85,
-              "tiny": 0.5,
-            },
-            "s": 18,
-            "xs": 17,
-          },
-        },
-        "typography": Object {
-          "text": Object {
-            "auto": Array [
-              "
-          color: ",
-              [Function],
-              ";
-          font-family: ",
-              "'Rajdhani', sans-serif",
-              ";
-          letter-spacing: 0.025em;
-          line-height: ",
-              [Function],
-              "em;
-        ",
-            ],
-            "font": "'Rajdhani', sans-serif",
-            "lineHeight": 1.75,
-          },
-          "title": Object {
-            "auto": Array [
-              "
-          color: ",
-              [Function],
-              ";
-          font-family: ",
-              "'Yanone Kaffeesatz', sans-serif",
-              ";
-          letter-spacing: 0.025em;
-          line-height: ",
-              [Function],
-              "em;
-          font-weight: ",
-              "400",
-              ";
-          margin: 0;
-        ",
-            ],
-            "font": "'Yanone Kaffeesatz', sans-serif",
-            "lineHeight": 1.15,
-          },
-        },
-      }
-    }
+    theme={Object {}}
   >
-    <Styled(_default) />
+    <ForwardRef(styled.button) />
   </ThemeProvider>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -195,21 +20,59 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
-    "props": Object {},
+    "nodeType": "function",
+    "props": Object {
+      "children": [Function],
+    },
     "ref": null,
-    "rendered": null,
-    "type": [Function],
+    "rendered": [Function],
+    "type": Object {
+      "$$typeof": Symbol(react.context),
+      "_calculateChangedBits": null,
+      "_context": Object {
+        "$$typeof": Symbol(react.context),
+        "Consumer": [Circular],
+        "Provider": Object {
+          "$$typeof": Symbol(react.provider),
+          "_context": [Circular],
+        },
+        "_calculateChangedBits": null,
+        "_currentRenderer": null,
+        "_currentRenderer2": null,
+        "_currentValue": undefined,
+        "_currentValue2": undefined,
+        "_threadCount": 0,
+      },
+    },
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
-      "props": Object {},
+      "nodeType": "function",
+      "props": Object {
+        "children": [Function],
+      },
       "ref": null,
-      "rendered": null,
-      "type": [Function],
+      "rendered": [Function],
+      "type": Object {
+        "$$typeof": Symbol(react.context),
+        "_calculateChangedBits": null,
+        "_context": Object {
+          "$$typeof": Symbol(react.context),
+          "Consumer": [Circular],
+          "Provider": Object {
+            "$$typeof": Symbol(react.provider),
+            "_context": [Circular],
+          },
+          "_calculateChangedBits": null,
+          "_currentRenderer": null,
+          "_currentRenderer2": null,
+          "_currentValue": undefined,
+          "_currentValue2": undefined,
+          "_threadCount": 0,
+        },
+      },
     },
   ],
   Symbol(enzyme.__options__): Object {
@@ -236,13 +99,6 @@ ShallowWrapper {
       },
     },
   },
-  Symbol(enzyme.__childContext__): Object {
-    "__styled-components__": [Function],
-    "__styled-components__next__": Object {
-      "getTheme": [Function],
-      "subscribe": [Function],
-      "unsubscribe": [Function],
-    },
-  },
+  Symbol(enzyme.__childContext__): null,
 }
 `;

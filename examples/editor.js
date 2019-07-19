@@ -84,19 +84,7 @@ export class Editor extends React.PureComponent {
             // with the default component
             Picture,
             //
-            // PictureDocket component can be rendered when the user clicks
-            // "Insert Image" button instead of straight-up opening a file
-            // dialogue box; this may give you a chance to give the user
-            // "recommended" images to work with, however, this is an advanced
-            // case and isn't required
-            PictureDocket: null,
-            //
-            // you can provide your own "Insert Image" button component,
-            // however, it's not required; if you'd like to do so, please have a
-            // look at the default component to see how to build one properly;
-            // if you simply want to change the text or add an icon to the
-            // ImageButton component, see `controls` prop below
-            ImageButton: null,
+            //Link,
           }}
           //
           options={{
@@ -138,7 +126,7 @@ export class Editor extends React.PureComponent {
             MakeHeader: () => <span>H</span>,
             //
             // button that converts header block back into paragraph
-            CancelHeader: () => <span>⇲</span>,
+            CancelHeader: () => <span>undo heading</span>,
             //
             // button that converts text block into a quote
             MakeQuote: () => <span>“</span>,

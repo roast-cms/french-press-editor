@@ -1,7 +1,5 @@
-import {makeRelative} from "@roast-cms/react-link-filter/dist/utils"
 import React from "react"
 
-import Link from "../components/controls/Link"
 import Unquote from "../components/controls/Unquote"
 
 /**
@@ -15,6 +13,9 @@ export const renderNode = props => {
   const focus = editor.value.isFocused && isSelected
   const className = focus ? "focus" : "nofocus"
 
+  const {components} = (editor && editor.props) || {}
+  const {data} = node
+
   switch (node.type) {
     case "paragraph":
       return <p {...attributes}>{children}</p>
@@ -27,7 +28,7 @@ export const renderNode = props => {
         <div style={{clear: "both"}}>
           {!props.readOnly && focus && (
             <Unquote
-              className="french-press_unquote"
+              className="fpe-unquote"
               contentEditable="false"
               spellCheck="false"
               suppressContentEditableWarning
@@ -53,11 +54,8 @@ export const renderNode = props => {
         </div>
       )
     case "image": {
-      if (
-        props.editor.props.components &&
-        props.editor.props.components.Picture
-      ) {
-        const Picture = props.editor.props.components.Picture
+      if (components && components.Picture) {
+        const Picture = components.Picture
         return <Picture {...props} />
       } else {
         // eslint-disable-next-line
@@ -65,34 +63,29 @@ export const renderNode = props => {
         return null
       }
     }
-    //
-    // user can define a <pictureDocketNode /> which is a component that may
-    // show up after they click "Insert Image" button; by default it's skipped,
-    // however, in some cases it may be useful to display some image suggestions
-    // that user can insert without having to upload new ones; this
-    // action is skipped if the user is inserting an image via drag & drop
-    case "docket": {
-      if (
-        props.editor.props.components &&
-        props.editor.props.components.PictureDocket
-      ) {
-        const PictureDocket = props.editor.props.components.PictureDocket
-        return <PictureDocket {...props} />
-      } else {
-        return null
-      }
-    }
     case "link": {
-      const {data} = node
       const href = data.get("href")
-      return (
-        <Link
-          {...attributes}
-          to={makeRelative(href, props.editor.props.options.domain)}
-        >
-          {children}
-        </Link>
-      )
+
+      if (components && components.Link) {
+        const Link = components.Link
+        return (
+          <>
+            <Link {...attributes} to={href}>
+              {children}
+            </Link>
+            {" "}
+          </>
+        )
+      } else {
+        return (
+          <>
+            <a {...attributes} href={href}>
+              {children}
+            </a>
+            {" "}
+          </>
+        )
+      }
     }
     default:
       return <p {...attributes}>{children}</p>

@@ -3,7 +3,6 @@ import React from "react"
 import {shallow} from "enzyme"
 
 import {renderNode} from "./render"
-import Link from "../components/controls/Link"
 import Picture from "../components/vignettes/Picture"
 
 test("renderNode produces paragraph element.", () => {
@@ -22,14 +21,16 @@ test("renderNode produces paragraph element.", () => {
 })
 
 test("renderNode produces heading element.", () => {
-  const element = <h3>a</h3>
-  expect(
+  const element = shallow(
     renderNode({
-      children: "a",
-      node: {type: "heading"},
+      children: "h2",
+      node: {type: "paragraph"},
       editor: {value: {isFocused: false}},
+      readOnly: true,
     })
-  ).toEqual(element)
+  )
+
+  expect(element).toMatchSnapshot()
 })
 
 test("renderNode produces divider element with correct class name.", () => {
@@ -76,7 +77,9 @@ test("renderNode produces picture element that matches a snapshot.", () => {
 
 test("renderNode produces link element with correct href prop.", () => {
   const element = (
-    <Link to="https://github.com/roast-cms/french-press-editor">a</Link>
+    <React.Fragment>
+      <a href="https://github.com/roast-cms/french-press-editor">a</a> 
+    </React.Fragment>
   )
   expect(
     renderNode({

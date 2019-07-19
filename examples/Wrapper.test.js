@@ -5,7 +5,7 @@ import React from "react"
 
 import {shallow} from "enzyme"
 
-import {EXAMPLE_THEME} from "../../../examples/constants"
+import { EXAMPLE_THEME } from './constants';
 import {Wrapper} from "./Wrapper"
 
 test("Snapshot", () => {

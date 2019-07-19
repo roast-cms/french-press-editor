@@ -21,7 +21,7 @@ import {
 import {loadContent, saveContent, setDraftStatusHelper} from "./utils/storage"
 import {plugins} from "./plugins"
 import {renderMark, renderNode} from "./utils/render"
-import DefaultImageButton from "./components/controls/ImageButton"
+import ImageButton from "./components/controls/ImageButton"
 import FormatMenu from "./components/controls/FormatMenu"
 
 /**
@@ -203,14 +203,6 @@ export class FrenchPress extends React.PureComponent {
     focusEvents.call(this)
 
     /**
-     * Image upload button (prop) can be defined or created by user.
-     * @constant ImageButton
-     */
-    const ImageButton =
-      (this.props.components && this.props.components.ImageButton) ||
-      DefaultImageButton
-
-    /**
      * Defines component label for image button.
      * @const ImageButtonLabel
      */
@@ -264,6 +256,8 @@ export class FrenchPress extends React.PureComponent {
           }}
           ref={input => (this.slateEditor = input)}
           fileInputRef={this.fileInput}
+          formatCommand={this.formatCommand}
+          controls={this.props.controls}
         />
         <input
           type="file"
@@ -279,7 +273,7 @@ export class FrenchPress extends React.PureComponent {
         onChange={this.handleChange}
         value={this.state.value}
         formatCommand={this.formatCommand}
-        style={{display: this.state.editorFocus ? "block" : "none"}}
+        style={{display: this.state.editorFocus ? "flex" : "none"}}
         controls={this.props.controls}
       />,
     ]

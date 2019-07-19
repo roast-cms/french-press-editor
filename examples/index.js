@@ -1,13 +1,12 @@
 import "typeface-rajdhani"
 import "typeface-yanone-kaffeesatz"
 
-import {BrowserRouter} from "react-router-dom"
 import {ThemeProvider} from "styled-components"
 import {render} from "react-dom"
 import React from "react"
 
-import {EXAMPLE_THEME, EXAMPLE_VALUE} from "./constants"
-import {Editor} from "./editor"
+import { EXAMPLE_THEME, EXAMPLE_VALUE } from './constants';
+import {Editor} from "./Editor"
 import {
   //
   // wrapper component contains some default styles that make your editor
@@ -16,14 +15,14 @@ import {
   // css in another way
   Wrapper,
   //
-} from "../src/components/vignettes/Wrapper"
-import Picture from "../src/components/vignettes/Picture"
-import Reader from "../src/components/vignettes/Reader"
+} from "./Wrapper"
+import Picture from '../src/components/vignettes/Picture';
+import Reader from '../src/components/vignettes/Reader';
 
+const Link = props => <strong><a href={props.to} target="_blank">{props.children}</a></strong>
 render(
   <div>
     <ThemeProvider theme={EXAMPLE_THEME}>
-      <BrowserRouter>
         <Wrapper>
           <h1>Editor</h1>
           <Editor />
@@ -31,10 +30,9 @@ render(
           <Reader
             options={{domain: "localhost:3002"}}
             value={EXAMPLE_VALUE}
-            components={{Picture}}
+            components={{Picture, Link}}
           />
         </Wrapper>
-      </BrowserRouter>
     </ThemeProvider>
   </div>,
   window.document.getElementById("app")
