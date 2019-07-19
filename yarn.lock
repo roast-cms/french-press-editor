@@ -7555,7 +7555,7 @@ slate-dev-environment@^0.1.2, slate-dev-environment@^0.1.4:
   dependencies:
     is-in-browser "^1.1.3"
 
-slate-dev-logger@^0.1.0, slate-dev-logger@^0.1.39, slate-dev-logger@^0.1.40, slate-dev-logger@^0.1.43:
+slate-dev-logger@^0.1.0, slate-dev-logger@^0.1.39, slate-dev-logger@^0.1.42, slate-dev-logger@^0.1.43:
   version "0.1.43"
   resolved "https://registry.yarnpkg.com/slate-dev-logger/-/slate-dev-logger-0.1.43.tgz#77f6ca7207fcbf453a5516f3aa8b19794d1d26dc"
   integrity sha512-GkcPMGzmPVm85AL+jaKnzhIA0UH9ktQDEIDM+FuQtz+TAPcpPCQiRAaZ6I2p2uD0Hq9bImhKSCtHIa0qRxiVGw==
@@ -7622,7 +7622,7 @@ slate-react@0.13.0:
     slate-plain-serializer "^0.5.18"
     slate-prop-types "^0.4.35"
 
-slate-schema-violations@^0.1.21:
+slate-schema-violations@^0.1.24:
   version "0.1.39"
   resolved "https://registry.yarnpkg.com/slate-schema-violations/-/slate-schema-violations-0.1.39.tgz#854ab5624136419cef4c803b1823acabe11f1c15"
   integrity sha512-SNRoV9Ii5UqjNqAKcIw7aAOMwgI45zsn86ue2n8NVLNOCe3fUI35cjq6l3fdvmRYw4X/GcZqzhpQsizHD3ts6A==
@@ -7637,10 +7637,10 @@ slate-when@0.1.0:
   resolved "https://registry.yarnpkg.com/slate-when/-/slate-when-0.1.0.tgz#4ff3914e78356170628cc6e96f7b466241fcceb5"
   integrity sha512-hxmwW+ybm4QOClHBEqNgKTxHP36XDvHfb5kRj7eGlvkR8SKxFaOLc8KhkohvqJFKgvVk1nDxcSa3y5+9tbXHXw==
 
-slate@0.35.0:
-  version "0.35.0"
-  resolved "https://registry.yarnpkg.com/slate/-/slate-0.35.0.tgz#6d13146b21db9aa9fdbe9323198dc25a5d334ec0"
-  integrity sha1-bRMUayHbmqn9vpMjGY3CWl0zTsA=
+slate@0.36.2:
+  version "0.36.2"
+  resolved "https://registry.yarnpkg.com/slate/-/slate-0.36.2.tgz#63640fde050aa3b88342c2ffb665bc0e00be6239"
+  integrity sha1-Y2QP3gUKo7iDQsL/tmW8DgC+Yjk=
   dependencies:
     debug "^3.1.0"
     direction "^0.1.5"
@@ -7648,8 +7648,8 @@ slate@0.35.0:
     is-empty "^1.0.0"
     is-plain-object "^2.0.4"
     lodash "^4.17.4"
-    slate-dev-logger "^0.1.40"
-    slate-schema-violations "^0.1.21"
+    slate-dev-logger "^0.1.42"
+    slate-schema-violations "^0.1.24"
     type-of "^2.0.1"
 
 slice-ansi@^2.1.0:

@@ -115,79 +115,75 @@ ShallowWrapper {
                 "docket": Object {
                   "isVoid": true,
                 },
+                "heading": Object {
+                  "match": Object {
+                    "object": "text",
+                  },
+                },
                 "image": Object {
                   "data": Object {
                     "src": [Function],
                   },
                   "isVoid": true,
-                  "normalize": [Function],
-                  "parent": Array [
-                    Object {
-                      "object": "document",
-                    },
-                  ],
                 },
                 "link": Object {
-                  "nodes": Array [
-                    Object {
-                      "objects": Array [
-                        "text",
-                      ],
-                    },
-                  ],
-                },
-              },
-              "document": Object {
-                "last": Object {
-                  "types": Array [
-                    "paragraph",
-                    "quote",
-                  ],
-                },
-                "nodes": Array [
-                  Object {
-                    "types": Array [
-                      "paragraph",
-                      "heading",
-                      "divider",
-                      "quote",
-                      "image",
-                      "docket",
-                      "link",
-                    ],
+                  "match": Object {
+                    "object": "text",
                   },
-                ],
-                "normalize": [Function],
-              },
-              "inlines": Object {
-                "heading": Object {
-                  "nodes": Array [
-                    Object {
-                      "types": Array [
-                        "text",
-                      ],
-                    },
-                  ],
                 },
                 "paragraph": Object {
-                  "nodes": Array [
+                  "match": Array [
                     Object {
-                      "types": Array [
-                        "text",
-                        "link",
-                      ],
+                      "object": "text",
+                    },
+                    Object {
+                      "object": "link",
                     },
                   ],
                 },
                 "quote": Object {
-                  "nodes": Array [
-                    Object {
-                      "types": Array [
-                        "text",
-                      ],
-                    },
-                  ],
+                  "match": Object {
+                    "object": "text",
+                  },
                 },
+              },
+              "document": Object {
+                "last": Array [
+                  Object {
+                    "type": "quote",
+                  },
+                  Object {
+                    "type": "paragraph",
+                  },
+                ],
+                "nodes": Array [
+                  Object {
+                    "match": Array [
+                      Object {
+                        "type": "paragraph",
+                      },
+                      Object {
+                        "type": "heading",
+                      },
+                      Object {
+                        "type": "divider",
+                      },
+                      Object {
+                        "type": "quote",
+                      },
+                      Object {
+                        "type": "image",
+                      },
+                      Object {
+                        "type": "docket",
+                      },
+                      Object {
+                        "type": "link",
+                      },
+                    ],
+                  },
+                ],
+                "normalize": [Function],
               },
             }
           }
@@ -234,40 +230,185 @@ ShallowWrapper {
                 "stack": Immutable.Record {
                   "plugins": Array [
                     Object {
-                      "validateNode": [Function],
-                    },
-                    Object {
-                      "validateNode": [Function],
-                    },
-                    Object {
-                      "validateNode": [Function],
-                    },
-                    Object {
-                      "validateNode": [Function],
-                    },
-                    Object {
-                      "validateNode": [Function],
-                    },
-                    Object {
-                      "validateNode": [Function],
-                    },
-                    Object {
-                      "validateNode": [Function],
-                    },
-                    Object {
-                      "validateNode": [Function],
-                    },
-                    Object {
                       "schema": Object {},
                     },
                   ],
                 },
-                "document": Object {
-                  "data": Object {},
-                  "nodes": null,
-                },
-                "blocks": Object {},
-                "inlines": Object {},
+                "rules": Array [
+                  Object {
+                    "match": Object {
+                      "object": "document",
+                    },
+                    "nodes": Array [
+                      Object {
+                        "match": Object {
+                          "object": "block",
+                        },
+                      },
+                    ],
+                  },
+                  Object {
+                    "match": Object {
+                      "first": Object {
+                        "object": "block",
+                      },
+                      "object": "block",
+                    },
+                    "nodes": Array [
+                      Object {
+                        "match": Object {
+                          "object": "block",
+                        },
+                      },
+                    ],
+                  },
+                  Object {
+                    "match": Object {
+                      "first": Array [
+                        Object {
+                          "object": "inline",
+                        },
+                        Object {
+                          "object": "text",
+                        },
+                      ],
+                      "object": "block",
+                    },
+                    "nodes": Array [
+                      Object {
+                        "match": Array [
+                          Object {
+                            "object": "inline",
+                          },
+                          Object {
+                            "object": "text",
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                  Object {
+                    "match": Object {
+                      "object": "inline",
+                    },
+                    "nodes": Array [
+                      Object {
+                        "match": Array [
+                          Object {
+                            "object": "inline",
+                          },
+                          Object {
+                            "object": "text",
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                  Object {
+                    "match": Array [
+                      Object {
+                        "object": "block",
+                      },
+                      Object {
+                        "object": "inline",
+                      },
+                    ],
+                    "nodes": Array [
+                      Object {
+                        "min": 1,
+                      },
+                    ],
+                    "normalize": [Function],
+                  },
+                  Object {
+                    "match": Object {
+                      "isVoid": false,
+                      "nodes": Array [
+                        Object {
+                          "match": Object {
+                            "object": "text",
+                          },
+                        },
+                      ],
+                      "object": "inline",
+                    },
+                    "text": /\\[\\\\w\\\\W\\]\\+/,
+                  },
+                  Object {
+                    "first": Array [
+                      Object {
+                        "object": "block",
+                      },
+                      Object {
+                        "object": "text",
+                      },
+                    ],
+                    "last": Array [
+                      Object {
+                        "object": "block",
+                      },
+                      Object {
+                        "object": "text",
+                      },
+                    ],
+                    "match": Object {
+                      "object": "block",
+                    },
+                    "normalize": [Function],
+                  },
+                  Object {
+                    "first": Array [
+                      Object {
+                        "object": "block",
+                      },
+                      Object {
+                        "object": "text",
+                      },
+                    ],
+                    "last": Array [
+                      Object {
+                        "object": "block",
+                      },
+                      Object {
+                        "object": "text",
+                      },
+                    ],
+                    "match": Object {
+                      "object": "inline",
+                    },
+                    "next": Array [
+                      Object {
+                        "object": "block",
+                      },
+                      Object {
+                        "object": "text",
+                      },
+                    ],
+                    "normalize": [Function],
+                    "previous": Array [
+                      Object {
+                        "object": "block",
+                      },
+                      Object {
+                        "object": "text",
+                      },
+                    ],
+                  },
+                  Object {
+                    "match": Object {
+                      "object": "text",
+                    },
+                    "next": Array [
+                      Object {
+                        "object": "block",
+                      },
+                      Object {
+                        "object": "inline",
+                      },
+                    ],
+                    "normalize": [Function],
+                  },
+                ],
               },
               "selection": Immutable.Record {
                 "anchorKey": "3",
@@ -419,79 +560,75 @@ ShallowWrapper {
               "docket": Object {
                 "isVoid": true,
               },
+              "heading": Object {
+                "match": Object {
+                  "object": "text",
+                },
+              },
               "image": Object {
                 "data": Object {
                   "src": [Function],
                 },
                 "isVoid": true,
-                "normalize": [Function],
-                "parent": Array [
-                  Object {
-                    "object": "document",
-                  },
-                ],
               },
               "link": Object {
-                "nodes": Array [
-                  Object {
-                    "objects": Array [
-                      "text",
-                    ],
-                  },
-                ],
-              },
-            },
-            "document": Object {
-              "last": Object {
-                "types": Array [
-                  "paragraph",
-                  "quote",
-                ],
-              },
-              "nodes": Array [
-                Object {
-                  "types": Array [
-                    "paragraph",
-                    "heading",
-                    "divider",
-                    "quote",
-                    "image",
-                    "docket",
-                    "link",
-                  ],
+                "match": Object {
+                  "object": "text",
                 },
-              ],
-              "normalize": [Function],
-            },
-            "inlines": Object {
-              "heading": Object {
-                "nodes": Array [
-                  Object {
-                    "types": Array [
-                      "text",
-                    ],
-                  },
-                ],
               },
               "paragraph": Object {
-                "nodes": Array [
+                "match": Array [
                   Object {
-                    "types": Array [
-                      "text",
-                      "link",
-                    ],
+                    "object": "text",
+                  },
+                  Object {
+                    "object": "link",
                   },
                 ],
               },
               "quote": Object {
-                "nodes": Array [
-                  Object {
-                    "types": Array [
-                      "text",
-                    ],
-                  },
-                ],
+                "match": Object {
+                  "object": "text",
+                },
               },
+            },
+            "document": Object {
+              "last": Array [
+                Object {
+                  "type": "quote",
+                },
+                Object {
+                  "type": "paragraph",
+                },
+              ],
+              "nodes": Array [
+                Object {
+                  "match": Array [
+                    Object {
+                      "type": "paragraph",
+                    },
+                    Object {
+                      "type": "heading",
+                    },
+                    Object {
+                      "type": "divider",
+                    },
+                    Object {
+                      "type": "quote",
+                    },
+                    Object {
+                      "type": "image",
+                    },
+                    Object {
+                      "type": "docket",
+                    },
+                    Object {
+                      "type": "link",
+                    },
+                  ],
+                },
+              ],
+              "normalize": [Function],
             },
           },
           "spellCheck": true,
@@ -534,40 +671,185 @@ ShallowWrapper {
               "stack": Immutable.Record {
                 "plugins": Array [
                   Object {
-                    "validateNode": [Function],
-                  },
-                  Object {
-                    "validateNode": [Function],
-                  },
-                  Object {
-                    "validateNode": [Function],
-                  },
-                  Object {
-                    "validateNode": [Function],
-                  },
-                  Object {
-                    "validateNode": [Function],
-                  },
-                  Object {
-                    "validateNode": [Function],
-                  },
-                  Object {
-                    "validateNode": [Function],
-                  },
-                  Object {
-                    "validateNode": [Function],
-                  },
-                  Object {
                     "schema": Object {},
                   },
                 ],
               },
-              "document": Object {
-                "data": Object {},
-                "nodes": null,
-              },
-              "blocks": Object {},
-              "inlines": Object {},
+              "rules": Array [
+                Object {
+                  "match": Object {
+                    "object": "document",
+                  },
+                  "nodes": Array [
+                    Object {
+                      "match": Object {
+                        "object": "block",
+                      },
+                    },
+                  ],
+                },
+                Object {
+                  "match": Object {
+                    "first": Object {
+                      "object": "block",
+                    },
+                    "object": "block",
+                  },
+                  "nodes": Array [
+                    Object {
+                      "match": Object {
+                        "object": "block",
+                      },
+                    },
+                  ],
+                },
+                Object {
+                  "match": Object {
+                    "first": Array [
+                      Object {
+                        "object": "inline",
+                      },
+                      Object {
+                        "object": "text",
+                      },
+                    ],
+                    "object": "block",
+                  },
+                  "nodes": Array [
+                    Object {
+                      "match": Array [
+                        Object {
+                          "object": "inline",
+                        },
+                        Object {
+                          "object": "text",
+                        },
+                      ],
+                    },
+                  ],
+                },
+                Object {
+                  "match": Object {
+                    "object": "inline",
+                  },
+                  "nodes": Array [
+                    Object {
+                      "match": Array [
+                        Object {
+                          "object": "inline",
+                        },
+                        Object {
+                          "object": "text",
+                        },
+                      ],
+                    },
+                  ],
+                },
+                Object {
+                  "match": Array [
+                    Object {
+                      "object": "block",
+                    },
+                    Object {
+                      "object": "inline",
+                    },
+                  ],
+                  "nodes": Array [
+                    Object {
+                      "min": 1,
+                    },
+                  ],
+                  "normalize": [Function],
+                },
+                Object {
+                  "match": Object {
+                    "isVoid": false,
+                    "nodes": Array [
+                      Object {
+                        "match": Object {
+                          "object": "text",
+                        },
+                      },
+                    ],
+                    "object": "inline",
+                  },
+                  "text": /\\[\\\\w\\\\W\\]\\+/,
+                },
+                Object {
+                  "first": Array [
+                    Object {
+                      "object": "block",
+                    },
+                    Object {
+                      "object": "text",
+                    },
+                  ],
+                  "last": Array [
+                    Object {
+                      "object": "block",
+                    },
+                    Object {
+                      "object": "text",
+                    },
+                  ],
+                  "match": Object {
+                    "object": "block",
+                  },
+                  "normalize": [Function],
+                },
+                Object {
+                  "first": Array [
+                    Object {
+                      "object": "block",
+                    },
+                    Object {
+                      "object": "text",
+                    },
+                  ],
+                  "last": Array [
+                    Object {
+                      "object": "block",
+                    },
+                    Object {
+                      "object": "text",
+                    },
+                  ],
+                  "match": Object {
+                    "object": "inline",
+                  },
+                  "next": Array [
+                    Object {
+                      "object": "block",
+                    },
+                    Object {
+                      "object": "text",
+                    },
+                  ],
+                  "normalize": [Function],
+                  "previous": Array [
+                    Object {
+                      "object": "block",
+                    },
+                    Object {
+                      "object": "text",
+                    },
+                  ],
+                },
+                Object {
+                  "match": Object {
+                    "object": "text",
+                  },
+                  "next": Array [
+                    Object {
+                      "object": "block",
+                    },
+                    Object {
+                      "object": "inline",
+                    },
+                  ],
+                  "normalize": [Function],
+                },
+              ],
             },
             "selection": Immutable.Record {
               "anchorKey": "3",
@@ -715,79 +997,75 @@ ShallowWrapper {
                   "docket": Object {
                     "isVoid": true,
                   },
+                  "heading": Object {
+                    "match": Object {
+                      "object": "text",
+                    },
+                  },
                   "image": Object {
                     "data": Object {
                       "src": [Function],
                     },
                     "isVoid": true,
-                    "normalize": [Function],
-                    "parent": Array [
-                      Object {
-                        "object": "document",
-                      },
-                    ],
                   },
                   "link": Object {
-                    "nodes": Array [
-                      Object {
-                        "objects": Array [
-                          "text",
-                        ],
-                      },
-                    ],
-                  },
-                },
-                "document": Object {
-                  "last": Object {
-                    "types": Array [
-                      "paragraph",
-                      "quote",
-                    ],
-                  },
-                  "nodes": Array [
-                    Object {
-                      "types": Array [
-                        "paragraph",
-                        "heading",
-                        "divider",
-                        "quote",
-                        "image",
-                        "docket",
-                        "link",
-                      ],
+                    "match": Object {
+                      "object": "text",
                     },
-                  ],
-                  "normalize": [Function],
-                },
-                "inlines": Object {
-                  "heading": Object {
-                    "nodes": Array [
-                      Object {
-                        "types": Array [
-                          "text",
-                        ],
-                      },
-                    ],
                   },
                   "paragraph": Object {
-                    "nodes": Array [
+                    "match": Array [
                       Object {
-                        "types": Array [
-                          "text",
-                          "link",
-                        ],
+                        "object": "text",
+                      },
+                      Object {
+                        "object": "link",
                       },
                     ],
                   },
                   "quote": Object {
-                    "nodes": Array [
-                      Object {
-                        "types": Array [
-                          "text",
-                        ],
-                      },
-                    ],
+                    "match": Object {
+                      "object": "text",
+                    },
                   },
+                },
+                "document": Object {
+                  "last": Array [
+                    Object {
+                      "type": "quote",
+                    },
+                    Object {
+                      "type": "paragraph",
+                    },
+                  ],
+                  "nodes": Array [
+                    Object {
+                      "match": Array [
+                        Object {
+                          "type": "paragraph",
+                        },
+                        Object {
+                          "type": "heading",
+                        },
+                        Object {
+                          "type": "divider",
+                        },
+                        Object {
+                          "type": "quote",
+                        },
+                        Object {
+                          "type": "image",
+                        },
+                        Object {
+                          "type": "docket",
+                        },
+                        Object {
+                          "type": "link",
+                        },
+                      ],
+                    },
+                  ],
+                  "normalize": [Function],
                 },
               }
             }
@@ -834,40 +1112,185 @@ ShallowWrapper {
                   "stack": Immutable.Record {
                     "plugins": Array [
                       Object {
-                        "validateNode": [Function],
-                      },
-                      Object {
-                        "validateNode": [Function],
-                      },
-                      Object {
-                        "validateNode": [Function],
-                      },
-                      Object {
-                        "validateNode": [Function],
-                      },
-                      Object {
-                        "validateNode": [Function],
-                      },
-                      Object {
-                        "validateNode": [Function],
-                      },
-                      Object {
-                        "validateNode": [Function],
-                      },
-                      Object {
-                        "validateNode": [Function],
-                      },
-                      Object {
                         "schema": Object {},
                       },
                     ],
                   },
-                  "document": Object {
-                    "data": Object {},
-                    "nodes": null,
-                  },
-                  "blocks": Object {},
-                  "inlines": Object {},
+                  "rules": Array [
+                    Object {
+                      "match": Object {
+                        "object": "document",
+                      },
+                      "nodes": Array [
+                        Object {
+                          "match": Object {
+                            "object": "block",
+                          },
+                        },
+                      ],
+                    },
+                    Object {
+                      "match": Object {
+                        "first": Object {
+                          "object": "block",
+                        },
+                        "object": "block",
+                      },
+                      "nodes": Array [
+                        Object {
+                          "match": Object {
+                            "object": "block",
+                          },
+                        },
+                      ],
+                    },
+                    Object {
+                      "match": Object {
+                        "first": Array [
+                          Object {
+                            "object": "inline",
+                          },
+                          Object {
+                            "object": "text",
+                          },
+                        ],
+                        "object": "block",
+                      },
+                      "nodes": Array [
+                        Object {
+                          "match": Array [
+                            Object {
+                              "object": "inline",
+                            },
+                            Object {
+                              "object": "text",
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                    Object {
+                      "match": Object {
+                        "object": "inline",
+                      },
+                      "nodes": Array [
+                        Object {
+                          "match": Array [
+                            Object {
+                              "object": "inline",
+                            },
+                            Object {
+                              "object": "text",
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                    Object {
+                      "match": Array [
+                        Object {
+                          "object": "block",
+                        },
+                        Object {
+                          "object": "inline",
+                        },
+                      ],
+                      "nodes": Array [
+                        Object {
+                          "min": 1,
+                        },
+                      ],
+                      "normalize": [Function],
+                    },
+                    Object {
+                      "match": Object {
+                        "isVoid": false,
+                        "nodes": Array [
+                          Object {
+                            "match": Object {
+                              "object": "text",
+                            },
+                          },
+                        ],
+                        "object": "inline",
+                      },
+                      "text": /\\[\\\\w\\\\W\\]\\+/,
+                    },
+                    Object {
+                      "first": Array [
+                        Object {
+                          "object": "block",
+                        },
+                        Object {
+                          "object": "text",
+                        },
+                      ],
+                      "last": Array [
+                        Object {
+                          "object": "block",
+                        },
+                        Object {
+                          "object": "text",
+                        },
+                      ],
+                      "match": Object {
+                        "object": "block",
+                      },
+                      "normalize": [Function],
+                    },
+                    Object {
+                      "first": Array [
+                        Object {
+                          "object": "block",
+                        },
+                        Object {
+                          "object": "text",
+                        },
+                      ],
+                      "last": Array [
+                        Object {
+                          "object": "block",
+                        },
+                        Object {
+                          "object": "text",
+                        },
+                      ],
+                      "match": Object {
+                        "object": "inline",
+                      },
+                      "next": Array [
+                        Object {
+                          "object": "block",
+                        },
+                        Object {
+                          "object": "text",
+                        },
+                      ],
+                      "normalize": [Function],
+                      "previous": Array [
+                        Object {
+                          "object": "block",
+                        },
+                        Object {
+                          "object": "text",
+                        },
+                      ],
+                    },
+                    Object {
+                      "match": Object {
+                        "object": "text",
+                      },
+                      "next": Array [
+                        Object {
+                          "object": "block",
+                        },
+                        Object {
+                          "object": "inline",
+                        },
+                      ],
+                      "normalize": [Function],
+                    },
+                  ],
                 },
                 "selection": Immutable.Record {
                   "anchorKey": "3",
@@ -1019,79 +1442,75 @@ ShallowWrapper {
                 "docket": Object {
                   "isVoid": true,
                 },
+                "heading": Object {
+                  "match": Object {
+                    "object": "text",
+                  },
+                },
                 "image": Object {
                   "data": Object {
                     "src": [Function],
                   },
                   "isVoid": true,
-                  "normalize": [Function],
-                  "parent": Array [
-                    Object {
-                      "object": "document",
-                    },
-                  ],
                 },
                 "link": Object {
-                  "nodes": Array [
-                    Object {
-                      "objects": Array [
-                        "text",
-                      ],
-                    },
-                  ],
-                },
-              },
-              "document": Object {
-                "last": Object {
-                  "types": Array [
-                    "paragraph",
-                    "quote",
-                  ],
-                },
-                "nodes": Array [
-                  Object {
-                    "types": Array [
-                      "paragraph",
-                      "heading",
-                      "divider",
-                      "quote",
-                      "image",
-                      "docket",
-                      "link",
-                    ],
+                  "match": Object {
+                    "object": "text",
                   },
-                ],
-                "normalize": [Function],
-              },
-              "inlines": Object {
-                "heading": Object {
-                  "nodes": Array [
-                    Object {
-                      "types": Array [
-                        "text",
-                      ],
-                    },
-                  ],
                 },
                 "paragraph": Object {
-                  "nodes": Array [
+                  "match": Array [
                     Object {
-                      "types": Array [
-                        "text",
-                        "link",
-                      ],
+                      "object": "text",
+                    },
+                    Object {
+                      "object": "link",
                     },
                   ],
                 },
                 "quote": Object {
-                  "nodes": Array [
-                    Object {
-                      "types": Array [
-                        "text",
-                      ],
-                    },
-                  ],
+                  "match": Object {
+                    "object": "text",
+                  },
                 },
+              },
+              "document": Object {
+                "last": Array [
+                  Object {
+                    "type": "quote",
+                  },
+                  Object {
+                    "type": "paragraph",
+                  },
+                ],
+                "nodes": Array [
+                  Object {
+                    "match": Array [
+                      Object {
+                        "type": "paragraph",
+                      },
+                      Object {
+                        "type": "heading",
+                      },
+                      Object {
+                        "type": "divider",
+                      },
+                      Object {
+                        "type": "quote",
+                      },
+                      Object {
+                        "type": "image",
+                      },
+                      Object {
+                        "type": "docket",
+                      },
+                      Object {
+                        "type": "link",
+                      },
+                    ],
+                  },
+                ],
+                "normalize": [Function],
               },
             },
             "spellCheck": true,
@@ -1134,40 +1553,185 @@ ShallowWrapper {
                 "stack": Immutable.Record {
                   "plugins": Array [
                     Object {
-                      "validateNode": [Function],
-                    },
-                    Object {
-                      "validateNode": [Function],
-                    },
-                    Object {
-                      "validateNode": [Function],
-                    },
-                    Object {
-                      "validateNode": [Function],
-                    },
-                    Object {
-                      "validateNode": [Function],
-                    },
-                    Object {
-                      "validateNode": [Function],
-                    },
-                    Object {
-                      "validateNode": [Function],
-                    },
-                    Object {
-                      "validateNode": [Function],
-                    },
-                    Object {
                       "schema": Object {},
                     },
                   ],
                 },
-                "document": Object {
-                  "data": Object {},
-                  "nodes": null,
-                },
-                "blocks": Object {},
-                "inlines": Object {},
+                "rules": Array [
+                  Object {
+                    "match": Object {
+                      "object": "document",
+                    },
+                    "nodes": Array [
+                      Object {
+                        "match": Object {
+                          "object": "block",
+                        },
+                      },
+                    ],
+                  },
+                  Object {
+                    "match": Object {
+                      "first": Object {
+                        "object": "block",
+                      },
+                      "object": "block",
+                    },
+                    "nodes": Array [
+                      Object {
+                        "match": Object {
+                          "object": "block",
+                        },
+                      },
+                    ],
+                  },
+                  Object {
+                    "match": Object {
+                      "first": Array [
+                        Object {
+                          "object": "inline",
+                        },
+                        Object {
+                          "object": "text",
+                        },
+                      ],
+                      "object": "block",
+                    },
+                    "nodes": Array [
+                      Object {
+                        "match": Array [
+                          Object {
+                            "object": "inline",
+                          },
+                          Object {
+                            "object": "text",
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                  Object {
+                    "match": Object {
+                      "object": "inline",
+                    },
+                    "nodes": Array [
+                      Object {
+                        "match": Array [
+                          Object {
+                            "object": "inline",
+                          },
+                          Object {
+                            "object": "text",
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                  Object {
+                    "match": Array [
+                      Object {
+                        "object": "block",
+                      },
+                      Object {
+                        "object": "inline",
+                      },
+                    ],
+                    "nodes": Array [
+                      Object {
+                        "min": 1,
+                      },
+                    ],
+                    "normalize": [Function],
+                  },
+                  Object {
+                    "match": Object {
+                      "isVoid": false,
+                      "nodes": Array [
+                        Object {
+                          "match": Object {
+                            "object": "text",
+                          },
+                        },
+                      ],
+                      "object": "inline",
+                    },
+                    "text": /\\[\\\\w\\\\W\\]\\+/,
+                  },
+                  Object {
+                    "first": Array [
+                      Object {
+                        "object": "block",
+                      },
+                      Object {
+                        "object": "text",
+                      },
+                    ],
+                    "last": Array [
+                      Object {
+                        "object": "block",
+                      },
+                      Object {
+                        "object": "text",
+                      },
+                    ],
+                    "match": Object {
+                      "object": "block",
+                    },
+                    "normalize": [Function],
+                  },
+                  Object {
+                    "first": Array [
+                      Object {
+                        "object": "block",
+                      },
+                      Object {
+                        "object": "text",
+                      },
+                    ],
+                    "last": Array [
+                      Object {
+                        "object": "block",
+                      },
+                      Object {
+                        "object": "text",
+                      },
+                    ],
+                    "match": Object {
+                      "object": "inline",
+                    },
+                    "next": Array [
+                      Object {
+                        "object": "block",
+                      },
+                      Object {
+                        "object": "text",
+                      },
+                    ],
+                    "normalize": [Function],
+                    "previous": Array [
+                      Object {
+                        "object": "block",
+                      },
+                      Object {
+                        "object": "text",
+                      },
+                    ],
+                  },
+                  Object {
+                    "match": Object {
+                      "object": "text",
+                    },
+                    "next": Array [
+                      Object {
+                        "object": "block",
+                      },
+                      Object {
+                        "object": "inline",
+                      },
+                    ],
+                    "normalize": [Function],
+                  },
+                ],
               },
               "selection": Immutable.Record {
                 "anchorKey": "3",
@@ -1258,40 +1822,185 @@ ShallowWrapper {
             "stack": Immutable.Record {
               "plugins": Array [
                 Object {
-                  "validateNode": [Function],
-                },
-                Object {
-                  "validateNode": [Function],
-                },
-                Object {
-                  "validateNode": [Function],
-                },
-                Object {
-                  "validateNode": [Function],
-                },
-                Object {
-                  "validateNode": [Function],
-                },
-                Object {
-                  "validateNode": [Function],
-                },
-                Object {
-                  "validateNode": [Function],
-                },
-                Object {
-                  "validateNode": [Function],
-                },
-                Object {
                   "schema": Object {},
                 },
               ],
             },
-            "document": Object {
-              "data": Object {},
-              "nodes": null,
-            },
-            "blocks": Object {},
-            "inlines": Object {},
+            "rules": Array [
+              Object {
+                "match": Object {
+                  "object": "document",
+                },
+                "nodes": Array [
+                  Object {
+                    "match": Object {
+                      "object": "block",
+                    },
+                  },
+                ],
+              },
+              Object {
+                "match": Object {
+                  "first": Object {
+                    "object": "block",
+                  },
+                  "object": "block",
+                },
+                "nodes": Array [
+                  Object {
+                    "match": Object {
+                      "object": "block",
+                    },
+                  },
+                ],
+              },
+              Object {
+                "match": Object {
+                  "first": Array [
+                    Object {
+                      "object": "inline",
+                    },
+                    Object {
+                      "object": "text",
+                    },
+                  ],
+                  "object": "block",
+                },
+                "nodes": Array [
+                  Object {
+                    "match": Array [
+                      Object {
+                        "object": "inline",
+                      },
+                      Object {
+                        "object": "text",
+                      },
+                    ],
+                  },
+                ],
+              },
+              Object {
+                "match": Object {
+                  "object": "inline",
+                },
+                "nodes": Array [
+                  Object {
+                    "match": Array [
+                      Object {
+                        "object": "inline",
+                      },
+                      Object {
+                        "object": "text",
+                      },
+                    ],
+                  },
+                ],
+              },
+              Object {
+                "match": Array [
+                  Object {
+                    "object": "block",
+                  },
+                  Object {
+                    "object": "inline",
+                  },
+                ],
+                "nodes": Array [
+                  Object {
+                    "min": 1,
+                  },
+                ],
+                "normalize": [Function],
+              },
+              Object {
+                "match": Object {
+                  "isVoid": false,
+                  "nodes": Array [
+                    Object {
+                      "match": Object {
+                        "object": "text",
+                      },
+                    },
+                  ],
+                  "object": "inline",
+                },
+                "text": /\\[\\\\w\\\\W\\]\\+/,
+              },
+              Object {
+                "first": Array [
+                  Object {
+                    "object": "block",
+                  },
+                  Object {
+                    "object": "text",
+                  },
+                ],
+                "last": Array [
+                  Object {
+                    "object": "block",
+                  },
+                  Object {
+                    "object": "text",
+                  },
+                ],
+                "match": Object {
+                  "object": "block",
+                },
+                "normalize": [Function],
+              },
+              Object {
+                "first": Array [
+                  Object {
+                    "object": "block",
+                  },
+                  Object {
+                    "object": "text",
+                  },
+                ],
+                "last": Array [
+                  Object {
+                    "object": "block",
+                  },
+                  Object {
+                    "object": "text",
+                  },
+                ],
+                "match": Object {
+                  "object": "inline",
+                },
+                "next": Array [
+                  Object {
+                    "object": "block",
+                  },
+                  Object {
+                    "object": "text",
+                  },
+                ],
+                "normalize": [Function],
+                "previous": Array [
+                  Object {
+                    "object": "block",
+                  },
+                  Object {
+                    "object": "text",
+                  },
+                ],
+              },
+              Object {
+                "match": Object {
+                  "object": "text",
+                },
+                "next": Array [
+                  Object {
+                    "object": "block",
+                  },
+                  Object {
+                    "object": "inline",
+                  },
+                ],
+                "normalize": [Function],
+              },
+            ],
           },
           "selection": Immutable.Record {
             "anchorKey": "3",

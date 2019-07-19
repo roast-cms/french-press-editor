@@ -11,32 +11,32 @@ export const SCHEMA = {
   document: {
     nodes: [
       {
-        types: [
-          "paragraph",
-          "heading",
-          "divider",
-          "quote",
-          "image",
-          "docket",
-          "link",
+        match: [
+          {type: "paragraph"},
+          {type: "heading"},
+          {type: "divider"},
+          {type: "quote"},
+          {type: "image"},
+          {type: "docket"},
+          {type: "link"},
         ],
       },
     ],
-    last: {types: ["paragraph", "quote"]},
-    normalize: (change, reason, {node}) => {
-      switch (reason) {
-        case "last_child_type_invalid": {
-          const paragraph = Block.create("paragraph")
-          return change.insertNodeByKey(node.key, node.nodes.size, paragraph)
-        }
-        default:
-          return null
-      }
+    last: [{type: "quote"}, {type: "paragraph"}],
+    normalize: (change, error) => {
+      if (error.code === "last_child_type_invalid") {
+        const paragraph = Block.create("paragraph")
+        return change.insertNodeByKey(
+          error.node.key,
+          error.node.nodes.size,
+          paragraph
+        )
+      } else return null
     },
   },
   blocks: {
     link: {
-      nodes: [{objects: ["text"]}],
+      match: {object: "text"},
     },
     divider: {
       isVoid: true,
@@ -46,26 +46,18 @@ export const SCHEMA = {
       data: {
         src: value => value,
       },
-      parent: [{object: "document"}],
-      normalize: (change, {code, node}) => {
-        if (code === "parent_object_invalid") {
-          return change.unwrapBlockByKey(node.key)
-        } else return null
-      },
     },
     docket: {
       isVoid: true,
     },
-  },
-  inlines: {
     quote: {
-      nodes: [{types: ["text"]}],
+      match: {object: "text"},
     },
     paragraph: {
-      nodes: [{types: ["text", "link"]}],
+      match: [{object: "text"}, {object: "link"}],
     },
     heading: {
-      nodes: [{types: ["text"]}],
+      match: {object: "text"},
     },
   },
 }
