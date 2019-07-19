@@ -4,6 +4,8 @@
 
 > ☕ An offline-first rich text editor component.
 
+### Note: the docs are outdated. See example files for usage.
+
 <p align="center"><img src="https://raw.githubusercontent.com/roast-cms/french-press-editor/develop/graphics/demo-1.gif" width="600" alt="getting started with french-press-editor" /></p>
 
 - **Offline-ready:** store content and images (!) in-browser.
@@ -102,11 +104,11 @@ The above, however, won't let you add add and store images within your content. 
 
 ```javascript
 // ...
-import { FrenchPress } from "@roast-cms/french-press-editor"
-import { Wrapper } from "@roast-cms/french-press-editor/dist/components/Wrapper"
-import { Picture } from "@roast-cms/french-press-editor/dist/containers/Picture"
+import {FrenchPress} from "@roast-cms/french-press-editor"
+import {Wrapper} from "@roast-cms/french-press-editor/dist/components/Wrapper"
+import {Picture} from "@roast-cms/french-press-editor/dist/containers/Picture"
 // ...
-<FrenchPress components={{Picture}} />
+;<FrenchPress components={{Picture}} />
 // ...
 ```
 
@@ -117,9 +119,9 @@ import { Picture } from "@roast-cms/french-press-editor/dist/containers/Picture"
 `<Reader />` component can render value JSON into react components without having to download the editor, saving a lot of bandwidth and parsing resources for your users.
 
 ```javascript
-import Reader from "@roast-cms/french-press-editor/dist/components/vignettes/Reader";
+import Reader from "@roast-cms/french-press-editor/dist/components/vignettes/Reader"
 
-<Reader
+;<Reader
   //
   // optional: domain which will parse all your links
   // using @roast-cms/react-link-filter
