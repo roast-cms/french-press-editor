@@ -29,7 +29,7 @@
     "file-loader": "^2.0.0",
     "identity-obj-proxy": "^3.0.0",
     "immutable": "^3.8.2",
-    "jest": "^23.6.0",
+    "jest": "^24.9.0",
     "jest-localstorage-mock": "^2.2.0",
     "jest-styled-components": "^7.0.0",
     "jest-webpack-resolver": "^0.3.0",
@@ -96,7 +96,9 @@
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|less|scss|sass)$": "identity-obj-proxy"
     },
-    "setupTestFrameworkScriptFile": "<rootDir>/setupTests.js",
+    "setupFilesAfterEnv": [
+      "<rootDir>/setupTests.js"
+    ],
     "coveragePathIgnorePatterns": [
       "/node_modules/"
     ],
