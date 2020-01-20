@@ -1,6 +1,6 @@
 import "localforage-getitems"
 
-import {Editor} from "slate-react"
+import {Editor} from "slate-react-legacy"
 import {Value} from "slate"
 import React from "react"
 import getOffsets from "positions"

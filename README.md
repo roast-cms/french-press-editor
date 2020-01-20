@@ -6,7 +6,7 @@
 
 ### Note: the docs are outdated. See example files for usage.
 
-<p align="center"><img src="https://raw.githubusercontent.com/roast-cms/french-press-editor/develop/graphics/demo-1.gif" width="600" alt="getting started with french-press-editor" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/roast-cms/french-press-editor/master/graphics/demo-1.gif" width="600" alt="getting started with french-press-editor" /></p>
 
 - **Offline-ready:** store content and images (!) in-browser.
 - **Much better than ContentEditable:** don't make your users and developers suffer!
@@ -20,7 +20,7 @@
 
 ---
 
-<p align="center"><img src="https://raw.githubusercontent.com/roast-cms/french-press-editor/develop/graphics/demo-2.gif" width="600" alt="adding images" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/roast-cms/french-press-editor/master/graphics/demo-2.gif" width="600" alt="adding images" /></p>
 
 ## Installation:
 
@@ -112,7 +112,7 @@ import {Picture} from "@roast-cms/french-press-editor/dist/containers/Picture"
 // ...
 ```
 
-<p align="center"><img src="https://raw.githubusercontent.com/roast-cms/french-press-editor/develop/graphics/demo-3.gif" width="600" alt="theming the controls" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/roast-cms/french-press-editor/master/graphics/demo-3.gif" width="600" alt="theming the controls" /></p>
 
 ## Reader
 
@@ -120,7 +120,6 @@ import {Picture} from "@roast-cms/french-press-editor/dist/containers/Picture"
 
 ```javascript
 import Reader from "@roast-cms/french-press-editor/dist/components/vignettes/Reader"
-
 ;<Reader
   //
   // optional: domain which will parse all your links
@@ -158,7 +157,7 @@ To see if this tool is right for you, please have a look through the list of spe
 - Built to make it easy for you to create an experience that will mirror the final published article for your users, so that they don't have to click <btn>Preview</btn> button every time.
 - `french-press-editor` is a ready-made, opinionated package, yet there is plenty that you can customize, far beyond CSS.
 
-<p align="center"><img src="https://raw.githubusercontent.com/roast-cms/french-press-editor/develop/graphics/demo-5.png?raw=true" width="400" alt="mobile hover menu" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/roast-cms/french-press-editor/master/graphics/demo-5.png?raw=true" width="400" alt="mobile hover menu" /></p>
 
 #### Built-in content block types.
 
@@ -220,4 +219,4 @@ If you have a feature request, bug report or a question, please submit an issue.
 
 **Every folder** in this repo has a `README.md` file to help you along.
 
-<p align="center"><img src="https://raw.githubusercontent.com/roast-cms/french-press-editor/develop/graphics/logo.gif" width="125" alt="animated logo" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/roast-cms/french-press-editor/master/graphics/logo.gif" width="125" alt="animated logo" /></p>
