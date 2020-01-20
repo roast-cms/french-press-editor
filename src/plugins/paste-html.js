@@ -1,4 +1,4 @@
-import {getEventTransfer} from "slate-react"
+import {getEventTransfer} from "slate-react-legacy"
 
 /**
  * MarkHotkey - A plugin that preserves allowed HTML structure when user pastes HTML content, and converts the rest into either plain text.

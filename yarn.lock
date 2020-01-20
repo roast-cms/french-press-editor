@@ -2154,7 +2154,7 @@ combined-stream@^1.0.6, combined-stream@~1.0.6:
   dependencies:
     delayed-stream "~1.0.0"
 
-command-line-args@^5.0.0:
+command-line-args@^5.0.0, command-line-args@^5.0.2:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/command-line-args/-/command-line-args-5.1.1.tgz#88e793e5bb3ceb30754a86863f0401ac92fd369a"
   integrity sha512-hL/eG8lrll1Qy1ezvkant+trihbGnaKaeEjj6Scyr3DN+RC7iQ5Rz84IeLERfAWDGo0HBSNAakczwgCilDXnWg==
@@ -2927,7 +2927,7 @@ enhanced-resolve@4.1.0:
     memory-fs "^0.4.0"
     tapable "^1.0.0"
 
-enhanced-resolve@^4.1.0:
+enhanced-resolve@^4.0.0, enhanced-resolve@^4.1.0:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/enhanced-resolve/-/enhanced-resolve-4.1.1.tgz#2937e2b8066cd0fe7ce0990a98f0d71a35189f66"
   integrity sha512-98p2zE+rL7/g/DzMHMTF4zZlCgeVdJ7yr6xzEpJRYwFYrGi9ANdn5DnJURg6RpBkyk60XYDnWIv51VfIhfNGuA==
@@ -5237,6 +5237,16 @@ jest-watcher@^23.4.0:
     ansi-escapes "^3.0.0"
     chalk "^2.0.1"
     string-length "^2.0.0"
+
+jest-webpack-resolver@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/jest-webpack-resolver/-/jest-webpack-resolver-0.3.0.tgz#d1c497f8f849d52f28ab76accaa52419ef600bb9"
+  integrity sha512-VHD4ctq3KQ6y0YpUQA8Ae6IQgsDAB87BwK2EDPi5jcUMlZkPZiwu5MsGFo0uOLDcRhSPwXbEVAvne5Wyr3z4og==
+  dependencies:
+    chalk "^2.0.1"
+    command-line-args "^5.0.2"
+    enhanced-resolve "^4.0.0"
+    pkg-dir "^2.0.0"
 
 jest-worker@^23.2.0:
   version "23.2.0"
@@ -7922,10 +7932,10 @@ slate-prop-types@^0.4.35:
   resolved "https://registry.yarnpkg.com/slate-prop-types/-/slate-prop-types-0.4.67.tgz#c6aa74195466546a44fcb85d1c7b15fefe36ce6b"
   integrity sha512-FmdwitAw1Y69JHm326dfwP6Zd6R99jz1Im8jvKcnG2hytk72I1vIv6ct2CkNGwc3sg90+OIO/Rf18frYxxoTzw==
 
-slate-react@0.13.0:
-  version "0.13.0"
-  resolved "https://registry.yarnpkg.com/slate-react/-/slate-react-0.13.0.tgz#4af0f8bf008a7e1c40adc94c97fe3d729c651772"
-  integrity sha1-SvD4vwCKfhxArclMl/49cpxlF3I=
+slate-react-legacy@^0.13.0:
+  version "0.13.1"
+  resolved "https://registry.yarnpkg.com/slate-react-legacy/-/slate-react-legacy-0.13.1.tgz#20eab9c0388b0b2131a24e48c1a5c53524f47a86"
+  integrity sha512-uObI1F2KYJp7bZC0lpoxqv06cZdUcCqumm83r2nGHPCFwFzFsyb6gVtSGl19ttAp9Ewxu0EyBSoqJwqYNLx6Yg==
   dependencies:
     debug "^3.1.0"
     get-window "^1.1.1"
