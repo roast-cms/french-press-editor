@@ -1,4 +1,4 @@
-import AutoReplace from "slate-auto-replace"
+import AutoReplace from "slate-auto-replace-legacy"
 import When from "slate-when"
 
 /**

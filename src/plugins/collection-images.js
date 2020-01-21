@@ -1,4 +1,4 @@
-import InsertImages from "slate-drop-or-paste-images"
+import InsertImages from "slate-drop-or-paste-images-legacy"
 import localForage from "localforage"
 import uuidv1 from "uuid/v1"
 

@@ -1,4 +1,4 @@
-import AutoReplace from "slate-auto-replace"
+import AutoReplace from "slate-auto-replace-legacy"
 
 /**
  * An array of plugins that makes quotes smart, turns dashes into long dashes and triple dots into an ellipsis.

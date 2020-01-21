@@ -1,5 +1,3 @@
-const path = require("path")
-
 module.exports = {
   entry: "./examples/index.js",
   output: {
@@ -36,12 +34,6 @@ module.exports = {
   },
   resolve: {
     extensions: ["*", ".js"],
-    alias: {
-      "slate-react": path.join(
-        __dirname,
-        "/node_modules/slate-react-legacy/dist/slate-react.min.js"
-      ),
-    },
   },
   devServer: {
     disableHostCheck: true,

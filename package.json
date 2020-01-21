@@ -1,6 +1,6 @@
 {
   "name": "@roast-cms/french-press-editor",
-  "version": "12.4.5",
+  "version": "13.0.0",
   "description": "An offline-first rich text editor component.",
   "main": "dist/index.js",
   "repository": "https://github.com/roast-cms/french-press-editor.git",
@@ -32,7 +32,6 @@
     "jest": "^24.9.0",
     "jest-localstorage-mock": "^2.2.0",
     "jest-styled-components": "^7.0.0",
-    "jest-webpack-resolver": "^0.3.0",
     "jsdoc": "^3.5.5",
     "jsdoc-to-markdown": "^4.0.1",
     "prettier": "^1.14.2",
@@ -73,8 +72,8 @@
     "lodash": "^4.17.4",
     "positions": "^1.6.1",
     "slate": "0.36.2",
-    "slate-auto-replace": "0.9.0",
-    "slate-drop-or-paste-images": "0.8.1",
+    "slate-auto-replace-legacy": "^0.9.0",
+    "slate-drop-or-paste-images-legacy": "^0.8.1",
     "slate-html-serializer": "0.6.0",
     "slate-react-legacy": "^0.13.0",
     "slate-when": "0.1.0",
@@ -104,7 +103,6 @@
     ],
     "modulePathIgnorePatterns": [
       "/dist/"
-    ],
-    "resolver": "jest-webpack-resolver"
+    ]
   }
 }

@@ -1,4 +1,4 @@
-import AutoReplace from "slate-auto-replace"
+import AutoReplace from "slate-auto-replace-legacy"
 
 /**
  * A plugin function that creates divider line via markup command (`***` on new line + Enter).
