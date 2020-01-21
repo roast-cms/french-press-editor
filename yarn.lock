@@ -2267,16 +2267,12 @@ command-line-usage@^4.1.0:
     table-layout "^0.4.2"
     typical "^2.6.1"
 
-<<<<<<< HEAD
-commander@^2.18.0, commander@^2.19.0, commander@^2.20.0, commander@~2.20.3:
-=======
 commander@^2.18.0:
   version "2.20.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.0.tgz#d58bb2b5c1ee8f87b0d340027e9e94e222c5a422"
   integrity sha512-7j2y+40w61zy6YC2iRNpUe/NwhNyoXrYpHMrSunaMG64nRnaf96zO/KMQR4OyN/UnE5KLyEBnKHd4aG3rskjpQ==
 
 commander@^2.19.0, commander@^2.20.0, commander@~2.20.3:
->>>>>>> 4bdf4b980bdb2c75abe145aea237f835cad306f3
   version "2.20.3"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
   integrity sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
@@ -7429,9 +7425,9 @@ slash@^2.0.0:
   integrity sha512-ZYKh3Wh2z1PpEXWr0MpSBZ0V6mZHAQfYevttO11c51CaWjGTaadiKZ+wVt1PbMlDV5qhMFslpZCemhwOK7C89A==
 
 slate-auto-replace-legacy@^0.9.0:
-  version "0.9.3"
-  resolved "https://registry.yarnpkg.com/slate-auto-replace-legacy/-/slate-auto-replace-legacy-0.9.3.tgz#ba4bbd6510fde16f14c417bc87d1c427a143025d"
-  integrity sha512-VIZ9rzmbWRcKxgniO6GEufMR5oF8XOCHas3gBhC28j4R77//QF+HivsM400iHcfKgSMe0y1WlNByIY20UHtbgQ==
+  version "0.9.4"
+  resolved "https://registry.yarnpkg.com/slate-auto-replace-legacy/-/slate-auto-replace-legacy-0.9.4.tgz#372054febfe5283889db9da5995f63140c0bde07"
+  integrity sha512-/Lv0J2SksWd7WtE3inBrWr+68+R4gMW0OcUB3MblxLY7CBGD4xq2lR9iYTIjtsUsxrHxft9FdqPuYXeg/UfDcw==
   dependencies:
     is-hotkey "^0.0.3"
     type-of "^2.0.1"
@@ -7456,9 +7452,9 @@ slate-dev-logger@^0.1.0, slate-dev-logger@^0.1.39, slate-dev-logger@^0.1.42, sla
   integrity sha512-GkcPMGzmPVm85AL+jaKnzhIA0UH9ktQDEIDM+FuQtz+TAPcpPCQiRAaZ6I2p2uD0Hq9bImhKSCtHIa0qRxiVGw==
 
 slate-drop-or-paste-images-legacy@^0.8.1:
-  version "0.8.5"
-  resolved "https://registry.yarnpkg.com/slate-drop-or-paste-images-legacy/-/slate-drop-or-paste-images-legacy-0.8.5.tgz#5469b27b1636a6d49bfed16f54eef3cf18f8850b"
-  integrity sha512-ErnwypTEQmwgrAEL+5+NREOe/Wpjxfc4as7upXkUIWkzp9XEqEGKBDhE9v6N1cYFXdBgO+tvOVncwHBQV9flSA==
+  version "0.8.6"
+  resolved "https://registry.yarnpkg.com/slate-drop-or-paste-images-legacy/-/slate-drop-or-paste-images-legacy-0.8.6.tgz#411a182a1215f41dc89aa23bf748ed9fc6b2ec11"
+  integrity sha512-FxlaNHGlpD7vGGmxnB2onQ5FZEvdn0rYKPZstHTPlVfQ9j2ONAr7QdrwSQeu9FDJfOKGm4NyKop+gnjLHNEBJg==
   dependencies:
     es6-promise "^4.0.5"
     image-to-data-uri "^1.0.0"
