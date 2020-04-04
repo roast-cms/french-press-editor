@@ -110,7 +110,7 @@ export const EXAMPLE_VALUE = {
         isVoid: true,
         data: {
           src:
-            "https://raw.githubusercontent.com/roast-cms/french-press-editor/develop/graphics/logo.gif",
+            "https://raw.githubusercontent.com/roast-cms/french-press-editor/master/graphics/logo.gif",
         },
         nodes: [
           {object: "text", leaves: [{object: "leaf", text: "", marks: []}]},
