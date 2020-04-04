@@ -60,7 +60,18 @@ export const RULES_SERIALIZE = [
           )
         }
         case "heading": {
-          return addKey(<h3>{children}</h3>)
+          // generate id based on header text or a random string
+          const id =
+            children[0] && children[0][0]
+              ? children[0][0]?.props?.children
+                  .toLowerCase()
+                  .replace(/[ ]+/g, "-")
+                  .replace(/[^a-z0-9\-]+/gi, "")
+              : Math.random()
+                  .toString(36)
+                  .substring(7)
+
+          return addKey(<h3 id={id}>{children}</h3>)
         }
         case "divider": {
           return addKey(<hr />)
