@@ -1,5 +1,7 @@
 import React from "react"
+import lscache from 'lscache';
 
+import {EXAMPLE_VALUE} from "./constants"
 import {
   //
   // editor compoent itself
@@ -8,7 +10,6 @@ import {
   //
 } from "../src/index"
 import {TestPlugin} from "./plugin"
-import {EXAMPLE_VALUE} from "./constants"
 import //
 // picture component that you will need to pass as a prop in order to
 // render images within your documents; you can create your own Picture

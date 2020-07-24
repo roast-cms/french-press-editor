@@ -27,7 +27,7 @@ export const loadTextContent = () => {
  * @param {Object} json
  */
 export const storeContentState = json => {
-  lscache.set("composer-content-state", contentState)
+  lscache.set("composer-content-state", json)
 }
 
 /**
