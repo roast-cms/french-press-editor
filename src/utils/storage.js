@@ -1,3 +1,4 @@
+import lscache from "lscache"
 import throttle from "lodash/throttle"
 
 import {DEFAULT_EDITOR_STATE} from "../constants/defaults"
@@ -7,8 +8,7 @@ import {DEFAULT_EDITOR_STATE} from "../constants/defaults"
  * @module loadContent
  */
 export const loadContent = () => {
-  let local = localStorage.getItem("composer-content-state")
-  return local ? JSON.parse(local) : DEFAULT_EDITOR_STATE
+  return lscache.get("composer-content-state") || DEFAULT_EDITOR_STATE
 }
 
 /**
@@ -16,7 +16,7 @@ export const loadContent = () => {
  * @module loadTextContent
  */
 export const loadTextContent = () => {
-  return localStorage.getItem("composer-content-text") || ""
+  return lscache.get("composer-content-text") || ""
 }
 //
 // functions that store content onto localStorage
@@ -27,8 +27,7 @@ export const loadTextContent = () => {
  * @param {Object} json
  */
 export const storeContentState = json => {
-  const contentState = JSON.stringify(json)
-  localStorage.setItem("composer-content-state", contentState)
+  lscache.set("composer-content-state", json)
 }
 
 /**
@@ -41,7 +40,7 @@ export const storeContentState = json => {
  */
 export const saveContent = throttle((document, state, callbackStatus) => {
   storeContentState(state.toJSON())
-  localStorage.setItem("composer-content-text", state.document.text)
+  lscache.set("composer-content-text", state.document.text)
   callbackStatus && callbackStatus("ok")
 }, 3000)
 

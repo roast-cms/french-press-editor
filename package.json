@@ -1,6 +1,6 @@
 {
   "name": "@roast-cms/french-press-editor",
-  "version": "13.2.1",
+  "version": "14.0.0",
   "description": "An offline-first rich text editor component.",
   "main": "dist/index.js",
   "repository": "https://github.com/roast-cms/french-press-editor.git",
@@ -70,6 +70,7 @@
     "localforage": "^1.7.1",
     "localforage-getitems": "^1.4.1",
     "lodash": "^4.17.4",
+    "lscache": "^1.3.0",
     "positions": "^1.6.1",
     "slate": "0.36.2",
     "slate-auto-replace-legacy": "^0.9.0",

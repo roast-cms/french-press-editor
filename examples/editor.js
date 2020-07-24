@@ -1,5 +1,7 @@
 import React from "react"
+import lscache from 'lscache';
 
+import {EXAMPLE_VALUE} from "./constants"
 import {
   //
   // editor compoent itself
@@ -8,7 +10,6 @@ import {
   //
 } from "../src/index"
 import {TestPlugin} from "./plugin"
-import {EXAMPLE_VALUE} from "./constants"
 import //
 // picture component that you will need to pass as a prop in order to
 // render images within your documents; you can create your own Picture
@@ -66,11 +67,11 @@ export class Editor extends React.PureComponent {
           // in localStorage. In that case, an EXAMPLE_VALUE content is to be
           // loaded. However, once it's modified, the saved version will be
           // loaded every time. Note that
-          // localStorage.getItem("composer-content-state") is never NULL, even
+          // lscache.get("composer-content-state") is never NULL, even
           // for empty documents after first auto save, since even an empty
           // document has a structure that's stored in the LS.
           value={
-            localStorage.getItem("composer-content-state")
+            lscache.get("composer-content-state")
               ? null
               : EXAMPLE_VALUE
           }
