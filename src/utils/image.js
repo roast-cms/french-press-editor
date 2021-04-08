@@ -1,6 +1,6 @@
 import isDataString from "valid-data-url"
 import localForage from "localforage"
-import uuidv1 from "uuid/v1"
+import {v1 as uuidv1} from "uuid"
 
 import {PICTURE_ACCEPTED_UPLOAD_MIME} from "../constants/defaults"
 

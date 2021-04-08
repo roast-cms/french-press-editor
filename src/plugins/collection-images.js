@@ -1,6 +1,6 @@
 import InsertImages from "slate-drop-or-paste-images-legacy"
 import localForage from "localforage"
-import uuidv1 from "uuid/v1"
+import {v1 as uuidv1} from "uuid"
 
 import {fileToBase64, forceImageRestrictions} from "../utils/image"
 
