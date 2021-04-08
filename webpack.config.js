@@ -9,10 +9,12 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: "babel-loader",
-        query: {
-          presets: ["@babel/preset-react", "@babel/preset-env"],
-          plugins: ["@babel/plugin-proposal-class-properties"],
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-react", "@babel/preset-env"],
+            plugins: ["@babel/plugin-proposal-class-properties"],
+          },
         },
       },
       {
@@ -21,19 +23,22 @@ module.exports = {
       },
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, //to support @font-face rule
-        loader: "url-loader",
-        query: {
-          limit: "10000",
-          name: "[name].[ext]",
-          outputPath: "fonts/",
-          //the fonts will be emmited to public/assets/fonts/ folder
-          //the fonts will be put in the DOM <style> tag as eg. @font-face{ src:url(assets/fonts/font.ttf); }
+        use: {
+          loader: "url-loader",
+          options: {
+            limit: "10000",
+            name: "[name].[ext]",
+            outputPath: "fonts/",
+            //the fonts will be emmited to public/assets/fonts/ folder
+            //the fonts will be put in the DOM <style> tag as eg. @font-face{ src:url(assets/fonts/font.ttf); }
+          },
         },
       },
     ],
   },
   resolve: {
     extensions: ["*", ".js"],
+    fallback: {path: require.resolve("path-browserify")},
   },
   devServer: {
     disableHostCheck: true,
