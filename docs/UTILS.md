@@ -1,6 +1,9 @@
 ## Modules
 
 <dl>
+<dt><a href="#module_focusEvents">focusEvents</a></dt>
+<dd><p>A collection of functions that call appropriate functions in response to user interactions.</p>
+</dd>
 <dt><a href="#module_addLink">addLink</a> ⇒ <code>Object</code></dt>
 <dd><p>Transforms an inline block by making it a link.</p>
 </dd>
@@ -34,9 +37,6 @@
 <dt><a href="#module_setDraftStatusHelper">setDraftStatusHelper</a> ⇒ <code>String</code></dt>
 <dd><p>Sets intermedia status between saves.</p>
 </dd>
-<dt><a href="#module_focusEvents">focusEvents</a></dt>
-<dd><p>A collection of functions that call appropriate functions in response to user interactions.</p>
-</dd>
 </dl>
 
 ## Functions
@@ -45,11 +45,43 @@
 <dt><a href="#fileToBase64">fileToBase64()</a> ⇒ <code>String</code></dt>
 <dd><p>Converts file to base64 string</p>
 </dd>
+<dt><a href="#base64ToBlob">base64ToBlob()</a> ⇒ <code>File</code></dt>
+<dd><p>Converts data-uri image to file/Blob
+Source: <a href="https://stackoverflow.com/questions/4998908/convert-data-uri-to-file-then-append-to-formdata">https://stackoverflow.com/questions/4998908/convert-data-uri-to-file-then-append-to-formdata</a></p>
+</dd>
 <dt><a href="#forceImageRestrictions">forceImageRestrictions(size, type, max)</a> ⇒ <code>Promise</code></dt>
 <dd><p>Enforces image size and filetype.</p>
 </dd>
+<dt><a href="#renderNode">renderNode(props)</a> ⇒ <code>Object</code></dt>
+<dd><p>Defines how all block-level nodes within the document are going to be rendered.</p>
+</dd>
+<dt><a href="#renderMark">renderMark()</a> ⇒ <code>Object</code></dt>
+<dd><p>Marks are inline &quot;rules&quot; for text that apply bold and italic formatting.</p>
+</dd>
 </dl>
 
+<a name="module_focusEvents"></a>
+
+## focusEvents
+A collection of functions that call appropriate functions in response to user interactions.
+
+
+* [focusEvents](#module_focusEvents)
+    * [~addEventListener()](#module_focusEvents..addEventListener) ⇒ <code>Event</code>
+    * [~addEventListener()](#module_focusEvents..addEventListener) ⇒ <code>Event</code>
+
+<a name="module_focusEvents..addEventListener"></a>
+
+### focusEvents~addEventListener() ⇒ <code>Event</code>
+Highlights potential drop target when the draggable element enters it.
+
+**Kind**: inner method of [<code>focusEvents</code>](#module_focusEvents)  
+<a name="module_focusEvents..addEventListener"></a>
+
+### focusEvents~addEventListener() ⇒ <code>Event</code>
+Blurs editor on Esc (remove highlights and guides for preview).
+
+**Kind**: inner method of [<code>focusEvents</code>](#module_focusEvents)  
 <a name="module_addLink"></a>
 
 ## addLink ⇒ <code>Object</code>
@@ -198,28 +230,6 @@ Processes Slate Value object, as well as plain text document, stores in localSto
 ## setDraftStatusHelper ⇒ <code>String</code>
 Sets intermedia status between saves.
 
-<a name="module_focusEvents"></a>
-
-## focusEvents
-A collection of functions that call appropriate functions in response to user interactions.
-
-
-* [focusEvents](#module_focusEvents)
-    * [~addEventListener()](#module_focusEvents..addEventListener) ⇒ <code>Event</code>
-    * [~addEventListener()](#module_focusEvents..addEventListener) ⇒ <code>Event</code>
-
-<a name="module_focusEvents..addEventListener"></a>
-
-### focusEvents~addEventListener() ⇒ <code>Event</code>
-Highlights potential drop target when the draggable element enters it.
-
-**Kind**: inner method of [<code>focusEvents</code>](#module_focusEvents)  
-<a name="module_focusEvents..addEventListener"></a>
-
-### focusEvents~addEventListener() ⇒ <code>Event</code>
-Blurs editor on Esc (remove highlights and guides for preview).
-
-**Kind**: inner method of [<code>focusEvents</code>](#module_focusEvents)  
 <a name="fileToBase64"></a>
 
 ## fileToBase64() ⇒ <code>String</code>
@@ -230,6 +240,18 @@ Converts file to base64 string
 | Type |
 | --- |
 | <code>File</code> | 
+
+<a name="base64ToBlob"></a>
+
+## base64ToBlob() ⇒ <code>File</code>
+Converts data-uri image to file/Blob
+Source: https://stackoverflow.com/questions/4998908/convert-data-uri-to-file-then-append-to-formdata
+
+**Kind**: global function  
+
+| Type |
+| --- |
+| <code>String</code> | 
 
 <a name="forceImageRestrictions"></a>
 
@@ -244,3 +266,20 @@ Enforces image size and filetype.
 | type | <code>Array</code> | Image memes accepted. |
 | max | <code>Int</code> | Cut-off image size in megabytes. |
 
+<a name="renderNode"></a>
+
+## renderNode(props) ⇒ <code>Object</code>
+Defines how all block-level nodes within the document are going to be rendered.
+
+**Kind**: global function  
+
+| Param |
+| --- |
+| props | 
+
+<a name="renderMark"></a>
+
+## renderMark() ⇒ <code>Object</code>
+Marks are inline "rules" for text that apply bold and italic formatting.
+
+**Kind**: global function  

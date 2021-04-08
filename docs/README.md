@@ -1,54 +1,3 @@
-## Modules
-
-<dl>
-<dt><a href="#module_FrenchPress">FrenchPress</a></dt>
-<dd><p>Editor component. Import this component and pass your props.</p>
-</dd>
-</dl>
-
-## Constants
-
-<dl>
-<dt><a href="#DEFAULT_EDITOR_STATE">DEFAULT_EDITOR_STATE</a></dt>
-<dd><p>Default document structure for Slate editor; an empty document.</p>
-</dd>
-<dt><a href="#BLOCK_TAGS">BLOCK_TAGS</a></dt>
-<dd><p>Dictionary list that transpiles HTML/DOM elements into Slate node types.</p>
-</dd>
-<dt><a href="#MARK_TAGS">MARK_TAGS</a></dt>
-<dd><p>Dictionary list that transpiles HTML/DOM elements into Slate mark types.</p>
-</dd>
-<dt><a href="#PLACEHOLDER_TEXT">PLACEHOLDER_TEXT</a></dt>
-<dd><p>Default placeholder text that appears in the Editor.</p>
-</dd>
-<dt><a href="#PICTURE_ACCEPTED_UPLOAD_MIME">PICTURE_ACCEPTED_UPLOAD_MIME</a></dt>
-<dd><p>Default accepted upload file types.</p>
-</dd>
-<dt><a href="#PICTURE_ACCEPTED_UPLOAD_MIME_HUMAN">PICTURE_ACCEPTED_UPLOAD_MIME_HUMAN</a></dt>
-<dd><p>Default accepted upload file types, written in human language.</p>
-</dd>
-<dt><a href="#rules">rules</a></dt>
-<dd><p>A set of rules that defines how to transpile HTML itno slate document nodes and marks (and back).</p>
-</dd>
-<dt><a href="#schema">schema</a></dt>
-<dd><p>A set of rules that transform document structure and keep it normalized to a defined format.</p>
-</dd>
-</dl>
-
-## Functions
-
-<dl>
-<dt><a href="#renderNode">renderNode(props)</a> ⇒ <code>Object</code></dt>
-<dd><p>Defines how all block-level nodes within the document are going to be rendered.</p>
-</dd>
-<dt><a href="#renderMark">renderMark()</a> ⇒ <code>Object</code></dt>
-<dd><p>Marks are inline &quot;rules&quot; for text that apply bold and italic formatting.</p>
-</dd>
-<dt><a href="#squish">squish()</a> ⇒ <code>String</code></dt>
-<dd><p>Flattens HTML into plain text.</p>
-</dd>
-</dl>
-
 <a name="module_FrenchPress"></a>
 
 ## FrenchPress
@@ -72,7 +21,6 @@ Editor component. Import this component and pass your props.
     * [~slatePlugins](#module_FrenchPress..slatePlugins)
     * [~unusedImageKeys](#module_FrenchPress..unusedImageKeys)
     * [~contentImageKeys](#module_FrenchPress..contentImageKeys)
-    * [~ImageButton](#module_FrenchPress..ImageButton)
     * [~ImageButtonLabel](#module_FrenchPress..ImageButtonLabel)
     * [~componentDidMount()](#module_FrenchPress..componentDidMount)
     * [~handleChange()](#module_FrenchPress..handleChange)
@@ -101,12 +49,6 @@ Creates a list of image keys in the database which aren't part of the content.
 
 ### FrenchPress~contentImageKeys
 Finds all used image keys in the document.
-
-**Kind**: inner constant of [<code>FrenchPress</code>](#module_FrenchPress)  
-<a name="module_FrenchPress..ImageButton"></a>
-
-### FrenchPress~ImageButton
-Image upload button (prop) can be defined or created by user.
 
 **Kind**: inner constant of [<code>FrenchPress</code>](#module_FrenchPress)  
 <a name="module_FrenchPress..ImageButtonLabel"></a>
@@ -205,81 +147,3 @@ Perform user commands from within the format menu
 | --- |
 | type | 
 
-<a name="DEFAULT_EDITOR_STATE"></a>
-
-## DEFAULT_EDITOR_STATE
-Default document structure for Slate editor; an empty document.
-
-**Kind**: global constant  
-<a name="BLOCK_TAGS"></a>
-
-## BLOCK_TAGS
-Dictionary list that transpiles HTML/DOM elements into Slate node types.
-
-**Kind**: global constant  
-<a name="MARK_TAGS"></a>
-
-## MARK_TAGS
-Dictionary list that transpiles HTML/DOM elements into Slate mark types.
-
-**Kind**: global constant  
-<a name="PLACEHOLDER_TEXT"></a>
-
-## PLACEHOLDER_TEXT
-Default placeholder text that appears in the Editor.
-
-**Kind**: global constant  
-<a name="PICTURE_ACCEPTED_UPLOAD_MIME"></a>
-
-## PICTURE_ACCEPTED_UPLOAD_MIME
-Default accepted upload file types.
-
-**Kind**: global constant  
-<a name="PICTURE_ACCEPTED_UPLOAD_MIME_HUMAN"></a>
-
-## PICTURE_ACCEPTED_UPLOAD_MIME_HUMAN
-Default accepted upload file types, written in human language.
-
-**Kind**: global constant  
-<a name="rules"></a>
-
-## rules
-A set of rules that defines how to transpile HTML itno slate document nodes and marks (and back).
-
-**Kind**: global constant  
-<a name="schema"></a>
-
-## schema
-A set of rules that transform document structure and keep it normalized to a defined format.
-
-**Kind**: global constant  
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| nodes | <code>Array</code> | Acceptable nodes within editor document. |
-| last | <code>Object</code> | Defines at least one empty paragraph block that follows a void block (such as picture); this is required to ensure that the user can continue adding content without additional effort below uploaded images (otherwise they will be forced to move the image up to free up a trailing paragraph space). |
-
-<a name="renderNode"></a>
-
-## renderNode(props) ⇒ <code>Object</code>
-Defines how all block-level nodes within the document are going to be rendered.
-
-**Kind**: global function  
-
-| Param |
-| --- |
-| props | 
-
-<a name="renderMark"></a>
-
-## renderMark() ⇒ <code>Object</code>
-Marks are inline "rules" for text that apply bold and italic formatting.
-
-**Kind**: global function  
-<a name="squish"></a>
-
-## squish() ⇒ <code>String</code>
-Flattens HTML into plain text.
-
-**Kind**: global function  
