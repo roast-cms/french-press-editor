@@ -26,7 +26,7 @@ module.exports = {
         use: {
           loader: "url-loader",
           options: {
-            limit: "10000",
+            limit: 10000,
             name: "[name].[ext]",
             outputPath: "fonts/",
             //the fonts will be emmited to public/assets/fonts/ folder
