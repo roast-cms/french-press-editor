@@ -8092,10 +8092,10 @@ slash@^3.0.0:
   resolved "https://registry.yarnpkg.com/slash/-/slash-3.0.0.tgz#6539be870c165adbd5240220dbe361f1bc4d4634"
   integrity sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==
 
-slate-auto-replace-legacy@^0.9.0:
-  version "0.9.5"
-  resolved "https://registry.yarnpkg.com/slate-auto-replace-legacy/-/slate-auto-replace-legacy-0.9.5.tgz#2afcbe29d01a7b34881d1b6b6a20b80850f378ad"
-  integrity sha512-cauRKlheHX4jjZjUJwH/0dmme5wVA5JyMEVZygMoghU+LNlJGW+bFttjLEDf9bGxOr0GbBUnB/lOf6O4i4dLJg==
+slate-auto-replace-legacy@^0.9.7:
+  version "0.9.7"
+  resolved "https://registry.yarnpkg.com/slate-auto-replace-legacy/-/slate-auto-replace-legacy-0.9.7.tgz#0290f7c7f2780d2366e537b5952da4ec181de9f9"
+  integrity sha512-qgqfJOwcKXFVX81j6fYzHAbYt8HBSKuYTrALyoS30L2aQKOOXZzGAcUrSJ2rQA5xHEcWYMJJJhKnpRefpqgHvw==
   dependencies:
     is-hotkey "^0.0.3"
     type-of "^2.0.1"
@@ -8119,10 +8119,10 @@ slate-dev-logger@^0.1.0, slate-dev-logger@^0.1.39, slate-dev-logger@^0.1.42, sla
   resolved "https://registry.yarnpkg.com/slate-dev-logger/-/slate-dev-logger-0.1.43.tgz#77f6ca7207fcbf453a5516f3aa8b19794d1d26dc"
   integrity sha512-GkcPMGzmPVm85AL+jaKnzhIA0UH9ktQDEIDM+FuQtz+TAPcpPCQiRAaZ6I2p2uD0Hq9bImhKSCtHIa0qRxiVGw==
 
-slate-drop-or-paste-images-legacy@^0.8.1:
-  version "0.8.7"
-  resolved "https://registry.yarnpkg.com/slate-drop-or-paste-images-legacy/-/slate-drop-or-paste-images-legacy-0.8.7.tgz#d14cd8b4b715e02e2f46cfd1dd599dbe90af234c"
-  integrity sha512-d3hJzXDz4xbBdgiGfjLB7O6Fl2sCf0shE+Hsg2WWvliVlNxIiIJDyJLT+S1X+lqE75AOadb3td4rsIWJuJwm1w==
+slate-drop-or-paste-images-legacy@^0.8.8:
+  version "0.8.8"
+  resolved "https://registry.yarnpkg.com/slate-drop-or-paste-images-legacy/-/slate-drop-or-paste-images-legacy-0.8.8.tgz#11b6612277d309080b0e057ed1ae398a1a1695e8"
+  integrity sha512-EE4olW2n67K2Spf//ouotQ49dz/ds1r2HVk7WBVpij6tm/8WpYEomJNGCMlXo+so5TYKkj9R8MJ2aMd2CVxmOQ==
   dependencies:
     es6-promise "^4.0.5"
     image-to-data-uri "^1.0.0"
@@ -8160,10 +8160,10 @@ slate-prop-types@^0.4.35:
   resolved "https://registry.yarnpkg.com/slate-prop-types/-/slate-prop-types-0.4.67.tgz#c6aa74195466546a44fcb85d1c7b15fefe36ce6b"
   integrity sha512-FmdwitAw1Y69JHm326dfwP6Zd6R99jz1Im8jvKcnG2hytk72I1vIv6ct2CkNGwc3sg90+OIO/Rf18frYxxoTzw==
 
-slate-react-legacy@^0.13.0:
-  version "0.13.6"
-  resolved "https://registry.yarnpkg.com/slate-react-legacy/-/slate-react-legacy-0.13.6.tgz#6aa70d55672af1ca55991886e196a3f6952f5942"
-  integrity sha512-iA/SPMcJ/7AmC5yct9aWKFfKbO0ZEKfdm4NBKvHTBc3JsZoIg2KIyzmcnpkNeZlCYp+6pODN2dZsUmaEI8h7Mg==
+slate-react-legacy@^0.13.7:
+  version "0.13.7"
+  resolved "https://registry.yarnpkg.com/slate-react-legacy/-/slate-react-legacy-0.13.7.tgz#fd60997babd1b23e3b3d3affc47f6b00db209b41"
+  integrity sha512-7ms90GBuzy7ADMOsEiCf9PwKfo+0lL2YuJbBdaoT8Dcr07nGptiuS7rwxvll6IWi7WHcLcQKT20Z0UT0mXbU9g==
   dependencies:
     debug "^3.1.0"
     get-window "^1.1.1"
