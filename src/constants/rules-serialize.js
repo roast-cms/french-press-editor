@@ -63,7 +63,7 @@ export const RULES_SERIALIZE = [
           // generate id based on header text or a random string
           const id =
             children[0] && children[0][0]
-              ? children[0][0]?.props?.children
+              ? (children[0][0]?.props?.children || "")
                   .toLowerCase()
                   .replace(/[ ]+/g, "-")
                   .replace(/[^a-z0-9\-]+/gi, "")
