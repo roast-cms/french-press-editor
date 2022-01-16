@@ -63,7 +63,8 @@ export const RULES_SERIALIZE = [
           // generate id based on header text or a random string
           const id =
             children[0] && children[0][0]
-              ? (typeof children[0][0]?.props?.children === "string"
+              ? // TODO: this needs a test
+                (typeof children[0][0]?.props?.children === "string"
                   ? children[0][0]?.props?.children
                   : ""
                 )
