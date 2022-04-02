@@ -78,7 +78,7 @@
     "slate-auto-replace-legacy": "^0.9.7",
     "slate-drop-or-paste-images-legacy": "^0.8.8",
     "slate-html-serializer": "0.6.0",
-    "slate-react-legacy": "^0.13.7",
+    "slate-react-legacy": "^0.13.9",
     "slate-when": "0.1.0",
     "styled-components": "^5.0.0",
     "uuid": "^8.3.2",
