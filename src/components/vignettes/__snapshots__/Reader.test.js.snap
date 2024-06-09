@@ -12,18 +12,18 @@ exports[`serializeLeaf maps leaves into marks components with keys 1`] = `
 <em
   node={null}
 >
-  <span
+  <React.Fragment
     node={null}
   >
     This is the first post to go onto this website.
-  </span>
+  </React.Fragment>
 </em>
 `;
 
 exports[`serializeString returns string, wrapped in consistent components. 1`] = `
-<span
+<React.Fragment
   node={null}
 >
   This is the first post to go onto this website.
-</span>
+</React.Fragment>
 `;
