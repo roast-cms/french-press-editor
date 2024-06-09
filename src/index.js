@@ -30,7 +30,7 @@ import FormatMenu from "./components/controls/FormatMenu"
  * @prop {String} placeholder Placeholder text that's displayed inside empty editor.
  * @prop {Object} controls You can pass pure React component functions here to render labels for the following controls: `MakeHeader` (button that converts the text block into a header), `CancelHeader` (button that converts header block back into paragraph), `MakeQuote` (button that converts text block into a quote), `MakeLink` (button that lets user add a link URL to selected text), `MakeBold` (button that marks selected text as bold (and the reverse)), `MakeItalic` (button that marks selected text as italic (and the reverse)), and `UploadImage` (button label for image upload control). For images, SVG animations, or whatever else you may fancy.
  * @prop {Object} options Here you can specify your app's domain address, a placeholder image, and a maximum image size. `domain` key helps rendering links better; for example, absolute links like `domain.com/page` can be automatically converted into `/page`. By default an image placeholder is a grey pixel, however, you can specify your own (note that user will rarely ever see it). Maximum upload image size in megabytes is specified as an integer value for `imageMaxSize` key.
- * @prop {Object} components This prop accepts three possible components (as values for the following keys): `Picture`, `PictureDocket`, and `ImageButton`. `Picture` component renders images inside the document; you can provide your own, however, it's recommended that you start with the default component. `PictureDocket` component can be rendered when the user clicks "Insert Image" button instead of straight-up opening a file dialogue box; this may give you a chance to give the user "recommended" images to work with, however, this is an advanced case and isn't required. You can provide your own "Insert Image" button component(`ImageButton`), however, it's not required; if you'd like to do so, please have a  look at the default component to see how to build one properly. If you simply want to change the text or add an icon to the ImageButton component, see `controls` prop.
+ * @prop {Object} components This prop accepts replacable components.
  * @prop {Array} slatePlugins `<FrenchPress />` component contains a number of Slate plugins customized for a specific user experience; you may add your own plugins here as well should you want to extend them.
  * @prop {Function} callbackStatus This prop will call a function with a parameter that specifies editor's localStorage save status (provides "ok" or "pending").
  * @prop {Function} callbackError This prop will call a function with error name and additional info that you may like to display within your own dialogue box or interface; i.e.: "Image is too large!" (provides `error` and `reason` strings parameters).
@@ -101,9 +101,7 @@ export class FrenchPress extends React.PureComponent {
         unusedImageKeys.length > 0 &&
           // eslint-disable-next-line
           console.log(
-            `Removed ${
-              unusedImageKeys.length
-            } unused image(s) from browser's database.`
+            `Removed ${unusedImageKeys.length} unused image(s) from browser's database.`
           )
       })
     }
@@ -220,7 +218,8 @@ export class FrenchPress extends React.PureComponent {
               : 0,
             display:
               this.state.cursorContext.newLine &&
-              (this.props.components && this.props.components.Picture)
+              this.props.components &&
+              this.props.components.Picture
                 ? "block"
                 : "none",
             opacity: this.state.editorFocus ? "1" : "0",

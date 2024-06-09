@@ -19,6 +19,30 @@ export const rulesSerializeWithProps = props => [
             return addKey(<a href={href}>{children}</a>)
           }
         }
+        case "heading": {
+          // generate id based on header text or a random string
+          const id =
+            children[0] && children[0][0]
+              ? // TODO: this needs a test
+                (typeof children[0][0]?.props?.children === "string"
+                  ? children[0][0]?.props?.children
+                  : ""
+                )
+                  .toLowerCase()
+                  .replace(/[ ]+/g, "-")
+                  .replace(/[^a-z0-9-]+/gi, "")
+              : Math.random()
+                  .toString(36)
+                  .substring(7)
+
+          if (props.components && props.components.H3) {
+            const H3 = props.editor
+              ? props.editor.props.components.H3
+              : props.components.H3
+            return addKey(<H3 id={id}>{children}</H3>)
+          }
+          return addKey(<h3 id={id}>{children}</h3>)
+        }
         case "image": {
           if (props.components && props.components.Picture) {
             const Picture = props.editor
@@ -39,7 +63,7 @@ export const rulesSerializeWithProps = props => [
           } else return null
         }
         default:
-          return addKey(<span>{children}</span>)
+          return addKey(<>{children}</>)
       }
     },
   },
@@ -58,24 +82,6 @@ export const RULES_SERIALIZE = [
               <blockquote>{children}</blockquote>
             </div>
           )
-        }
-        case "heading": {
-          // generate id based on header text or a random string
-          const id =
-            children[0] && children[0][0]
-              ? // TODO: this needs a test
-                (typeof children[0][0]?.props?.children === "string"
-                  ? children[0][0]?.props?.children
-                  : ""
-                )
-                  .toLowerCase()
-                  .replace(/[ ]+/g, "-")
-                  .replace(/[^a-z0-9\-]+/gi, "")
-              : Math.random()
-                  .toString(36)
-                  .substring(7)
-
-          return addKey(<h3 id={id}>{children}</h3>)
         }
         case "divider": {
           return addKey(<hr />)

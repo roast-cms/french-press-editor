@@ -5,7 +5,7 @@ import {ThemeProvider} from "styled-components"
 import {render} from "react-dom"
 import React from "react"
 
-import { EXAMPLE_THEME, EXAMPLE_VALUE } from './constants';
+import {EXAMPLE_THEME, EXAMPLE_VALUE} from "./constants"
 import {Editor} from "./Editor"
 import {
   //
@@ -16,23 +16,29 @@ import {
   Wrapper,
   //
 } from "./Wrapper"
-import Picture from '../src/components/vignettes/Picture';
-import Reader from '../src/components/vignettes/Reader';
+import Picture from "../src/components/vignettes/Picture"
+import Reader from "../src/components/vignettes/Reader"
 
-const Link = props => <strong><a href={props.to} target="_blank">{props.children}</a></strong>
+const Link = props => (
+  <strong>
+    <a href={props.to} target="_blank">
+      asdfasd{props.children}
+    </a>
+  </strong>
+)
 render(
   <div>
     <ThemeProvider theme={EXAMPLE_THEME}>
-        <Wrapper>
-          <h1>Editor</h1>
-          <Editor />
-          <h1>Reader</h1>
-          <Reader
-            options={{domain: "localhost:3002"}}
-            value={EXAMPLE_VALUE}
-            components={{Picture, Link}}
-          />
-        </Wrapper>
+      <Wrapper>
+        <h1>Editor</h1>
+        <Editor />
+        <h1>Reader</h1>
+        <Reader
+          options={{domain: "localhost:3002"}}
+          value={EXAMPLE_VALUE}
+          components={{Picture, Link}}
+        />
+      </Wrapper>
     </ThemeProvider>
   </div>,
   window.document.getElementById("app")

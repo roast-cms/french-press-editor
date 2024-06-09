@@ -1,5 +1,5 @@
 import React from "react"
-import lscache from 'lscache';
+import lscache from "lscache"
 
 import {EXAMPLE_VALUE} from "./constants"
 import {
@@ -18,6 +18,8 @@ import //
 // project; advanced Picture components may be created later for you to
 // choose from within a different repo/package
 Picture from "../src/components/vignettes/Picture"
+
+
 
 //
 // this component will render the editor
@@ -70,11 +72,7 @@ export class Editor extends React.PureComponent {
           // lscache.get("composer-content-state") is never NULL, even
           // for empty documents after first auto save, since even an empty
           // document has a structure that's stored in the LS.
-          value={
-            lscache.get("composer-content-state")
-              ? null
-              : EXAMPLE_VALUE
-          }
+          value={lscache.get("composer-content-state") ? null : EXAMPLE_VALUE}
           //
           // components prop accepts three possible components: Picture,
           // PictureDocket, and ImageButton
@@ -84,8 +82,6 @@ export class Editor extends React.PureComponent {
             // can provide your own, however, it's recommended that you start
             // with the default component
             Picture,
-            //
-            //Link,
           }}
           //
           options={{

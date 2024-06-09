@@ -4,8 +4,6 @@
 
 > ☕ An offline-first rich text editor component.
 
-### Note: the docs are outdated. See example files for usage.
-
 <p align="center"><img src="https://raw.githubusercontent.com/roast-cms/french-press-editor/master/graphics/demo-1.gif" width="600" alt="getting started with french-press-editor" /></p>
 
 - **Offline-ready:** store content and images (!) in-browser.
@@ -27,10 +25,6 @@
 ```
 yarn add @roast-cms/french-press-editor
 ```
-
-## API
-
-For complete API reference refer to **[docummentation](./docs)**.
 
 # Usage Example
 
@@ -131,7 +125,6 @@ import Reader from "@roast-cms/french-press-editor/dist/components/vignettes/Rea
   value={EXAMPLE_VALUE}
   //
   // optional: here you can pass your custom Picture component
-  // (see API docs for more details)
   components={{Picture}}
   //
 />
@@ -208,8 +201,6 @@ To see if this tool is right for you, please have a look through the list of spe
 #### Object/component reference.
 
 - `editorRef()` returns Slate Editor reference once it mounts.
-
-To learn more about what you can customize and build for `french-press-editor` to make it yours, check out the [complete API guide](/docs).
 
 ## Contributions welcome!
 
