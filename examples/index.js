@@ -6,7 +6,7 @@ import {render} from "react-dom"
 import React from "react"
 
 import {EXAMPLE_THEME, EXAMPLE_VALUE} from "./constants"
-import {Editor} from "./Editor"
+import {Editor} from "./editor"
 import {
   //
   // wrapper component contains some default styles that make your editor
@@ -22,10 +22,12 @@ import Reader from "../src/components/vignettes/Reader"
 const Link = props => (
   <strong>
     <a href={props.to} target="_blank">
-      asdfasd{props.children}
+      {props.children}
     </a>
   </strong>
 )
+const H3 = props => <h3>👉{props.children}</h3>
+
 render(
   <div>
     <ThemeProvider theme={EXAMPLE_THEME}>
@@ -36,7 +38,7 @@ render(
         <Reader
           options={{domain: "localhost:3002"}}
           value={EXAMPLE_VALUE}
-          components={{Picture, Link}}
+          components={{Picture, Link, H3}}
         />
       </Wrapper>
     </ThemeProvider>
