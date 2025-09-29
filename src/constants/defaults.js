@@ -59,10 +59,14 @@ export const PLACEHOLDER_TEXT = "Write your story…"
  * Default accepted upload file types.
  * @constant PICTURE_ACCEPTED_UPLOAD_MIME
  */
-export const PICTURE_ACCEPTED_UPLOAD_MIME = ["image/png", "image/jpeg"]
+export const PICTURE_ACCEPTED_UPLOAD_MIME = [
+  "image/png",
+  "image/jpeg",
+  "image/gif",
+]
 
 /**
  * Default accepted upload file types, written in human language.
  * @constant PICTURE_ACCEPTED_UPLOAD_MIME_HUMAN
  */
-export const PICTURE_ACCEPTED_UPLOAD_MIME_HUMAN = "PNG or JPEG"
+export const PICTURE_ACCEPTED_UPLOAD_MIME_HUMAN = "PNG, JPEG, or GIF"

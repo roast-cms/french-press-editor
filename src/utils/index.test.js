@@ -27,8 +27,8 @@ test("Reject images over custom size via forceImageRestrictions()", () => {
     forceImageRestrictions(1000001, "image/jpeg", 1)
   ).rejects.toEqual("size")
 })
-test("Reject GIF (unsupported) image mime via forceImageRestrictions()", () => {
-  return expect(forceImageRestrictions(10000000, "image/gif")).rejects.toEqual(
+test("Reject TIFF (unsupported) image mime via forceImageRestrictions()", () => {
+  return expect(forceImageRestrictions(10000000, "image/tiff")).rejects.toEqual(
     "mime"
   )
 })
